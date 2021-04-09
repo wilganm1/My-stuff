@@ -7,8 +7,6 @@ player_score = 0
 goal = int(input("Play first to: "))
 
 while True: 
-    comp_score = comp_score
-    player_score = player_score
     choices = ["rock","paper","scissors"]
     computer = random.choice(choices)
     player = str(input("Pick: "))
