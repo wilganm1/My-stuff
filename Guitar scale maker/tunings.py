@@ -22,7 +22,7 @@ def tune():
         
         string = 0    #create this so that each string is looped through later.
         j = 0      #for printing 1st string, 2nd string, etc
-        for open_note in reversed(tunings[tuning]):   #This reverses the order of notes in the dictionary key. The last letter is printed first. Format = guitar tab
+        for open_note in reversed(tunings[tuning]):  #This reverses the order of notes in the dictionary for the tuning you choose. The last letter is printed first.
             string += 1    #increases the strings 
             zo = notes.index(open_note)     
             ad = notes[zo:]     #extracts the notes from the given index to the end of the arry
