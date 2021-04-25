@@ -11,7 +11,7 @@ As always, start a new project in Python. If you are going to use split images f
               
 First, you must choose which images you want to cycle through, or in my case, choose a gif found on the internet that you can split into images to use. If you want a gif, right click it and select "copy image link" Here is the website I used to split gifs into separate imgages: https://ezgif.com/split. I recommend you use gifs that perfectly cycle through with no jarring cuts in them. You can edit each frame in different ways like changing the size, brightness, etc.
 
-** Save as png file in the dropdown window, then hit the "Split to frames!" button. On the next page, download as zip, then extract them the a folder you created. 
+**Save as png file in the dropdown window, then hit the "Split to frames!" button. On the next page, download as zip, then extract them the a folder you created.** 
 
 Second, you will have to rename the first 10 images to make the code work. When you download the images, they should look like this:
   frame_00_delay-0.03s.png
