@@ -25,3 +25,6 @@ Second, you will have to rename the first 10 images to make the code work. When 
      frame_1_delay-0.03s.png,  etc.
      
  Alright, you have everything you need, now just input the code. You will need the get the path for the folder.
+ 
+ ### Making it an exe file
+ Watch this YouTube video for a tutorial to convert a Python script into an exe file: https://www.youtube.com/watch?v=UZX5kH72Yx4. 
