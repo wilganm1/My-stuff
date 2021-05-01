@@ -28,3 +28,4 @@ Second, you will have to rename the first 10 images to make the code work. When 
  
  ### Making it an exe file
  Watch this YouTube video for a tutorial to convert a Python script into an exe file: https://www.youtube.com/watch?v=UZX5kH72Yx4. 
+ Then just run the exe file and you'll always have the code running withouth having Python running.
