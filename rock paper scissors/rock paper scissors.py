@@ -1,5 +1,5 @@
 #Have the computer pick random rock, paper or scissors
-#Have it restart when you it's over
+#Have it restart when it's over
 import random
 
 comp_score = 0
