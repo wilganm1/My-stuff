@@ -1,3 +1,5 @@
+#This script combines the other two scripts to get the notes that are in the scale on each string. Next I'll have to make a GUI to show the notes themselves.
+
 def scales():
     while True:  
      while True:      #Loop that checks if a correct note is entered
@@ -80,8 +82,7 @@ def scales():
                                    3 : ['Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D'],
                                    4 : ['Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A'],
                                    5 : ['F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E'],
-                                   6 : ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B']}}
-        
+                                   6 : ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B']}  
         
          strings = {'1' : 'st',
                    '2' : 'nd', 
