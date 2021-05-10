@@ -2,8 +2,6 @@
 dictionary in real-time, get its numpy arrays, then see if it matches with a matrix
 of a wav file saved in the 'dictionary of wav files' file.
 """
-import sounddevice as sd
-
 global Recordings
 Recordings = {'strings' : {'1' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
                            '2' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
@@ -29,7 +27,6 @@ while string_number < 7:
         continue        
     string_number +=1 
     continue  
-
 
 Arrays = {'strings' : {'1' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
                        '2' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
