@@ -2,7 +2,6 @@
 dictionary in real-time, get its numpy arrays, then see if it matches with a matrix
 of a wav file saved in the 'dictionary of wav files' file.
 """
-
 import sounddevice as sd
 
 global Recordings
@@ -12,16 +11,15 @@ Recordings = {'strings' : {'1' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
                            '4' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
                            '5' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
                            '6' : [0,1,2,3,4,5,6,7,8,9,10,11,12]}}
-
 global fs
 fs = 44100  # Sample rate
 global seconds
 seconds = 1  # Duration of recording
-
+#Now the recording that will hopfully loop through
 myrecording = 0
 myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=2)
 sd.wait()  # Wait until recording is finished
-
+#Loop function to save the recordings as. Will compare these recordings to archives files.
 string_number = 1     
 while string_number < 7:   
     fret_number = 0    
@@ -39,19 +37,18 @@ Arrays = {'strings' : {'1' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
                        '4' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
                        '5' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
                        '6' : [0,1,2,3,4,5,6,7,8,9,10,11,12]}}
-  
 """
 I need to write a function that is a 
 countdown to prepare for the recording.
 """
 import sounddevice as sd
 import time
-
+#This is for the recording part
 global fs
 fs = 44100  # Sample rate
 global seconds
 seconds = 2  # Duration of recording
-
+#This is the countdown
 secs = 5
 while secs > 0:
     print(secs)
@@ -63,8 +60,8 @@ myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=2)
 record_time = 1
 while seconds > 0:
     print(seconds)
-    seconds -= 1
+    seconds -= 1      #This shows me how much time is left to record.
     time.sleep(1)
     if seconds == 0:
-        print("Done")
+        print("Recording finished")
 sd.wait()  # Wait until recording is finished
