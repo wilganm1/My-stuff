@@ -1,64 +1,57 @@
-""""Now I need to see if I can record a sound and save it as a variable in 
-dictionary in real-time, get its numpy arrays, then see if it matches with a matrix
-of a wav file saved in the 'dictionary of wav files' file.
 """
-global Recordings
-Recordings = {'strings' : {'1' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
-                           '2' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
-                           '3' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
-                           '4' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
-                           '5' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
-                           '6' : [0,1,2,3,4,5,6,7,8,9,10,11,12]}}
-global fs
-fs = 44100  # Sample rate
-global seconds
-seconds = 1  # Duration of recording
-#Now the recording that will hopfully loop through
-myrecording = 0
-myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=2)
-sd.wait()  # Wait until recording is finished
-#Loop function to save the recordings as. Will compare these recordings to archives files.
-string_number = 1     
-while string_number < 7:   
-    fret_number = 0    
-    while fret_number < 13:    
-        Recordings['strings'][str(string_number)][fret_number] = myrecording  
-        fret_number +=1  
-        continue        
-    string_number +=1 
-    continue  
+Step 1. Recording audio
+    I need to record the frets. Do this is Python so it's 
+    more accurate. Can always convert later.
+    Get all 13 frets of the six strings.
+    
+    Make sure to wait half a second during the 
+    recording so get a clear pluck
+ """
+import sounddevice as sd     #plays audio files
+import time         #counts time
+import numpy as np    
+from scipy.io.wavfile import write  #write wav files
+from scipy.io.wavfile import read   #read wav files
 
-Arrays = {'strings' : {'1' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
-                       '2' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
-                       '3' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
-                       '4' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
-                       '5' : [0,1,2,3,4,5,6,7,8,9,10,11,12],
-                       '6' : [0,1,2,3,4,5,6,7,8,9,10,11,12]}}
+global folder
+folder = " Insert folder here "
+
+
+def record():
+    while True:
+        the_string = input("Enter string: ")
+        the_fret = input("Enter fret: ")
+        
+        # Now for the countdown
+        countdown = 5
+        while countdown > 0:
+            print(countdown)
+            countdown -= 1
+            time.sleep(1)
+        print("Recording:")
+        
+        #This is for the recording part
+        fs = 44100     # Sample rate
+        seconds = 1     # Duration of recording
+        my_recording = sd.rec(int(seconds * fs), samplerate=fs, channels=1)
+        sd.wait()      # Wait until recording is finished
+        write(folder + ' ' + str(the_string)+str(the_fret) + '.wav', fs, my_recording)
+        the_recording = my_recording
+          # Store it in Array dictionary 
+          # Now loop it
+        restart = str(input("Record another? (y/n): "))
+        if restart == 'y':
+            continue
+        else:
+            break
 """
-I need to write a function that is a 
-countdown to prepare for the recording.
+May 11 update:
+    The wav file recorded in Audacity won't work.
+    I must record everything in Python.
+    The good news is that Python returns one single 
+    long array that will make things easier
 """
-import sounddevice as sd
-import time
-#This is for the recording part
-global fs
-fs = 44100  # Sample rate
-global seconds
-seconds = 2  # Duration of recording
-#This is the countdown
-secs = 5
-while secs > 0:
-    print(secs)
-    secs -= 1
-    time.sleep(1)
-    if secs == 0:
-        print("Recording:")        
-myrecording = sd.rec(int(seconds * fs), samplerate=fs, channels=2)
-record_time = 1
-while seconds > 0:
-    print(seconds)
-    seconds -= 1      #This shows me how much time is left to record.
-    time.sleep(1)
-    if seconds == 0:
-        print("Recording finished")
-sd.wait()  # Wait until recording is finished
+
+
+
+
