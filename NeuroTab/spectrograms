@@ -1,0 +1,31 @@
+"""Step 2. Spectrograms & matrices
+    Use matplotlib and librosa to read the audio
+    files into spectrograms. Use numpy to read the
+    files and get the matrices for them.
+    Use Fourier Transform algorithms
+    https://medium.com/analytics-vidhya/understanding-the-mel-spectrogram-fca2afa2ce53 """
+
+import matplotlib.pyplot as plot
+from scipy.io import wavfile
+samplingFrequency, signalData = wavfile.read("C:/Users/WilganZMT/Documents/Coding/Python/NeuroTab/60.wav")
+
+# Plot the signal read from wav file
+plot.title('Spectrogram of a wav file')
+plot.specgram(signalData,Fs=samplingFrequency)
+plot.xlabel('Time')
+plot.ylabel('Frequency')
+plot.show()
+
+
+""" Now I need to loop through all the files.
+I should make a folder exclusivley for the 
+files then loop through it. """
+
+folder = (' ~~~ ')   #insert the folder path here
+for x in folder:
+    samplingFrequency, signalData = wavfile.read()   
+    plot.title('Spectrogram of ' + str(x))
+    plot.specgram(signalData,Fs=samplingFrequency)
+    plot.xlabel('Time')
+    plot.ylabel('Frequency')
+    plot.show()
