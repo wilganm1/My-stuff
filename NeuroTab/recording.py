@@ -13,10 +13,6 @@ import numpy as np
 from scipy.io.wavfile import write  #write wav files
 from scipy.io.wavfile import read   #read wav files
 
-global folder
-folder = " Insert folder here "
-
-
 def record():
     while True:
         the_string = input("Enter string: ")
@@ -35,8 +31,7 @@ def record():
         seconds = 1     # Duration of recording
         my_recording = sd.rec(int(seconds * fs), samplerate=fs, channels=1)
         sd.wait()      # Wait until recording is finished
-        write(folder + ' ' + str(the_string)+str(the_fret) + '.wav', fs, my_recording)
-        the_recording = my_recording
+        write('' + str(the_string)+str(the_fret) + '.wav', fs, my_recording)
           # Store it in Array dictionary 
           # Now loop it
         restart = str(input("Record another? (y/n): "))
@@ -51,7 +46,3 @@ May 11 update:
     The good news is that Python returns one single 
     long array that will make things easier
 """
-
-
-
-
