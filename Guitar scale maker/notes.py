@@ -1,10 +1,8 @@
-#This script combines the other two scripts to get the notes that are in the scale on each string. Next I'll have to make a GUI to show the notes themselves.
-
-def scales():
+def get_notes():
     while True:  
      while True:      #Loop that checks if a correct note is entered
-            notes = ["Ab","A","Bb","B","C","Db","D","Eb","E","F","Gb","G"]
-            root = str(input("Enter one of the following notes (case-sensitive):\nAb, A, Bb, B, C, Db, D, Eb, E, F, Gb, G\n: "))
+            notes = ["A","A#","B","C", "C#","D","D#","E","F","F#","G","G#"]
+            root = str(input("Enter one of the following notes (case-sensitive):\nA, A#, B, C, C#, D, D#, E, F, F#, G, G#\n: "))
             if root not in notes:
                 print("Error! Please enter a valid note")
                 continue
@@ -15,16 +13,15 @@ def scales():
          w = 2 #W & h are called "steps", or how many frets away one note is from another
          h  =1 #A whole-step, w, is 2 frets, and a half-step, h, is one fret. 
     
-         scales = {'major' : [r,w,w,h,w,w,w],
-              'minor' : [r,w,h,w,w,h,w],
-              'phrygian' : [r,h,w,w,w,h,w],
-              'lydian' : [r,w,w,w,h,w,w],
-              'mixolydian' : [r,w,w,h,w,w,h],
-              'dorian' : [r,w,h,w,w,w,h],
-              'locrian' : [r,h,w,w,h,w,w]}
+         scales = {'Major' : [r,w,w,h,w,w,w],
+              'Minor' : [r,w,h,w,w,h,w],
+              'Phrygian' : [r,h,w,w,w,h,w],
+              'Lydian' : [r,w,w,w,h,w,w],
+              'Mixolydian' : [r,w,w,h,w,w,h],
+              'Dorian' : [r,w,h,w,w,w,h],
+              'Locrian' : [r,h,w,w,h,w,w]}
             
          scale_type = str(input("Enter one of the following scales (not case-sensitive):\nMajor, Minor, Phrygian, Lydian, Mixolydian, Dorian, Locrian\n: "))
-         scale_type = scale_type.lower()
         
          if scale_type not in scales:
              print("Error! Please enter valid scale")
@@ -51,58 +48,64 @@ def scales():
              this_scale = []      #New list that will be have our finished scale.
              for i in note_list:     #loops through the numbers in scale. Those number are index values
                  this_scale.append(notes[i])   #adds in letters from notes variable that correspond to scale indices
+             this_scale.append(this_scale[0])
          print("\n" + str(root) + " " + str(scale_type) + "\n" + str(this_scale))  #prints completed scale in the correct order
             
-         tunings = {'standard' : {1 : ['E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb'],
-                                 2 : ['B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb'],
-                                 3 : ['G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb'],
-                                 4 : ['D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db'],
-                                 5 : ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab'],
-                                 6 : ['E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb']},
-                   'd standard' : {1 : ['D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db'],
-                                   2 : ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab'],
-                                   3 : ['F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E'],
-                                   4 : ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'],
-                                   5 : ['G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb'],
-                                   6 : ['D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db']},
-                   'drop c' : {1 : ['D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db'],
-                               2 : ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab'],
-                               3 : ['F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E'],
-                               4 : ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'],
-                               5 : ['G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb'],
-                               6 : ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B']},
-                   'drop d' : {1 : ['E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb'],
-                               2 : ['B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb'],
-                               3 : ['G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb'],
-                               4 : ['D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db'],
-                               5 : ['A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab'],
-                               6 : ['D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db']},
-                   'c standard' : {1 : ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'],
-                                   2 : ['G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb'],
-                                   3 : ['Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D'],
-                                   4 : ['Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A'],
-                                   5 : ['F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C', 'Db', 'D', 'Eb', 'E'],
-                                   6 : ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B']}  
-        
-         strings = {'1' : 'st',
+         global tuning_notes
+         tuning_notes = {'Standard' : {1 : ['E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#'],
+                                  2 : ['B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#'],
+                                  3 : ['G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#'],
+                                  4 : ['D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#'],
+                                  5 : ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'],
+                                  6 : ['E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#']},
+                    'Drop D' : {1 : ['E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#'],
+                               2 : ['B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#'],
+                               3 : ['G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#'],
+                               4 : ['D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#'],
+                               5 : ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'],
+                               6 : ['D', 'E#', 'E', 'F', 'G#', 'G', 'A#', 'A', 'B#', 'B', 'C', 'D#']},
+                    'D Standard' : {1 : ['D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'DC'],
+                                   2 : ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'],
+                                   3 : ['F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E'],
+                                   4 : ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'],
+                                   5 : ['G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#'],
+                                   6 : ['D', 'E#', 'E', 'F', 'G#', 'G', 'A#', 'A', 'B#', 'B', 'C', 'D#']},
+                    'Drop C' : {1 : ['D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'DC'],
+                               2 : ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'],
+                               3 : ['F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E'],
+                               4 : ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'],
+                               5 : ['G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#'],
+                               6 : ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']},
+                    'C Standard' : {1 : ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'],
+                                   2 : ['G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#'],
+                                   3 : ['D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D'],
+                                   4 : ['A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A'],
+                                   5 : ['F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E'],
+                                   6 : ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']}}
+
+         strings = {'1' :'st',
                    '2' : 'nd', 
                    '3' : 'rd',
                    '4' : 'th', 
                    '5' : 'th',
                    '6' : 'th'}
          tuning = str(input("Choose desired tuning (space-sensitive, not case-sensitive):\nStandard, Drop D, D Standard, Drop C, C Standard\n: ") )  #Chooses what tuning you want
-         tuning = tuning.lower()
         
          string = 1
          superscript = 1
          print('\n' + str(root) + ' ' + str(scale_type) + ' - ' + tuning + " tuning")
          for x in range(1,7):
-             for y in tunings[tuning][x]:
+             for y in tuning_notes[tuning][x]:
                  if y not in this_scale:
-                     tunings[tuning][x].remove(y)
-             print(str(tunings[tuning][x]) + ' ' + str(string) + strings[str(superscript)] + ' string')
+                     tuning_notes[tuning][x].remove(y)
+             print(str(tuning_notes[tuning][x]) + ' ' + str(string) + strings[str(superscript)] + ' string')
              string +=1
              superscript += 1
          break
+     restart = str(input("Restart? (y/n): "))
+     if restart == 'y':
+         continue
+     else:
+         print("Farewell")
+         break
      break
-   
