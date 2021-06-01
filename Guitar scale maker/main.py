@@ -38,13 +38,9 @@ frame1.pack()
 
 """ Make frame 2 with the button """
 frame2 = Frame(master = root) 
-def scl():        #This shows the root note and the scale when button pressed
-    label2.config(text = tuning_var.get() + " - " + root_note_var.get() + " " + scale_var.get())
 
 # Create button, it will change all label text
-button = Button(frame2 , text = "Get", command=lambda:[scl(), ioq()]).pack()
-label2 = Label(frame2 , text = " ")
-label2.pack()
+button = Button(frame2 , text = "Get", command=lambda:[ioq()]).pack()
   
 frame2.pack()
 
