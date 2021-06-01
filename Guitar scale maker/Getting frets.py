@@ -5,7 +5,8 @@ notes = ["A","A#","B","C", "C#","D","D#","E","F","F#","G","G#"]
 root = str(input("Enter one of the following notes (case-sensitive):\nA, A#, B, C, C#, D, D#, E, F, F#, G, G#\n: "))
 r = 0 #The index of the note we pick that starts a scale
 w = 2 #W & h are called "steps", or how many frets away one note is from another
-h  =1 #A whole-step, w, is 2 frets, and a half-step, h, is one fret. 
+h =1 #A whole-step, w, is 2 frets, and a half-step, h, is 1 fret. 
+wh= 3 #A whole & a half step. 3 frets.
 
 scales = {'Major' : [r,w,w,h,w,w,w],
   'Minor' : [r,w,h,w,w,h,w],
