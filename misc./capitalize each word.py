@@ -1,4 +1,4 @@
-""" This is how to capitalize each """ 
+""" This is how to capitalize each string element in a list""" 
 
 variable = ['habt','aqnu','zjll','gioqng']  #change 'variable' to whatever you want. The words in the list are what you want to capitalize
 
