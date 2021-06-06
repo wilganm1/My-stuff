@@ -7,5 +7,6 @@ for i in range(len(variable)):  #Iterates through the words in the list by their
     
 variable
     
+   #Testing  
 In[134]: variable
 Out[134]: ['Habt', 'Aqnu', 'Zjll', 'Gioqng']
