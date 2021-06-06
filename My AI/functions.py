@@ -37,45 +37,37 @@ def listen():
 """ Step 2: Web surfing.
 Surf and scrape the web for stuff. I will mostly
 just use wikipedia for information"""
-
-"""Opens up the wikipedia page of what you ask for. We do this by splitting the query into separate words, and extract the last words.
-You can't just extract the last because it might be wrong. Example: The Big Bang. If you just take Bang, you won't get the correct results.
-
-This follows a forumula that's on main.py.   If you mention wikipedia, you need to say the words 'for', 'on', or 'about', before saying what you 
-want to go on Wikipedia for.  So if you want to open the wiki page for the 
-"""
+#
 def get_wiki():
     query = listen.lower()
     split = query.split()
-    the_index = -1
+    the_index = -2
     while True:
-        if split[the_index] == 'for' or 'on' or 'about':
-            query = split[the_index+1:]
-            mn = ""
-            for x in query:
-              mn += str(x)
-            break
-        elif split[the_index] != 'for' or 'on' or 'about':
+        if split[the_index] != 'for' or 'on' or 'about':
             the_index -= 1
             continue
-    webbrowswer.open("https://en.wikipedia.org/wiki/" + str(mn))
-    print(results)
-    speak(results)
+        elif split[the_index] == 'for' or 'on' or 'about':
+            query = split[the_index+1:]
+            break
+    for i in range(len(query)):
+        query[i] = query[i].capitalize()
+    for word in query:   #loops through words in query
+        if query.index(word)%2 == 1: 
+            query.insert(query.index(word), "_") 
+    query = "".join(query)
+    webbrowser.open("https://en.wikipedia.org/wiki/" + str(query))
+
     
-#If sphinx recognizes ? marks then this will work, if not I'll have to readjust this.
-#This automatically opens up a google tab with what you asked for
 def get_google():
-    qu = query.replace("?","")  #gets rid of ?
-    quer = qu.split()   #takes the query and splits it
+    quer = query.split()   #takes the query and splits it
     for word in quer:   #loops through words in query
         if quer.index(word)%2 == 1: 
             quer.insert(quer.index(word), "+")   #adds in + sign in every odd index
-    ask = ""    #This will be added to the google URL
-    for q in quer:
-        ask += str(q)
-    webbrowser.open('https://www.google.com/' + str(ask))
+    quer = ''.join(quer)
+    webbrowser.open('https://www.google.com/' + quer)
 
 #Get information from wikipedia
+
 def wikinfo():
     if 'what is' in query:
         query = query.split()
@@ -84,4 +76,31 @@ def wikinfo():
             em += str(words)
         wikipedia.summary(em, sentences = 3)
         
-        
+#Play video on youtube
+    
+def play_vid():
+    query = query.split()
+    query.remove('play')
+    query.remove('by')
+    for word in query:   #loops through words in query
+        if query.index(word)%2 == 1: 
+            query.insert(query.index(word), "+")   #adds in + sign in every odd index
+    "".join(query)
+    webbrowser.open('https://www.youtube.com/results?search_query=' + query)
+
+def get_weather():
+    webbrowser.open("https://weather.com/weather/tenday/l/c277dae335f9538e22909aaa3e887daa822dbde134f4379a25f368167c04bbfe")
+    
+def greet():
+    if 6 >= datetime.now().hour > 9:
+        speak('Good morning sir.')
+        speak(random.choice(greetings))
+    elif 9 >= datetime.now().hour > 14:
+        speak('Good day sir.')
+        speak(random.choice(greetings))
+    if 14 >= datetime.now().hour > 18:
+        speak('Good afternoon sir.')
+        speak(random.choice(greetings))
+    elif 18 >= datetime.now().hour > 24:
+        speak('Good evening sir.')
+        speak(random.choice(greetings))
