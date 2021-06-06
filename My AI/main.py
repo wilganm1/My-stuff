@@ -26,6 +26,8 @@ import os
 import wolframalpha
 import wikipedia
 import twilio
+import json
+import subprocess
 import requests
 from urllib.request import urlopen
 from bs4 import BeautifulSoup 
@@ -95,44 +97,61 @@ def listen():
   
 """ Step 2: Web surfing.
 Surf and scrape the web for stuff. I will mostly
-just use wikipedia for information"""
+just use wikipedia for information Used to open
+up different websites."""
 
 def get_wiki():
     query = listen.lower()
     split = query.split()
     the_index = -2
     while True:
-        if split[the_index] == 'for' or 'on' or 'about':
-            query = split[the_index+1:]
-            break
-        elif split[the_index] != 'for' or 'on' or 'about':
+        if split[the_index] != 'for' or 'on' or 'about':
             the_index -= 1
             continue
-    results = wikipedia.summary(str(query))
-    print(results)
-    speak(results)
+        elif split[the_index] == 'for' or 'on' or 'about':
+            query = split[the_index+1:]
+            break
+    for i in range(len(query)):
+        query[i] = query[i].capitalize()
+    for word in query:   #loops through words in query
+    if query.index(word)%2 == 1: 
+        query.insert(query.index(word), "_") 
+    query = "".join(query)
+    webbrowser.open("https://en.wikipedia.org/wiki/" + str(query))
     
 def get_google():
     quer = query.split()   #takes the query and splits it
     for word in quer:   #loops through words in query
         if quer.index(word)%2 == 1: 
             quer.insert(quer.index(word), "+")   #adds in + sign in every odd index
-    ask = ""    #This will be added to the google URL
-    for q in quer:
-        ask += str(q)
-    webbrowser.open('https://www.google.com/search?q=' + str(ask))
+    quer = ''.join(quer)
+    webbrowser.open('https://www.google.com/' + quer
     
-def wikinfo():
+def wikinfo():  #what is
         query = query.split()
-        em = ""
-        for words in query[query.index('is')+1]:
-            em += str(words)
-        wikipedia.summary(em, sentences = 3)
+        query.remove('what')
+        query.remove('is')
+        ' '.join(query)
+        wikipedia.summary(query, sentences = 3)
         
+def play_vid():
+    query = query.split()
+    query.remove('play')
+    query.remove('by')
+    for word in query:   #loops through words in query
+    if query.index(word)%2 == 1: 
+        query.insert(query.index(word), "+")   #adds in + sign in every odd index
+    vid = ""    #This will be added to the google URL
+    for q in quer:
+        vid += str(q)
+    webbrowser.open('https://www.youtube.com/results?search_query=' + str(vid))
+
+    
 if __name__ == '__main__':
     clear = lambda: os.system('cls')
     while True:
         listen()
+        
         for site in Websites:
             if site in query:
                 webbrowser.open(Websites[site])
@@ -142,12 +161,8 @@ if __name__ == '__main__':
             speak('Searching Wikipedia...')
             get_wiki()
             
-        elif 'what is' in query:
+        elif 'what is' in query:     #Gets general info from wikipedia. Format: 'What is (the) {whatever}
             wikinfo()
-
-        """ Make a dictionary for questions that
-        Google may have answers to. Example:
-        If query has 'How big is', or 'What is the
-        most' then ask google. """
-        
-
+            
+        elif "play" and 'by' in query: #Play a video on youtube. Format: 'Play {What you want to play here}
+            play_vid()                     #by {artist or uploader}
