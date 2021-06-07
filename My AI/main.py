@@ -45,7 +45,9 @@ responses = ['Yes sir.', 'As you wish.', 'Of course sir.',
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
+global r
 r = sr.Recognizer()
+global mic
 mic = sr.Microphone()
 
 """ Now do text to speech """
@@ -79,7 +81,27 @@ def callback(recognizer, audio):
     except sr.UnknownValueError: #if there is nothing understood
         print("Oops! Didn't catch that") #prints to screen error message
 
-  
+def takeCommand():
+    with mic as source:
+        r.adjust_for_ambient_noise(source)
+        print("Listening...")
+        r.pause_threshold = 1
+        audio = r.listen(source)
+        r.recognize_sphinx(audio)
+    try:
+        print("Recognizing...")   
+        query = r.recognize_sphinx(audio, language ='en-in')
+    except sr.UnknownValueError:
+        print("Sphinx could not understand audio")
+    except sr.RequestError as e:
+        print("Sphinx error; {0}".formate(e))
+    return query
+
+print("Loading your AI personal assistant G-One")
+speak("Loading your AI personal assistant G-One")
+wishMe()  
+
+
 """ Step 2: Web surfing.
 Surf and scrape the web for stuff. I will mostly
 just use wikipedia for information Used to open
@@ -87,7 +109,6 @@ up different websites."""
 
 def get_wiki():
     speak(random.choice(responses))
-    query = query.lower()
     split = query.split()
     the_index = -2
     while True:
@@ -113,16 +134,9 @@ def get_google():
             quer.insert(quer.index(word), "+")   #adds in + sign in every odd index
     quer = ''.join(quer)
     webbrowser.open('https://www.google.com/' + quer)
-    
-def wikinfo():
-    speak(random.choice(responses))
-    query = query.split()
-    query.remove('what')
-    query.remove('is')
-    ' '.join(query)
-    wikipedia.summary(query, sentences = 3)
-        
+            
 def play_vid():
+    query = takeCommand().lower
     query = query.split()
     query.remove('play')
     query.remove('by')
@@ -136,38 +150,38 @@ def get_weather():
     webbrowser.open("https://weather.com/weather/tenday/l/c277dae335f9538e22909aaa3e887daa822dbde134f4379a25f368167c04bbfe")
 
     
+def wolf():
+    question = takeCommand()
+    app_id = 'AQV4H4-8LWH8GRXWG'
+    client = wolframalpha.Client(app_id)
+    res = client.query(question)
+    answer = next(res.results).text
+    speak(answer)
+    print(answer)            
+
+inquiries = ['who', 'what', 'where', 'when',
+            'why', 'how']
+
 if __name__ == '__main__':
     clear = lambda: os.system('cls')
     while True:
-        with mic as source:
-            r.adjust_for_ambient_noise(source)
-            print("Listening...")
-            r.pause_threshold = 1
-            audio = r.listen(source)
-            r.recognize_sphinx(audio)
-        try:
-            print("Recognizing...")   
-            global query
-            query = r.recognize_sphinx(audio, language ='en-in')
-        except sr.UnknownValueError:
-            print("Sphinx could not understand audio")
-        except sr.RequestError as e:
-            print("Sphinx error; {0}".formate(e))
-  #Open websites
+        query = takeCommand().lower()
         for site in Websites:
             if site in query:
                 webbrowser.open(Websites[site])
         speak("Opening " + str(site))
+  #Search WolframAlpha for answers to questions
+        for inquiry in inquiries:
+            if inquiry in query:
+                wolf()
   #Open wikipedia page on something
         if 'wikipedia' in query:
             speak('Searching Wikipedia...')
             get_wiki()
-  #Get general info about something from wikipedia   
-        elif 'what is' in query:     #Gets general info from wikipedia. Format: 'What is (the) {whatever}
-            wikinfo()
   #Open the YouTube search for a video  
-        elif "play" and 'by' in query: #Play a video on youtube. Format: 'Play {What you want to play here}
+        elif "play" in query and 'by' in query: #Play a video on youtube. Format: 'Play {What you want to play here}
             play_vid()                     #by {artist or uploader}
-  #Directs to weather.com 10-day forecast
+  #Directs to weather.com - 10-day forecast
         elif 'weather' in query:
             get_weather()
+                   
