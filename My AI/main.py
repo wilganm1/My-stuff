@@ -24,6 +24,7 @@ import pyttsx3
 import os
 import wolframalpha
 import wikipedia
+import sys
 import webbrowser
 from datetime import datetime
 
@@ -35,7 +36,7 @@ responses = ['Yes sir.', 'As you wish.', 'Of course sir.',
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
-engine.setProperty('rate', 185)
+engine.setProperty('rate', 165)
 global r
 r = sr.Recognizer()
 global mic
@@ -46,7 +47,6 @@ def speak(audio):
     engine.say(audio)
     engine.runAndWait()
     
-
 def greet():
     greetings = ['Welcome back.', 'How are you today?', 
              'I\'ve missed you.']
@@ -62,12 +62,14 @@ def greet():
     elif datetime.now().hour >= 18 and datetime.now().hour < 21:
         speak('Good evening sir.')
         speak(random.choice(greetings))
-             
+    elif datetime.now().hour >= 21 and datetime.now().hour < 24:
+        speak('It\'s getting late sir.')
+        speak(random.choice(greetings))
+        
 
 """ Make a recognizer function to start when 
 you say certain words """    
-keywords = [("Jarvis"), ('hey Jarvis') ('yo Jarvis')]
-
+keywords = ["Jarvis", 'hey Jarvis', 'yo Jarvis']
 
 def rise():
     calls = ['Yes sir?', 'You called sir?', 'What can I help you with?', 'What do you need?', 'Listening sir']
@@ -93,6 +95,7 @@ def rise():
                 else:
                     print('Keyword not heard, try again')
                     continue
+                engine.endLoop()
 def takeCommand():
     with mic as source:
         r.adjust_for_ambient_noise(source)
@@ -170,22 +173,22 @@ def wolf(query):
 def open_site(site):
     speak("Opening " + str(site))
     webbrowser.open(Websites[str(site)])
+    
+inquiries = ['who', 'what', 'where', 'when', 'why', 'how']
+Websites = {'youtube' : 'https://www.youtube.com/',
+'google' : 'https://www.google.com/',
+'reddit' : 'https://www.reddit.com/',
+'td ameritrade' : 'https://www.tdameritrade.com/home.html',
+'gmail' : 'https://accounts.google.com/signin/v2/identifier?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin',
+'ncbi' : 'https://www.ncbi.nlm.nih.gov/',
+'indeed' : 'https://www.indeed.com/',
+'github' : 'https://github.com/'}
 
 if __name__ == '__main__':
     clear = lambda: os.system('cls')
-    greet()
-    inquiries = ['who', 'what', 'where', 'when', 'why', 'how']
-    Websites = {'youtube' : 'https://www.youtube.com/',
-    'google' : 'https://www.google.com/',
-    'reddit' : 'https://www.reddit.com/',
-    'td ameritrade' : 'https://www.tdameritrade.com/home.html',
-    'gmail' : 'https://accounts.google.com/signin/v2/identifier?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin',
-    'ncbi' : 'https://www.ncbi.nlm.nih.gov/',
-    'indeed' : 'https://www.indeed.com/',
-    'github' : 'https://github.com/'}
-    
+    greet()    
+    rise()
     while True:
-        rise()
         query = takeCommand().lower()
         for site in Websites:
             if site in query:
@@ -203,4 +206,4 @@ if __name__ == '__main__':
   
         elif 'weather' in query:
             get_weather()
-                    
+        continue
