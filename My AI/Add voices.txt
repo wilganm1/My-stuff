@@ -1,4 +1,4 @@
-I want to add new voices.
+How to add new voices to pyttsx3. I'm using Python 3.8 on Windows 10.
 
 Click start button on Windows. Type or click "Run". 
 
@@ -6,7 +6,32 @@ Type in 'regedit' into the bar. Go to HKEY_LOCAL_MACHINE/SOFTWARE/MICROSOFT/SPEE
 
 Look at where the voices are located.
 
-Make a new key, which is a folder, and just copy all the features of the other voices. All the files you need should be in the folder LangDataPath and VoicePath keys. The files should be:
+Right-click on Tokens folder and add a new key, which is a folder, and just copy all the features of the other voices, like this:
+
+    Example:
+-TTS_MS_EN-US_DAVID_11.0
+|          Name        Type            Data
+|      -(Default)      REG_SZ          Microsoft David Desktop - English (United Sates)
+|      -409            REG_SZ          Microsoft David Desktop - English (United Sates)
+|      -CLSID          REG_SZ          {179F3D56-1B0B-42B2-A962-59B7EF59FE1B}
+|      -LangDataPath   REG_EXPAND_SZ   %windir%\Speech_OneCore\Engines\TTS\en-US\MSTTSLocEnUS.dat
+|      -VoicePath      REG_EXPAND_SZ   %windir%\Speech_OneCore\Engines\TTS\en-US\M1033David
+|                        
+ -Attributes             
+           Name        Type            Data
+       -(Default)      REG_SZ          (value not set)
+       -Age            REG_SZ          Adult
+       -Gender         REG_SZ          Male
+       -Language       REG_SZ          409 
+       -Name           REG_SZ          Microsoft David Desktop
+       -SharedPronu... REG_SZ          
+       -SpLexicon      REG_SZ          {0655E396-25D0-11D3-9C26-00C04F8EF87C}    
+       -Vendor         REG_SZ          Microsoft     
+       -Version        REG_SZ          11.0
+ 
+All the files you need should be where the VoicePath and LangDataPath lead to.
     M10333{name of voice}.APM
     M10333{name of voice}.DEP
     M10333{name of voice}.INI
+       + more maybe
+
