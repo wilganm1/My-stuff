@@ -83,7 +83,7 @@ class AI:
         split = self.query.split()
         the_index = -1
         while True:
-            if split[the_index] != 'for' or 'on' or 'about':
+            if split[the_index] != 'for' or split[the_index] != 'on' or split[the_index] != 'about':
                 the_index -= 1
                 continue
             elif split[the_index] == 'for' or 'on' or 'about':
@@ -96,7 +96,8 @@ class AI:
                 self.query.insert(self.query.index(word), "_") 
         self.query = "".join(self.query)
         webbrowser.open("https://en.wikipedia.org/wiki/" + str(self.query))
-        
+      
+    #Searches Google     
     def get_google(self):
         self.speak(random.choice(self.responses))
         quer = self.query.split()   #takes the self.query and splits it
@@ -106,7 +107,7 @@ class AI:
         quer = ''.join(quer)   #joins all words without any spaces
         webbrowser.open('https://www.google.com/' + quer)
         
-    #Open the YouTube search for a video            
+    #Opens YouTube to search for a video by search words         
     def play_vid(self):
         self.speak(random.choice(self.responses))    
         quer = self.query.split()
@@ -134,58 +135,58 @@ class AI:
         self.speak(answer)
         print(answer)            
     
-    def open_site(self, site):
-        for site in self.Websites:
-            if site in self.query:
+    def open_site(self):
+        for site in self.Websites:    #checks if a pre-determined site is in query
+            if site in self.query:    
+                self.speak('Opening ' + str(site))
                 webbrowser.open(self.Websites[str(site)])
+        extensions = ['.com', '.org', '.gov']
+        for x in extensions:
+            if x in self.query:
+                extension = x
+                self.query = self.query.replace(x, "")
         quer = self.query.split()   
         if 'open' in quer:
             quer.remove('open')
-        elif 'go to' in quer:
+        elif 'go to' in self.query:
             quer.remove('go')
             quer.remove('to')
-        if 'dot' in quer:
-            quer.remove('dot')
-        extensions = ['com', 'org', 'gov']
-        for x in extensions:
-            if x in quer:
-                quer.remove(x)
-            "".join(quer)
-            webbrowser.open(str(quer) + '.' + str(x))        
-            self.speak("Opening " + str(site))
-            webbrowser.open(self.Websites[str(site)])
+        quer = "".join(quer)
+        webbrowser.open("https://www." + quer + str(extension))        
+        self.speak("Opening " + quer)
         
 """Main program"""
 if __name__ == '__main__':
+    AI = AI()
     try:
         AI.greet()
-        while True:
-            AI.takeCommand()      
-            if 'wikipedia' in AI.takeCommand():
+        while True:            #This will always keep it running.
+            AI.takeCommand() #Since this resets query every time it's called, it will last forever.
+            
+            if 'wikipedia' in AI.query:
                 AI.get_wiki()
                 continue
-            
-            elif "play" in AI.takeCommand() and 'by' in AI.takeComman(): #Play a video on youtube. Format: 'Play {What you want to play here}
+            #Play YouTube video
+            elif "play" in AI.query and 'by' in AI.takeCommand(): #Play a video on youtube. Format: 'Play {What you want to play here}
                 AI.play_vid()                    #by {artist or uploader}
                 continue
-        
-            elif 'weather' in AI.takeCommand():
+            #Opens weather.com for my location
+            elif 'weather' in AI.query:
                 AI.get_weather()
                 continue
-            
-            elif "terminate" in AI.takeCommand():
+            #Stops the loop.
+            elif "terminate" in AI.query:
                 break
             
-            elif "shut down" in AI.takeCommand():
+            elif "shut down" in AI.query:
                 AI.speak("Shutting down, good bye sir.")
                 break
                 os.sytem("shutdown /s /t 1")
-    
-            for site in AI.Websites:
-                if site in AI.takeCommand():
-                    AI.open_site(site)
-                    continue
-                    
+            
+            elif 'open' in AI.query or 'go to' in AI.query:
+                AI.open_site()
+                continue
+            #searches wolframalpha for answers to questions        
             for inquiry in AI.inquiries:
                 if inquiry == AI.split[0]:
                     AI.wolf()
