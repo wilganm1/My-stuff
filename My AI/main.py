@@ -64,8 +64,7 @@ def greet():
         speak(random.choice(greetings))
     elif datetime.now().hour >= 21 and datetime.now().hour < 24:
         speak('It\'s getting late sir.')
-        speak(random.choice(greetings))
-        
+        speak(random.choice(greetings))      
 
 """ Make a recognizer function to start when 
 you say certain words """    
@@ -170,9 +169,26 @@ def wolf(query):
     speak(answer)
     print(answer)            
 
-def open_site(site):
-    speak("Opening " + str(site))
-    webbrowser.open(Websites[str(site)])
+def open_site(query):
+    for site in Websites:
+        if site in query:
+            webbrowser.open(Websites[str(site)])
+    quer = query.split()   
+    if 'open' in quer:
+        quer.remove('open')
+    elif 'go to' in quer:
+        quer.remove('go')
+        quer.remove('to')
+    if 'dot' in quer:
+        quer.remove('dot')
+    extensions = ['com', 'org', 'gov']
+    for x in extensions:
+        if x in quer:
+            quer.remove(x)
+        "".join(quer)
+        webbrowser.open(str(quer) + '.' + str(x))        
+        speak("Opening " + str(site))
+        webbrowser.open(Websites[str(site)])
     
 inquiries = ['who', 'what', 'where', 'when', 'why', 'how']
 Websites = {'youtube' : 'https://www.youtube.com/',
@@ -201,6 +217,9 @@ if __name__ == '__main__':
         if 'wikipedia' in query:
             get_wiki(query)
               
+        if "open" in query or "go to" in query and 'dot com' in query or 'dot org' in query or 'dot gov' in query:
+            open_site(query)
+            
         elif "play" in query and 'by' in query: #Play a video on youtube. Format: 'Play {What you want to play here}
             play_vid(query)                     #by {artist or uploader}
   
