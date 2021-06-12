@@ -1,0 +1,9 @@
+I want to add new voices.
+
+Click start button on Windows. Type or click "Run". 
+
+Type in 'regedit' into the bar. Go to HKEY_LOCAL_MACHINE/SOFTWARE/MICROSOFT/SPEECH/VOICES/TOKENS
+
+Look at where the voices are located.
+
+Find out how to add more.
