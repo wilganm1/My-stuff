@@ -6,4 +6,7 @@ Type in 'regedit' into the bar. Go to HKEY_LOCAL_MACHINE/SOFTWARE/MICROSOFT/SPEE
 
 Look at where the voices are located.
 
-Find out how to add more.
+Make a new key, which is a folder, and just copy all the features of the other voices. All the files you need should be in the folder LangDataPath and VoicePath keys. The files should be:
+    M10333{name of voice}.APM
+    M10333{name of voice}.DEP
+    M10333{name of voice}.INI
