@@ -71,22 +71,28 @@ keywords = [("Jarvis"), ('hey Jarvis') ('yo Jarvis')]
 
 def rise():
     calls = ['Yes sir?', 'You called sir?', 'What can I help you with?', 'What do you need?', 'Listening sir']
-    with mic as source:
-        r.adjust_for_ambient_noise(source)
-        print("Listening...")
-        r.pause_threshold = 1
-        audio = r.listen(source)
-        r.recognize_sphinx(audio)
-        for keyword in keywords:
-            if keyword in r.recognize_sphinx(audio):
-                try:
-                    speak(random.choice(calls))
-                    takeCommand()
-                except sr.UnknownValueError:
+    while True:
+        with mic as source:
+            r.adjust_for_ambient_noise(source)
+            print("Listening...")
+            r.pause_threshold = 1
+            audio = r.listen(source)
+            r.recognize_sphinx(audio)
+            for keyword in keywords:
+                if keyword in r.recognize_sphinx(audio):
+                    try:
+                        speak(random.choice(calls))
+                        break
+                        takeCommand()
+                    except sr.UnknownValueError:
                         print("Sphinx could not understand audio")
-                except sr.RequestError as e:
-                    print("Sphinx error; {0}".formate(e))
-
+                        continue
+                    except sr.RequestError as e:
+                        print("Sphinx error; {0}".formate(e))
+                        continue
+                else:
+                    print('Keyword not heard, try again')
+                    continue
 def takeCommand():
     with mic as source:
         r.adjust_for_ambient_noise(source)
@@ -161,6 +167,10 @@ def wolf(query):
     speak(answer)
     print(answer)            
 
+def open_site(site):
+    speak("Opening " + str(site))
+    webbrowser.open(Websites[str(site)])
+
 if __name__ == '__main__':
     clear = lambda: os.system('cls')
     greet()
@@ -179,11 +189,10 @@ if __name__ == '__main__':
         query = takeCommand().lower()
         for site in Websites:
             if site in query:
-                webbrowser.open(Websites[site])
-                speak("Opening " + str(site))
-        
+                open_site(site)
+                
         for inquiry in inquiries:
-            if inquiry in query:
+            if inquiry == query.split[0]:
                 wolf(query)
                 
         if 'wikipedia' in query:
@@ -191,6 +200,7 @@ if __name__ == '__main__':
               
         elif "play" in query and 'by' in query: #Play a video on youtube. Format: 'Play {What you want to play here}
             play_vid(query)                     #by {artist or uploader}
+  
         elif 'weather' in query:
             get_weather()
-                   
+                    
