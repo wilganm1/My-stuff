@@ -10,6 +10,7 @@ import sys
 import webbrowser
 
 "Make the program a class"
+
 class AI:
     def __init__(self):
         self.r = sr.Recognizer()
@@ -26,7 +27,8 @@ class AI:
         'ncbi' : 'https://www.ncbi.nlm.nih.gov/',
         'indeed' : 'https://www.indeed.com/',
         'github' : 'https://github.com/'}
-       
+
+ 
     def speak(self, audio):
         self.engine = pyttsx3.init('sapi5')
         self.voices = self.engine.getProperty('voices')
@@ -64,7 +66,7 @@ class AI:
                 print("Waiting for command...") #prints to screen
                 self.r.pause_threshold = 1
                 audio = self.r.listen(source) #sets variable 'audio'
-                self.r.recognize_sphinx(self.audio)
+                self.r.recognize_sphinx(audio)
             try:
                 self.query = self.r.recognize_sphinx(audio).lower() #now uses Google speech recognition
                 break
@@ -133,9 +135,26 @@ class AI:
         print(answer)            
     
     def open_site(self, site):
-        self.speak("Opening " + str(site))
-        webbrowser.open(self.Websites[str(site)])
-
+        for site in self.Websites:
+            if site in self.query:
+                webbrowser.open(self.Websites[str(site)])
+        quer = self.query.split()   
+        if 'open' in quer:
+            quer.remove('open')
+        elif 'go to' in quer:
+            quer.remove('go')
+            quer.remove('to')
+        if 'dot' in quer:
+            quer.remove('dot')
+        extensions = ['com', 'org', 'gov']
+        for x in extensions:
+            if x in quer:
+                quer.remove(x)
+            "".join(quer)
+            webbrowser.open(str(quer) + '.' + str(x))        
+            self.speak("Opening " + str(site))
+            webbrowser.open(self.Websites[str(site)])
+        
 """Main program"""
 if __name__ == '__main__':
     try:
