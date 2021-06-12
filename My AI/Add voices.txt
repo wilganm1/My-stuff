@@ -1,14 +1,17 @@
 How to add new voices to pyttsx3. I'm using Python 3.8 on Windows 10.
 
-Click start button on Windows. Type or click "Run". 
+I haven't downloaded any non-Microsoft voices. All the voices I've downloaded came from narrator packs. I don't know how to add custom voices, but I assume you just need the same file types as the pre-installed ones.
 
-Type in 'regedit' into the bar. Go to HKEY_LOCAL_MACHINE/SOFTWARE/MICROSOFT/SPEECH/VOICES/TOKENS
+   Steps:
+1) Click start button on Windows. Type or click "Run". 
 
-Look at where the voices are located.
+2) Type in 'regedit' into the bar. Go to HKEY_LOCAL_MACHINE/SOFTWARE/MICROSOFT/SPEECH/VOICES/TOKENS
 
-Right-click on Tokens folder and add a new key, which is a folder, and just copy all the features of the other voices, like this:
+3) Click on '  -TTS_MS_EN-US_{name}_11.0  ' and look at LangDataPath. Go to that folder and check if your downloaded voice are there too. Make sure you're looking in the correct language folder. You could have en-US, en-GB, en-CA, etc. 
 
-    Example:
+4) Right-click on Tokens folder and add a new key, which is a folder, and just copy all the features of the other voices. Give the folder the same exact label as the default ones except swap out the name for the new voice. Then make sub folder called attributes. Once that's done, just copy the same exact format as the pre-installed pyttsx3 voices
+
+    For example, here's the pre-installed voice for David in pyttsx3:
 -TTS_MS_EN-US_DAVID_11.0
 |          Name        Type            Data
 |      -(Default)      REG_SZ          Microsoft David Desktop - English (United Sates)
@@ -28,10 +31,17 @@ Right-click on Tokens folder and add a new key, which is a folder, and just copy
        -SpLexicon      REG_SZ          {0655E396-25D0-11D3-9C26-00C04F8EF87C}    
        -Vendor         REG_SZ          Microsoft     
        -Version        REG_SZ          11.0
+       
+     These are the files you need for VoicePath.
+        M10333{name of voice}.APM
+        M10333{name of voice}.DEP
+        M10333{name of voice}.INI
+         + more maybe
+       
+ All you have to do is just copy this format for your new voice,except make sure you change VoicePath to the new voice. LangDataPath is the same if the voices are the same language.
  
-All the files you need should be where the VoicePath and LangDataPath lead to.
-    M10333{name of voice}.APM
-    M10333{name of voice}.DEP
-    M10333{name of voice}.INI
-       + more maybe
+ One more thing, you will have to know the code for the language. 409 is for US english, and 809 is for Great Britain English. I don't know the code for Canada or any other language. If you can figure that out please tell other.
+ 
+ 
+
 
