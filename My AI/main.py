@@ -47,6 +47,10 @@ def speak(audio):
     engine.say(audio)
     engine.runAndWait()
     
+    
+speak('ultimateguitar .gov')
+    
+    
 def greet():
     greetings = ['Welcome back.', 'How are you today?', 
              'I\'ve missed you.']
@@ -116,9 +120,9 @@ def takeCommand():
 def get_wiki(query):
     speak(random.choice(responses))
     split = query.split()
-    the_index = -2
+    the_index = -1
     while True:
-        if split[the_index] != 'for' or 'on' or 'about':
+        if split[the_index] != 'for' or split[the_index] != 'on' or split[the_index] != 'about':
             the_index -= 1
             continue
         elif split[the_index] == 'for' or 'on' or 'about':
@@ -170,25 +174,24 @@ def wolf(query):
     print(answer)            
 
 def open_site(query):
-    for site in Websites:
-        if site in query:
-            webbrowser.open(Websites[str(site)])
-    quer = query.split()   
-    if 'open' in quer:
-        quer.remove('open')
-    elif 'go to' in quer:
-        quer.remove('go')
-        quer.remove('to')
-    if 'dot' in quer:
-        quer.remove('dot')
-    extensions = ['com', 'org', 'gov']
-    for x in extensions:
-        if x in quer:
-            quer.remove(x)
-        "".join(quer)
-        webbrowser.open(str(quer) + '.' + str(x))        
-        speak("Opening " + str(site))
-        webbrowser.open(Websites[str(site)])
+        for site in Websites:    #checks if a pre-determined site is in query
+            if site in query:    
+                speak('Opening ' + str(site))
+                webbrowser.open(Websites[str(site)])
+        extensions = ['.com', '.org', '.gov']
+        for x in extensions:
+            if x in query:
+                extension = x
+                query = query.replace(x, "")
+        quer = query.split()   
+        if 'open' in quer:
+            quer.remove('open')
+        elif 'go to' in query:
+            quer.remove('go')
+            quer.remove('to')
+        quer = "".join(quer)
+        webbrowser.open("https://www." + quer + str(extension))        
+        speak("Opening " + quer)
     
 inquiries = ['who', 'what', 'where', 'when', 'why', 'how']
 Websites = {'youtube' : 'https://www.youtube.com/',
@@ -217,7 +220,7 @@ if __name__ == '__main__':
         if 'wikipedia' in query:
             get_wiki(query)
               
-        if "open" in query or "go to" in query and 'dot com' in query or 'dot org' in query or 'dot gov' in query:
+        if "open" in query or "go to" in query:
             open_site(query)
             
         elif "play" in query and 'by' in query: #Play a video on youtube. Format: 'Play {What you want to play here}
