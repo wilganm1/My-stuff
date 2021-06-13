@@ -1,6 +1,6 @@
 import pyttsx3
-import speech_recognition as sr #don't forget to 'pip install' this library
-import time # this is part of python - you should not need to install this
+import speech_recognition as sr 
+import time 
 from datetime import datetime
 import random
 import os
@@ -10,7 +10,6 @@ import sys
 import webbrowser
 
 "Make the program a class"
-
 class AI:
     def __init__(self):
         self.r = sr.Recognizer()
@@ -76,11 +75,11 @@ class AI:
             except sr.RequestError as e:
                 print("Sphinx error; {0}".formate(e))
                 continue
-            return self.query
+        return self.query
     
-    def get_wiki(self):
-        self.speak(random.choice(self.responses))
-        split = self.query.split()
+    def get_wiki(self):     #Opens the wikipedia page for something.  Format: "Open the wikipedia page
+        self.speak(random.choice(self.responses))                       # 'For/on/about {what ever}
+        split = self.query.split()                                              
         the_index = -1
         while True:
             if split[the_index] != 'for' or split[the_index] != 'on' or split[the_index] != 'about':
@@ -95,7 +94,7 @@ class AI:
             if self.query.index(word)%2 == 1: 
                 self.query.insert(self.query.index(word), "_") 
         self.query = "".join(self.query)
-        webbrowser.open("https://en.wikipedia.org/wiki/" + str(self.query))
+        webbrowser.open("https://en.wikipedia.org/wiki/" + self.query)
       
     #Searches Google     
     def get_google(self):
@@ -107,7 +106,7 @@ class AI:
         quer = ''.join(quer)   #joins all words without any spaces
         webbrowser.open('https://www.google.com/' + quer)
         
-    #Opens YouTube to search for a video by search words         
+    #Opens YouTube to search for a video by search word. Format: "Play {video} by {artist}      
     def play_vid(self):
         self.speak(random.choice(self.responses))    
         quer = self.query.split()
@@ -136,6 +135,7 @@ class AI:
         print(answer)            
     
     def open_site(self):
+        self.speak(random.choice(self.responses))
         for site in self.Websites:    #checks if a pre-determined site is in query
             if site in self.query:    
                 self.speak('Opening ' + str(site))
@@ -146,14 +146,18 @@ class AI:
                 extension = x
                 self.query = self.query.replace(x, "")
         quer = self.query.split()   
-        if 'open' in quer:
+        if 'open up' in self.query:
+            quer.remove('open')
+            quer.remove('up')
+        elif 'open' in quer:
             quer.remove('open')
         elif 'go to' in self.query:
             quer.remove('go')
             quer.remove('to')
         quer = "".join(quer)
-        webbrowser.open("https://www." + quer + str(extension))        
         self.speak("Opening " + quer)
+        webbrowser.open("https://www." + quer + str(extension))        
+        
         
 """Main program"""
 if __name__ == '__main__':
@@ -162,31 +166,33 @@ if __name__ == '__main__':
         AI.greet()
         while True:            #This will always keep it running.
             AI.takeCommand() #Since this resets query every time it's called, it will last forever.
-            
+          #Open specific wikipedia page
             if 'wikipedia' in AI.query:
                 AI.get_wiki()
                 continue
-            #Play YouTube video
+          #Play YouTube video
             elif "play" in AI.query and 'by' in AI.takeCommand(): #Play a video on youtube. Format: 'Play {What you want to play here}
                 AI.play_vid()                    #by {artist or uploader}
                 continue
-            #Opens weather.com for my location
+          #Opens weather.com for my location
             elif 'weather' in AI.query:
                 AI.get_weather()
                 continue
-            #Stops the loop.
+          #Opens a website
+            elif 'open' in AI.query or 'go to' in AI.query:
+                AI.open_site()
+                continue
+            
+          #Stops the program
             elif "terminate" in AI.query:
                 break
-            
+          #Shuts down the computer
             elif "shut down" in AI.query:
                 AI.speak("Shutting down, good bye sir.")
                 break
                 os.sytem("shutdown /s /t 1")
-            
-            elif 'open' in AI.query or 'go to' in AI.query:
-                AI.open_site()
-                continue
-            #searches wolframalpha for answers to questions        
+                      
+          #Searches wolframalpha for answers to questions        
             for inquiry in AI.inquiries:
                 if inquiry == AI.split[0]:
                     AI.wolf()
