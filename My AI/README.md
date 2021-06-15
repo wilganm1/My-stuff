@@ -7,6 +7,7 @@ emails. I could even make an app for it and put it on my phone.
 
 ### Voice recognition neural network.
 I have an idea about programming the AI to only respond to my voice. This can be done as I've seen other projects on Github do the same thing. 
+
 #### How it will work
 I will have to write a neural network to recognize my voice. This is done through detection of certain frequencies, like how a guitar tuning app and detect frequencies
 of strings to know if they are in tune or not. What I do is I record myself speaking for about 3-7 seconds, then have Python read this wav file and print out the
@@ -20,4 +21,8 @@ If this works I can train the network to recognize my voice and only work when i
 ##### New voices
 I find out how to add new voices to pyttsx3. So far I only got voices that come directly from Microsoft's narrator packages.
 
+###### Refernces used
+https://towardsdatascience.com/how-to-build-your-own-ai-personal-assistant-using-python-f57247b4494b
+https://www.geeksforgeeks.org/voice-assistant-using-python/
+https://www.youtube.com/watch?v=n4MXCnppKOY&list=PLm4rgP2bwr1q4s_9EwAo4pHBcYxsBRPKs
 
