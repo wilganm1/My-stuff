@@ -1,4 +1,4 @@
-Disclaimer: The following is not to be used for monetary of commerical gain, but only for private & personal use. Any illegal activity is immediatley and whole 
+### Disclaimer: The following is not to be used for monetary of commerical gain, but only for private & personal use. Any illegal activity is immediatley and whole 
 disavowed. All rights of the voices used go to their respective voice actor/actress & any & all parties legally contracted with them.
 
 These are people/characters from video games & anime that I would like to turn into synthsized voices. The problem is that this most definitley probably illegal. 
