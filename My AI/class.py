@@ -121,7 +121,7 @@ class AI:
     #Directs to weather.com - 10-day forecast
     def get_weather(self):
         self.speak(random.choice(self.responses))
-        webbrowser.open("https://weather.com/weather/tenday/l/c277dae335f9538e22909aaa3e887daa822dbde134f4379a25f368167c04bbfe")
+        webbrowser.open("https://weather.com/weather/tenday/)
     
     #Search WolframAlpha for answers to questions  
     def wolf(self):
