@@ -70,7 +70,7 @@ def ioq():
             h = 1 #A whole-step, w, is 2 frets, and a half-step, h, is one fret. 
             m= 3 #A whole-half step. 3 frets away. Also called minor third
            
-                            These are the formulas for each scale. '''
+            
             scales = {'Major' : [r,w,w,h,w,w,w],
               'Minor' : [r,w,h,w,w,h,w],
               'Phrygian' : [r,h,w,w,w,h,w],
@@ -182,7 +182,7 @@ canvas.create_rectangle(0,10,5,85,
 """ Fret circles """ 
 for i in [3,5,7,9,15,17,19,21]: #Frets 3,5,7,9
     canvas.create_oval(((i-1)*(fret_length/24)) + 6, 42.5,
-                       ((i-1)*(fret_length/24)) + 16, 44.5 + height_radius,
+                       ((i-1)*(fret_length/24)) + 16, 52.5,
                        outline = "white", fill = "white")
         #Fret 12
 canvas.create_oval(218.5, 27.5, 228.5, 37.5,
