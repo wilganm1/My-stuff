@@ -1,35 +1,11 @@
-""" I want to make my own AI assistant and maybe 
-add in a synthesized voice or the OG Aku from 
-Samurai Jack (rip Mako). To get the trained voice
-I can find something online or use Microsoft's Azure
-program to train a custom voice.
-
-I need this AI to be able to listen to me through
-my microphone, recognize speech, and return the 
-results I want. I'll have to give it funcitonality
-to surf the web and get information. Wikipedia 
-and Wolfram Alpha will help.
-
-I could also make an Excel sheet of possible 
-answers/responses to my question/orders.
-"""
-
-#!!!!!!!!!!!!!!!!!!!!!!!!!!
 import speech_recognition as sr
 import pyttsx3
 from datetime import datetime
-import wikipedia
 import webbrowser
 import os
-import time
 import subprocess
-from ecapture import ecapture as ec
 import wolframalpha
-import json
-import requests
 import random
-import sys
-import numpy as np
 
 global term
 term = 'sir'
@@ -38,7 +14,7 @@ name = "jarvis"
 global keywords
 keywords = ["Hey Jarvis", "Yo Jarivs", "Jarvis"]
 global calls
-calls = [f'yes {term}?', 'What?', 'The fuck do you want now?', 'You called?', 'You rang?']
+calls = [f'yes {term}?', 'The fuck do you want now?', 'You called?', 'You rang?']
 global responses
 responses = [f'Yes {term}.', 'As you wish.', f'Of course {term}.',
           'Just one moment.', f'Right away {term}.', 'As you command.', 
@@ -47,13 +23,13 @@ global inquiries
 inquiries = ['who', 'what', 'where', 'when', 'why', 'which','what\'s','whose','when\'s',]   #For wolfram to answer questions
 global Websites
 Websites = {'youtube' : 'https://www.youtube.com/',
-                 'google' : 'https://www.google.com/',
-                 'reddit' : 'https://www.reddit.com/',      #List of websites I've pre-programmed to open when I ask for it.
-                 'td ameritrade' : 'https://www.tdameritrade.com/home.html',   
-                 'gmail' : 'https://accounts.google.com/signin/v2/identifier?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin',
-                 'ncbi' : 'https://www.ncbi.nlm.nih.gov/',
-                 'indeed' : 'https://www.indeed.com/',
-                 'github' : 'https://github.com/'}
+            'google' : 'https://www.google.com/',
+            'reddit' : 'https://www.reddit.com/',      #List of websites I've pre-programmed to open when I ask for it.
+            'td ameritrade' : 'https://www.tdameritrade.com/home.html',   
+            'gmail' : 'https://accounts.google.com/signin/v2/identifier?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAZAmgQ&flowName=GlifWebSignIn&flowEntry=ServiceLogin',
+            'ncbi' : 'https://www.ncbi.nlm.nih.gov/',
+            'indeed' : 'https://www.indeed.com/',
+            'github' : 'https://github.com/'}
 global Programs
 Programs = {"Fret finder": 'C:\\Users\\WilganZMT\\Desktop\\Fret Finder.exe', 
                  "Audacity": "C:\\Program Files (x86)\\Audacity\\audacity.exe",  
@@ -63,24 +39,6 @@ Programs = {"Fret finder": 'C:\\Users\\WilganZMT\\Desktop\\Fret Finder.exe',
 global instructions
 instructions = ["show me how to", "look up how to", "How do you"]
 
-""" I have the weights I need to recognize my voice. Now I just need to find a way
-for python to read voices in real-time, set the data to a numpy array, then run 
-dot product and logistic regression/sigmoid. Then if it doesn't return a certain value
-like < 0.95 it doesn't run."""
-
-def dot(inputs, weights):
-    z = np.dot(inputs, weights)
-    check_voice(z)
-
-def check_voice(z):
-    prediction = 1 / (1 + np.exp(-z))
-    while 1:
-        if prediction < 0.95:
-            speak("You are not my master, you do not have authorization of my programming.")
-            break
-        else:
-            takeCommand()
-
 def speak(text):
     engine=pyttsx3.init('sapi5')
     voices=engine.getProperty('voices')
@@ -89,10 +47,25 @@ def speak(text):
     engine.setProperty('volume', 1.5)
     engine.say(text)
     engine.runAndWait()
-
-
+def password():
+    speak("Please say password")
+    while 1:
+        r=sr.Recognizer()
+        with sr.Microphone() as source:
+            r.adjust_for_ambient_noise(source)
+            r.pause_threshold = 1
+            print("Say password...")
+            audio=r.listen(source)
+            try:
+                spoken = r.recognize_google(audio,language='en-in')
+                if 'god' in spoken.lower():
+                    speak("Password accepted")
+                    break
+            except Exception as e:
+                speak("Pardon me, please say that again")
+                continue
 def greet():
-        greetings = ['Welcome back.', 'How are you today?', 'How are you doing?']
+        greetings = ['Welcome back.']
         while True:
             if datetime.now().hour >= 6 and datetime.now().hour < 9:
                 speak(f'Good morning {term}' )
@@ -110,8 +83,7 @@ def greet():
                 speak(f'It\'s getting late {term}, you should consider sleeping.')
                 speak(random.choice(greetings))
             break
-        return
-
+        
 def activate():
     while 1:
         r=sr.Recognizer()
@@ -122,12 +94,11 @@ def activate():
             audio=r.listen(source)
             try:
                 spoken = r.recognize_google(audio,language='en-in')
-                if 'jarvis' in spoken.lower():
+                if f"{name}" in spoken.lower():
                     break
             except Exception as e:
                 speak("Pardon me, please say that again")
-                continue
-        
+                continue                   
 def takeCommand():
     while True:
         r=sr.Recognizer()
@@ -145,8 +116,7 @@ def takeCommand():
             except Exception as e:
                 speak("Pardon me, please say that again")
                 continue
-            return query 
-    
+            return query  
 def open_site(query):
         speak(random.choice(responses))
         for site in Websites:    #checks if a pre-determined site is in query
@@ -169,7 +139,6 @@ def open_site(query):
         print('Opening ' + quer)
         webbrowser.open("https://www." + quer + str(extension))    #opens the website in browser   
         return
-    
 def instruction_vid1(query):
     speak(random.choice(responses))
     if instructions[0] in query or instructions[1] in query:
@@ -180,8 +149,7 @@ def instruction_vid1(query):
             if quer.index(word)%2 == 1: 
                 quer.insert(quer.index(word), "+")   #adds in + sign in every odd index
         quer="".join(quer)
-        webbrowser.open('https://www.youtube.com/results?search_query=' + quer)
-        
+        webbrowser.open('https://www.youtube.com/results?search_query=' + quer)      
 def instruction_vid2(query):
     speak(random.choice(responses))
     quer = query.split()
@@ -194,11 +162,9 @@ def instruction_vid2(query):
     quer ="".join(quer)
     webbrowser.open('https://www.youtube.com/results?search_query=' + quer)
     return
-
 def open_program(program):
     subprocess.call(Programs[program])
     return
-
 def wolf(query):
         speak("Checking")
         app_id = 'AQV4H4-8LWH8GRXWG'             
@@ -215,12 +181,10 @@ def wolf(query):
         print(answer)  
         speak(answer + quer)
         return
-
 def get_weather():
         speak(random.choice(responses))
         webbrowser.open("https://weather.com/weather/tenday/l/c277dae335f9538e22909aaa3e887daa822dbde134f4379a25f368167c04bbfe")
         return
-
 def get_wiki(query):     
         speak(random.choice(responses))    
         split = query.split()                                              
@@ -240,7 +204,6 @@ def get_wiki(query):
         query = "".join(query)
         webbrowser.open("https://en.wikipedia.org/wiki/" + query)
         return
-
 def play_vid(query):
         speak(random.choice(responses))    
         quer = query.split()
@@ -252,8 +215,8 @@ def play_vid(query):
         quer = "".join(quer)
         webbrowser.open('https://www.youtube.com/results?search_query=' + quer)
         return
-
 if __name__=='__main__':   
+    password() 
     greet()
     try:
         while 1:
@@ -298,8 +261,4 @@ if __name__=='__main__':
                 play_vid(query)
                 continue                      
     except RuntimeError:
-        try:
-            sys.exit(0)
-            raise
-        except:
-            os._exis(0)
+        os._exit(0)
