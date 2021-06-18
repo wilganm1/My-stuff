@@ -14,7 +14,7 @@ name = "jarvis"
 global keywords
 keywords = ["Hey Jarvis", "Yo Jarivs", "Jarvis"]
 global calls
-calls = [f'yes {term}?', 'The fuck do you want now?', 'You called?', 'You rang?']
+calls = [f'yes {term}?', 'The fuck do you want now?', 'You called?', 'You rang?', 'shut your whore mouth', 'Yes masta?']
 global responses
 responses = [f'Yes {term}.', 'As you wish.', f'Of course {term}.',
           'Just one moment.', f'Right away {term}.', 'As you command.', 
@@ -47,23 +47,8 @@ def speak(text):
     engine.setProperty('volume', 1.5)
     engine.say(text)
     engine.runAndWait()
-def password():
-    speak("Please say password")
-    while 1:
-        r=sr.Recognizer()
-        with sr.Microphone() as source:
-            r.adjust_for_ambient_noise(source)
-            r.pause_threshold = 1
-            print("Say password...")
-            audio=r.listen(source)
-            try:
-                spoken = r.recognize_google(audio,language='en-in')
-                if 'god' in spoken.lower():
-                    speak("Password accepted")
-                    break
-            except Exception as e:
-                speak("Pardon me, please say that again")
-                continue
+    
+
 def greet():
         greetings = ['Welcome back.']
         while True:
@@ -82,14 +67,12 @@ def greet():
             elif datetime.now().hour >= 21 and datetime.now().hour < 24:
                 speak(f'It\'s getting late {term}, you should consider sleeping.')
                 speak(random.choice(greetings))
-            break
-        
+            break      
 def activate():
     while 1:
         r=sr.Recognizer()
         with sr.Microphone() as source:
             r.adjust_for_ambient_noise(source)
-            r.pause_threshold = 1
             print("Awaiting request...")
             audio=r.listen(source)
             try:
@@ -104,19 +87,17 @@ def takeCommand():
         r=sr.Recognizer()
         with sr.Microphone() as source:
             r.adjust_for_ambient_noise(source)
-            r.pause_threshold = 1
             speak(random.choice(calls))
             print("Listening...")
             audio=r.listen(source)
             try:
                 query=r.recognize_google(audio,language='en-in')
-                print(f"user said:{query}\n")
+                print(f"user said: {query}\n")
                 return query
                 break
             except Exception as e:
                 speak("Pardon me, please say that again")
                 continue
-            return query  
 def open_site(query):
         speak(random.choice(responses))
         for site in Websites:    #checks if a pre-determined site is in query
@@ -175,11 +156,13 @@ def wolf(query):
             quer = query.split()[2::]
             quer.append('is ')
             quer = " ".join(quer)
+            print(answer)
+            speak(quer + answer)
         elif 'how many' in query or 'how much':
             quer = query.split()[-3::]
             quer = " ".join(quer)
-        print(answer)  
-        speak(answer + quer)
+            print(answer)  
+            speak("There are " + answer + " " + quer)
         return
 def get_weather():
         speak(random.choice(responses))
@@ -216,7 +199,6 @@ def play_vid(query):
         webbrowser.open('https://www.youtube.com/results?search_query=' + quer)
         return
 if __name__=='__main__':   
-    password() 
     greet()
     try:
         while 1:
@@ -243,14 +225,6 @@ if __name__=='__main__':
             elif'how' == xyz[0] and 'do' == xyz[1] and 'you' == xyz[2]:
                 instruction_vid2(query)
                 continue
-            elif "terminate script" in query or 'end script' in query or 'and script' in query or "kill yourself":
-                speak("Alright then. See you later.")
-                print("Terminating")
-                break            
-            elif "shut down computer" in query:
-                speak(f"Shutting down, good bye {term}")
-                os.sytem("shutdown /s /t 1")
-                break
             elif 'how' == xyz[2] and 'to' == xyz[3]:
                 instruction_vid1(query)             #Format: "Look up how to/Show me how to/How do you
                 continue
@@ -259,6 +233,9 @@ if __name__=='__main__':
                 continue
             elif "play" == xyz[0] and 'by' in query:  #Format: "Play {video} by {uploader/artist}
                 play_vid(query)
-                continue                      
+                continue       
+            elif "end program" in query:
+                speak("Alright the. Goodbye.")
+                break
     except RuntimeError:
         os._exit(0)
