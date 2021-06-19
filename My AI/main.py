@@ -241,7 +241,7 @@ if __name__=='__main__':
         elif "play" == xyz[0] and 'by' in query:  
             play_vid(query)  
             continue       
-        elif "end script" in query or "end program" in query or 'kill yourself' in query:
+        elif "end script" in query or "end program" in query or 'kill yourself' in query:   #You might need to get rid of this.
             speak("Alright the. Goodbye.")  #Causes the program to break and end
             break
         elif RuntimeError:
