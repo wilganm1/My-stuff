@@ -31,15 +31,14 @@ Websites = {'youtube' : 'https://www.youtube.com/',
             'indeed' : 'https://www.indeed.com/',
             'github' : 'https://github.com/'}
 global Programs        #Programs on your computer that you can preset. 
-Programs = {"Fret finder": 'C:\\Users\\WilganZMT\\Desktop\\Fret Finder.exe', 
-            "Audacity": "C:\\Program Files (x86)\\Audacity\\audacity.exe",  
+Programs = {"Audacity": "C:\\Program Files (x86)\\Audacity\\audacity.exe",  
             "Krita": "C:\\Program Files\\Krita (x64)\\bin\\krita.exe",
             "iTunes": "C:\\Program Files\\iTunes\\iTunes.exe",
             'tux guitar': "C:\\Program Files (x86)\\tuxguitar-1.1\\tuxguitar.exe"}
 global instructions   #Used to look up a video on how to do something. Used for function
 instructions = ["show me how to", "look up how to", "How do you"]
 
-def password():    #Has you enter a password to begin. Uncomment to ativate
+def password():    #Has you enter a password to begin the use the assistant.
     while 1:
         if input("Please enter password: ") == password:
             speak("Welcome back sir")
@@ -206,7 +205,7 @@ def play_vid(query):       #Searches youtube for a video
         webbrowser.open('https://www.youtube.com/results?search_query=' + quer)
         return
 if __name__=='__main__':   
-    #password()       
+    #password()       Uncomment to use this function.
     greet()            
     while 1:           #Starts a loop that will keep the script running unless it's told to end
         activate()       
