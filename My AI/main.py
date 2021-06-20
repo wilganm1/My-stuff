@@ -6,22 +6,14 @@ import os
 import subprocess
 import wolframalpha
 import random
+import ctypes
 
-global password       #Password to get the program going. (Optional)
-password = "shubbery"     #Monty Python reference
-global term      #What you want the AI to address you as.
+global term      #!!! What you want the AI to address you as.
 term = 'sir'
-global name     #Name of the AI. Change this to whatever you want.
-name = "jarvis"
-global calls   #What the AI says when I call it. For the activate() function
-calls = [f'yes {term}?', 'You called?', 'You rang?', 'What can I help you with?']
-
 global responses      #Responses to what I say so I know it's doing what I ask.
 responses = [f'Yes {term}', 'As you wish', f'Of course {term}',
           'Just one moment', f'Right away {term}', 'As you command', 
           'One moment please', 'Please wait']       
-global inquiries        #For wolfram to answer questions
-inquiries = ['who', 'what', 'where', 'when', 'why', 'which','what\'s','whose','when\'s',]   
 global Websites    #Preset websites that the computer will open for you.
 Websites = {'youtube' : 'https://www.youtube.com/',
             'google' : 'https://www.google.com/',
@@ -31,14 +23,16 @@ Websites = {'youtube' : 'https://www.youtube.com/',
             'indeed' : 'https://www.indeed.com/',
             'github' : 'https://github.com/'}
 global Programs        #Programs on your computer that you can preset. 
-Programs = {"Audacity": "C:\\Program Files (x86)\\Audacity\\audacity.exe",  
+Programs = {"Fret finder": 'C:\\Users\\WilganZMT\\Desktop\\Fret Finder.exe', 
+            "Audacity": "C:\\Program Files (x86)\\Audacity\\audacity.exe",  
             "Krita": "C:\\Program Files\\Krita (x64)\\bin\\krita.exe",
             "iTunes": "C:\\Program Files\\iTunes\\iTunes.exe",
             'tux guitar': "C:\\Program Files (x86)\\tuxguitar-1.1\\tuxguitar.exe"}
 global instructions   #Used to look up a video on how to do something. Used for function
 instructions = ["show me how to", "look up how to", "How do you"]
 
-def password():    #Has you enter a password to begin the use the assistant.
+def password():    #Has you enter a password to begin. Uncomment below to activate
+    password = "shubbery"     #Monty Python reference
     while 1:
         if input("Please enter password: ") == password:
             speak("Welcome back sir")
@@ -49,13 +43,13 @@ def speak(text):         #speaks what is typed in
     engine=pyttsx3.init('sapi5')
     voices=engine.getProperty('voices')
     engine.setProperty('voice',voices[0].id)   #Defaults are 2 voices. It possible to add more. I've done it.
-    engine.setProperty('rate', 160)
-    engine.setProperty('volume', 1.5)
+    engine.setProperty('rate', 160)    #How fast the voice speaks.
+    engine.setProperty('volume', 1.5)  #how loud the voice is.
     engine.say(text)
     engine.runAndWait()
-def greet():       #Says hello to you
-        greetings = ['Welcome back.', 'How are you doing?', "I hope you're well"]
-        while True:
+def greet():       #Says hello to you. Based on time of day
+        greetings = ['Welcome back.', "I hope you're well.", 'Good to see you again']
+        while 1:
             if datetime.now().hour >= 6 and datetime.now().hour < 9:
                 speak(f'Good morning {term}' )
                 speak(random.choice(greetings))
@@ -72,7 +66,8 @@ def greet():       #Says hello to you
                 speak(f'It\'s getting late {term}, you should consider sleeping.')
                 speak(random.choice(greetings))
             break      
-def activate():
+def activate():  #Name of the AI. Change this to whatever you want. 
+    name = "jarvis"   #!!!!!! Change to whatever you want.
     while 1:       #loop so it stays in this function forever until condition met.
         r=sr.Recognizer()
         with sr.Microphone() as source:  #sets your default microphone as the source
@@ -88,7 +83,8 @@ def activate():
                 speak("Pardon me, please say that again")
                 continue                   
 def takeCommand():       #Main function of the AI. listens to you speak and will pass it along.
-    while True:
+    calls = [f'yes {term}?', 'You called?', 'You rang?', 'What can I help you with?']
+    while 1:
         r=sr.Recognizer()
         with sr.Microphone() as source:
             r.adjust_for_ambient_noise(source)
@@ -104,11 +100,11 @@ def takeCommand():       #Main function of the AI. listens to you speak and will
             except Exception as e:
                 speak("Pardon me, please say that again")  #Error if it doesn't understand what you said.
                 continue
-def open_site(query):        #opens a website based on what you said. #Format: "Go to/Open up/Open {site}. If not in Websites say .com/.org/.gov
+def open_site(query):        #opens a website based on what you said. #Format: "Go to/Open {site}. If not in Websites say .com/.org/.gov
         speak(random.choice(responses))     #random response so you know it's working
-        for site in Websites:    #checks if a pre-determined site is in query
-            if site in query:    
-                speak('Opening ' + site) 
+        for site in Websites:    
+            if site in query:    #checks if a preset site is in query  
+                speak(" ".join(['Opening', site])) 
                 webbrowser.open(Websites[site])  #opens up the website
         extensions = ['.com', '.org', '.gov']   #Checks for extensions.
         for x in extensions:
@@ -122,9 +118,9 @@ def open_site(query):        #opens a website based on what you said. #Format: "
             quer.remove('go')
             quer.remove('to')
         quer = "".join(quer)           #Combines all the words into one string without spaces.
-        speak("Opening " + quer)
-        print('Opening ' + quer)
-        webbrowser.open("https://www." + quer + str(extension))    #opens the website in browser   
+        speak(" ".join(["Opening", quer]))
+        print(" ".join(['Opening' + quer]))
+        webbrowser.open("".join(["https://www.",quer, str(extension)]))    #opens the website in browser   
         return
 def instruction_vid1(query):   #Opens a youtube video on how to do something: "(Show me/look up) How to use a chainsaw"
     speak(random.choice(responses))
@@ -136,7 +132,7 @@ def instruction_vid1(query):   #Opens a youtube video on how to do something: "(
             if quer.index(word)%2 == 1:      #checks if the index is odd.
                 quer.insert(quer.index(word), "+")   #adds in + sign in every odd index
         quer="".join(quer)
-        webbrowser.open('https://www.youtube.com/results?search_query=' + quer)   #Opens youtube search for query  
+        webbrowser.open("".join(['https://www.youtube.com/results?search_query=', quer]))   #Opens youtube search for query  
 def instruction_vid2(query):      #Same thing as previous functio.  Format: "How do you {whatever}
     speak(random.choice(responses))
     quer = query.split()           ##['How', 'do', 'you', ~~~~~~~~~~]
@@ -147,7 +143,7 @@ def instruction_vid2(query):      #Same thing as previous functio.  Format: "How
         if quer.index(word)%2 == 1: 
             quer.insert(quer.index(word), "+")   
     quer ="".join(quer)  
-    webbrowser.open('https://www.youtube.com/results?search_query=' + quer)
+    webbrowser.open("".join(['https://www.youtube.com/results?search_query=',quer]))
     return
 def open_program(program):         #Opens program on your computer that's in the Programs dictionary
     subprocess.call(Programs[program])
@@ -163,12 +159,13 @@ def wolf(query):    #Checks wolframalpha for a answers to a question. Wolframalp
             quer.append('is ')
             quer = " ".join(quer)
             print(answer)
-            speak(quer + answer)
+            speak("".join([quer, answer]))
         elif 'how many' in query or 'how much':
             quer = query.split()[-3::]
             quer = " ".join(quer)
             print(answer)  
-            speak("There are " + answer + " " + quer)
+            speak(" ".join(["There are", "answer", "quer"]))
+
         return
 def get_weather():      #Opens weather.com for your location. Add link of your location.
         speak(random.choice(responses))
@@ -191,7 +188,7 @@ def get_wiki(query):     #Opens wikipedia page for something. Format: "(Open/Sea
             if quer.index(word)%2 == 1:  #chekcs for odd indices
                 quer.insert(quer.index(word), "_")   #inserts _ for the url
         quer = "".join(quer)     #The_Big_Bang
-        webbrowser.open("https://en.wikipedia.org/wiki/" + quer)   #opens the wikipedia page for query
+        webbrowser.open("".join(["https://en.wikipedia.org/wiki/", quer]))   #opens the wikipedia page for query
         return
 def play_vid(query):       #Searches youtube for a video
         speak(random.choice(responses))    
@@ -202,10 +199,38 @@ def play_vid(query):       #Searches youtube for a video
             if quer.index(word)%2 == 1: 
                 quer.insert(quer.index(word), "+")
         quer = "".join(quer)
-        webbrowser.open('https://www.youtube.com/results?search_query=' + quer)
+        webbrowser.open("".join(['https://www.youtube.com/results?search_query=',quer]))
         return
+def change_wallpaper():  #Changes wallpaper. You need a folder that has pics you want to choose from.  
+    from os import walk        #!!!! Have the names of your images something that is easy to read. dog/space station/grass field/Earth, etc.
+    mypath = "C:\\Users\\~~~~~~~\\Pictures\\Wallpaper pics"  #!!! Insert the folder that has the images you want to choose from
+    filenames = next(walk(mypath), (None, None, []))[2]  # [] if no file
+    image_type = ['.jpg','.png']    #list of image types. Used for later.
+    for x in filenames:    
+        for i in image_type:
+            if i in x:       #checks if the image has a known extension
+                img = i
+                x.replace(i, "")  #Gets rid of .jpg/.png/whatever.
+                print(x)      #prints out names of fles
+    speak("Please speak desired image")
+    while 1:       #loop so it stays in this function forever until condition met.
+        r=sr.Recognizer()
+        with sr.Microphone() as source:  #sets your default microphone as the source
+            print("Choose wallpaper...")   #Prints to the screen so you know it's listening
+            audio=r.listen(source)
+            try:
+                wallpaper = r.recognize_google(audio,language='en-in')   
+                if wallpaper in filenames:  #Checks if the wallpaper is in 
+                    ctypes.windll.user32.SystemParametersInfoW(20,0, "".join([mypath,"\\", wallpaper, img]), 0)     #This is used for windows.                      
+                    break    #stops the loop,
+            except Exception as e:
+                speak("Pardon me, please say that again")
+                continue  
+        return                 
+
 if __name__=='__main__':   
-    #password()       Uncomment to use this function.
+    inquiries = ['who', 'what', 'where', 'when', 'why', 'which','what\'s','whose','when\'s',]    #For wolfram to answer questions
+    #password()       #uncomment to activate
     greet()            
     while 1:           #Starts a loop that will keep the script running unless it's told to end
         activate()       
@@ -240,7 +265,10 @@ if __name__=='__main__':
         elif "play" == xyz[0] and 'by' in query:  
             play_vid(query)  
             continue       
-        elif "end script" in query or "end program" in query or 'kill yourself' in query:   #You might need to get rid of this.
+        elif 'wallpaper' in query:
+            change_wallpaper()
+            continue
+        elif "end script" in query or "end program" in query or 'and script' in query or 'and program' in query or 'kill yourself' in query:
             speak("Alright the. Goodbye.")  #Causes the program to break and end
             break
         elif RuntimeError:
