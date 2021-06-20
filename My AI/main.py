@@ -211,18 +211,21 @@ def change_wallpaper():  #Changes wallpaper. You need a folder that has pics you
             if i in x:       #checks if the image has a known extension
                 img = i
                 x.replace(i, "")  #Gets rid of .jpg/.png/whatever.
-                print(x)      #prints out names of fles
+                print(x)      #prints out names of files
     speak("Please speak desired image")
     while 1:       #loop so it stays in this function forever until condition met.
         r=sr.Recognizer()
-        with sr.Microphone() as source:  #sets your default microphone as the source
+        with sr.Microphone() as source:  
             print("Choose wallpaper...")   #Prints to the screen so you know it's listening
             audio=r.listen(source)
             try:
                 wallpaper = r.recognize_google(audio,language='en-in')   
-                if wallpaper in filenames:  #Checks if the wallpaper is in 
+                if wallpaper in filenames:  #Checks if the wallpaper is in the folder
                     ctypes.windll.user32.SystemParametersInfoW(20,0, "".join([mypath,"\\", wallpaper, img]), 0)     #This is used for windows.                      
-                    break    #stops the loop,
+                    break    #stops the loop
+                else:
+                    speak("File not found")
+                    break
             except Exception as e:
                 speak("Pardon me, please say that again")
                 continue  
