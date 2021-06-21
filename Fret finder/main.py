@@ -157,7 +157,7 @@ frame3.pack()
 
 frame4 = Frame(master = root)
 
-canvas = Canvas(frame4, width = 510,
+canvas = Canvas(frame4, width = 480,
                 height = 95)
 
 neck_length = 480
