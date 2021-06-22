@@ -3,13 +3,14 @@ from tkinter import *
 root = Tk()
 root.title('Fret Finder')
 
+counter = 0
+
 ''' Make frame 1 with all the dropdown menus '''
 frame1 = Frame(master = root)
 
 #Tuning choices
 tuning_var = StringVar(root)
 tuning_var.set('') # set the default option
-
 tuning_choices = ['Standard', 'Open E', 'Drop D', 'Double Drop D', 'D Standard', 
                   'Open D', 'Drop C#', 'Drop C', 'C# Standard', 'C Standard', 
                   'Open C', 'Drop B', 'B Standard', 'Open B', 'Drop A#', 
@@ -21,7 +22,6 @@ tuningMenu.grid(row=2, column=1)
 #Root note choices
 root_note_var = StringVar(root)
 root_note_var.set('')
-
 root_note_choices = ['A','A#','B','C', 'C#','D','D#','E','F','F#','G','G#']
 rootNoteMenu= OptionMenu(frame1, root_note_var, *root_note_choices)
 Label(frame1, text='Select root note').grid(row=1, column = 2)
@@ -30,61 +30,11 @@ rootNoteMenu.grid(row=2, column=2)
 #Scale choices
 scale_var = StringVar(root)
 scale_var.set('')
-
 scale_choices = ['Major', 'Minor', 'Phrygian', 'Lydian', 'Mixolydian', 'Dorian', 'Locrian',
                  'Harmonic Minor', 'Melodic Minor', 'Major Pentatonic', 'Minor Pentatonic']
 scaleMenu = OptionMenu(frame1, scale_var, *scale_choices)
 Label(frame1, text='Select scale').grid(row=1, column = 3)
 scaleMenu.grid(row=2, column=3)
-
-
-"""
-Write another function that will use new_tune.get() to insert a new tuning into tuning_choices
-Bind this to ('<Return>', the function)
-"""
-lab1 = Label(frame1, text="Enter new tuning")
-lab1.grid(row=1, column = 0)
-global new_tune_var
-new_tune_var = StringVar(root)
-global ent
-ent = Entry(frame1, textvariable = new_tune_var)
-ent.grid(row=2,column=0)
-ent.bind('<Return>', hide_me)
-
-def add_tune(x):
-    global tuning_choices
-    tuning_choices = ['E Standard', 'Open E', 'Drop D', 'Double Drop D', 'D Standard', 'D# Standard',
-                  'Open D', 'Drop C#', 'Drop C', 'C# Standard', 'C Standard', 
-                  'Open C', 'Drop B', 'B Standard', 'Open B', 'Drop A#', 'Open A', 
-                  'Drop A', 'A# Standard', 'A Standard']
-    tuning_choices.append(x)
-    tuning_choices = sorted(tuning_choices)
-    tuning_choices.remove('E Standard')
-    tuning_choices.insert(tuning_choices.index("D# Standard")+1, 'E Standard')
-    tuningMenu = OptionMenu(frame1, tuning_var, *tuning_choices)
-    tuningMenu.grid(row=2, column=1)  
-
-def hide_me(x):
-    add_tune(new_tune_var.get())
-    lab1.grid_forget()
-    x.widget.grid_forget()
-    add_notes()
-
-def add_notes():
-    global lab2
-    lab2 = Label(frame1, text="Enter open notes (Cap.)")
-    lab2.grid(row=1, column=0)
-    global new_notes_var
-    new_notes_var = StringVar()    
-    global ent1
-    ent1 = Entry(frame1, textvariable = new_notes_var)
-    ent1.grid(row=2, column = 0)
-    tunings[new_tune_var.get()] = new_notes_var.get().split()
-    ent1.bind('<Return>', hide_me1)
-        
-def hide_me1(x):
-    lab2.grid_forget()
-    x.widget.grid_forget()
 
 frame1.pack()
 
@@ -118,8 +68,6 @@ def ioq():
             w = 2 #W & h are called 'steps', or how many frets away one note is from another
             h = 1 #A whole-step, w, is 2 frets, and a half-step, h, is one fret. 
             m= 3 #A whole-half step. 3 frets away. Also called minor third
-           
-            
             scales = {'Major' : [r,w,w,h,w,w,w],
               'Minor' : [r,w,h,w,w,h,w],
               'Phrygian' : [r,h,w,w,w,h,w],
@@ -199,6 +147,8 @@ def ioq():
             label.pack(padx=2, pady=2) 
 frame3.pack()
 frame4 = Frame(master = root)
+
+''' Now create a canvas to draw the neck diagram '''
 canvas = Canvas(frame4, width = 480,height = 95)
 neck_length = 480
 fret_length = neck_length - 15
@@ -214,7 +164,7 @@ for fret in range(1,25):
      canvas.create_rectangle(fret * (fret_length/24), 10, (fret * (fret_length/24)), 85,
             outline = "#b8b0ad", fill = "#b8b0ad")
 """ Nut """
-canvas.create_rectangle(0,10,5,85,
+canvas.create_rectangle(0,0,5,95,
         outline = "black", fill="black")
     
 """ Fret circles """ 
@@ -235,15 +185,19 @@ canvas.create_oval(451, 57.5, 461, 67.5,
             outline = "#f1f0f0", fill="#f1f0f0")
 """ Make a fretboard that spans the width of the 
 root frame. Then put in strings and frets and nut. """
+canvas.pack()
+
 def mqs():
-    """ Problem 3:
-        The actual circles don't update. Instead of the circles changing, 
-        the program just adds in another fretboard. So everytime you click the
-        "Get" button it adds a new fretboard. Need to find a way to fix that.
-        
-        I might just have to take the fret board out of the function and 
-        put it in another frame. Or just make it so it's always visible.
-        """
+    canvas.delete("all")
+    """ Adding canvas.delete("all") updates the dots 
+    but it also deletes the neck diagram. I think this 
+    is because it deletes the canvas that was made
+    before the delete() function is called.
+    That's why the dots stay even though 
+    they have the same canvas name. 
+    I might just have to make the entire
+    neck diagram after I delete it. """
+    
     for io in range(len(results)):
         for ng in results[io]:
             if ng == 0:
