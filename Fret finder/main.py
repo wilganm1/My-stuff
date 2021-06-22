@@ -3,8 +3,6 @@ from tkinter import *
 root = Tk()
 root.title('Fret Finder')
 
-counter = 0
-
 ''' Make frame 1 with all the dropdown menus '''
 frame1 = Frame(master = root)
 
@@ -49,7 +47,7 @@ frame2.pack()
 ''' Make frame 3 with the grid for the frets'''
 frame3 = Frame(master = root)
 
-''' This function will show all the correct frets based on the chosen scale for each string in each tuning '''
+''' This function will show all the correct frets based on the chosen scale for each string in the chosen tuning '''
 def ioq():
     for i in range(0, 6): #strings. Rows.
         for j in range(0, 25):  #frets. Columns
@@ -62,27 +60,27 @@ def ioq():
             )
             frame.grid(row=i, column=j, padx=2, pady=2)
             label = Label(master=frame)
-            notes = ['A','A#','B','C','C#','D','D#','E','F','F#','G','G#']
+            notes = ['A','A#','B','C','C#','D','D#','E','F','F#','G','G#']   
             root = root_note_var.get()  #This is will be whatever you pick from the dropdown
-            r = 0 #The index of the note we pick that starts a scale
-            w = 2 #W & h are called 'steps', or how many frets away one note is from another
-            h = 1 #A whole-step, w, is 2 frets, and a half-step, h, is one fret. 
-            m= 3 #A whole-half step. 3 frets away. Also called minor third
+            r = 0  #The index of the note we pick that starts a scale
+            w = 2  #W & h are called 'steps', or how many frets away one note is from another
+            h = 1  #A whole-step, w, is 2 frets, and a half-step, h, is one fret. 
+            m = 3   #A whole-half step. 3 frets away. Also called minor third
             scales = {'Major' : [r,w,w,h,w,w,w],
               'Minor' : [r,w,h,w,w,h,w],
               'Phrygian' : [r,h,w,w,w,h,w],
               'Lydian' : [r,w,w,w,h,w,w],
-              'Mixolydian' : [r,w,w,h,w,w,h],
+              'Mixolydian' : [r,w,w,h,w,w,h],    #These are the forumulas for the scales.
               'Dorian' : [r,w,h,w,w,w,h],   
               'Locrian' : [r,h,w,w,h,w,w],
               'Harmonic Minor' : [r,w,h,w,w,h,m],
               'Melodic Minor' : [r,w,h,w,w,w,w],
               'Major Pentatonic' : [r,w,w,m,w],
               'Minor Pentatonic' : [r,m,w,w,m]}
-            scale_type = scale_var.get()
-            note_list = []   #Empty list that will become our indices of notes
-            scale_index = 0   #Starting index so the root note will be first
-            scale = scales[scale_type] #Formula for the scale. r must be included
+            scale_type = scale_var.get()   #This will be what you pick the scale type to be.
+            note_list = []    #Empty list that will become our indices of notes
+            scale_index = 0    #Starting index so the root note will be first
+            scale = scales[scale_type] #Formula for the scale picked. 
             for akj in scale:
                 scale_index += akj   #computes the indices from the values r, w, h, & wh
                 note_list.append(scale_index)  #Adds in index values. [0,...,12] 
@@ -121,71 +119,62 @@ def ioq():
             results = []    #This will eventually have 6 lists of frets.
             for open_note in reversed(tunings[select]):  #Reverse it so the 1st string is output first
                 zo = notes.index(open_note)   #Get indices of the open_note in notes. notes has changed based on the root note picked
-                ad = notes[zo:] 
-                ad.reverse()
-                del notes[zo:]    
-                for ce in ad:   
+                ad = notes[zo:]   #Takes notes from the open note to the end
+                ad.reverse()     #reverses the list so it's added in correctly later
+                del notes[zo:]     #deletes the notes in zo from notes
+                for ce in ad:        #inserts the notes in ad to the front of the notes variable. This is why I reversed it.
                     notes.insert(0, ce)
-                a_list = []
-                for oq in this_scale:
-                    if oq in notes:
-                        a_list.append(notes.index(oq))  #Adds in correct fret for string
+                a_list = []    #Will eventually be the list of correct frets.
+                for oq in this_scale:    #Loops through the correct scale
+                    if oq in notes:        #Checks if the notes in this_scale are in notes.
+                        a_list.append(notes.index(oq))  #Adds in correct fret for string. Gets the index value for each note in this_scale
                 results.append(a_list)  #Adds in a_list as a nested list
             for yha in results:  #Will go through every a_list for each string.
                 yha.sort()    #Sorts frets in ascending order. 
             for qpr in results:
                 length = int(len(qpr))
-                for k in range(length):
-                    qpr.append(qpr[k] + 12)
-                if qpr[0] == 0:
-                    qpr.append(24)
+                for k in range(length):      #We do it this way so it only affects frets 0-11
+                    qpr.append(qpr[k] + 12)    #Adds in all frets past fret 12. Adds 12 to each number in qpr
+                if qpr[0] == 0:      #Checks if the first number is 0
+                    qpr.append(24)        #Adds in 24th fret if it is
             for zzz in numbers:       #loops through the numbers variable
                 for qot in results:     #loops through each a_list in results
-                    if zzz not in qot:     #loops through every fret in each a_list. checks if a number in numbers is not in the list
-                        qot.insert(zzz, '-') #inserts '-' into the place where a number is missing. Doing this allows us to display the list in tkinter
+                    if zzz not in qot:     #checks if a number in numbers is not in the list
+                        qot.insert(zzz, '-')   #inserts '-' into the place where a number is missing. Doing this allows us to display the list in tkinter
             label.configure(text = results[i][j], font = 4)    #mathces up the correct fret for each grid in tkinter.
             label.pack(padx=2, pady=2) 
 frame3.pack()
+
+''' Make frame 4 for the neck diagram '''
 frame4 = Frame(master = root)
 
 ''' Now create a canvas to draw the neck diagram '''
-canvas = Canvas(frame4, width = 530,height = 95)
+canvas = Canvas(frame4, width = 530,height = 95)      #Create a canvas that is used in mqs()
 
 def mqs():
-    canvas.delete("all")
-    """ Adding canvas.delete("all") updates the dots 
-    but it also deletes the neck diagram. I think this 
-    is because it deletes the canvas that was made
-    before the delete() function is called.
-    That's why the dots stay even though 
-    they have the same canvas name. 
-    I might just have to make the entire
-    neck diagram after I delete it. 
-    I tried just moving the neck code to the mqs 
-    function but nothing shows up at all.
-    """
-    
-    neck_length = 530
+    canvas.delete("all")    #So this is kinda weird. You create the canvas above, then it gets deleted. Then you just create the actual shapes of the  
+    neck_length = 530                             #canvas itself below. This way it gets updated every time you hit the button.
     fret_length = neck_length - 15
     
-    """ Neck """
+    """ Neck """    #Just a brown rectangle
     canvas.create_rectangle(0,0, neck_length, 95,
                     outline="#5c3626", fill="#5c3626")
-    """ Strings """
+    
+    """ Strings """    # 6 1-pixel-long horizontal lines that go across the whole neck
     for i in range(0,6):
         canvas.create_rectangle(0, (i*15)+10, neck_length, (i*15)+10)
     
-    """ Frets """
+    """ Frets """         #1-pixel-wide vertical lines going over every string.
     for fret in range(1,25):
          canvas.create_rectangle(fret * (fret_length/24), 10, (fret * (fret_length/24)), 85,
                 outline = "#b8b0ad", fill = "#b8b0ad")
-    
-    """ Nut """
+        
+    """ Nut """     #This is just a black bar that represents the open notes
     canvas.create_rectangle(0,10,5,85,
             outline = "black", fill="black")
          
-    """ Fret circles """ 
-    for i in [3,5,7,9,15,17,19,21]: #Frets 3,5,7,9
+    """ Fret circles """    #These are dots on guitar that can help you see what fret you're on.
+    for i in [3,5,7,9,15,17,19,21]: #Frets 3,5,7,9...
         canvas.create_oval(((i-1)*(fret_length/24)) + 6.25, 42.5,
                            ((i-1)*(fret_length/24)) + 16.25, 52.5,
                            outline = "white", fill = "white")
@@ -193,17 +182,16 @@ def mqs():
     canvas.create_oval(11 * (fret_length/24) + 6.25, 27.5, 11 * (fret_length/24) + 16.25, 37.5,
                 outline = "#f1f0f0", fill="#f1f0f0")  
     canvas.create_oval(11 * (fret_length/24) + 6.25, 57.5, 11 * (fret_length/24) + 16.25, 67.5,
-                outline = "#f1f0f0", fill="#f1f0f0")
-    
+                outline = "#f1f0f0", fill="#f1f0f0")  
             #Fret 24
     canvas.create_oval(23 * (fret_length/24) + 6.25, 27.5, 23 * (fret_length/24) + 16.25, 37.5,
                 outline = "#f1f0f0", fill="#f1f0f0")  
     canvas.create_oval(23 * (fret_length/24) + 6.25, 57.5, 23 * (fret_length/24) + 16.25, 67.5,
                 outline = "#f1f0f0", fill="#f1f0f0")
-    for io in range(len(results)):
-        for ng in results[io]:
-            if ng == 0:
-                canvas.create_oval(
+    for io in range(len(results)):             #Now we create the dots that represent frets.
+        for ng in results[io]:         #Loops through the list of frets.
+            if ng == 0:           #Open notes
+                canvas.create_oval(             #Change colors every five frets to make the diagram more readable
                     0,
                     ((io * 15) +10) -3,
                     6,
