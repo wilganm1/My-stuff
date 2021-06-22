@@ -11,7 +11,7 @@ frame1 = Frame(master = root)
 #Tuning choices
 tuning_var = StringVar(root)
 tuning_var.set('') # set the default option
-tuning_choices = ['Standard', 'Open E', 'Drop D', 'Double Drop D', 'D Standard', 
+tuning_choices = ['E Standard', 'Open E', 'Drop D', 'Double Drop D', 'D Standard', 
                   'Open D', 'Drop C#', 'Drop C', 'C# Standard', 'C Standard', 
                   'Open C', 'Drop B', 'B Standard', 'Open B', 'Drop A#', 
                   'Drop A', 'A# Standard', 'A Standard']
@@ -97,7 +97,7 @@ def ioq():
                 for hhq in note_list:     #loops through the numbers in scale. Those number are index values
                     this_scale.append(notes[hhq])   #adds in letters from notes variable that correspond to scale indices
             '''  This is the tuning dictionary. Add in more if you'd like. The letters are the open notes. '''
-            tunings = {'Standard' : ['E','A','D','G','B','E'], 
+            tunings = {'E Standard' : ['E','A','D','G','B','E'], 
                        'Open E' : ['E','B','E','G#','B','E'],
                        'Drop D' : ['D','A','D','G','B','E'],
                        'Double Drop D' : ['D','A','D','G','B','D'],
