@@ -148,62 +148,61 @@ def ioq():
 frame3.pack()
 frame4 = Frame(master = root)
 
-
-
-#!!!!!!! Neck diagram here
 ''' Now create a canvas to draw the neck diagram '''
 canvas = Canvas(frame4, width = 480,height = 95)
-neck_length = 480
-fret_length = neck_length - 15
-
-""" Neck """
-canvas.create_rectangle(0,0, neck_length, 95,
-                outline="#5c3626", fill="#5c3626")
-""" Strings """
-for i in range(0,6):
-    canvas.create_rectangle(0, (i*15)+10, neck_length, (i*15)+10)
-""" Frets """
-for fret in range(1,25):
-     canvas.create_rectangle(fret * (fret_length/24), 10, (fret * (fret_length/24)), 85,
-            outline = "#b8b0ad", fill = "#b8b0ad")
-""" Nut """
-canvas.create_rectangle(0,0,5,95,
-        outline = "black", fill="black")
-    
-""" Fret circles """ 
-for i in [3,5,7,9,15,17,19,21]: #Frets 3,5,7,9
-    canvas.create_oval(((i-1)*(fret_length/24)) + 5, 42.5,
-                       ((i-1)*(fret_length/24)) + 15, 52.5,
-                       outline = "white", fill = "white")
-        #Fret 12
-canvas.create_oval(218.5, 27.5, 228.5, 37.5,
-            outline = "#f1f0f0", fill="#f1f0f0")  
-canvas.create_oval(218.5, 57.5, 228.5, 67.5,
-            outline = "#f1f0f0", fill="#f1f0f0")
-
-        #Fret 24
-canvas.create_oval(451, 27.5, 461, 37.5,
-            outline = "#f1f0f0", fill="#f1f0f0")  
-canvas.create_oval(451, 57.5, 461, 67.5,
-            outline = "#f1f0f0", fill="#f1f0f0")
-""" Make a fretboard that spans the width of the 
-root frame. Then put in strings and frets and nut. """
-canvas.pack()
-
-#!!!!!!!!!!!  Problem over here
 
 def mqs():
     canvas.delete("all")
-    """ Adding canvas.delete("all") updates the dots but it also deletes the neck diagram. I think this 
-    is because it deletes the canvas that was made before the delete() function is deleted.
-    That's why the dots stay even though they have the same canvas name. Each time I called mqs it just resets.
-    I tried adding the diagram code to mqs but that didin't work either. """
-    #Make the dots that correspond to the frets
+    """ Adding canvas.delete("all") updates the dots 
+    but it also deletes the neck diagram. I think this 
+    is because it deletes the canvas that was made
+    before the delete() function is called.
+    That's why the dots stay even though 
+    they have the same canvas name. 
+    I might just have to make the entire
+    neck diagram after I delete it. 
+    I tried just moving the neck code to the mqs 
+    function but nothing shows up at all.
+    """
+    
+    neck_length = 480
+    fret_length = neck_length - 15
+    
+    """ Neck """
+    canvas.create_rectangle(0,0, neck_length, 95,
+                    outline="#5c3626", fill="#5c3626")
+    """ Strings """
+    for i in range(0,6):
+        canvas.create_rectangle(0, (i*15)+10, neck_length, (i*15)+10)
+    """ Frets """
+    for fret in range(1,25):
+         canvas.create_rectangle(fret * (fret_length/24), 10, (fret * (fret_length/24)), 85,
+                outline = "#b8b0ad", fill = "#b8b0ad")
+    """ Nut """
+    canvas.create_rectangle(0,0,5,95,
+            outline = "black", fill="black")
+        
+    """ Fret circles """ 
+    for i in [3,5,7,9,15,17,19,21]: #Frets 3,5,7,9
+        canvas.create_oval(((i-1)*(fret_length/24)) + 5, 42.5,
+                           ((i-1)*(fret_length/24)) + 15, 52.5,
+                           outline = "white", fill = "white")
+            #Fret 12
+    canvas.create_oval(218.5, 27.5, 228.5, 37.5,
+                outline = "#f1f0f0", fill="#f1f0f0")  
+    canvas.create_oval(218.5, 57.5, 228.5, 67.5,
+                outline = "#f1f0f0", fill="#f1f0f0")
+    
+            #Fret 24
+    canvas.create_oval(451, 27.5, 461, 37.5,
+                outline = "#f1f0f0", fill="#f1f0f0")  
+    canvas.create_oval(451, 57.5, 461, 67.5,
+                outline = "#f1f0f0", fill="#f1f0f0")
     for io in range(len(results)):
         for ng in results[io]:
             if ng == 0:
                 canvas.create_oval(
-                    0,   
+                    0,
                     ((io * 15) +10) -3,
                     6,
                     ((io * 15) +10) + 5,
