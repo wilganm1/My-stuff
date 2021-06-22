@@ -148,6 +148,9 @@ def ioq():
 frame3.pack()
 frame4 = Frame(master = root)
 
+
+
+#!!!!!!! Neck diagram here
 ''' Now create a canvas to draw the neck diagram '''
 canvas = Canvas(frame4, width = 480,height = 95)
 neck_length = 480
@@ -191,20 +194,16 @@ canvas.pack()
 
 def mqs():
     canvas.delete("all")
-    """ Adding canvas.delete("all") updates the dots 
-    but it also deletes the neck diagram. I think this 
-    is because it deletes the canvas that was made
-    before the delete() function is called.
-    That's why the dots stay even though 
-    they have the same canvas name. 
-    I might just have to make the entire
-    neck diagram after I delete it. """
-    
+    """ Adding canvas.delete("all") updates the dots but it also deletes the neck diagram. I think this 
+    is because it deletes the canvas that was made before the delete() function is deleted.
+    That's why the dots stay even though they have the same canvas name. Each time I called mqs it just resets.
+    I tried adding the diagram code to mqs but that didin't work either. """
+    #Make the dots that correspond to the frets
     for io in range(len(results)):
         for ng in results[io]:
             if ng == 0:
                 canvas.create_oval(
-                    0,
+                    0,   
                     ((io * 15) +10) -3,
                     6,
                     ((io * 15) +10) + 5,
