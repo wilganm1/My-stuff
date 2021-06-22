@@ -222,7 +222,7 @@ def mqs():
                     ((io * 15) +10) -3,
                     (ng*(fret_length/24)) - 1,
                     ((io * 15) +10) + 5,
-                    outline = 'blue', fill='blue')
+                    outline = 'steelblue', fill='steelblue')
             elif ng in range(11,16):
                 canvas.create_oval(
                     (ng*(fret_length/24)) - 9,
