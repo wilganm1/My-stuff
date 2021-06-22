@@ -149,7 +149,7 @@ frame3.pack()
 frame4 = Frame(master = root)
 
 ''' Now create a canvas to draw the neck diagram '''
-canvas = Canvas(frame4, width = 480,height = 95)
+canvas = Canvas(frame4, width = 530,height = 95)
 
 def mqs():
     canvas.delete("all")
@@ -165,7 +165,7 @@ def mqs():
     function but nothing shows up at all.
     """
     
-    neck_length = 480
+    neck_length = 530
     fret_length = neck_length - 15
     
     """ Neck """
@@ -174,29 +174,31 @@ def mqs():
     """ Strings """
     for i in range(0,6):
         canvas.create_rectangle(0, (i*15)+10, neck_length, (i*15)+10)
+    
     """ Frets """
     for fret in range(1,25):
          canvas.create_rectangle(fret * (fret_length/24), 10, (fret * (fret_length/24)), 85,
                 outline = "#b8b0ad", fill = "#b8b0ad")
+    
     """ Nut """
-    canvas.create_rectangle(0,0,5,95,
+    canvas.create_rectangle(0,10,5,85,
             outline = "black", fill="black")
-        
+         
     """ Fret circles """ 
     for i in [3,5,7,9,15,17,19,21]: #Frets 3,5,7,9
-        canvas.create_oval(((i-1)*(fret_length/24)) + 5, 42.5,
-                           ((i-1)*(fret_length/24)) + 15, 52.5,
+        canvas.create_oval(((i-1)*(fret_length/24)) + 6.25, 42.5,
+                           ((i-1)*(fret_length/24)) + 16.25, 52.5,
                            outline = "white", fill = "white")
             #Fret 12
-    canvas.create_oval(218.5, 27.5, 228.5, 37.5,
+    canvas.create_oval(11 * (fret_length/24) + 6.25, 27.5, 11 * (fret_length/24) + 16.25, 37.5,
                 outline = "#f1f0f0", fill="#f1f0f0")  
-    canvas.create_oval(218.5, 57.5, 228.5, 67.5,
+    canvas.create_oval(11 * (fret_length/24) + 6.25, 57.5, 11 * (fret_length/24) + 16.25, 67.5,
                 outline = "#f1f0f0", fill="#f1f0f0")
     
             #Fret 24
-    canvas.create_oval(451, 27.5, 461, 37.5,
+    canvas.create_oval(23 * (fret_length/24) + 6.25, 27.5, 23 * (fret_length/24) + 16.25, 37.5,
                 outline = "#f1f0f0", fill="#f1f0f0")  
-    canvas.create_oval(451, 57.5, 461, 67.5,
+    canvas.create_oval(23 * (fret_length/24) + 6.25, 57.5, 23 * (fret_length/24) + 16.25, 67.5,
                 outline = "#f1f0f0", fill="#f1f0f0")
     for io in range(len(results)):
         for ng in results[io]:
