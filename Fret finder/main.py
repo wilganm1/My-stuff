@@ -187,6 +187,8 @@ canvas.create_oval(451, 57.5, 461, 67.5,
 root frame. Then put in strings and frets and nut. """
 canvas.pack()
 
+#!!!!!!!!!!!  Problem over here
+
 def mqs():
     canvas.delete("all")
     """ Adding canvas.delete("all") updates the dots 
