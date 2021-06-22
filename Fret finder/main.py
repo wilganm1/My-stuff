@@ -37,6 +37,55 @@ scaleMenu = OptionMenu(frame1, scale_var, *scale_choices)
 Label(frame1, text='Select scale').grid(row=1, column = 3)
 scaleMenu.grid(row=2, column=3)
 
+
+"""
+Write another function that will use new_tune.get() to insert a new tuning into tuning_choices
+Bind this to ('<Return>', the function)
+"""
+lab1 = Label(frame1, text="Enter new tuning")
+lab1.grid(row=1, column = 0)
+global new_tune_var
+new_tune_var = StringVar(root)
+global ent
+ent = Entry(frame1, textvariable = new_tune_var)
+ent.grid(row=2,column=0)
+ent.bind('<Return>', hide_me)
+
+def add_tune(x):
+    global tuning_choices
+    tuning_choices = ['E Standard', 'Open E', 'Drop D', 'Double Drop D', 'D Standard', 'D# Standard',
+                  'Open D', 'Drop C#', 'Drop C', 'C# Standard', 'C Standard', 
+                  'Open C', 'Drop B', 'B Standard', 'Open B', 'Drop A#', 'Open A', 
+                  'Drop A', 'A# Standard', 'A Standard']
+    tuning_choices.append(x)
+    tuning_choices = sorted(tuning_choices)
+    tuning_choices.remove('E Standard')
+    tuning_choices.insert(tuning_choices.index("D# Standard")+1, 'E Standard')
+    tuningMenu = OptionMenu(frame1, tuning_var, *tuning_choices)
+    tuningMenu.grid(row=2, column=1)  
+
+def hide_me(x):
+    add_tune(new_tune_var.get())
+    lab1.grid_forget()
+    x.widget.grid_forget()
+    add_notes()
+
+def add_notes():
+    global lab2
+    lab2 = Label(frame1, text="Enter open notes (Cap.)")
+    lab2.grid(row=1, column=0)
+    global new_notes_var
+    new_notes_var = StringVar()    
+    global ent1
+    ent1 = Entry(frame1, textvariable = new_notes_var)
+    ent1.grid(row=2, column = 0)
+    tunings[new_tune_var.get()] = new_notes_var.get().split()
+    ent1.bind('<Return>', hide_me1)
+        
+def hide_me1(x):
+    lab2.grid_forget()
+    x.widget.grid_forget()
+
 frame1.pack()
 
 ''' Make frame 2 with the button '''
@@ -82,7 +131,6 @@ def ioq():
               'Melodic Minor' : [r,w,h,w,w,w,w],
               'Major Pentatonic' : [r,w,w,m,w],
               'Minor Pentatonic' : [r,m,w,w,m]}
-            
             scale_type = scale_var.get()
             note_list = []   #Empty list that will become our indices of notes
             scale_index = 0   #Starting index so the root note will be first
@@ -100,7 +148,6 @@ def ioq():
                 this_scale = []      #New list that will be have our finished scale.
                 for hhq in note_list:     #loops through the numbers in scale. Those number are index values
                     this_scale.append(notes[hhq])   #adds in letters from notes variable that correspond to scale indices
-            
             '''  This is the tuning dictionary. Add in more if you'd like. The letters are the open notes. '''
             tunings = {'Standard' : ['E','A','D','G','B','E'], 
                        'Open E' : ['E','B','E','G#','B','E'],
@@ -120,8 +167,6 @@ def ioq():
                        'A# Standard' : ['A#','D#','G#','C#','F','A#'],
                        'Drop A' : ['A','E','A','D','F#','B'],
                        'A Standard' : ['A','D','G','C','E','A']}
-            
-            
             numbers = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]    #this is a reference for the list of frets. We come back to it later
             select = tuning_var.get()    #saves the tuning selection
             global results
@@ -150,16 +195,11 @@ def ioq():
                 for qot in results:     #loops through each a_list in results
                     if zzz not in qot:     #loops through every fret in each a_list. checks if a number in numbers is not in the list
                         qot.insert(zzz, '-') #inserts '-' into the place where a number is missing. Doing this allows us to display the list in tkinter
-            label.configure(text = results[i][j])    #mathces up the correct fret for each grid in tkinter.
+            label.configure(text = results[i][j], font = 4)    #mathces up the correct fret for each grid in tkinter.
             label.pack(padx=2, pady=2) 
-            
 frame3.pack()
-
 frame4 = Frame(master = root)
-
-canvas = Canvas(frame4, width = 480,
-                height = 95)
-
+canvas = Canvas(frame4, width = 480,height = 95)
 neck_length = 480
 fret_length = neck_length - 15
 
@@ -169,20 +209,18 @@ canvas.create_rectangle(0,0, neck_length, 95,
 """ Strings """
 for i in range(0,6):
     canvas.create_rectangle(0, (i*15)+10, neck_length, (i*15)+10)
-
 """ Frets """
 for fret in range(1,25):
      canvas.create_rectangle(fret * (fret_length/24), 10, (fret * (fret_length/24)), 85,
             outline = "#b8b0ad", fill = "#b8b0ad")
-
 """ Nut """
 canvas.create_rectangle(0,10,5,85,
         outline = "black", fill="black")
-     
+    
 """ Fret circles """ 
 for i in [3,5,7,9,15,17,19,21]: #Frets 3,5,7,9
-    canvas.create_oval(((i-1)*(fret_length/24)) + 6, 42.5,
-                       ((i-1)*(fret_length/24)) + 16, 52.5,
+    canvas.create_oval(((i-1)*(fret_length/24)) + 5, 42.5,
+                       ((i-1)*(fret_length/24)) + 15, 52.5,
                        outline = "white", fill = "white")
         #Fret 12
 canvas.create_oval(218.5, 27.5, 228.5, 37.5,
@@ -191,9 +229,9 @@ canvas.create_oval(218.5, 57.5, 228.5, 67.5,
             outline = "#f1f0f0", fill="#f1f0f0")
 
         #Fret 24
-canvas.create_oval(452, 27.5, 462, 37.5,
+canvas.create_oval(451, 27.5, 461, 37.5,
             outline = "#f1f0f0", fill="#f1f0f0")  
-canvas.create_oval(452, 57.5, 462, 67.5,
+canvas.create_oval(451, 57.5, 461, 67.5,
             outline = "#f1f0f0", fill="#f1f0f0")
 """ Make a fretboard that spans the width of the 
 root frame. Then put in strings and frets and nut. """
