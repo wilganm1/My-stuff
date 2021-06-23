@@ -1,4 +1,4 @@
-# Fret finder, an app for guitar.
+# Fret finder, a desktop app for guitar.
 
 Have you ever wanted to write a song with a certain scale, but for the tuning you're on you don't know which frets have notes that are in that scale? Well Fret finder
 does all that for you. You select the tuning you use, the root note for the scale you use, and the type of scale you want, hit the button that says "Get" and it will
