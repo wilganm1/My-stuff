@@ -170,7 +170,7 @@ def mqs():
                 outline = "#b8b0ad", fill = "#b8b0ad")
         
     """ Nut """     #This is just a black bar that represents the open notes
-    canvas.create_rectangle(0,10,5,85,
+    canvas.create_rectangle(0,0,5,95,
             outline = "black", fill="black")
          
     """ Fret circles """    #These are dots on guitar that can help you see what fret you're on.
