@@ -258,7 +258,7 @@ if __name__=='__main__':
         elif 'how' in query and xyz.index('to') == xyz.index('how')+1:  
             instruction_vid1(query)    
             continue
-        elif'how' == xyz[0] and 'do' == xyz[1] and 'you' == xyz[2]:
+        elif query.startswith("how do you"):
             instruction_vid2(query)     
             continue
         elif 'how many' in query or 'how much' in query:
