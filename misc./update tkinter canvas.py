@@ -12,7 +12,7 @@ def refresh():  #make a function that will fill in the Canvas.
   
   
   """
-  canvas.pack()
+  canvas.pack()      #This needs to be in the function.
 ''' Everytime you call the refresh function it will delete the previous canvas and add in the new one. The first time this function is called there is nothing to 
 delete, so the canvas will be filled in with whatever is in the funciton. But the next time the function is called is will delete the previous canvas and fill in 
 the new one. This happens everytime the function is called. '''  
