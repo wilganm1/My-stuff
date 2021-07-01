@@ -33,12 +33,7 @@ Manga colors are default. If a character isn't colored yet
 in the manga, use anime colors. Get all the colors for each
 character.
 
-Step 4: Image Labeling
-    Use a labeling system like LabelImg or YOLOv4
-to identify each character and label them. This will 
-help train a neural network to identify the character.
-
-Step 5: Colorization
+Step 4: Colorization
     Set up a learning algorithm based on your
 annotated images that will automatically recognize
 characters and color them in based on 
@@ -65,80 +60,3 @@ for pixel in pixels:
 
 gray_scale
 len(gray_scale) #1640
-"""
-So I now have all my gray scale pixels.
-Now to add all the values into a neural network.
-The pixels go from left to right, then down
-a row.
-
-For the network, the input layer will have 
-340319 nodes, the output will have 2, one being
-the vector [1,0] for 'Yes', and the other being 
-the vector [0,1] for 'No'. The hidden layer 
-will have 820 nodes. 
-"""
-import numpy as np
-import random
-"""Input layer. 1640 nodes"""
-
-1640/2 # 820
-
-inputs = []
-for m in gray_scale:
-    inputs.append(m) 
-biases1 = []
-for n in range(0,820):
-    biases1.append(1)
-len(biases1)
-
-""" For each input node, I need 1640 weights.
-But I need as many lists of weights as there are
-hidden layer nodes. That is 820.
-
-So I need 820 lists of weights
-
-That's 1344800 weights"""
-nodes = len(inputs)
-hidden_nodes = []
-weights = {}
-#loop through every input for each node. Generate random weights for each node.
-m = 0
-while m < 820:
-    weights[str(m)] = []    
-    for node in range(nodes):
-        weights[str(m)].append(random.uniform(-1,1))
-    m += 1      
-for x in weights:
-    hidden_nodes.append(weights[str(x)])
-
-len(hidden_nodes)
-len(hidden_nodes[0])
-
-"""I now have everything I need. Now just do
-dot product and add biases. Use HIDDEN_NODES for the weights"""
-
-hidden_output = np.dot(hidden_nodes, inputs) + biases1
-
-len(hidden_output)
-
-
-""" Now get the output layer. 2 nodes will be in it."""
-weights2 = {}
-biases2 = [1,1]
-
-final_outputs = []
-uy = 0
-while uy < 2:
-    weights2[str(uy)] = []    
-    for n in range(len(hidden_output)):
-        weights2[str(uy)].append(random.uniform(-1,1))
-    uy += 1      
-for bn in weights2:
-    final_outputs.append(weights2[str(bn)])
-    
-len(final_outputs)
-final_outputs
-
-final = np.dot(final_outputs, hidden_output) + biases2
-
-final
