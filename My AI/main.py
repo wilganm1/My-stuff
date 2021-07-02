@@ -9,23 +9,18 @@ import random
 import ctypes
 from os import walk        #!!!! Have the names of your images something that is easy to read. dog/space station/grass field/Earth, etc.
 
-
-global term      #!!! What you want the AI to address you as.
-term = 'sir'
-global responses      #Responses to what I say so I know it's doing what I ask.
-responses = [f'Yes {term}', 'As you wish', f'Of course {term}',
+term = 'sir'        #!!! What you want the AI to address you as.
+responses = [f'Yes {term}', 'As you wish', f'Of course {term}',           #Responses to what I say so I know it's doing what I ask.
           'Just one moment', f'Right away {term}', 'As you command', 
           'One moment please', 'Please wait']       
-global Websites    #Preset websites that the computer will open for you.
-Websites = {'youtube' : 'https://www.youtube.com/',
+Websites = {'youtube' : 'https://www.youtube.com/',      #Preset websites that the computer will open for you.
             'google' : 'https://www.google.com/',
-            'reddit' : 'https://www.reddit.com/',      #List of websites I've pre-programmed to open when I ask for it.
+            'reddit' : 'https://www.reddit.com/',      
             'td ameritrade' : 'https://www.tdameritrade.com/home.html',   
             'ncbi' : 'https://www.ncbi.nlm.nih.gov/',
             'indeed' : 'https://www.indeed.com/',
             'github' : 'https://github.com/'}
-global Programs        #Programs on your computer that you can preset. 
-Programs = {"Fret finder": 'C:\\Users\\WilganZMT\\Desktop\\Fret Finder.exe', 
+Programs = {"Fret finder": 'C:\\Users\\WilganZMT\\Desktop\\Fret Finder.exe',     #Programs on your computer that you can preset. 
             "Audacity": "C:\\Program Files (x86)\\Audacity\\audacity.exe",  
             "Krita": "C:\\Program Files\\Krita (x64)\\bin\\krita.exe",
             "iTunes": "C:\\Program Files\\iTunes\\iTunes.exe",
