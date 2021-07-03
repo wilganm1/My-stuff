@@ -1,6 +1,6 @@
 # Making my own custom AI assistant in Python.
 
-I've seen this been done online and I want to make my own assistant. I'm using pyttsx3 for text-to-speech and using recognize_google to use Google's API  for words for the computer to recognize. This has been known to be inaccurate but it is the only one that will work offline. Using Google's ApI too much may actually cost money, and I'm not doingthat just for this project. This assistant will be able to open websites, look up things on Wolframalpha, turn off the computer, and in the future do stuff like send emails. I could even make an app for it and put it on my phone. 
+I've seen this been done online and I want to make my own assistant. I'm using pyttsx3 for text-to-speech and using recognize_google to use Google's API  for words for the computer to recognize. This assistant will be able to open websites, look up things on Wolframalpha, turn off the computer, and in the future do stuff like send emails and be able to save notepad files.
 
 ### Voice recognition neural network.
 I have an idea about programming the AI to only respond to my voice. This can be done as I've seen other projects on Github do the same thing. I will have to make python
