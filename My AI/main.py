@@ -7,8 +7,7 @@ import subprocess
 import wolframalpha
 import random
 import ctypes
-from os import walk        #!!!! Have the names of your images something that is easy to read. dog/space station/grass field/Earth, etc.
-
+from os import walk        
 term = 'sir'        #!!! What you want the AI to address you as.
 responses = [f'Yes {term}', 'As you wish', f'Of course {term}',           #Responses to what I say so I know it's doing what I ask.
           'Just one moment', f'Right away {term}', 'As you command', 
