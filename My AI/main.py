@@ -7,7 +7,8 @@ import subprocess
 import wolframalpha
 import random
 import ctypes
-from os import walk        
+from os import walk  
+
 term = 'sir'        #!!! What you want the AI to address you as.
 responses = [f'Yes {term}', 'As you wish', f'Of course {term}',           #Responses to what I say so I know it's doing what I ask.
           'Just one moment', f'Right away {term}', 'As you command', 
@@ -19,13 +20,12 @@ Websites = {'youtube' : 'https://www.youtube.com/',      #Preset websites that t
             'ncbi' : 'https://www.ncbi.nlm.nih.gov/',
             'indeed' : 'https://www.indeed.com/',
             'github' : 'https://github.com/'}
-Programs = {"Fret finder": 'C:\\Users\\WilganZMT\\Desktop\\Fret Finder.exe',     #Programs on your computer that you can preset. 
+Programs = {"Fret finder": 'C:\\Users\\Desktop\\Fret Finder.exe',     #Programs on your computer that you can preset. 
             "Audacity": "C:\\Program Files (x86)\\Audacity\\audacity.exe",  
             "Krita": "C:\\Program Files\\Krita (x64)\\bin\\krita.exe",
             "iTunes": "C:\\Program Files\\iTunes\\iTunes.exe",
             'tux guitar': "C:\\Program Files (x86)\\tuxguitar-1.1\\tuxguitar.exe"}
-global instructions   #Used to look up a video on how to do something. Used for function
-instructions = ["show me how to", "look up how to", "How do you"]
+instructions = ["show me how to", "look up how to", "How do you"]      #Used to look up a video on how to do something. Used for function
 
 def password():    #Has you enter a password to begin. Uncomment below to activate
     password = "shrubbery"     #Monty Python reference
@@ -35,7 +35,7 @@ def password():    #Has you enter a password to begin. Uncomment below to activa
         else:
             speak("Invalid password.")
             continue
-def speak(text):         #speaks what is typed in
+def speak(text):         #speaks what is entered
     engine=pyttsx3.init('sapi5')
     voices=engine.getProperty('voices')
     engine.setProperty('voice',voices[3].id)   #Defaults are 2 voices. It possible to add more. I've done it.
@@ -62,8 +62,8 @@ def greet():       #Says hello to you. Based on time of day
                 speak(f'It\'s getting late {term}, you should consider sleeping.')
                 speak(random.choice(greetings))
             break      
-def activate():  #Name of the AI. Change this to whatever you want. 
-    name = "jarvis"   #!!!!!! Change to whatever you want.
+def activate():  
+    name = "jarvis"   #!!!!!! Name of AI. Change to whatever you want.
     while 1:       #loop so it stays in this function forever until condition met.
         r=sr.Recognizer()
         with sr.Microphone() as source:  #sets your default microphone as the source
@@ -73,10 +73,9 @@ def activate():  #Name of the AI. Change this to whatever you want.
             audio=r.listen(source)
             try:
                 spoken = r.recognize_google(audio,language='en-in')   #What it hears and transcribes. 
-                if f"{name}" in spoken.lower():  #Checks if the AI's name is in spoken.
+                if name in spoken.lower():  #Checks if the AI's name is in spoken.
                     break    #stops the loop,
             except Exception as e:
-                speak("Pardon me, please say that again")
                 continue                   
 def takeCommand():       #Main function of the AI. listens to you speak and will pass it along.
     calls = [f'yes {term}?', 'You called?', 'You rang?', 'What can I help you with?']
@@ -94,7 +93,7 @@ def takeCommand():       #Main function of the AI. listens to you speak and will
                 return query
                 break
             except Exception as e:
-                speak("Pardon me, please say that again")  #Error if it doesn't understand what you said.
+                speak("Please say that again")  #Error if it doesn't understand what you said.
                 continue
 def open_site(query):        #opens a website based on what you said. #Format: "Go to/Open {site}. If not in Websites say .com/.org/.gov
         speak(random.choice(responses))     #random response so you know it's working
@@ -161,7 +160,6 @@ def wolf(query):    #Checks wolframalpha for a answers to a question. Wolframalp
             quer = " ".join(quer)
             print(answer)  
             speak(" ".join(["There are", "answer", "quer"]))
-
         return
 def get_weather():      #Opens weather.com for your location. Add link of your location.
         speak(random.choice(responses))
@@ -200,12 +198,15 @@ def play_vid(query):       #Searches youtube for a video
 def change_wallpaper():  #Changes wallpaper. You need a folder that has pics you want to choose from.  
     while 1:       #loop so it stays in this function forever until condition met.
         r=sr.Recognizer()
-        mypath = "C:\\Users\\WilganZMT\\Pictures\\Wallpaper pics"  #!!! Insert the folder that has the images you want to choose from
+        mypath = ""  #!!! Insert the folder that has the images you want to choose from
         from os import listdir
         from os.path import isfile, join
         onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
         for x in onlyfiles:
-            x = x.replace('.jpg', "")
+            if x.endswith('.jpg'):
+                x = x.replace('.jpg', "")
+            elif x.endswith('.png'):
+                x = x.replace('.png', '')
             print(x)
         with sr.Microphone() as source:  
             print("Choose wallpaper...")   #Prints to the screen so you know it's listening
