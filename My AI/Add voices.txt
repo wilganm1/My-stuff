@@ -1,10 +1,10 @@
 Python 3.8, Windows 10, Pyttsx3 version = 2.7
-So I'm working on making a personal AI and I wanted to add in more voices. So far the only ones I got are the ones you can download for the Windows 10 narrator. I found a way to add these voices to pyttsx3 so you have more than the default 2. I don't know how to do this on Mac or Linux, but the process should be similar. Here's the steps I did:
+
 1. Download voices from the Narrator settings. Find Narrator in settings and click Add Voices. Click the languages and regions you want.
 
 2. Click start button on Windows. Type or click "Run".
 
-3. Type in 'regedit' into the bar, then hit yes. This is the Microsoft registry editor. Go to HKEY_LOCAL_MACHINE/SOFTWARE/MICROSOFT/SPEECH/VOICES/TOKENS
+3. Type in 'regedit' into the bar, hit enter, then click yes. This is the Microsoft registry editor. Go to HKEY_LOCAL_MACHINE/SOFTWARE/MICROSOFT/SPEECH/VOICES/TOKENS
 This will have 2 folders, one for each default voice. They should be David and Zira. They should be named -TTS_MS_EN-US_{name}_11.0 or something like that.
 
 4) Click on '  -TTS_MS_EN-US_{name}_11.0  ' and look at LangDataPath. Go to that folder and check if your downloaded voice are there too. Make sure you're looking in the correct language folder. You could have en-US, en-GB, en-CA, etc.
@@ -13,24 +13,24 @@ This will have 2 folders, one for each default voice. They should be David and Z
 
 For example, here's the pre-installed voice for David - English (US)
 -TTS_MS_EN-US_DAVID_11.0
-|          Name        Type            Data
-|      -(Default)             REG_SZ                     Microsoft David Desktop - English (United Sates)
-|      -409                      REG_SZ                     Microsoft David Desktop - English (United Sates)
-|      -CLSID                  REG_SZ                     {179F3D56-1B0B-42B2-A962-59B7EF59FE1B}
-|      -LangDataPath   REG_EXPAND_SZ    %windir%\Speech_OneCore\Engines\TTS\en-US\MSTTSLocEnUS.dat
-|      -VoicePath           REG_EXPAND_SZ    %windir%\Speech_OneCore\Engines\TTS\en-US\M1033David
+|          Name                Type                 Data
+|      -(Default)             REG_SZ            Microsoft David Desktop - English (United Sates)
+|      -409                   REG_SZ            Microsoft David Desktop - English (United Sates)
+|      -CLSID                 REG_SZ            {179F3D56-1B0B-42B2-A962-59B7EF59FE1B}
+|      -LangDataPath          REG_EXPAND_SZ     %windir%\Speech_OneCore\Engines\TTS\en-US\MSTTSLocEnUS.dat
+|      -VoicePath             REG_EXPAND_SZ     %windir%\Speech_OneCore\Engines\TTS\en-US\M1033David
 |             ******* If the voice is British, EN-GB, change 409 to 809*******
 -Attributes
-Name             Type               Data
--(Default)            REG_SZ         (value not set)
--Age                     REG_SZ         Adult
--Gender               REG_SZ        Male
--Language          REG_SZ         409
--Name                 REG_SZ         Microsoft David Desktop
--SharedPronu... REG_SZ
--SpLexicon         REG_SZ          {0655E396-25D0-11D3-9C26-00C04F8EF87C}
--Vendor              REG_SZ          Microsoft
--Version              REG_SZ          11.0
+    Name                 Type         Data
+    -(Default)          REG_SZ     (value not set)
+    -Age                REG_SZ     Adult
+    -Gender             REG_SZ     Male
+    -Language           REG_SZ     409
+    -Name               REG_SZ     Microsoft David Desktop
+    -SharedPronu...     REG_SZ
+    -SpLexicon          REG_SZ     {0655E396-25D0-11D3-9C26-00C04F8EF87C}
+    -Vendor             REG_SZ     Microsoft
+    -Version            REG_SZ     11.0
 
 
 These are the files you need for VoicePath. David and Zira had these 3.
