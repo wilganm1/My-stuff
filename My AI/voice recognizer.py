@@ -55,19 +55,30 @@ N = SAMPLE_RATE * DURATION
 yf = rfft(inputs)
 xf = rfftfreq(N, 1 / SAMPLE_RATE)
 
+# My natural range is A#3 - C4.
+     #233.08 - 261.63
+
+(233.08+261.63)/2
+
 plt.plot(xf, np.abs(yf))
+#Where the middle ground is
+line1 = plt.axvline(x=233.08, color='r', linestyle='-')
 plt.show()
 
-
-
-#!!!!!    A#3 is close to my natural voice.
-#    C3 - 10 to 21  on guitar tuna
-
+"""
+Okay, so I have the graph with the the frequencies
+and a line that is my natrual speaking tone. I 
+I need to get rid of any xf frequencies that don't 
+go above a certain volume (yf) threshold. yf 
+values are calculated using np.abs. It adds 
+a real number with a complex number like 3j. j is 
+an imaginary number like square root of -1.
+All I have to do is make a threshold an arbitrary
+threshold and automatically get rid of any xf values
+that don't make it. 
 
 """
-This will visualize the wav file with the
-frequencies
-"""
+
 
 #Now get the unique frequencies
 
@@ -87,22 +98,9 @@ I could just make a list of someone's voice and
 compare it to mine. I could then match them 
 and have a % comparison.
 
-Test this with my brothers and see how the 
+Test this with Zak/Tristan and see how the 
 vocal frequencies work.
 
-
-I found a way to make this easier. I just needed
-to find out what my natural voice freuqncy was and 
-I can use that as a benchmark. I did this with the guitar
-tuning app GuitarTuna. I literally just held a note
-and saw what it was. I then used TuxGuitar to know
-which octave the note it was. A#3 - C4.
-    233.08 - 261.63
-
-https://pages.mtu.edu/~suits/notefreqs.html
-
-Now I can just tweak audio samples to operate around
-my vocal range.
 """
 
 #inputs = unique frequencies list
