@@ -98,8 +98,15 @@ I could just make a list of someone's voice and
 compare it to mine. I could then match them 
 and have a % comparison.
 
-Test this with Zak/Tristan and see how the 
+Test this with my brothers and see how the 
 vocal frequencies work.
+
+Update 2: Just realized that almost any 
+recording will have these frequencies in them.
+My recording had over 80000 numbers. They definitly
+have my vocal range in them. I need to find a way to 
+distinquish when I talk vs when I don't.
+Maybe based on intensity and volume
 
 """
 
