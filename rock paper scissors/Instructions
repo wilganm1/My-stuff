@@ -1,7 +1,0 @@
-This is my custom made rock paper scissors game I wrote in Python. 
-You are able to choose what the score limit is and you can restart the entire game when that limit has been reached.
-You first enter the score limit you want, then you choose either "rock", "paper", or "scissors".
-The computer randomly chooses any of those options, and the code runs with the game's rules.
-You keep going until either you or the computer hits the limit, then you can choose to replay it or quit with "y" or "n"
-
-Feel free to copy this.
