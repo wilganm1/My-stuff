@@ -32,6 +32,7 @@ while True:
         if play_again.lower() == "y":
             comp_score = 0
             player_score = 0
+            continue
         else:
             print("Thanks for playing")
             break
@@ -42,6 +43,7 @@ while True:
         if play_again.lower() == "y":
             comp_score = 0
             player_score = 0
+            continue
         else:
             print("Thanks for playing")
             break
