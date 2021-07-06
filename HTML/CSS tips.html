@@ -1,0 +1,344 @@
+:::::::::::::::::::::::::::::::BASICS::::::::::::::::::::::::::::::::::::::
+To affect all of the page, use body{} in css, UNLESS there is a more specific place. #IDs > .classes > <tags>.
+  
+Use !important to ensure a style is absolute and set.
+
+*****Set width of page div to 100%
+
+	viewport is the viewable area on a device. 10vw means 10% of the 
+			viewable width on a device.
+
+::::::::::::::::::::::::::::::::IMAGES:::::::::::::::::::::::::::::::::::::
+
+ -Height and width of an <img> in a div must go within the html file itself, NOT the css file.
+ 	-<img src="(IMAGE)" width="x" height="y">
+
+ background image goes in the body{} of a CSS file.
+
+body { background-image: url("");
+	  background-size: cover;} 	  -Auto fits image perfectly
+
+-Load from a folder: url('.../folder1/folder/image.jpg')
+
+-background-image:
+height:				 -height of box: px, em, % SET TO AUTO
+width: 			     -width of box. px, em, % PUT IN BODY
+border-radius: px    -Changes corners of border into 
+		50%					-makes a circle.
+padding: xpx ypx     -clears area inside border, around content.
+min-width:           -sets smallest possible width.
+max-width:           -sets largest possible width.
+background-repeat	 -whether the image repeats. -x or -y
+	-no-repeat:			-Only one single image
+background-size:	 -How big the image is.
+	-cover:				-perfectly scales the image to it's div
+
+						  THE BOX MODEL
+
+----------------------------------------------------------------------
+					                   MARGIN    (to everything outside div)                          
+ |----------------------------------------------------------------|
+ |                           BORDER                               |
+ |	|---------------------------------------------------------|   |
+ |	|                        PADDING  (from border to content)|   |
+ |	|  |-------------------------------------------------|    |   |
+ |	|	 | 						                                     |    |   |
+ |	|	 |					           CONTENT		                 |    |   |
+ |	|	 |                                                 |    |   |
+ |	|	 |-------------------------------------------------|    |   |
+ |	|	 	 												                              |   |
+ |	|---------------------------------------------------------|   |
+ |----------------------------------------------------------------|
+  
+----------------------------------------------------------------------
+<span>    Creates a div that does not exclude itself.
+
+-overflow:           -Dictates what happens to conent that spills out of its margin
+		      	-only happens when content of a div has a greater height than the div itself.	
+	-hidden; 		 -hides the content
+	-visible;         -makes it visible. Default
+	-scroll;          -adds a scroll bar to <p> box.
+
+-margin:	        -space between elements and it's surroundings
+	-auto			-centers elements
+	-left:			-Distance from left side of page
+	-right:			-``````````````right```````````````````
+	-top:			-``````````````top````````````````````````
+	-bottom:	    -``````````````bottom````````````````````  
+ **shorthand: 1st number = top-bottom, 2nd number = left-right
+ **   margin: 0 auto;  = 0 top & bottom margins, auto left & right
+	  			
+-box-shadow: 				-adds a shadow to a div
+   -offset-x:  				-shadow's distance from element. width
+   -offset-y 				-shadow's distance from element. height.
+   -blur-radius				- radius that is blurred out slightly
+   -spread-radius			-radius of shadow. Does not include parent div
+   -color 
+
+   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+:::::::::::::::::::::::::FLOW OF HTML:::::::::::::::::::::::::::::::::
+ **How HTML reads input. Left-to-right, then top-down.**
+       Mostly used within divs
+ -static: 			-default
+ -relative:			-changes relative to it's normal position on page.
+ 	-top:				-moves the object DOWN. AWAY from top
+ 	-bottom:			-moves it UP. AWAY from bottom
+ 	-left:				-moves it RIGHT. AWAY from left
+ 	-right:				-moves it LEFT. AWAY from right
+ -absolute: 		-does not change position
+ -fixed: 			-keeps in it place. Moves with scroll.
+ -display: 			- How text looks on a web page
+  -grid 			  -grid layout
+  -inline             -same as content around it
+  -block 			  -a block on its own
+  -inline block 	-block on same line
+  -table 			-layout like a table
+ -Float 			-removes from normal flow and pushed to either left or 						 right of their parent div
+ -clear 			- keeps floating elements away
+ -line-height:		-the vertical spacing between text lines.
+
+:::::::::::::::::::::::::::::::COLOR:::::::::::::::::::::::::::::::::::::::
+-Color:                     -Color of text
+-Background-color:     	    -color of the background
+ -rgb(x, y, z)             -specified color information
+ -hsla(120, 60%, 70%, 0.5) -hsl(0-360 hue, saturation, lightness, opacity)
+ -linear-gradient(xdeg, y, z..n) -y & z are colors of gradient
+ 
+
+    ------------------------GRADIENTS------------------------------
+Gradients are when two colors fade into each other or to transparency.
+	***Must use {background-image} in css for it to work
+-background-image:
+  -linear-gradient(x,y,z)   -transition of colors. x=direction, 
+								y&z=colors.
+  -repeating-linear-gradient(deg, y, z, n) -gradient that repeats
+ 		blue: 0px
+ 		blue: 40px		 -How gradient works. Can set where they start & end
+ 		red: 40px		 	-Doing it like this makes solid bars
+ 		red: 80px
+
+  -radial-gradient		   -transition of colors in circular patter.
+	 Weird to explain. Example: (red 29%, yellow 32%, green 70%)
+	   -Think of it this way, the latter percentages are how big the radius before them is. Changing the former changes its transparency gradient
+	  Green determines how big yellow's radius is. However, changing yellow's % will change it's transparency gradient, and red's radius. Chaning red's % will only change it's transparnecy gradient.
+
+	 Changing green only changes yellow's radius, chaning yellow changes it's transparency & red's radius, and changing red only changes it's transparency.
+
+	 Example: If you make green 60%, the yellow circle will get smaller. If you make the yellow 28%, yellow will become more transparent and the red cirlce will get smaller. If red beomes 28%, it will become opaque, and overtake yellow completely. And the reverse is true
+
+  - repeating-radial-gradient(color1 %, color2%)
+  		-continuous repeating of colors in circle. like a pond ripple
+  		The closer color1's % is to color2's %, the more ripples.
+
+  	******Inner number expands ripples outward, outer number pulls ripples inward******
+  			-Decreasing latter % shrinks it's radius and brings in the former color. 
+  			-Increasing former causes inner circle to get bigger. **When the former color is > 1/2 of outer color, a new ripple starts**
+  		Example: magenta 1%, black 100% -Black fills up corners of div
+  			-decreasing black shrinks black's radius and magenta comes in
+  				-The smaller black is, the more ripples. 
+  				-Black is between space between magenta circle.
+
+:::::::::::::::::::::::::::::::::FONTS::::::::::::::::::::::::::::::::::::
+-font-family:      -font style
+-font-style:       -italic styles
+-font-size:        -size of the font
+-font-weight:      -bold of the text
+-font-family:       -"Garamond", "Times", serif; #pick a font
+-word-spacing:     -0.0Xem
+-letter-spacing:   -0.0Xem
+-text-transform:   -uppercase. lowercase, italicize
+-text-alignment:   -left, right, or center
+-line height       -height of the line between inserts
+-serif text        -looks fancier
+-text-decoration:  -adds in overline, underline, or line-through
+-text-transform:   -capitalizes, uppercase, or lowercase
+-text-indent: px   -sets and indent
+
+How to import a font from google. Go to https://fonts.google.com/ and copy a font's url into the html document. 
+	Example:
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+::::::::::::::::::::::::::::PSEUDO-CLASSES:::::::::::::::::::::::::::::::::
+Pseudo-classes are "classes" that allow changes. They work when
+something on the webpage happens, like when a box is hovered or a link
+is clicked on. This is when these psuedo-classes activate.
+
+  selector:psuedo-class{property: value}
+
+-Structural
+:first-child			-matches specified element that is first child of 
+						 another element.
+:last-child				-last child of a parent element
+:nth-child				-nth number child of a parent element
+-Link
+ :link
+ :visited				-when a link is visited
+-User Action
+ :hover 				-when mouse hovers over an element
+ :active 				-when mouse is held down over element
+ :focus 			    -focused on when tab button used
+-Forms
+ :enabled 			    -
+ :checked 				-if checkbox is clicked
+ :disabled
+-Textual
+ :first-letter			-changes first letter of an element
+ :first-line 			-changes first line of an element
+-Positonal
+ :before
+ :after
+
+
+:::::::::::::::::::::::::::CREATING A GRID:::::::::::::::::::::::::::::::::
+**Create a nested grid within a parent <div>. Make a new class.**
+	<div class="grid">
+		<div>Grid box 1</div>
+		<div>Grid box 2</div>.....
+-display: grid;            #makes a grid out of lists
+ -block:				  -
+ -inline:
+ inline-block:
+-grid-template-columns: xpx ypx   -How wide each column is.
+-grid-template-rows:    xpx y%    -Adds rows. How long it is.
+		-fr 						 -fraction of remaining space
+		-auto 					 	 -sets automatically
+	    -%               	  		 -percentages of grid space
+	-repeat(x, ypx):		-Repeats rows x times with y pixels. 	                                  
+-grid-column-gap: 		-gap between each grid column box
+-grid-row-start:        -Dictate how many rows a grid item is. 
+-grid-row-end:          -number is one higher than what you want
+		- end: 7         -Ends at row 6
+-grid-row: x / y
+-grid-column x / span y
+-grid-area: w / x / y / span z #span means how many rows it spans
+		-grid-row-start
+		-grid-column-start
+		-grid-row-end
+		-grid-column-end
+- grid-template-areas #let's you name sections to use as values in
+					  		-grid-row-start etc.
+ - advert header        -advert first, then header to end.
+ - advert content       -still advert, then content
+ - advert footer        -advert ends, then footer
+
+
+text-align               -aligns text left, right, or center.
+vertical- align          -aligns text top, bottom, or center
+
+-align-self:			-aligns grid box size vertically.
+
+justify=row
+align=column
+
+justify-items      		-positions all grid boxes Left-to-right. 
+						-Use on the grid container class.
+							-left, right, center, stretch, start, end
+justify-content:
+	-space-around: #equal space on each side.
+	-space-between: #space between equal. No space at either end.
+lign-items: #aligns grid items to a side of their grid space
+	start, end, center, stretch
+align-content: #positions rows up or Down
+
+-flex-wrap:				-extra items moves into new column or row
+  -wrap:				  -left-to-right in row. top-to-bottom if column
+  -wrap-reverse:		  -wrap but in reverse order.
+
+display: flex				-Like a grid except only columns
+ -order:					  -In which order columns appear. left-to-right
+::::::::::::::::::::::::::CREATE A TABLE:::::::::::::::::::::::::::::::::::
+Creates a table with as many rows as you want.
+
+*******To inpute data into table you need <td> tag.********
+		*****Column borders are done in <th> tag*****
+			**Add lines using:
+		table, th, td{border: 1px solid #888;
+				margin-top: 0.3rem;
+    			padding-left: 0.3rem;
+    			padding-right: 0.3rem;}
+    separae into boxes using border-collapse: collapse;
+
+
+<caption>						  -adds a top caption above head
+<table>							  -the table input
+	<tbody>						  -creates body outline
+		<tr>					  -Creates a new row
+			<th>1st column</th>   -HEADINGS of columns
+			<th>2nd column</th>
+			<th>nth column</th>
+		</tr>
+		<tr>
+			<td>1st column</td>   -Adds data value to table box 
+			<td>2nd column</td> 
+			.................
+	</tbody>
+</table>
+
+-<td rowspan="n">				-Spanning multiple rows. n rows
+-<td colspan="n">				-Spanning multiple columns. n columns
+
+You can style even and odd rows differently by using pseudo-classes instead
+of manually typing class="odd_row" / class="even_row" using nth-child
+
+tr:nth-child(odd){background-color: ~~~}
+tr:nth-child(even){background-color: ~~~}
+
+   You can use > to lead from one psuedo-class to another
+
+ tr:nth-child(odd)>td:last-child {border-radius: 0 0 25px 0}
+ -this says the last data point in the last row has a border radius
+:::::::::::::::::::::::::::::::FORMS:::::::::::::::::::::::::::::::::::::::
+You an change the individual forms in CSS using the following format
+
+[type="~~~"] {~~~~~;}
+
+::::::::::::::::::::::TRANSITIONS & ANIMATIONS:::::::::::::::::::::::::::::
+ ****Must have @keyframes NAME OF ANIMATION {} to execute the animation****
+
+ 	@keyframes animation-name:
+
+**You can change what happens at different times of the animation cycle using percentages (%). This happens
+
+ #anim{ animation-name: colorful;
+ animation-duration:3s}
+
+@keyframes colorful { 0%
+ 	{background-color: blue;
+} 100% 
+	{background-color: yellow;}}
+
+-transition-property:   -changes the color or style of a button when mouse 			    		  	  -hovers over it
+-transition-duration:    -how long it lasts
+-transition-delay: 	     -time before tranistion starts
+-tranistion-timing-function: -pace at which total transition ocurrs.
+-cursor:			    -Changes the cursor to a different shape.
+-~:hover 				-changes property of data when mouse is hovered over
+	-a:hover {color: red;}	-changes color of <a> to red when hovered over
+-animation-fill-mode:		-Specifies the style applied when animation ends
+	-forwards
+-animation-iteration-count:  -How many times it happens. infinite
+-animation-timing-function:  -How quick an animation changes over time
+	-ease;					   -starts slow, speeds up, then slows at end
+	-ease-out;				   -quick in beginning, slows down
+	-ease-in;				   -slow in beginning, speeds up at end
+	-linear;				   -constant animation speed throughout
+-opacity:					 -changes opacity 
+-transform: 				 -changes properites of elemens.
+	-scale(x)				    -changes the size of an object. 1 is default
+	-skewX(~deg):				-skews X angle of element
+	-skewY(~deg):				-skews Y angle of element
+
+::before: 					-adds something before an element
+
+:::::::::::::::::::::::::::::RESPONSIVE DESIGN:::::::::::::::::::::::::::::
+Responsive design is changing the layout of your site when on screens of 
+different sizes, such as an iphone vs a computer.
+
+Use the @media followed by the screen size in pixels, then normal code
+
+ @media (200px) {			-Changes when screen is at most 200 px
+ background-color: red 		-the change that happens to whatever
+}
+
+ @media screen and (min-width: )
