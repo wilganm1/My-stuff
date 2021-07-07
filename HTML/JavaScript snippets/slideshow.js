@@ -1,6 +1,5 @@
  <!-- Slideshow container -->
 <div class="slideshow-container">
-  <div class="slideshow-container">
   <img class="mySlides fade" src="math.jpg" style="width:100%">    //insert as many images as you want
   <img class="mySlides fade" src="eye.jpg" style="width:100%">
   <img class="mySlides fade" src="computer_science.jpg" style="width:100%">
