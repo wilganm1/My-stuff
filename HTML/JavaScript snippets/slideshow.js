@@ -1,37 +1,26 @@
  <!-- Slideshow container -->
-<div class="slideshow-container">
- <div class="mySlides fade">
-    <img src="math.jpg" style="width:100%"></div>   //insert as many images as you want
- <div class="mySlides fade">
-    <img src="eye.jpg" style="width:100%"></div>
- <div class="mySlides fade">
-    <img src="computer_science.jpg" style="width:100%"></div>
- <div class="mySlides fade">
-    <img class="mySlides fade" src="periodic_table.jpg" style="width:100%"></div>
-</div>
+  <div class="slideshow-container" style="max-width:500px">
+	  <img class="mySlides" src="math.jpg" style="width:100%">
+	  <img class="mySlides" src="flask.jpeg" style="width:100%">
+	  <img class="mySlides" src="eye.jpg" style="width:100%">
+  </div>
 
 <script>
-var slideIndex = 0;
-showSlides();
+var myIndex = 0;
+carousel();
 
-function showSlides() {
-  var i;        //index variable
-  var slides = document.getElementsByClassName("mySlides");
-      /*this syntax retrives the images within the same document. 
-        The images need the same class */
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";}
-    /* This is the looping function that tells the function showSlides
-       to move onto the next index within the images array */
-  slideIndex++;  //This causes the next image to actually show.
-  if (slideIndex > slides.length) {slideIndex = 1}
-      /*This tells the function showSlides to reset to the first image
-            once the last image is shown */
- slides[slideIndex-1].style.display = "block";
- dots[slideIndex-1].className += " active";
- setTimeout(showSlides, 2000); //change image every 2 seconds
-}                            //1000 = 1 second
- </script>
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 9000); // Change image every 2 seconds
+}
+</script>
 
 /* CSS for the slideshow */
 
