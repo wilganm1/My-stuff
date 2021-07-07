@@ -1,39 +1,39 @@
  <!-- Slideshow container -->
 <div class="slideshow-container">
-
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
-    <img src="img1.jpg" style="width:100%">
-    <div class="text">Caption Text</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
-    <img src="img2.jpg" style="width:100%">
-    <div class="text">Caption Two</div>
-  </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
-    <img src="img3.jpg" style="width:100%">
-    <div class="text">Caption Three</div>
-  </div>
-
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <div class="slideshow-container">
+  <img class="mySlides fade" src="math.jpg" style="width:100%">    //insert as many images as you want
+  <img class="mySlides fade" src="eye.jpg" style="width:100%">
+  <img class="mySlides fade" src="computer_science.jpg" style="width:100%">
+  <img class="mySlides fade" src="periodic_table.jpg" style="width:100%">
 </div>
-<br>
 
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div> 
+<script>
+var slideIndex = 0;
+showSlides();
 
-* {box-sizing:border-box}
+function showSlides() {
+  var i;        //index variable
+  var slides = document.getElementsByClassName("mySlides");
+      /*this syntax retrives the images within the same document. 
+        The images need the same class */
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";}
+    /* This is the looping function that tells the function showSlides
+       to move onto the next index within the images array */
+  slideIndex++;  //This causes the next image to actually show.
+
+  if (slideIndex > slides.length) {slideIndex = 1}
+      /*This tells the function showSlides to reset to the first image
+            once the last image is shown */
+    for (i = 0; i < dots.length: i++) { //remove this if no dots
+      dots[i].className = dots[i].className.replace(" active", "");
+ }
+ slides[slideIndex-1].style.display = "block";
+ dots[slideIndex-1].className += " active";
+ setTimeout(showSlides, 2000); //change image every 2 seconds
+}                            //1000 = 1 second
+ </script>
 
 /* CSS for the slideshow */
 
@@ -76,41 +76,6 @@
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
 
 /* Fading animation */
 .fade {
