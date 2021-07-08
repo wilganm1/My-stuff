@@ -9,7 +9,7 @@
        CSS
 .topnav {
   background-color: #333;   /* background */
-  overflow: hidden;}
+  overflow: hidden;}  <!-- Change to auto for a horizontal bar -->
 
 .topnav a {
   float: left;   /* links within bar */
