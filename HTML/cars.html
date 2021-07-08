@@ -1,0 +1,153 @@
+<!-- Show off a bunch of cars. have a tab gallery that will expand when the image
+  is clicked on -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: Arial;
+  width: 90%;
+  background-color: rgba(0,0,0,0.84);
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer;
+  height: 200px; 
+  border: 1px solid rgb(245,245,245,0.6);
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+}
+
+h2, p {
+  color: rgb(255,255,240);
+}
+
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+
+h1 {
+  text-align: center;
+  color: rgb(255,255,240);
+}
+
+.column:hover .overlay {
+  height: 10%;
+}
+
+#expandedImg {
+  height: 500px;
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <h2>Our Featured Line Up</h2>
+  <p>Click on a car below for further details:</p>
+</div>
+
+
+<!-- The four columns -->
+<div class="row">
+  <div class="column">
+    <img src="1.jpeg" alt="Munzo Verde" style="width:100%;" onclick="myFunction(this);">
+    <div class="content">
+      <h1>Muzno Verde</h1>
+      <p></p>
+    </div>
+  </div>
+  <div class="column">
+    <img src="2.jpg" alt="Gezeratti Bensque" style="width:100%;" onclick="myFunction(this);">
+    <div class="content">
+      <h1>Genzeratti Bensque</h1>
+      <p></p>
+    </div>
+  </div>
+  <div class="column">
+    <img src="3.jpg" alt="Kraton Supreme" style="width:100%;" onclick="myFunction(this);">
+    <div class="content">
+      <h1>Kraton Supreme</h1>
+      <p></p>
+    </div>
+  </div>
+  <div class="column">
+    <img src="4.jpg" alt="Dahaka Fusion" style="width:100%;" onclick="myFunction(this);">
+    <div class="content">
+      <h1>Dahaka Fusion</h1>
+      <p></p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div>
+    <h1 id = "expandedHeader"></h1>
+      <p id="imgText">
+</div>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  expandImg.src = imgs.src;
+  expandImg.parentElement.style.display = "block";
+}
+
+function otherFunction(text) {
+  var imgText = document.getElementById("imgtext");
+
+}
+</script>
+
+</body>
+</html>
