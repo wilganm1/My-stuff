@@ -55,8 +55,8 @@
   <!-- JavaScript-->
 <script>
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";}
+  document.getElementById("mySidenav").style.width = "250px";   <!-- how much screen the pop-up takes up -->
+  document.getElementById("main").style.marginLeft = "250px";}   <!-- Needs to be the same as the pop-up width -->
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
