@@ -1,5 +1,5 @@
         HTML
- <!-- Make sure the for in <label> matches the <name> in input -->
+ <!-- Make sure that <label for=""> is the same as <input name=""> -->
   
     <!-- single-line text -->
 <form>
@@ -94,10 +94,39 @@
   <input type="number" id="quantity" name="quantity" min="0" max="100" step="10" value="30"> /* step is how much it changes by */
 </form>
 
+   <!-- Range input
+<form action="/action_page.php" method="get">
+  <label for="vol">Volume (between 0 and 50):</label>
+  <input type="range" id="vol" name="vol" min="0" max="50"> /* min and max are limits */
+</form>
 
+   <!-- Search -->
+<form>
+  <label for="gsearch">Search Google:</label>
+  <input type="search" id="gsearch" name="gsearch">
+</form> 
 
+   <!-- Telephone number -->
+<form>
+  <label for="phone">Enter your phone number:</label>  /* the number in curly brackets are how many numbers are allowed */
+  <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"> 
+</form> 
 
-
+   <!-- time select -->
+<form>
+  <label for="appt">Select a time:</label>
+  <input type="time" id="appt" name="appt">
+</form> 
  
- 
- 
+   <!-- URL filed -->
+<form action="/action_page.php">
+  <label for="homepage">Add your homepage:</label>
+  <input type="url" id="homepage" name="homepage">
+</form>
+
+   <!-- Week input --> /* not supported in Firefox */
+<form action="/action_page.php">
+  <label for="week">Select a week:</label>
+  <input type="week" id="week" name="week">
+  <input type="submit" value="Submit">
+</form>  
