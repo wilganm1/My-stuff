@@ -1,0 +1,36 @@
+Make a custom grid
+            ____________________________
+           |           Header           |
+           |____________________________|
+           |  menu  |   main  |   right |
+           |        |_________|_________|
+           |        |       Footer      |
+           |________|___________________|      
+
+<!-- HTML -->
+<div class="grid-container">
+  <div class="item1"> <!-- Insert whatever here --> </div>
+  <div class="item2"> <!-- Insert whatever here --></div>
+  <div class="item3"> <!-- Insert whatever here --> </div>  
+  <div class="item4"> <!-- Insert whatever here --> </div>
+  <div class="item5"> <!-- Insert whatever here --> </div>
+</div>
+
+      <!-- CSS -->
+<style>
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }  /* Change to whatever you want. Make sure you change it below */
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:  /* This is where you name the sections. */
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: /* Insert whatever here */;
+  background-color: /* Insert whatever here */;
+  padding: ;
+}
