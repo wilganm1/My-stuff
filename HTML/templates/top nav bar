@@ -27,15 +27,22 @@
   text-align: center;
   padding: ;
   text-decoration: none;
-  font-size: ;
-}
+  font-size: ;}
 
-.topnav a:hover {   /* Change the color of links on hover */
+.topnav a:hover {   <!-- Change the color of links on hover -->
   background-color: #ddd;
-  color: black;
-}
+  color: black;}
 
-.topnav a.active {      /* Add a color to the active/current link */
+.topnav a.active {      <!-- Add a color to the active/current link -->
   background-color: ;
-  color: ;
-}
+  color: ;}
+  
+    <!-- Responsive nav bar -->
+ @media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;  }
+  
+  .header {
+    float: none;}}
