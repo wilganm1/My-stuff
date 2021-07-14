@@ -1,9 +1,29 @@
-C++ tips:
-You can import librarys like in Python.
-#include <iostream>
-#include <cmath>     //include cmath library
-using std::cout    //Don't use the entire standard namespace.
-using std::cin     //Use this as a shortcut.
+----------------------------BASICS-------------------------------------------
+You can import libraries like in Python.
+Libraries include functions/objects that can be helpful
+#include <iostream>    //input/output library
+   std::cout <<        //send data to console
+   std:: cin >>        //let's user input data
+   std::endl           //puts in a new line
+#include <cmath>
+#include <cstdint>
+using namespace std   -Imports standard namespace library in total.
+   -doing this is not actually preferred. Always use std::.
+  -Namespaces, make your own functions. Use :: operator
+      namespace abc {   //creating the namespace abc
+         int func(param1, param2) {}}  //function within namespace
+     call the func function by using the namespace and ::
+            abc::func
+     calling :: within a namespace calls the global function
+
+  -Nested namespaces
+   You can shorthand a namespace inside another namespace
+       namespace foo::goo {} with is the same as
+         namespace foo{
+          namespace goo{int func(){}}}
+   -Namespace aliases let you save a namespace variable as a namespace
+       namespace active = foo::goo;   //
+         active::func();    //calling the foo:goo function
 
 -Variable Types
 int          -stores integers.
@@ -19,10 +39,10 @@ bool         -True or False vales. 1= true, 0 = false
 *      -multiplies values
 /      -divides values
 %      -modulus. Returnes division remainder
-++     -increases values by 1
---     -decreases values by 1
-&&     -and operator. compares things. Like and in Python
-||     -or operator. like in Python.
+++x    -increments by 1. changes value of it.
+--x    -decrements by 1
+&&,    -and operator. (Higher precedence than ||)
+||     -or operator. like in Python. (Lower precedence than &&)
 !      -logical not
 ::     -scope resolution operator
 >      -greater than. Returns true or false
@@ -35,64 +55,107 @@ bool         -True or False vales. 1= true, 0 = false
 -=     -subtracts from a variables
 *=     -multiplies a variable
 &=     -reference equals
+std::pow(x,y)  -Exponential. #include<cmath> to use. Equals x^y.
+
+ -funciton for exponentiation.
+     #include <cstdint>
+    std::int_fast64_t pow(int base, int exp){
+        std::int_fast64_t result{ 1 };
+        while (exp){
+            if (exp & 1)
+                result *= base;
+            exp >>= 1;
+            base *= base;}
+        return result;}
+
+ ** You need to divide floats otherwise C++ will give a rounded number **
+      Type cast integers into doubles when dividing
+     int x{7};
+     int y{4};
+     std:: cout << static_cast<double>(x) / y << endl;
 
 All comparison operators need to be in (). (~ > ~)
+  When comparing floats use epsilon. These check if they are "close enough"
 
--Syntax
- cout <<      -outputs values. works like print() in Python.
- <<           -"See out". Output
- >>           -"see in". Input
- ;            -ends statements in C++
+
+-Basic syntax
+;             -ends statements in C++. Need these in every statement
  \n           -inserts a new line.
  \n\n, endl   -creates a blank line
  //           -single-line comments. Ignored by compiler. Like # in Python.
  /* ~~ */     -multi-line comments. Like """ in Python.
  std::        -can bypass the standard namespace library.
+{}            -braces used for code in functions
 
--Variable creation
-  type identifier = value;
+-------------------------------VARIABLES-------------------------------------
+There are 4 ways to create a variable, You first
+ assign a variable then you initialize it with a value.;
+  data_type identifier;  //assignment of identifier to a data_type
+  data_type identifier = value; //copy initialization
+  data_type identifier( value );  //direct initialization
+  data_type identifier { value }; //brace/list initialization ***
     int myNum = 15;
-    cout << myNum;
- You can combine variables in one cout sentence
-        int myAge = 35;
-        cout << "I am " << myAge << " years old.";
+    cout << myNum; //outputs 15
+  List initialization is generally the best because any errors are addressed
+  where as the othere ones just auto-correct into a different value.
+   ******* Use list initalization whenever possible. ********
+
+    Doing empty braces {} results in value initialization, which is
+    usually zero - called zero initialization
+         int x {}   //outputs 0
+
+ You can combine variables in one cout sentence. Make sure to add space
+        int myName = Mitch;
+        int myAge = 25;
+        cout << "I'm " << myName << " and I'm " << myAge << " years old.";
  Add variables together:
     int x = 5;
-    int x = 6;
+    int y = 6;
     int sum = x + y;
     cout << sum;
 
- Declare multiple variables of the dame type.
-    int x = 4, y = 5, z = 20;
-    cout << x+y+z;
+ -Type cast. Converting one data type to another.
+      static_cast<new_data_type>(expression)
 
- Constants, unchanging variables
+ -Constants, unchanging variables
     const int myNum = 15;  -use const to make it a constant.
 
- Use e to represent powers of 10 for numbers
+ -constexpr, a compile-time constant. A variable is initialized at time
+ of compilation. It's a variable that's known when being built.
+   constexpr double gravity {9.8}  //this doesn't change and is known before
+
+ -Auto, have the computer assign variable type automatically.
+  Using auto can change the
+    auto variable = value;
+
+ -Use e to represent powers of 10 for numbers
     float f1 = 35e3;
 
- Reference operator. &
-  you can create another variable with the same value as another variable
-     string food = "Pizza";
-     string &meal = food;
+ -Reference operator. &
+   you can create another variable with the same value as another variable
+      string food = "Pizza";
+      string &meal = food;
 
-     cout << food << "\n";  // Outputs Pizza
-     cout << meal << "\n";  // Outputs Pizza
+      cout << food << "\n";  // Outputs Pizza
+      cout << meal << "\n";  // Outputs Pizza
 
- Memory address &. when you create a variable reference itself to get
-    its memory address
+ -Memory address &. references a variable itself to get it's memory address
   string food = "Pizza";
   cout << &food; // Outputs 0x6dfed4
 
- Pointer. stores memory address as its value. Needs a & in its value
-  string food = "Pizza";  // A food variable of type string
-  string* ptr = &food;   //NEED TO HAVE & SYMBOL
- Use *ptr to print out the OG value that is being referenced to. Without
- the * symbol it just prints out the memory of the referenced variable
-   cout << ptr << endl;  //outputs 0x61fde0
-   cout << *ptr;    //outputs Pizza
+ -Pointer. stores memory address as its value. Needs a & in its value
+   string food = "Pizza";  // A food variable of type string
+   string* ptr = &food;   //NEED TO HAVE & SYMBOL
+  Use *ptr to print out the OG value that is being referenced to. Without
+  the * symbol it just prints out the memory of the referenced variable
+    cout << ptr << endl;  //outputs 0x61fde0
+    cout << *ptr;    //outputs Pizza
 
+ -Saving functions as variables
+     //someFunction(){}
+     x{ someFunction() }
+
+      Don't use (x, ++x) as parameters because it causes error.
 
 -Memory allocation. You need to manually deallocate memory in C++.
   The new operator allocates memory to a variable
@@ -106,19 +169,22 @@ All comparison operators need to be in (). (~ > ~)
   delete operator deallocates memory.
      delete pointerVariable
 
--User inputs
- cin >>   -Use cin to get user input. Like input() in Python.
+-User inputs. Use std::cin
+ std::cin >>   -Use cin to get user input. Like input() in Python.
   int x;
-  cout << "Type a number: ";
-  cin >> x;  //Gets user input from keyboard
-  cout << "Your number is: " << x;
-If you want to save a line of text to cin use getline(cin, x)
-    string fullName;
-    cout << "Type your full name: ";
-    getline (cin, fullName);
-    cout << "Your name is: " << fullName;
+  std::cout << "Type a number: ";
+  std::cin >> x;  //Gets user input from keyboard. End of above statement.
+  std::cout << "Your number is: " << x;
+ **********************************************************
+ If you want to save a line of text to cin use:
+     std::getline(std::cin, std::ws, x).
+  std::ws ignores any whitespace in front of the first character
+      std::string fullName;
+      std::cout << "Type your full name: ";
+      std::getline (cin, fullName);
+      std::cout << "Your name is: " << fullName;
 
-Concatenate strings.
+-Concatenate strings.
 Use + to combine different strings. Add a space at end of first string " "
 or you can use .append() as the same thing.
 
@@ -133,8 +199,10 @@ or you can use .append() as the same thing.
     x.length()   -gets length of x
     max(x,y,..)  -returns the largest number of x or y
     max(x,y,..)  -returns the smallest number of x or y
+    .find(~)     -sees if ~ is in a string.
 
--Conditional statements
+----------------------------CONDITIONALS-------------------------------------
+-Conditional statements.
     if       -block of code is run if condition is true
     else     -runs if same condition is false
     else if  -runs if first condition is false
@@ -142,8 +210,8 @@ or you can use .append() as the same thing.
 
     if (condition1) {//block of code run if true
     } else if (condition2){//block of code if condition1 is false
-    } else { //block of code run if all are false
-    }
+    } else {} //block of code run if all are false
+
     Ternary ? operator as shortcut for if else
         (condition) ? expressionTrue : expressionFalse
       string result = (x < 18) ? "x is illegal." : "x is legal.";
@@ -156,11 +224,18 @@ or you can use .append() as the same thing.
       case y:
         // code block if y == expression
         break;
-      default:
+      default:}
         // code block if nothing == expression
-    }
     switch will evaluate an expression and will run the case that mathces it.
 
+ -Boolean conditionals.
+     bool b1;
+     if (b1) automatically evaluates to true
+     if (!b1) "not b1". Evaluates to false. "Not true."
+
+
+
+---------------------------------LOOPS---------------------------------------
 -Loops, for and while
  While loops will run forever unless a condition is met.
    int i = 0;
@@ -169,8 +244,8 @@ or you can use .append() as the same thing.
      i++;}   //increases i every time. Then restarts the loop
 
    Multiple conditions with OR. (this OR that)
-    C++ is different than python that if you want to say (this OR that) you need
-    to use the && operator because one is always set to true.
+    C++ is different than python that if you want to say (this OR that)
+    you need to use the && operator because one is always set to true.
      (condition 1 && condition 2)
       Example: while x < 5 OR y < 3
   -->   while (x < 5 && y < 3)
@@ -221,20 +296,26 @@ You can combine for, if, and break to stop a loop at a condition
   ...
 
 -Functions
-functions are blocks of code that do specific things. Only when called.
+ Functions are blocks of code that do specific things. Only when called.
+ They can return something specific using the return keyword. The
+ function needs a data type classifier if it returns something.
+ If it returns nothing use the void keword.
     void functionName(parameter1, parameter2) { //declaration
     //code to run. body of funtion    (definition)
     }   //void returns nothing
   To call a function you need to put it inside main() function
      int main() {
      functionName();
-     return 0;
-     }
+     return 0;}
+
+    if the returned value isn't used it's discarded.
+     YOU CAN ONLY HAVE ONE RETURN STATEMENT. C++ will only return the
+     first return statement, and not any others.
   functions must be DECLARED BEFORE they are called. But they have to
   be defined after the main function.
 
   Functions can have parameters that are variables within the function.
-  They can be anything. Just like python
+  They are blank variables that can be anything. Just like python
 
      void myFunction(string fname) {
       cout << fname << " Refsnes\n";}
@@ -244,6 +325,23 @@ functions are blocks of code that do specific things. Only when called.
       return 0;}
 
   **********YOU CANNOT DO NESTED FUNCTION IN C++************
+       int f1(){int f2(){}}  //Not allowed
+
+   If you want to return a functions value inside main(){} you need to
+    set a variable to the function itself, then print out that variable
+
+    int getValueFromUser(){  //function to get an input
+        std::cout << "Enter an integer: ";
+        int input{};
+        std::cin >> input;  //input a number
+        return input;}  //prints out the input
+    int main(){
+        int num {getValueFromUser()};  //This sets num equal to input
+        std::cout << num << " doubled is: " << num * 2 << '\n';
+        return 0;}
+  -Local scope
+  Local scope refers to variables defined inside a function. If x is
+  defined in a function it has no value outside it.
 
    -Default variable
    You can add a default variable using =. If the function has no argument
@@ -255,10 +353,17 @@ functions are blocks of code that do specific things. Only when called.
           myFunction("Sweden"); //outputs Sweden
           myFunction();    //outputs Norway
           return 0;}
-  -Return values. If you want the function to return something you have
-  to change the type of the function and enter what you want to return
-      int myFunction (int x, int y){
-      return y + x;}
+   -Forward declaration. You can declare a function but define it later.
+        int add(int x, int y); //declared but not defined
+        int main(){
+            std::cout << "The sum of 3 and 4 is: " << add(3, 4) << '\n'; // this works because we forward declared add() above
+            return 0;}
+        int add(int x, int y){  //defining the add function
+            return x + y;}
+
+  -Naming collisions. When functions in multiple files have same name.
+   Say you have the function myFunc in two separate file both with int
+   as a data type. Linking them would give an error.
 
   -Reference. You can swap variables using references sign &
       void swapNums(int &x, int &y) {
@@ -359,9 +464,6 @@ functions are blocks of code that do specific things. Only when called.
       nameOfStruct a;
         a.x = 20
 
-
-
-
 -Access specifiers.
 How member of a class can be accessed.
  -public    -members accessible from outside class
@@ -372,8 +474,7 @@ How member of a class can be accessed.
       public:    // Public access specifier
         int x;   // Public attribute
       private:   // Private access specifier
-        int y;   // Private attribute
-    };
+        int y;};   // Private attribute
 
     int main() {
       MyClass myObj;
@@ -442,5 +543,82 @@ Use fstream library to work with files
       cout << myText;}
      MyReadFile.close();   // Close the file
 
-
 -RAII
+
+-Preprocessors, includes, macros.
+ Preprocessors manipulate the text in each code file. Use a # directive
+ When you include a file you actually import the contents of the file.
+ You use #include nameOfFile like when you do #include <iostream> to
+ be able to use cout and cin.
+
+  -Macros. A rule that defines how input text is converted into replacement
+  output text. They are shortcuts.
+    #define identifier
+
+  -Conditional compilation. specify if something will compile. They
+    They are ifdef and ifndef. They both end in endif
+       int main() {
+         #ifdef X //if X is defined, the code is compiled
+           //code to run
+         #endif
+         return 0;}
+       int main() {
+         #ifndef Y //if Y is NOT defined, code runs
+           //code to run
+         #endif
+         return 0;}
+    Also use if 0 to stop things from compiling
+         #if 0
+           //whatever code
+         #endif
+-Header files. forward declaring functions
+ These files are at top of file May have a .h or .hpp extension.
+    #incldue "file_here.h"
+
+       *****USE "" FOR FILES YOU WRITE YOURSELF*****
+
+ You can write your own headers in two parts, a guard and the content
+  If you pair a header file with a code file use the same base name:
+      add.h & add.cpp (add)
+
+   -Guards. Stop duplicating same function from different sources
+      #ifndef file_name
+      #define file_name
+        //declarations
+      #endif
+
+  -Logging. Logging is sending debugging information to a file that
+  records events in software called a log file.
+        #include <plog/Log.h>
+        #include <plog.Initializers/RollingFileInitializer.h>
+
+-Bits and bytes. All data has memory, a combination of 1's and 0's called
+ bits. 8 bits = 1 byte.
+     -sizeof operator to see how large some data types are.
+ signed integers. 4 types of integers
+   short s;
+   int i;
+   long l;
+   long long ll;
+
+ Floating point numbers. 3 different types.
+    float f = 4 bytes
+    double d = 8 bytes
+    long double ld = 8 bytes
+
+ Inf. Used for infinity. NaN, stands for Not a Number
+    double posinf // positive infinity
+    double neginf // negative infinity
+    double nan
+
+ -Boolean prints 0 for false or 1 for ture. Use std::boolalpha to
+    print out either true or false.
+    std::cout << std::boolalpha
+  You can assign an integer to a bool variable. Setting it equal to 0
+   prints out false, and other numbers evaluate to true.
+
+  To input a bool as true or false use std::boolalpha
+   bool b{}
+   std::cin >> std:: boolalpha;
+   std:: cin >> b;
+
