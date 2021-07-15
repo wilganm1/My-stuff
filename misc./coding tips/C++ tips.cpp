@@ -1,14 +1,17 @@
-----------------------------BASICS-------------------------------------------
+------------------------------BASICS-----------------------------------------
 You can import libraries like in Python.
 Libraries include functions/objects that can be helpful
 #include <iostream>    //input/output library
-   std::cout <<        //send data to console
-   std:: cin >>        //let's user input data
-   std::endl           //puts in a new line
-#include <cmath>
+#include <cmath>     //for std::sqrt()
 #include <cstdint>
-using namespace std   -Imports standard namespace library in total.
-   -doing this is not actually preferred. Always use std::.
+#include <cassert>   //for assert() true unless a bug in program
+#include <vector>    //for vector
+#include <cstdlib> // for std::rand() and std::srand()
+
+To add external libraries, download them, click on Settings up top,
+click on Compiler, click on Linker Settings and add the path.
+#include "library.h"
+
   -Namespaces, make your own functions. Use :: operator
       namespace abc {   //creating the namespace abc
          int func(param1, param2) {}}  //function within namespace
@@ -25,12 +28,49 @@ using namespace std   -Imports standard namespace library in total.
        namespace active = foo::goo;   //
          active::func();    //calling the foo:goo function
 
+-Basic syntax
+;            -ends statements in C++. Need these in every statement
+\n           -inserts a new line.
+\n\n, endl   -creates a blank line
+\t           -horizontal tab
+\?           -question mark
+//           -single-line comments. Ignored by compiler. Like # in Python.
+/* ~~ */     -multi-line comments. Like """ in Python.
+{}           -braces used for code in functions
+
+
 -Variable Types
 int          -stores integers.
 double,float -stores decimal numbers.
 char         -stores single characters only. Uses ''
 string       -stores text lines. Uses "".
 bool         -True or False vales. 1= true, 0 = false
+
+Convert one type to another using static_cast
+     static_cast<new type>(x)
+** You need to divide floats otherwise C++ will give a rounded number **
+      Type cast integers into doubles when dividing
+         int x{7};
+         int y{4};
+         std:: cout << static_cast<double>(x) / y << endl;
+
+-Concatenate strings.
+Use + to combine different strings. Add a space at end of first string " "
+or you can use .append() as the same thing.
+        std::cout << "My " + "name " + "is "
+
+-Indexing strings []
+ Can access the element at a certain posistiom. 0-indexed like Python.
+    string myString = "Hello";
+    cout << myString[1];
+    //Outputs e
+-Methods
+   Methods are built-in functions like python.
+    x.append(y)  -concatenates y to end of x
+    x.length()   -gets length of x
+    max(x,y,..)  -returns the largest number of x or y
+    max(x,y,..)  -returns the smallest number of x or y
+    .find(~)     -sees if ~ is in a string.
 
 -Operators
 =      -assigns values to variables
@@ -68,24 +108,44 @@ std::pow(x,y)  -Exponential. #include<cmath> to use. Equals x^y.
             base *= base;}
         return result;}
 
- ** You need to divide floats otherwise C++ will give a rounded number **
-      Type cast integers into doubles when dividing
-     int x{7};
-     int y{4};
-     std:: cout << static_cast<double>(x) / y << endl;
+-Arrays/lists. Uses {} braces
+   dataType arrayName[x]. x = how long it is. Need to be same data type
+   int myNum[3] = {10,20,30}
+ Change the value of an elem in a certain index the same way in python.
+   cars[0] = "New value"
 
 All comparison operators need to be in (). (~ > ~)
   When comparing floats use epsilon. These check if they are "close enough"
 
+----------------------------USER INPUTS--------------------------------------
+ cin >>    -Use std::cin to get user input. Like input() in Python.
+   int x;
+   std::cout << "Type a number: ";
+   std::cin >> x;  //Gets user input from keyboard.
+   std::cout << "Your number is: " << x;
 
--Basic syntax
-;             -ends statements in C++. Need these in every statement
- \n           -inserts a new line.
- \n\n, endl   -creates a blank line
- //           -single-line comments. Ignored by compiler. Like # in Python.
- /* ~~ */     -multi-line comments. Like """ in Python.
- std::        -can bypass the standard namespace library.
-{}            -braces used for code in functions
+.ignore   -ignores everything up to break line.
+
+ getline(std::cin, std::ws, x).  -input strings of text.
+  -ws      -ignores leading whitespace
+      std::string fullName;
+      std::cout << "Type your full name: ";
+      std::getline (cin, fullName);
+      std::cout << "Your name is: " << fullName;
+
+ buffer   -holds user input
+
+ Errors. Have an error pass if a condition is not met.
+  std::cerr       -throws an error.
+    if (x < 0) {
+     std::cerr << "Error";}
+
+ Assertion. Something is true unless something is wrong.
+   #include <cassert>
+     assert(gravity > 0.0)   -stops the program and gives an error
+
+ Static assert. An assertion that runs at compile time if false.
+    static_assert(condition, diganostic_message)
 
 -------------------------------VARIABLES-------------------------------------
 There are 4 ways to create a variable, You first
@@ -114,19 +174,61 @@ There are 4 ways to create a variable, You first
     int sum = x + y;
     cout << sum;
 
+ -Global variables are defined outside functions.
+    use g or g_ to help define global variables
+
  -Type cast. Converting one data type to another.
       static_cast<new_data_type>(expression)
 
  -Constants, unchanging variables
-    const int myNum = 15;  -use const to make it a constant.
+     const int myNum = 15;  -use const to make it a constant.
 
  -constexpr, a compile-time constant. A variable is initialized at time
- of compilation. It's a variable that's known when being built.
+    of compilation. It's a variable that's known when being built.
    constexpr double gravity {9.8}  //this doesn't change and is known before
 
  -Auto, have the computer assign variable type automatically.
-  Using auto can change the
-    auto variable = value;
+        auto variable = value;
+     Auto variables must be initialized or it returns an error
+
+ -Signed and unsigned numbers.
+    -unsigned   -Can only hold positve numbers. > 0
+    -signed     -can be negative or positive.
+
+
+ -Aliases. Set a name equal to a data_type
+     using name_of_alias = data_type;
+       using distance_t = double
+    distance_t milesToDestination{ 3.4 } //a double variable
+
+ -Typedef. same as aliases with using keyword
+     typedef data_type variable_name;
+       typedef long miles_t;
+
+ -Enumerated types
+     Enumerated types are data types the user can create
+        enum enumName {
+            enumerator1,  //values called enumerator
+            enumerator2,
+            ...};
+     Different enum can't have the same enumerator names.
+   Each enumerator is auto-assigned an integer value based on position.
+       enum enumName {
+            enumerator1,   //assigned 0
+            enumerator2};  //assigned 1
+       enumName varName{enumerator1};
+       std::cout << x //outputs 0
+
+   Inputting enumerators. Use type casting
+        int inputColor{};
+        std::cin >> inputColor;
+        Color color { static_cast<Color>(inputColor)};
+
+   Printing enumerator's values
+     enum Color {
+        color_black};
+     Color color{};
+     std::cout <<
 
  -Use e to represent powers of 10 for numbers
     float f1 = 35e3;
@@ -169,37 +271,12 @@ There are 4 ways to create a variable, You first
   delete operator deallocates memory.
      delete pointerVariable
 
--User inputs. Use std::cin
- std::cin >>   -Use cin to get user input. Like input() in Python.
-  int x;
-  std::cout << "Type a number: ";
-  std::cin >> x;  //Gets user input from keyboard. End of above statement.
-  std::cout << "Your number is: " << x;
- **********************************************************
- If you want to save a line of text to cin use:
-     std::getline(std::cin, std::ws, x).
-  std::ws ignores any whitespace in front of the first character
-      std::string fullName;
-      std::cout << "Type your full name: ";
-      std::getline (cin, fullName);
-      std::cout << "Your name is: " << fullName;
-
--Concatenate strings.
-Use + to combine different strings. Add a space at end of first string " "
-or you can use .append() as the same thing.
-
--Indexing strings []
- Can access the element at a certain posistiom. 0-indexed like Python.
-    string myString = "Hello";
-    cout << myString[1];
-    //Outputs e
--Methods
-    Methods are built-in functions like python.
-    x.append(y)  -concatenates y to end of x
-    x.length()   -gets length of x
-    max(x,y,..)  -returns the largest number of x or y
-    max(x,y,..)  -returns the smallest number of x or y
-    .find(~)     -sees if ~ is in a string.
+  -Linkage.
+    Internal linkage is when an identifier can be seen and used within a
+    single file, but not accessible from other files.
+    Global variables with interanl inkage are called internal variables.
+     Use static to make non-const global variable
+        static int g_x;
 
 ----------------------------CONDITIONALS-------------------------------------
 -Conditional statements.
@@ -216,7 +293,7 @@ or you can use .append() as the same thing.
         (condition) ? expressionTrue : expressionFalse
       string result = (x < 18) ? "x is illegal." : "x is legal.";
 
-    -Switch syntax. Basically a giant if, else if layout.
+  -Switch syntax. Basically a giant if, else layout.
     switch(expression) {    //loops through cases
       case x:
         // code block if x == expression
@@ -228,12 +305,34 @@ or you can use .append() as the same thing.
         // code block if nothing == expression
     switch will evaluate an expression and will run the case that mathces it.
 
+    -Fallthroughs. Starting at one case and going until told to stop.
+        case x:
+            [[fallthrough];   //goes to case y
+        case y:
+
  -Boolean conditionals.
      bool b1;
      if (b1) automatically evaluates to true
      if (!b1) "not b1". Evaluates to false. "Not true."
 
+ -Goto statements. Allows you to jump to another spot in the code
+     the jump is started at a goto statement and goes to a statement label
+      Kinda like an manual restart for a loop
+          int main(){
+          double x{};
+        tryAgain:  //label statement that is jumped to
+            std:: cin >> x;
+            if (x < 0.0 )
+            goto tryAgain;}  //jumps to label statement
 
+    -Implement a while loop that restarts if condition not met
+        while(1){
+            int x{};
+            std::cout << "Do something: ";
+            std::cin >> x;
+            if (x > 5){
+                break}
+            else {std::cout << "Enter value smaller than 5." << endl;}}}
 
 ---------------------------------LOOPS---------------------------------------
 -Loops, for and while
@@ -250,39 +349,33 @@ or you can use .append() as the same thing.
       Example: while x < 5 OR y < 3
   -->   while (x < 5 && y < 3)
 
-
  Do/While loop
      will run code block once, checks if condition is true, and will continue
      to loop if the condition is true.
      do {
        // code block to be executed
-     }
+       }
      while (condition);  //runs if do == true
 
-For loop. More control over loop. (starting; while condition; change)
- for (int i = 0; i < 5; i++) {
-   cout << i << "\n";}
+    If you want an infinite loop use while (true)
 
-You can combine for, if, and break to stop a loop at a condition
- for (int i = 0; i < 10; i++) {
-   if (i == 4) {
-     break;     //stops the loop entirely
-   }
-   cout << i << "\n";}
+-For loop. More control over loop. (starting; while condition; change)
+  for (int i = 0; i < 5; i++) {
+    cout << i << "\n";}
 
-  continue. skips the iteraion if a condition is met. goes to the next iteration
- for (int i = 0; i < 10; i++) {
-   if (i == 4) {
-     continue;
-   }
-   cout << i << "\n";}
+ You can combine for, if, and break to stop a loop at a condition
+  for (int i = 0; i < 10; i++) {
+    if (i == 4) {
+      break;     //stops the loop entirely
+    }
+    cout << i << "\n";}
 
--Arrays/lists. Uses {}
- create arrays using dataType arrayName[x]. x = how long it is. Need to be
- the same elem type.
- int myNum[3] = {10,20,30}
- change the value of an elem in a certain index the same way in python.
- cars[0] = "New value"
+  continue. skips the current iteraion if a condition is met.
+  Goes to the next iteration
+     for (int i = 0; i < 10; i++) {
+       if (i == 4) {
+         continue;}
+       cout << i << "\n";}
 
  you can loop through an arryay.
  string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
@@ -295,14 +388,16 @@ You can combine for, if, and break to stop a loop at a condition
   cars[1] = "BMW";
   ...
 
--Functions
+----------------------------FUNCTIONS--------------------------------------
  Functions are blocks of code that do specific things. Only when called.
  They can return something specific using the return keyword. The
- function needs a data type classifier if it returns something.
+ function needs a data type classifier if it returns that data type.
+    data_type functionName(parameters){ //declaration
+    //code to run. body of function    (definition)
+            return data;}
+
  If it returns nothing use the void keword.
-    void functionName(parameter1, parameter2) { //declaration
-    //code to run. body of funtion    (definition)
-    }   //void returns nothing
+    void functionName(parameter1, parameter2) {
   To call a function you need to put it inside main() function
      int main() {
      functionName();
@@ -343,7 +438,7 @@ You can combine for, if, and break to stop a loop at a condition
   Local scope refers to variables defined inside a function. If x is
   defined in a function it has no value outside it.
 
-   -Default variable
+   -Default variable, rightmost variable
    You can add a default variable using =. If the function has no argument
    when it's called it used the default variables.
         void myFunction(string country = "Norway") {
@@ -382,13 +477,22 @@ You can combine for, if, and break to stop a loop at a condition
       return 0;}
 
   -Function overloading
-   Multiple functions can have the same name with different parameters.
-      int plusFunc(int x, int y){
-        return x + y;}
-      double plusFunc(double x, double y){
-        return x + y;}
+    Multiple functions can have the same name with different parameters.
+       int plusFunc(int x, int y){
+         return x + y;}
+       double plusFunc(double x, double y){
+         return x + y;}
 
--Classes and Objects
+  -Templates. Build functions using a specific form
+          template <typename T> //template parameter declaration
+          T funcName(T x, T y) {} //use T,U,V,...etc to name template types
+     Calling a function from the template is called function template
+     instantiation.
+           funcName<int>(x,y)  //instantiation of function
+     The function instantiated looks like this:
+         int max<int>(in x, int y) //generated from max<int>(int, int)
+
+-------------------------CLASSES & OBJECTS----------------------------------
  A class is a blueprint of objects. Think class as car and object as Volvo
  You can create multiple objects
      class Car {
@@ -622,3 +726,28 @@ Use fstream library to work with files
    std::cin >> std:: boolalpha;
    std:: cin >> b;
 
+-Halts.
+Halts will stop the program entirely.
+ exit() will explicitly end the program.
+   int main(){
+       std::exit(0);} //terminates the program at that point.
+       //rest of code
+ atexit() will specify a function to be called when program is exited.
+   int main(){
+       std::atexit(cleanup());}
+
+ abort() aborts abnormally do to unusual error like dividing by 0
+    std::abort();
+
+-Random number generation
+ a pseudo-random number generator (PRNG) takes a starting number (seed)
+ and does math to it to get a new different number. Then repeats the math.
+ Use a third-party library for random numbers
+
+ #include "random.hpp"
+ using Random = effolkronium::random_static;
+ int main(){
+ 	 std::cout << Random::get(1, 6) << '\n';
+ 	 std::cout << Random::get(1, 10) << '\n';
+ 	 std::cout << Random::get(1, 20) << '\n';
+ 	 return 0;}
