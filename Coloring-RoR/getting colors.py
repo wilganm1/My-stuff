@@ -18,7 +18,7 @@ they appear. A pie graph would probably be best.
 possible
 """
 
-image = cv2.imread('C:/Users/WilganZMT/Documents/Coding/Python/Coloring_RoR/Characters/Sasaki Kojiro/color.png')
+image = cv2.imread('~~~~.png')
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 image = np.array(image, dtype = int)
 plt.imshow(image)
