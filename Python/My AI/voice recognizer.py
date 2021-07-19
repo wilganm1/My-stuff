@@ -55,10 +55,15 @@ N = SAMPLE_RATE * DURATION
 yf = rfft(inputs)
 xf = rfftfreq(N, 1 / SAMPLE_RATE)
 
+# !!!!!!!!!!!!!!!!!!!!!
+  """running xf now crashes my computer
+  I have no idea why, but it just does
+  I can't finish the project. Maybe 
+  because I installed CUDA/NVIDIA on
+  my computer. """
+ 
 # My natural range is A#3 - C4.
      #233.08 - 261.63
-
-(233.08+261.63)/2
 
 plt.plot(xf, np.abs(yf))
 #Where the middle ground is
@@ -76,9 +81,7 @@ an imaginary number like square root of -1.
 All I have to do is make a threshold an arbitrary
 threshold and automatically get rid of any xf values
 that don't make it. 
-
 """
-
 
 #Now get the unique frequencies
 
@@ -107,7 +110,6 @@ My recording had over 80000 numbers. They definitly
 have my vocal range in them. I need to find a way to 
 distinquish when I talk vs when I don't.
 Maybe based on intensity and volume
-
 """
 
 #inputs = unique frequencies list
