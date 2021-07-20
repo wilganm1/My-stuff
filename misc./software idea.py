@@ -1,6 +1,6 @@
 """  Idea to combine computer programming and biology, mainly gene therapy & CRISPR technology.
 
-    Build software in C++/Java or Python that will dislpay basically display how certain genes build the body of organisms.
+    Build software in C++/Java or Python that will basically display how certain genes build the body of organisms.
     
     I got the idea from a black & white cat I saw on a YouTube thumbnail. It was all black on most of its body but the feet and legs are white, along with
     certain part of it's face. https://www.youtube.com/watch?v=3w4roG3Gjro
