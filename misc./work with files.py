@@ -11,12 +11,17 @@ if os.path.exists("nameoffile.txt"):
 else:
     print("The file does not exist")
 
+""" Save to a specific file """
+path = "Insert path here"
+file_name = "nameoffile.txt"
+os.path.join(path, file_name)
 
 """ Create new file """
 file = open("nameOfFile.txt", "x") #x creates file
 
 """ Overwrite/create file """
 file = open("fileName.txt", "w")
+file.write("information in file")
 
 """ Open existing file """ #default
 file = open("file_name.extension", 'r')
@@ -40,3 +45,5 @@ file.close()
 
 #delete file
 os.remove("filename.txt")
+#delete whole folder
+os.rmdir("folderName")
