@@ -11,11 +11,6 @@ if os.path.exists(".\\nameoffile.txt"):
 else:
     print("The file does not exist")
 
-""" Save to a specific file """
-path = "Insert path here"
-file_name = "nameoffile.txt"
-os.path.join(path, file_name)
-
 """ Create new file """
 with open("nameOfFile.txt", "x") as file:
     #stuff here. 
@@ -65,6 +60,11 @@ os.rename('name', 'new_name')
 from pathlib import Path
 data_file = Path('filename')
 data_file.rename('newfilename')
+
+""" Save to a specific directory """
+path = "Insert path here"
+file_name = "nameoffile.txt"
+os.path.join(path, file_name)
 
 """ Archiving ZIP and TAR """
 #Read ZIP files
