@@ -1,11 +1,10 @@
-"""Want to make a program that can auto-write 
-music scales of any note in the 7 standard
-musical scales"""
+"""Want to make a program that can auto-write music scales of any note in the 7 standard musical scales"""
     
 def get_music():
-    
-#I want it so if you input a wrong note or scale it will loop back until you input a correct one
-    
+    """
+    I want it so if you input a wrong note or scale it will loop 
+    back until you input a correct one
+    """
     while True:       #Main loop that encompasses everything. Starting point at every loop
         while True:      #Loop that checks if a correct note is entered
             global notes
