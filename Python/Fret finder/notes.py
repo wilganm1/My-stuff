@@ -12,7 +12,7 @@ def get_notes():
          r = 0 #The index of the note we pick that starts a scale
          w = 2 #W & h are called "steps", or how many frets away one note is from another
          h = 1 #A whole-step, w, is 2 frets, and a half-step, h, is one fret. 
-         wh= 3 #A whole-half step is 3 frets. This is used in unorthodox scales.
+         m = 3 #A minor third, a whole-half step is 3 frets. This is used in unorthodox scales.
     
          scales = {'Major' : [r,w,w,h,w,w,w],
               'Minor' : [r,w,h,w,w,h,w],
@@ -21,10 +21,10 @@ def get_notes():
               'Mixolydian' : [r,w,w,h,w,w,h],
               'Dorian' : [r,w,h,w,w,w,h],
               'Locrian' : [r,h,w,w,h,w,w],
-              'Harmonic Minor' : [r,w,h,w,w,h,wh,h],
+              'Harmonic Minor' : [r,w,h,w,w,h,m,h],
               'Melodic Minor' : [r,w,h,w,w,w,w,h],
-              'Major Pentatonic' : [r,w,w,wh,w,wh],
-              'Minor Pentatonic' : [r,wh,w,w,wh,w]}
+              'Major Pentatonic' : [r,w,w,m,w,m],
+              'Minor Pentatonic' : [r,m,w,w,m,w]}
             
          scale_type = str(input("Enter one of the following scales (not case-sensitive):\nMajor, Minor, Phrygian, Lydian, Mixolydian, Dorian, Locrian\n: "))
         
