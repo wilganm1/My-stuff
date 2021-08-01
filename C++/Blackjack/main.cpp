@@ -39,7 +39,7 @@ int main() {
                 std::cout << "Hit or stay? ";
                 std::string choice{};
                 std::cin >> choice;
-                if(choice == "hit"){
+                if(choice == "hit" || choice == "Hit"){
                     player_cards += Random::get(1,11);
                     std::cout << "Player: " << player_cards << "\n";
                     std::cout << "Dealer: " << dealer_cards << "\n\n";}
