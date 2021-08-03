@@ -1,0 +1,22 @@
+   <!-- HTML -->
+<table id="table1">
+  <tr>       <!-- rows -->
+    <th> </th>   <!-- headings. Automatically bold. -->
+  </tr>
+  <tr>
+    <td> </td>   <!-- Add in rowspan ='number' to make the data take up multiple rows -->
+  </tr>
+  <tr> 
+    <td> </td>    <!-- data entries -->
+    <td> </td>
+  </tr>
+</table>
+
+<style>
+   /* CSS */
+table, td, th {
+  border: 1px solid black;}
+  
+#table1 {
+ border-collapse: collapse;   <!-- collapse makes one border if multiple borders intersect -->
+</style>
