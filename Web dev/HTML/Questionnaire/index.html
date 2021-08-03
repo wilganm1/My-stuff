@@ -1,0 +1,87 @@
+<!DOCTYPE html>  
+<html>
+<head>
+	<title>Fake Questionnaire</title>
+	<link rel="stylesheet" type="text/css" href="questions.css">
+</head>
+<body>
+	<div id="container">
+<section id="page">
+<form method="POST">
+	<div id="header">
+	<h1 id="h1">Take This Questionnaire</h1>
+	<h3>It's Stupid But It's Pracitce</h3>
+	<h3>It asks questions based on songs</h3>
+	</div>
+	<hr>
+<section class="names">
+	<label for="name" id="q1">What Is My Name?</label><br>
+	<input type="text" name="name" id="name"><br>
+</section>
+<hr>
+
+<section class="feels" id="feels">
+	<label for="feeling" id="q2">How are you feeling now?</label>
+	<select name="feeling" id="feeling"><br>
+		<option value="happy">(Select)</option>
+		<option value="happy">Happy?</option>
+		<option value="malicious">Malicious</option>
+		<option value="nihilistic">Nihilistic</option>
+		<option value="overjoyed">Overjoyed</option>
+		<option value="confuzzled">Confuzzled</option></select>
+</section>
+<hr>
+<section class="coffees">
+	<span id="q3">What is your favorite coffe brand?</span><br>
+	<label for="starbucks">Starbucks</label>
+	<input type="radio" name="coffee" value="starbucks" id="starbucks">
+	<label for="duncan hills">Duncan Hills</label>
+	<input type="radio" name="coffee" value="duncan hills" id="duncan hills">
+	<label for="dunkin' donuts">Dunkin' Donuts</label>
+	<input type="radio" name="coffee" value="dunkin' donuts" id="dunkin' donuts">
+</section>
+<hr>
+<section class="Identity">
+		<span id="q4">What Are You?</span><br>
+	<label for="truth">I am your spoken truth, I am the lies in you</label>
+	<input type="checkbox" name="truth" value="truth"> <br>
+	<label for="dream">I'm your dream, make you real I'm your eyes when you must steal</label>
+	<input type="checkbox" name="dream" value="dream"><br>
+	<label for="vengeful">I'm the hand of God, I'm the dark messiah. I'm the Vengeful One.</label>
+	<input type="checkbox" name="vengeful" value="vengeful"><br>
+	<label for="rocker">I'm an Earth rocker</label>
+	<input type="checkbox" name="rocker" value="rocker"><br>
+	<label for="beast">I'm the one that you wanted, (hey yeah) I'm your superbeast</label>
+	<input type="checkbox" name="beast" value="beast"><br>
+	<label for="table">I am the table. I am the table! I AM! I AM! I AM!! I AM THE TABLE!!!</label>
+	<input type="checkbox" name="table" value="table"><br>
+	<label for="standing">I am the one, who lost control. I am the one, who sold his soul. <br> I am the one, who'll be the last man standing.</label>
+	<input type="checkbox" name="standing" value="standing"><br>
+</section>
+<hr>
+<section class="range">
+	<label for="steps" id="q5">How many steps from Hell are we?</label><br>
+	<span>0</span>
+	<input type="range" name="steps" min="0" max="2" step="1">
+	<span>2</span>
+</section>
+<hr>
+
+<section class="textbox">
+	<label for="textarea" id="q6">Leave a stupid song question example here:</label><br>
+	<textarea id="textarea" name="textarea" rows="4" cols="50"></textarea>
+		<br>
+	<hr>
+</section>
+
+<div id="submit">
+	<input type="submit" name="submit">
+</div>
+<div id="footer">
+	Copyright: &copy: Myu 2020.
+</div>
+</section>
+</form>
+	</div>
+</body>
+</html>
