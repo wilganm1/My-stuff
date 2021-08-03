@@ -1,21 +1,21 @@
 #include <iostream>
 #include "random.hpp"
-using Random = effolkronium::random_static;
+using Random = effolkronium::random_static;     //this is to use Random::get to get a random number
 
-int goal{};
+int goal{};           //zero-initialize the goal
 void ignoreLine(){
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');}
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');}  //this function erases and ignores cin input for invalid input
 
 int main() {
-    while(true){
-        int player_cards{};
-        int dealer_cards{};
-        int player_score{};
+    while(true){                  //loop that will restart if retry is yes down below.
+        int player_cards{};       //the hand for the player
+        int dealer_cards{};       //the hand for the dealer
+        int player_score{};     
         int dealer_score{};
         while (true){
-            std::cout << "Enter goal: ";
+            std::cout << "Enter goal: ";   
             std::cin >> goal;
-            if (std::cin.fail()){  //will catch if x is not a double
+            if (std::cin.fail()){  //will catch if goal is not an integer
                 std::cout << "Not an number. Try again." << "\n";
                 std::cin.clear();  //will erase the cin input
                 ignoreLine();}     //removes bad input. Loop restarts
@@ -25,11 +25,11 @@ int main() {
                 ignoreLine();}
             else {break;};}
 
-        while(player_score < goal && dealer_score < goal){
+        while(player_score < goal && dealer_score < goal){   //This loop will reset the hands after every point.
             player_cards = 0;
             dealer_cards = 0;
             player_cards += Random::get(1,11);
-            player_cards += Random::get(1,11);
+            player_cards += Random::get(1,11);          //adds two cards to hands
             dealer_cards += Random::get(1,11);
             dealer_cards += Random::get(1,11);
             std::cout << "Player: " << player_cards << "\n";
