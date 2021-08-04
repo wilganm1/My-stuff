@@ -60,7 +60,17 @@ xf = rfftfreq(N, 1 / SAMPLE_RATE)
   I have no idea why, but it just does
   I can't finish the project. Maybe 
   because I installed CUDA/NVIDIA on
-  my computer. """
+  my computer.
+  
+  UPDATE: It turns out it was a memory issue. 
+  I deleted all the NVIDIA stuff and the 
+  computer stopped crashing, but now prints
+  this error:
+  Unable to allocate 14.5 GiB for an array
+  with shape (3889620001,) and data type int32.
+  
+  Will have to solve that.
+  """
  
 # My natural range is A#3 - C4.
      #233.08 - 261.63
@@ -86,7 +96,6 @@ that don't make it.
 #Now get the unique frequencies
 
 """ Step 3: Setting up the network
-This network will be small so it can run fast.
 It will be a binary classification network with
 0 hidden layers and 1 output neuron. I will
 use Binary Cross Entropy as my loss function
