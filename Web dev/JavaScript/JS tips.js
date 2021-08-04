@@ -4,7 +4,7 @@
 To use JavaScript code in an HTML file it needs to be within
     <script>
      ~~~~~~~~~~~~
-    </script>/
+    </script>/;
 
 Statements. Statements are lines of code that are read.
 They must end with a semicolon.;
@@ -17,9 +17,9 @@ Syntax:
 {}          -code block for closed off code
 
 Data types:
-"String"			-read as words. Requires "" or ''
-Numeric			-number values
-Boolean   		-whether something is true or not.
+"String"     -read as words. Requires "" or ''
+Numeric	     -number values
+Boolean      -whether something is true or false.
 objects      -like dictionaries in Python
 
 typeof        -returns what type of data a piece of code is
@@ -32,25 +32,24 @@ String(x)      -turns x into a string
  x.toString()  
 
 Arithmatic operators:
-	+					-Adds two variables
+  +	    -Adds two variables
   -         -Subtracts
-	/					-Divides variables
+  /	    -Divides variables
   *         -multiplies
-	>=					-Greater than or equal too
-	<=					-Less than or equal
-	!=					-not equal to
-  ==          -Is equal to. Causes coercion. Makes strings numbers
-	===					-Is equal to. Does not cause coercion
-  !         -Is not.
-	%					-Remainder Whats left over after one number goes into 
-						 another number fully. Example: 7 % 3 = 1.
-             3 goes into 7 two times with a left-over of 1.
-	+=				-Adds values to a variable
-	++				-Increases value of variable by 1
-	--				-Decreases value of variable by 1 
+  >=	    -Greater than or equal too
+  <=	    -Less than or equal
+  !=	    -not equal to
+  ==        -Is equal to. Causes coercion. Makes strings numbers
+  ===	    -Is equal to. Does not cause coercion
+  !         -Is not. !true == false
+  %	    -Remainder Whats left over after one number goes into 
+	      another number fully. Example: 7 % 3 = 1.
+              3 goes into 7 two times with a left-over of 1.
+  +=	    -Adds values to a variable
+  ++	    -Increases value of variable by 1
+  --	    -Decreases value of variable by 1 
   &&        -logical AND operator 
   ||        -logical OR operator
-  Add a comment with //.   //This is ignored by machine
 
 console.log();         -Prints data onto console
 document.write()       -writes characters onto document
@@ -58,7 +57,6 @@ document.write()       -writes characters onto document
 
 console.log('Go Fu ' + 'ck Yourself');
 --> Go Fuck Yourself
-
 
 -Numbers
  Nan         -not a number. 
@@ -85,8 +83,8 @@ Use words var, let, and const
       --> 'pizza'
     let meal = 'fries'
       --> 'fries'
-    Using let prevents variables chaning across scopes
-    Cannot redeclare variables within the same block using let
+  Using let prevents variables chaning across scopes
+  Cannot redeclare variables within the same block using let
 
  const variableName = whatever  //A variable that cant be changed.
     Object.freeze(myName)         //prevents myName from being altered
@@ -140,10 +138,8 @@ Spread operator [...~~~]      -Copies an entire array
 -------------------------------Methods------------------------------------
 Methods are built-in fucntions. Use by adding a . after a variable/instance
 
-Format:   methodName(argument) {
-	property(argument)}
-
-	addNew(new) {this._new.push(new)}
+Syntax:
+	whatever.methodName(parameters)
 	
 Example:
 	console.log('hello'.toUpperCase());  -Uppcase every letter
@@ -153,8 +149,8 @@ Example:
  .getMonth()         -gets current month.
  .toUpperCase()      -Uppercases all letters
  .toLowerCase()      -lowercases all letters
- .random() 		   	   -generates random number.
- .length()		   	   -How long a list/array is.
+ .random() 		-generates random number.
+ .length()		-How long a list/array is.
  .indexOf("")        -find the index of a variable or string
  .replace(X, Y)      -replaces X with Y
  .pop()              -removes last position of an array
@@ -188,27 +184,29 @@ If, else if, else statements 		//if something happens, do something.
     		      //'We can eat later!'
 
 Operators.  Can add additional conditions
- &&			-This AND that are true
- ||			-This is true OR that is true
- !		  -NOT.
+ &&	-This AND that are true
+ ||	-This is true OR that is true
+ !	-NOT.
  !=     -not equal to.
-    Example:  let day = 'Saturday';
-    			if(day === 'Saturday' || day === 'Sunday') 
-    			{console.log('Enjoy the weekend!');
-    		  } else {console.log('Do some work.');}
-    		   --> Enjoy the weekend;
+ 
+   Example:  
+    let day = 'Saturday';
+	if(day === 'Saturday' || day === 'Sunday') 
+	{console.log('Enjoy the weekend!');
+  	} else {console.log('Do some work.');}
+   	 --> Enjoy the weekend;
 
-    		  let excited = true;
-    		  console.log(!excited);
-    		   --> false
+  let excited = true;
+  console.log(!excited);
+   --> false
 
-break statement. Use to jump out of a loop;
+Break statement. Use to jump out of a loop;
   for (let i = 0; i < 10; i++) {
     if (i === 3) { break; }
     text += "The number is " + i + "<br>";}
       //prints out numbers 0 to 2
 
-continue statement.;     breaks current iteration of loop. Like C++;
+Continue statement.  breaks current iteration of loop. Like C++;
   for (let i = 0; i < 10; i++) {
     if (i === 3) { continue; }
     text += "The number is " + i + "<br>";} 
@@ -227,7 +225,7 @@ condition that is checked for.;
     case x:              //if condition == x this will run
       //code to run;
       break;
-    case y:              //
+    case y:              //if condition == y this will run
       //code to run;
       break;
     default:           //if nothing meets condition this runs.
@@ -363,30 +361,29 @@ fruits.forEach(fruit => console.log(`I want to eat a ${fruit}.`));
   Example:
     const numbers = [1, 2, 3, 4, 5]; 
 
-const bigNumbers = numbers.map(number => {   -number defines elements
-  return number * 10;});					  in the array as a parameters
+const bigNumbers = numbers.map(number => {   -number defines elements;
+  return number * 10;});		      in the array as a parameters;
 
- - .filter()			- filters out certain elements from array;
+ .filter()			-filters out certain elements from array;
  Example:
   const randomNumbers = [375, 200, 3.14, 7, 13, 852];
 const smallNumbers = randomNumbers.filter(num => 
 	{return num < 250});
      --> [200, 3.14, 7, 13];
 
- - .forIndex() 			- Find location of an element in array.
- Example:				  Returns first value that = true
+ .forIndex() 			-Find location of an element in array.
+ Example:		         Returns first value that = true
   const jumbledNums = [123, 25, 78, 5, 9]; 
    const lessThanTen = jumbledNums.findIndex(num => {
      return num < 10;});
       --> 3
 
-  - .reduce()			- Reduces an array after each iteration.
- Example:
+ .reduce()			-Reduces an array after each iteration.
+  Example:
  	const numbers = [1, 2, 4, 10];
 	 const summedNums = numbers.reduce((accumulator, currentValue)
 	  => {return accumulator + currentValue});
 			console.log(summedNums) // Output: 17
-
 
 --------------------------------ERRORS--------------------------------
 Errors are when things go wrong. You can manually try for them.;
@@ -620,10 +617,10 @@ Events are things that happend to HTML elements when something happens
    -page finished loading
    -input field changed
    -button was clicked
-Events are pieces of JavaScript code that change HTML
+Events are pieces of JavaScript code that change HTML elements
 
 Syntax:
-  <element event="some JavaScript">
+  <element eventName="whatever">
 
   Example:
     <button onclick="document.getElementById('demo').innerHTML = Date()">
@@ -633,22 +630,21 @@ You can also use functions as events.
     <button onclick="functionName()">HTML text</button>/
 
 Common HTML events:
-  onchange      An HTML element has been changed
-  onclick       The user clicks an HTML element
-  onmouseover   The user moves the mouse over an HTML element
-  onmouseout    The user moves the mouse away from an HTML element
-  onkeydown     The user pushes a keyboard key
-  onload        The browser has finished loading the page
-
+  onchange      -An HTML element has been changed
+  onclick       -The user clicks an HTML element
+  onmouseover   -The user moves the mouse over an HTML element
+  onmouseout    -The user moves the mouse away from an HTML element
+  onkeydown     -The user pushes a keyboard key
+  onload        -The browser has finished loading the page
 
 --------------------------------CLASSES--------------------------------
 Classes are templates for objects
 
 Syntax:
- 	class ClassName {
- 		constructor(value1, value2) {  //parameters like in functions
- 			this.property1 = value1;        //the x value of ClassName is property1
- 			this.property2 = value2;
+  class ClassName {
+ 	constructor(value1, value2) {  //parameters like in functions
+           this.property1 = value1;        //the x value of ClassName is property1
+ 	   this.property2 = value2;
       method(parameter){};}}
 
   You use classes to create objects using the new keyword. Called instances.;
@@ -662,8 +658,8 @@ Syntax:
         return z - this.property1;}
 
 -Inheritance. Can make subclasses that take properties and methods 
- from their parent.; Use extends keyword. Use the parent property 
- with super keyword;
+ from their parent. Use the extends keyword. Use the parent property 
+ with the super keyword;
 
  Syntax: 
   class ParentClass {            //Parent class
@@ -675,7 +671,7 @@ Syntax:
       super(parentProperty);
       this.value2 = subclassProperty;}}
 
- -static methods: methods that any object can call
+ -static methods: methods that any object can call;
  	static methodName() {
     const names = ['Angel', 'Spike', 'Buffy', 'Willow', 'Tara'];
     const randomNumber = Math.floor(Math.random()*5);
@@ -686,7 +682,7 @@ Syntax:
 --------------------------------MODULES--------------------------------
 Reusable pieces of code that can be exported from one 
  program and imported for use in another program
- 		Export and import files
+ Export and import files
   Write in HTML within the <script> tag
     <script type="module" scr="~~~~~.js"><script>
 
@@ -775,7 +771,6 @@ You can also add a function to parsed objects.;
       return new Date(value);        
     } else {
       return value;}});
-
 
 ---------------------------REGULAR EXPRESSIONS---------------------------
 Regular expressions, also called "regex" help find specific characters in 
