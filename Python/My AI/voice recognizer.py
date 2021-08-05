@@ -61,15 +61,6 @@ xf = rfftfreq(N, 1 / SAMPLE_RATE)
   I can't finish the project. Maybe 
   because I installed CUDA/NVIDIA on
   my computer.
-  
-  UPDATE: It turns out it was a memory issue. 
-  I deleted all the NVIDIA stuff and the 
-  computer stopped crashing, but now prints
-  this error:
-  Unable to allocate 14.5 GiB for an array
-  with shape (3889620001,) and data type int32.
-  
-  Will have to solve that.
   """
  
 # My natural range is A#3 - C4.
