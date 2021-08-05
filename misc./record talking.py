@@ -1,3 +1,8 @@
+import sounddevice as sd     #plays audio files
+import time         #controls time
+from scipy.io.wavfile import write  #write wav files
+
+
 def record():
     while True:
         the_string = input("Enter string: ")
