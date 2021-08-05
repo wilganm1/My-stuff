@@ -21,7 +21,7 @@ def record():
         seconds = 1     # Duration of recording
         my_recording = sd.rec(int(seconds * fs), samplerate=fs, channels=1)   #Mono recording in this.
         sd.wait()      # Wait until recording is finished
-        write('' + str(the_string)+str(the_fret) + '.wav', fs, my_recording)
+        write("file name here", fs, my_recording)
           # Store it in Array dictionary 
           # Now loop it
         restart = str(input("Record another? (y/n): "))
