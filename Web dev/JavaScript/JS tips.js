@@ -4,7 +4,7 @@
 To use JavaScript code in an HTML file it needs to be within
     <script>
      ~~~~~~~~~~~~
-    </script>/;
+    </script>/
 
 Statements. Statements are lines of code that are read.
 They must end with a semicolon.;
@@ -17,9 +17,9 @@ Syntax:
 {}          -code block for closed off code
 
 Data types:
-"String"     -read as words. Requires "" or ''
-Numeric	     -number values
-Boolean      -whether something is true or false.
+"String"			-read as words. Requires "" or ''
+Numeric			-number values
+Boolean   		-whether something is true or not.
 objects      -like dictionaries in Python
 
 typeof        -returns what type of data a piece of code is
@@ -32,24 +32,25 @@ String(x)      -turns x into a string
  x.toString()  
 
 Arithmatic operators:
-  +	    -Adds two variables
+	+					-Adds two variables
   -         -Subtracts
-  /	    -Divides variables
+	/					-Divides variables
   *         -multiplies
-  >=	    -Greater than or equal too
-  <=	    -Less than or equal
-  !=	    -not equal to
-  ==        -Is equal to. Causes coercion. Makes strings numbers
-  ===	    -Is equal to. Does not cause coercion
-  !         -Is not. !true == false
-  %	    -Remainder Whats left over after one number goes into 
-	      another number fully. Example: 7 % 3 = 1.
-              3 goes into 7 two times with a left-over of 1.
-  +=	    -Adds values to a variable
-  ++	    -Increases value of variable by 1
-  --	    -Decreases value of variable by 1 
+	>=					-Greater than or equal too
+	<=					-Less than or equal
+	!=					-not equal to
+  ==          -Is equal to. Causes coercion. Makes strings numbers
+	===					-Is equal to. Does not cause coercion
+  !         -Is not.
+	%					-Remainder Whats left over after one number goes into 
+						 another number fully. Example: 7 % 3 = 1.
+             3 goes into 7 two times with a left-over of 1.
+	+=				-Adds values to a variable
+	++				-Increases value of variable by 1
+	--				-Decreases value of variable by 1 
   &&        -logical AND operator 
   ||        -logical OR operator
+  Add a comment with //.   //This is ignored by machine
 
 console.log();         -Prints data onto console
 document.write()       -writes characters onto document
@@ -57,6 +58,7 @@ document.write()       -writes characters onto document
 
 console.log('Go Fu ' + 'ck Yourself');
 --> Go Fuck Yourself
+
 
 -Numbers
  Nan         -not a number. 
@@ -83,8 +85,8 @@ Use words var, let, and const
       --> 'pizza'
     let meal = 'fries'
       --> 'fries'
-  Using let prevents variables chaning across scopes
-  Cannot redeclare variables within the same block using let
+    Using let prevents variables chaning across scopes
+    Cannot redeclare variables within the same block using let
 
  const variableName = whatever  //A variable that cant be changed.
     Object.freeze(myName)         //prevents myName from being altered
@@ -138,19 +140,19 @@ Spread operator [...~~~]      -Copies an entire array
 -------------------------------Methods------------------------------------
 Methods are built-in fucntions. Use by adding a . after a variable/instance
 
-Syntax:
-	whatever.methodName(parameters)
+Format:   methodName(argument) {
+	property(argument)}
+
+	addNew(new) {this._new.push(new)}
 	
 Example:
 	console.log('hello'.toUpperCase());  -Uppcase every letter
 		--> 'HELLO'
 
- .getFullYear()      -gets full year
- .getMonth()         -gets current month.
  .toUpperCase()      -Uppercases all letters
  .toLowerCase()      -lowercases all letters
- .random() 		-generates random number.
- .length()		-How long a list/array is.
+ .random() 		   	   -generates random number.
+ .length()		   	   -How long a list/array is.
  .indexOf("")        -find the index of a variable or string
  .replace(X, Y)      -replaces X with Y
  .pop()              -removes last position of an array
@@ -159,10 +161,16 @@ Example:
  .substr(x,n)        -returns new array from x, n is length extracted part.
  .map()              -makes new array for every array element of function
  .sort(desc())       -sorts array ascending or descending. asc is default
- document.getElementBy  -gets HTML elements 
-  Id("id")               -get elements by specific a id
-  ClassName('name')        -get elements by a specific class name.
- .innerHTML="~"      -Changes content of an element
+
+---------------------------------DATE-------------------------------------
+How to get the date.;
+
+ var d = new Date();  //can add in "month day, year hour:min:sec:millisec"
+  .getDay()           -gets day of date (0 to 6)
+  .getFullYear()      -gets full year
+  .getMonth()         -gets current month.
+  .getHours()         -gets current hours of date
+  .getMilliseconds(); -returns millisecond
 
 -------------------------CONDITIONAL STATEMENTS--------------------------
 Checks a specific condition & performs a task based on condition
@@ -184,29 +192,27 @@ If, else if, else statements 		//if something happens, do something.
     		      //'We can eat later!'
 
 Operators.  Can add additional conditions
- &&	-This AND that are true
- ||	-This is true OR that is true
- !	-NOT.
+ &&			-This AND that are true
+ ||			-This is true OR that is true
+ !		  -NOT.
  !=     -not equal to.
- 
-   Example:  
-    let day = 'Saturday';
-	if(day === 'Saturday' || day === 'Sunday') 
-	{console.log('Enjoy the weekend!');
-  	} else {console.log('Do some work.');}
-   	 --> Enjoy the weekend;
+    Example:  let day = 'Saturday';
+    			if(day === 'Saturday' || day === 'Sunday') 
+    			{console.log('Enjoy the weekend!');
+    		  } else {console.log('Do some work.');}
+    		   --> Enjoy the weekend;
 
-  let excited = true;
-  console.log(!excited);
-   --> false
+    		  let excited = true;
+    		  console.log(!excited);
+    		   --> false
 
-Break statement. Use to jump out of a loop;
+break statement. Use to jump out of a loop;
   for (let i = 0; i < 10; i++) {
     if (i === 3) { break; }
     text += "The number is " + i + "<br>";}
       //prints out numbers 0 to 2
 
-Continue statement.  breaks current iteration of loop. Like C++;
+continue statement.;     breaks current iteration of loop. Like C++;
   for (let i = 0; i < 10; i++) {
     if (i === 3) { continue; }
     text += "The number is " + i + "<br>";} 
@@ -225,7 +231,7 @@ condition that is checked for.;
     case x:              //if condition == x this will run
       //code to run;
       break;
-    case y:              //if condition == y this will run
+    case y:              //
       //code to run;
       break;
     default:           //if nothing meets condition this runs.
@@ -361,29 +367,30 @@ fruits.forEach(fruit => console.log(`I want to eat a ${fruit}.`));
   Example:
     const numbers = [1, 2, 3, 4, 5]; 
 
-const bigNumbers = numbers.map(number => {   -number defines elements;
-  return number * 10;});		      in the array as a parameters;
+const bigNumbers = numbers.map(number => {   -number defines elements
+  return number * 10;});					  in the array as a parameters
 
- .filter()			-filters out certain elements from array;
+ - .filter()			- filters out certain elements from array;
  Example:
   const randomNumbers = [375, 200, 3.14, 7, 13, 852];
 const smallNumbers = randomNumbers.filter(num => 
 	{return num < 250});
      --> [200, 3.14, 7, 13];
 
- .forIndex() 			-Find location of an element in array.
- Example:		         Returns first value that = true
+ - .forIndex() 			- Find location of an element in array.
+ Example:				  Returns first value that = true
   const jumbledNums = [123, 25, 78, 5, 9]; 
    const lessThanTen = jumbledNums.findIndex(num => {
      return num < 10;});
       --> 3
 
- .reduce()			-Reduces an array after each iteration.
-  Example:
+  - .reduce()			- Reduces an array after each iteration.
+ Example:
  	const numbers = [1, 2, 4, 10];
 	 const summedNums = numbers.reduce((accumulator, currentValue)
 	  => {return accumulator + currentValue});
 			console.log(summedNums) // Output: 17
+
 
 --------------------------------ERRORS--------------------------------
 Errors are when things go wrong. You can manually try for them.;
@@ -617,34 +624,33 @@ Events are things that happend to HTML elements when something happens
    -page finished loading
    -input field changed
    -button was clicked
-Events are pieces of JavaScript code that change HTML elements
+Events are pieces of JavaScript code that change HTML
 
 Syntax:
-  <element eventName="whatever">
-
-  Example:
-    <button onclick="document.getElementById('demo').innerHTML = Date()">
-      HTML text</button>/
+  <element event="some JavaScript">
 
 You can also use functions as events.
     <button onclick="functionName()">HTML text</button>/
 
 Common HTML events:
-  onchange      -An HTML element has been changed
-  onclick       -The user clicks an HTML element
-  onmouseover   -The user moves the mouse over an HTML element
-  onmouseout    -The user moves the mouse away from an HTML element
-  onkeydown     -The user pushes a keyboard key
-  onload        -The browser has finished loading the page
+  onchange      An HTML element has been changed
+  onclick       Click an HTML element
+  onmousedown   Hold down the mouse click
+  onmouseover   Move the mouse over an HTML element
+  onmouseout    Move the mouse away from an HTML element
+  onkeydown     The user pushes a keyboard key
+  onload        The browser has finished loading the page
+  onsubmit      When a submit button is pressed
+  onfocus       Input field is foucsed/clicked on
 
 --------------------------------CLASSES--------------------------------
 Classes are templates for objects
 
 Syntax:
-  class ClassName {
- 	constructor(value1, value2) {  //parameters like in functions
-           this.property1 = value1;        //the x value of ClassName is property1
- 	   this.property2 = value2;
+ 	class ClassName {
+ 		constructor(value1, value2) {  //parameters like in functions
+ 			this.property1 = value1;        //the x value of ClassName is property1
+ 			this.property2 = value2;
       method(parameter){};}}
 
   You use classes to create objects using the new keyword. Called instances.;
@@ -658,8 +664,8 @@ Syntax:
         return z - this.property1;}
 
 -Inheritance. Can make subclasses that take properties and methods 
- from their parent. Use the extends keyword. Use the parent property 
- with the super keyword;
+ from their parent.; Use extends keyword. Use the parent property 
+ with super keyword;
 
  Syntax: 
   class ParentClass {            //Parent class
@@ -671,7 +677,7 @@ Syntax:
       super(parentProperty);
       this.value2 = subclassProperty;}}
 
- -static methods: methods that any object can call;
+ -static methods: methods that any object can call
  	static methodName() {
     const names = ['Angel', 'Spike', 'Buffy', 'Willow', 'Tara'];
     const randomNumber = Math.floor(Math.random()*5);
@@ -682,7 +688,7 @@ Syntax:
 --------------------------------MODULES--------------------------------
 Reusable pieces of code that can be exported from one 
  program and imported for use in another program
- Export and import files
+ 		Export and import files
   Write in HTML within the <script> tag
     <script type="module" scr="~~~~~.js"><script>
 
@@ -844,74 +850,108 @@ Modifiers:
     wrongText.replace(silverRegex, "blue"); // Returns "The sky is blue.
 -$n $o....                   -captures words that are searched for
 
+-----------------------DOCUMENT OBJECT MODEL---------------------------
+The DOM is a model of the webpage that separates elements in a tree.;
 
-----------------------CREATE AN AUTOMATIC SLIDESHOW----------------------
-  //Create a slideshow. Needs a looping function. Make in HTML
+                             Document
+                                |
+                           Root Element:
+                              <html>
+        ________________________|_____________________
+        |                                            |
+     Element:                                     Element:
+      <head>                                       <body>
+        |                                      ______|______     
+     Element:                                  |           |
+     <title>              Attribute:________Element:    Element:        
+        |                   "href"            <a>        <h1>
+      Text:                                    |           |
+    "My title"                               Text:       Text:
+                                           "My link"  "My header"
 
-  /*First, make a div that contains the slideshow itself, 
-    then make separate divs that hold every single image
-     Give them all the same class "mySlides" or anything*/
+With the DOM JavaScript can dynamically change HTML elements
+DOM methods are actions to perform on HTML elements;
+DOM properties are values of HTML elements that you can change;
 
-<div class="slideshow-container">
+Finding HTML Elements;
+ document.getElementBy{}  //element is plural if not Id
+  -Id("")              -singular element of specific Id;
+  -ClassName("")       -All elements with a specific class;
+  -TagName("")         -All tags like <div> or <img>
 
-<div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="img_nature_wide.jpg" style="width:100%">
-  <div class="text">Caption Text</div>
-</div>
+Changing HTML Elements;
+ .innerHTML = "new HTML";   //changes what the html tag shows
+  element                      
+  .{attribute} = new value      -change attribute of HTML element
+  .style.{property} = new style  -change CSS style of HTML element
+  .setAttribute(attribute,value) -change attribute value
+  .addEventListener("event", property)  -adds event;
+  .removeEventListener()
 
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="img_snow_wide.jpg" style="width:100%">
-  <div class="text">Caption Two</div>
-</div>
+Adding & Deleting Elements;
+ document              -calls the document 
+  .createElement("tag")     -creates HTML element;
+  .removeChild(element)     -removes HTML element
+  .createTextNode('text')   -creates node with text;
+  .appendChild(element)     -Add an HTML element
+  .replaceChild(new, old)   -replace element;
+  .write(text)              -Adds a new div where <script> is with text;
+  .getElementById('p1').remove()          
 
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="img_mountains_wide.jpg" style="width:100%">
-  <div class="text">Caption Three</div>
-</div>
-    ///All divs have the same class. Can add a caption if you want
+Adding event handlers in code;
+   element.addEventListener(event, function(), useCapture, param1);
+ This is a shortcut to adding an event. You don't need' to write a 
+ function out if you include an action as a parameter;
+                           OR
+  document.getElementById("").event = ('function(){code}');
 
-</div>
-<br>
+  https://www.w3schools.com/jsref/dom_obj_event.asp 
 
-///You can add dots underneath slideshow using the following.
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-</div>
+  Or you can make a function then call it in the event;
+     <script>
+       function myFunction(){code to execute;}</script>/
+           <tag onlick = myFunction()>
 
-//Using script to create the JavaScript needed to make the slideshow
-<script>
-  //create variables that will be used in the function
-  //set an index variable to zero to start 
-var slideIndex = 0;
-showSlides();
+ You can assign a varialbe to finding elements then change HTML.;
+    const element = document.getElementsByTagName("");
+      element.innerHTML = ''      //changes the html elements
 
-function showSlides() {
-  var i;        //index variable
-  var slides = document.getElementsByClassName("   ");
-      /*this syntax retrives the images within the same document. 
-        The images need the same class */
-  var dots = document.getElementsByClassName("    ");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";}
-    /* This is the looping function that tells the function showSlides
-       to move onto the next index within the images array */
-  slideIndex++;  //This causes the next image to actually show.
 
-  if (slideIndex > slides.length) {slideIndex = 1}
-      /*This tells the function showSlides to reset to the first image
-            once the last image is shown */
-    for (i = 0; i < dots.length: i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
- }
- slides[slideIndex-1].style.display = "block";
- dots[slideIndex-1].className += " active";
- setTimeout(showSlides, 2000); //change image every 2 seconds
-}                            //1000 = 1 second
+Event Bubbling & Event Capturing
+ What is the order of events? If you have a <p> inside a <div> and 
+ you do a "click" event which element is affected first?
+       This uses the useCapture argument in addEventListener
 
- </script> /
+-bubbling. Inner-to-outer event handling. useCapture = false. default
+       <div onclick=>          //second
+         <p onclick=></p>/     //first
+       </div>/
 
+-capturing. Outer-to-inner handling.  useCapture = true
+       <div onclick=>     //first
+         <p onclick =></p>/   //second
+       </div>/
+
+Accessing Nodes of the DOM tree.;
+ Each element is a node, and they can have children nodes;
+    .firstChild.nodeValue      -get value of a particular node
+    .childNodes[0].nodeValue;  
+
+ Access full document
+  document.body;             -show all of <body> of page
+  document.documentElement
+
+ .nodeName property         -returns the tag name of the node;
+ .nodeValue property        -
+
+HTML Collection Objects. Return a list of tags or classes;
+ When you call getElementsByTagName() it returns an HTMLCollection 
+ object which is an array of HTML elements.;
+    <div>
+      <p id ="p1"></p>/
+      <p id ="p2"></p>/
+    </div>/
+
+  const myCollection = document.getElementsByTagName("p");
+ -This returns an array with 2 elements in it.;
+    .length         -returns length of myCollection;
