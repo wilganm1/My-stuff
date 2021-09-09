@@ -1,1 +1,1 @@
-Directory for my recorded 1-mile run times.
+Directory for my recordeded 1-mile run times. The actual script will generate a plot of my average run times over the years. All the math is done and the csv file has all the data. miletimes.py is the plain directory the csv and dataframe was created from.
