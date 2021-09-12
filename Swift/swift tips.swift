@@ -39,6 +39,7 @@ Operators
 -Methods
  Methods are built-in functions using .methodName
   .isEmpty     -checks if a string is empty
+  .append(x)    -adds x to end of it.
 
 Strings.
  Strings allow you to write plain text that is picked up by the editor
@@ -59,10 +60,16 @@ Strings.
       var variableString = "Horse"
       varableString += " and carriage"
 
- -Use count to get a count of characters in a string
+   -Use count to get a count of characters in a string
       var word = "cafe"
-      print("the number of characters in \(word) is
-            \(word.count)")
+      print("the number of characters in \(word) is \(word.count)")
+
+ -Modifying strings
+     .insert(_:at:x)    -inserts _ at index-x
+     .remove(_:at:x)    -removes _ at index-x
+     .removeSubrange(_) -removes range of         
+     .hasPrefix(_)       -checks if a string starts with _. Like .startswith() in Python.
+     .hasSuffix(_)       -checks if a string ends with _
 
 
 Variables & Constants
@@ -124,7 +131,23 @@ separate constants or variables, which you then access as usual:
 
   t = (a,b)
   s = a.0
+            
+------------------------------COLLECTION TYPES--------------------------------
+-Arrays. store values of the same type in an ordered list.
+     var array: [Element] = []
+     var array = [value1, value2]
+  Set default values 
+        threeDoubles = Array(repeating: x, count: y)
 
+-Sets. stores distinct values of same type with no defined order.
+     Sets must be hashable (int object same for all objects)
+             var set = Set<Characters>()
+     .intersection(_)         -create new set with common values
+     .symmetricDifference(_)  -excludes shared values
+     .union(_)                -includes all values
+     .subtracting(_)          -values not specified
+  
+            
 -Dictionaries.
  Allow you to store data in a sequence in key-value pairs.
      let dictionary = ["key1": "value1", "key2": "value2"]
@@ -197,11 +220,6 @@ While loops
         label name: while condition {
            statements }
 ---------------------------CONTROL TRANSFER STATEMENTS-----------------------
-Change the order in which code is executed
-  -continue
-     skips the current iteration of a loop and goes on to next
-  -break
-     terminates control flow statment. Used in loops or switch
   -return
   -throw
          
