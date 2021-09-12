@@ -59,6 +59,11 @@ Strings.
       var variableString = "Horse"
       varableString += " and carriage"
 
+ -Use count to get a count of characters in a string
+      var word = "cafe"
+      print("the number of characters in \(word) is
+            \(word.count)")
+
 
 Variables & Constants
  Variables hold data within names and are given a value. 
@@ -145,14 +150,20 @@ Switch. Uses cases as if, else. If value of case matches switch, case runs
         responds to value 2 or 3
      default:
         runs if nothing matches}
- -You can use tuples in switches and use underscore as a case
-        switch (1,1) {
-         case (_,1):
+ -You can use tuples in switches and use underscore as a case and a where.
+   Can also declare variables within cases, and use compound cases
+        switch (x,y) {
+         case (_,y) where y == z:
              whatever
+         case let (a,b) where c == d:
+             whatever
+         case "a", "b", "c":
+             whatever
+             fallthrough
          default:
-              whatever  
-
-
+              whatever} 
+  -fallthrough
+      keeps a switch going even after a case is met
 -------------------------------------LOOPS-----------------------------------
 For-in loops. Iterate over a sequence. Exaclty like for loops in Python
         var sequence = [1,2,3,4]
@@ -180,7 +191,21 @@ While loops
  -repeat-while loop. Loops once to check condition. Then loops until false.
          repeat {
           statements 
-         } while condition
+         } while condition}
+        }}
+ -Labeled statements. Name a loop to make it stand out
+        label name: while condition {
+           statements }
+---------------------------CONTROL TRANSFER STATEMENTS-----------------------
+Change the order in which code is executed
+  -continue
+     skips the current iteration of a loop and goes on to next
+  -break
+     terminates control flow statment. Used in loops or switch
+  -return
+  -throw
+         
+        
  
         
         
