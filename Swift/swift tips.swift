@@ -164,7 +164,7 @@ separate constants or variables, which you then access as usual:
   -Shorthand conditional operator.
          a : b ? c
      //if a is true, then b. If not, then c.
-Switch. Uses cases as if, else. If value of case matches switch, case runs
+Switch. Uses cases instead of if, else. If value of case matches switch, case runs
     switch value {
     case value1:
         respond to value 1
@@ -187,7 +187,7 @@ Switch. Uses cases as if, else. If value of case matches switch, case runs
               whatever} 
   -fallthrough
       keeps a switch going even after a case is met
--------------------------------------LOOPS-----------------------------------
+-----------------------------------LOOPS--------------------------------------
 For-in loops. Iterate over a sequence. Exaclty like for loops in Python
         var sequence = [1,2,3,4]
         for seq in sequences {
@@ -219,11 +219,33 @@ While loops
  -Labeled statements. Name a loop to make it stand out
         label name: while condition {
            statements }
----------------------------CONTROL TRANSFER STATEMENTS-----------------------
-  -return
-  -throw
-         
-        
+
+----------------------------------FUNCTIONS-----------------------------------
+Have a type depending on parameter type and return type.
+       func name(parameter: parameterType) -> returnType{
+          return code}
+ You must give arguments labels when you call them if they are defined.
+
+ -Omit argument labels with _ for a parameter
+       func ion(_){}
+
+ The return type is the overall data type the function gives back.
+ You do not need a return type.
+
+-Call functions by typing the name and parameter(s) of the function
+            print(name(parameter: "whatever")) 
+
+-Variadic parameters. Accept zero or more values of a specific type  
+ Uses ... after parameter type's name.
+        func adslf(numbers: Double...) ->
+
+-In-out parameters. Can change the parameter's value within the function.
+     func fad(_ a: inout Int, _ b: inout Int) {
+    let temporaryA = a
+    a = b
+    b = temporaryA}
+
+
  
         
         
