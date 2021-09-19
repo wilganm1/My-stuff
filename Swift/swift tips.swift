@@ -226,26 +226,97 @@ Have a type depending on parameter type and return type.
           return code}
  You must give arguments labels when you call them if they are defined.
 
- -Omit argument labels with _ for a parameter
-       func ion(_){}
+  -Omit argument labels with _ for a parameter
+        func ion(_){}
 
  The return type is the overall data type the function gives back.
  You do not need a return type.
 
--Call functions by typing the name and parameter(s) of the function
+ -Call functions by typing the name and parameter(s) of the function
             print(name(parameter: "whatever")) 
 
--Variadic parameters. Accept zero or more values of a specific type  
- Uses ... after parameter type's name.
+ -Variadic parameters. Accept zero or more values of a specific type  
+  Uses ... after parameter type's name.
         func adslf(numbers: Double...) ->
 
--In-out parameters. Can change the parameter's value within the function.
-     func fad(_ a: inout Int, _ b: inout Int) {
-    let temporaryA = a
-    a = b
-    b = temporaryA}
+ -In-out parameters. Can change the parameter's value within the function.
+      func fad(_ a: inout Int, _ b: inout Int) {
+     let temporaryA = a
+     a = b
+     b = temporaryA}
+
+-Nesed Functions. Functions inside bodies of other functions
+
+------------------------------------CLOSURES------------------------------------
+Self-contained blocks of code that can be used anywhere. Can capture and store
+references to any variables from context in which they're defined'. 
+  
+    let closureName:(parameter types) -> (return type) = 
+       {(parameter_name:parameter_type) -> (return type) in statements}
+
+      -What's in between the {} is the closure expression'
+      -closure type syntax is the (parameter_types) -> (return type)
+      -closure expression is {(parameter name:parameter type) -> return type in}
+
+-----------------------------------ENUMERATION-----------------------------------
+Defines common type for a group of related values. Uses cases
+
+         enum EnumerationName {
+             case x
+             case y}
+
+   -Example: four points on a compass. Can also state multiple cases per line:
+         enum CompassPoint {
+             case north, south, east, west }
+ You can access cases in enumerations as methods and assign them to variables
+       var directionToHead = CompassPoint.west
+   Once it's assigned to the enumeration you can change to a different case.
+           directionToHead = .east
+  
+ -Matching enumerations with switch
+          switch EnumerationName {
+           case x:
+               //code
+           case y:
+               //code
+           default:}
+
+ -Iterating over enumeration cases. CaseIterable
+          enum enumName: CaseIterable{
+           case x,y,z}
+     -.allCases           -calls all cases of the enumeration
+
+ -Additional values
 
 
- 
-        
+------------------------------STURCTURES & CLASSES-------------------------------
+General purpose blocks of code that can be used anywhere and between files.
+     struct StructName {
+         definition here }
+     class ClassName {
+         definition here }
+
+ You call classes or structs by typing their name with () after.
+      struct Resolution {
+        var width = 0
+        var height = 0 }
+    class VideoMode {
+        var resolution = Resolution()    //calling the struct
+        var interlaced = false
+        var frameRate = 0.0
+        var name: String? }
+
+   -Access properites using dot syntax.
+           Resolution.width
+   -Initialize properties
+         let vga = Resolution(width: 640, height: 480)
+
+
+
+
+
+
+
+
+
         
