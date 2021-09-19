@@ -312,9 +312,31 @@ General purpose blocks of code that can be used anywhere and between files.
          let vga = Resolution(width: 640, height: 480)
 
 
+-Subscripts. shortcuts for accessing member elements of list/sequence.
+         subscript(index: Int) -> Int {
+          get {
+             return subscript here.}
+          set(newValue) {
+              setting action}}
 
+-Class inheritance.
+  One class (subclass) can inherit properites and values from another (superclass)
+       class SomeSubclass: SomeSuperclass {}
 
+    -Example:
+        class Vehicle {
+          var currentSpeed = 0.0
+          var description: String {
+              return "traveling at \(currentSpeed) miles per hour"  }
+          func makeNoise() {}}
 
+        class Bicycle: Vehicle {
+          var hasBasket = false}
+-Overriding
+  Setting a subclass's' properties instead of the superclass.
+          class Train: Vehicle {
+             override func makeNoise() {
+                print("Choo Choo")}}
 
 
 
