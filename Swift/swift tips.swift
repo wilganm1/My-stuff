@@ -11,7 +11,6 @@ Data types
  String()     -plain text. Uses "" ("Hello World"). 
     """ for multiline strings """
  Character  -Single character string.  ("H")
- Optional   -can either hold a value or not hold a value
  Tuple      -group multiple values in single compound value 
    (a,b)
 
@@ -187,6 +186,10 @@ Switch. Uses cases instead of if, else. If value of case matches switch, case ru
               whatever} 
   -fallthrough
       keeps a switch going even after a case is met
+
+ -guard
+   Guards require that a statement be true for the statment to execute.
+             guard ~~~ else {}
 -----------------------------------LOOPS--------------------------------------
 For-in loops. Iterate over a sequence. Exaclty like for loops in Python
         var sequence = [1,2,3,4]
@@ -338,7 +341,35 @@ General purpose blocks of code that can be used anywhere and between files.
              override func makeNoise() {
                 print("Choo Choo")}}
 
+----------------------------------------ERRORS------------------------------------------
+Receiving and handling erros in Swift. Use throw to handle errors
+ Can use enums to make errors easy to find and handle.
+     enum SomeEnum: Error {
+      case error1
+        throw throwSomething
+      case error2
+      case error3}
 
+ -Do-catch statements to handle errors.
+    Errors need to have a patterN that can match a catch. 
+    It's like a case in a switch statement.'
 
-
+      do {
+         try expression
+           statements
+       } catch pattern 1 {
+           statements
+       } catch pattern 2 where condition {
+           statements
+       } catch pattern 3, pattern 4 where condition {
+           statements
+       } catch {
+           statements}
         
+ -Cathcing errors in functions. Uses throws 
+      func getErrors() throws -> String
+
+---------------------------------------CONCURRENCY------------------------------------------
+Asynchronous code = code that can be suspended and resumed later.
+paralle code = multiple pieces of code runs simultaneously.
+
