@@ -1,5 +1,5 @@
-Swift is a language used for Apple producs using MacOS software. Swift is a type-safe, meaning it prevents you from 
-entering in wrong data values into variables.
+Swift is a language used for Apple producs using MacOS software. Swift is a type-safe, 
+meaning it prevents you from entering in wrong data values into variables.
 
 ------------------------------------BASICS-------------------------------------
 Data types
@@ -35,14 +35,13 @@ Operators
 (a..<b)  -half-open range. excludes b
 
 
--Methods
+Methods
  Methods are built-in functions using .methodName
   .isEmpty     -checks if a string is empty
   .append(x)    -adds x to end of it.
 
 Strings.
  Strings allow you to write plain text that is picked up by the editor
-   """ """     -multiline comments
    Use \ at end of line of string to exclude white space in value
       Indents ignore white spaces in """ """.
   -Special characters
@@ -71,29 +70,28 @@ Strings.
      .hasSuffix(_)       -checks if a string ends with _
 
 
+-Booleans
+ true
+ false
+ !true == false
+ !false == true
+
 Variables & Constants
  Variables hold data within names and are given a value. 
  Constants use let and variables use var.
  You can't change the variable type once declared, only the
  value if it's the same type.
 
-      let variable_name = value_of_varialbe
-      var fasl = eion
+       let variable_name = value_of_varialbe
+       var fasl = eion
 
    -Declare multiple variables on the same line with , if same type
-     var x = 1, y = 2, z = 3
- -You can access a varialbe within a string using:
-            \(varaible)
-      
-Type Annotations  
- Specify what type of data can be housed in the variable.
-        var variable_name: data_type
- 
-Printing variables or data
- Use the print() function to print variables
-      print(variable)
-      print("String")      -prints String
-      print(1)             -prints 1
+        var x = 1, y = 2, z = 3
+   -You can access a varialbe within a string using:
+              \(varaible)   
+   -Type Annotations  
+     Specify what type of data can be housed in the variable.
+            var variable_name: data_type
       
 Comments
  Comments exclude text from being executed.
@@ -103,34 +101,23 @@ Comments
       /*   
         This is ignored
       */ 
-      
-Semicolons ;
- Semicolons are used to write separate statements
- on a single line.
-      let cat = "meow"; print(cat)    //prints 'meow'
-
 Type Aliases
  Define an alternative name for existing variable with typealias
       typealias VarialbeName = 0
       var secondVarialbe = VarialbeName    //secondVariable now equals 0
-
--Booleans
- true
- false
- !true == false
- !false == true
 
 Tuples
 You can decompose a tuple’s contents into 
 separate constants or variables, which you then access as usual:
   print("Whatever data \(here)")
 
- Swift is zero-indexed like Python. Access a tuple's index 
-   using .n
+Swift is zero-indexed like Python. Access a tuple's index 
+using .n or [n]
 
-  t = (a,b)
-  s = a.0
-            
+  t = ("a","b")
+  s = a.0    //s = "a"
+  q = t[1]   //q = "b"
+       
 ------------------------------COLLECTION TYPES--------------------------------
 -Arrays. store values of the same type in an ordered list.
      var array: [Element] = []
@@ -261,7 +248,7 @@ references to any variables from context in which they're defined'.
       -closure type syntax is the (parameter_types) -> (return type)
       -closure expression is {(parameter name:parameter type) -> return type in}
 
------------------------------------ENUMERATION-----------------------------------
+-----------------------------------ENUMERATIONS-----------------------------------
 Defines common type for a group of related values. Uses cases
 
          enum EnumerationName {
@@ -341,6 +328,13 @@ General purpose blocks of code that can be used anywhere and between files.
              override func makeNoise() {
                 print("Choo Choo")}}
 
+ -Type Casting. Used for instances in classes
+      -is     -checks whether instance is a certain subclass type
+      -as
+
+ -Extensions. Add new functionality to existing class, enum, etc.
+                ex
+
 ----------------------------------------ERRORS------------------------------------------
 Receiving and handling erros in Swift. Use throw to handle errors
  Can use enums to make errors easy to find and handle.
@@ -372,4 +366,10 @@ Receiving and handling erros in Swift. Use throw to handle errors
 ---------------------------------------CONCURRENCY------------------------------------------
 Asynchronous code = code that can be suspended and resumed later.
 paralle code = multiple pieces of code runs simultaneously.
+
+
+
+
+
+
 
