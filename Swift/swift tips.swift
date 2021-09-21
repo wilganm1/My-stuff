@@ -333,7 +333,8 @@ General purpose blocks of code that can be used anywhere and between files.
       -as
 
  -Extensions. Add new functionality to existing class, enum, etc.
-                ex
+                extension SomeType {
+                 new functionality here }
 
 ----------------------------------------ERRORS------------------------------------------
 Receiving and handling erros in Swift. Use throw to handle errors
