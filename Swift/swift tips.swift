@@ -211,12 +211,15 @@ While loops
            statements }
 
 ----------------------------------FUNCTIONS-----------------------------------
-Have a type depending on parameter type and return type.
-       func name(parameter: parameterType) -> returnType{
-          return code}
- You must give arguments labels when you call them if they are defined.
+Blocks of code that do stuff you program it to. Has many forms.
+ -Basic
+        func functionName() {}
+ -Returned type. Has parameters and a data type it returns
 
-  -Omit argument labels with _ for a parameter
+        func name(parameter: parameterType) -> returnType{
+          return code}
+  You must give arguments labels when you call them if they are defined.
+ -Omit argument labels with _ for a parameter
         func ion(_){}
 
  The return type is the overall data type the function gives back.
@@ -237,7 +240,7 @@ Have a type depending on parameter type and return type.
 
 -Nesed Functions. Functions inside bodies of other functions
 
-------------------------------------CLOSURES------------------------------------
+-------------------------------------CLOSURES------------------------------------
 Self-contained blocks of code that can be used anywhere. Can capture and store
 references to any variables from context in which they're defined'. 
   
@@ -249,7 +252,7 @@ references to any variables from context in which they're defined'.
       -closure expression is {(parameter name:parameter type) -> return type in}
 
 -----------------------------------ENUMERATIONS-----------------------------------
-Defines common type for a group of related values. Uses cases
+Defines a common type for a group of related values. Uses cases.
 
          enum EnumerationName {
              case x
@@ -259,7 +262,7 @@ Defines common type for a group of related values. Uses cases
          enum CompassPoint {
              case north, south, east, west }
  You can access cases in enumerations as methods and assign them to variables
-       var directionToHead = CompassPoint.west
+         var directionToHead = CompassPoint.west
    Once it's assigned to the enumeration you can change to a different case.
            directionToHead = .east
   
@@ -276,8 +279,11 @@ Defines common type for a group of related values. Uses cases
            case x,y,z}
      -.allCases           -calls all cases of the enumeration
 
- -Additional values
-
+ -Associated values
+  Other value types of data stored alongside case values
+  It's just assigned a case to a value'
+            enum Enumeration: DataType {
+              case x = z }      //z is the associated value
 
 ------------------------------STURCTURES & CLASSES-------------------------------
 General purpose blocks of code that can be used anywhere and between files.
