@@ -8,19 +8,19 @@ struct ContentView: View {
    }
 }
 
-
 To add in stuff to the view it must be a recognized SwiftUI element such as:
-          Text()
-          Button()
+       Text()
+       Button()
+       Image()
 
- -modifiers. These change characteristics of the elements.
+ -Modifiers. These change characteristics of the elements.
      .background(Color.green)
      .font(12)
  
-  SwiftUI has preprogrammed modifiers for every single elements
-
+  SwiftUI has preprogrammed modifiers for every single element.
 
 -Stacking stuff in a frame.
     
-   -Vstack. Stacks multiple elements into one single frame vertically.
-   -Hstack. Horizontally stacks elements.
+   -VStack. Stacks multiple elements into one single frame vertically.
+   -HStack. Horizontally stacks elements.
+   -ZStack. Stacks things on top of each other.
