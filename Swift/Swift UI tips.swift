@@ -14,12 +14,14 @@ To add in stuff to the view it must be a recognized SwiftUI element such as:
        Image()
 
  -Modifiers. These change characteristics of the elements.
-     .background(Color.green)
-     .font(12)
- 
+     Element()
+       .background(Color.green)
+       .font(12)
+       .foregroundColor(Color. )
+       .frame(width: x, height: y)
   SwiftUI has preprogrammed modifiers for every single element.
 
--Stacking stuff in a frame.
+-Stacking. Think of these like frames.
     
    -VStack. Stacks multiple elements into one single frame vertically.
    -HStack. Horizontally stacks elements.
