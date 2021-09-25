@@ -26,3 +26,8 @@ To add in stuff to the view it must be a recognized SwiftUI element such as:
    -VStack. Stacks multiple elements into one single frame vertically.
    -HStack. Horizontally stacks elements.
    -ZStack. Stacks things on top of each other.
+
+
+Get max width & height of child element possible.
+         .frame(maxWidth: .infinity,
+                maxHeight: .infinity)
