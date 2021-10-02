@@ -31,3 +31,22 @@ To add in stuff to the view it must be a recognized SwiftUI element such as:
 Get max width & height of child element possible.
          .frame(maxWidth: .infinity,
                 maxHeight: .infinity)
+
+//  Add navigation buttons at top right corner
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        NavigationView {     //Need to add this to have a navigation bar
+            Text("SwiftUI").  //This can be anything.
+                .toolbar {
+                    ToolbarItemGroup(placement: .navigationBarTrailing) {
+                        Button("+") {
+                            print("about tapped!")
+                        }
+                    }
+                }
+            
+        }
+    }
+}
