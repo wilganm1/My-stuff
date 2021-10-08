@@ -84,6 +84,14 @@ from tkinter import *
     title = "",
     filetypes = (("Text files", "*.txt*"), ("all files", "*.*"))) #can choose which files to search 
     
+  #Browse button
+   def open_file():
+     tk.filedialog.askopenfilename(
+     filetypes = (("Text files", "*.txt*"), ("all files", "*.*")))
+
+   Button = tk.Button(root, text = "Browse",
+               command = open_file).pack()  
+    
 -Menu
   menubar = tk.Menu(root)
   file = Menu(menubar, tearoff = 0)
