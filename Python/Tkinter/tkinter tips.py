@@ -3,14 +3,16 @@ from tkinter import *
 
 -Creating the window
   root = tk.Tk()      #creates window
-  root.iconbitmap("filename.ico")  #top left image
-  root.title("")  #title of the window
+   .geometry('numb1xnumb2')
+   .iconbitmap("filename.ico")  #top left image
+   .title("")  #title of the window
   
     #  put code in here
 
   root.mainloop()   #keeps the window running
   
 -Positioning
+  
   .pack()          #Puts the widget in the window in its exact size
   .grid(row = x, column = y, columnspan = z, rowspan = a)
   root.rowconfigure(n, minsize = x)    #n is which row
