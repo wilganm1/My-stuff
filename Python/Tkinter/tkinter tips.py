@@ -17,7 +17,9 @@ from tkinter import *
   root.columnconfigure([a,b,c], maxsize = y)  #you can have a list of columns/rows.
 
 -Frames
-  frame1 = tk.Frame()
+  frame1 = tk.Frame(
+    .width = x    #width of frame
+    .height = y)  #height of frame
   
  #You can put things inside the frame by setting master option equal to frame
   Labelx = tk.Label(frame1, text = "")
