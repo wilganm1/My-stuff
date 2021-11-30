@@ -15,6 +15,12 @@ canvas = tk.Canvas(master = root)
 canvas_width = 800
 canvas_height = 600
 
+""" Getting the number of nodes from an entry widget"""
+
+
+numb_nodes = IntVar()
+#get number using .get
+#numb_nodes.get
 
 """ Get locations of circles. More circles means
 they will get smaller. Need to be same size.
@@ -32,11 +38,9 @@ middle of left half, so 1/4th of width of canvas
 y coordinate is dependent on how many circles there 
 are. Will always be number of nodes/2.
     Example: 3 nodes = screen_height/6 """
-    
-#numb_nodes = .get() from a IntVar
-    
+        
 radius_x = canvas_width/4
-radius_y = canvas_height/(numb_nodes/2) 
+radius_y = canvas_height/(numb_nodes.get()/2) 
 #!!! change y according to number of nodes selected 
 
 radius = radius_y/2
@@ -67,10 +71,10 @@ of the sections of the screen height.
     1st circle radius_y = 1/4 screen height (1/4 * 1)
     2nd cirlce radius_y = 3/4 screen height (1/4 * 3)
     
-    list(range(1,(numb_nodes * 2),2))
+    list(range(1,(numb_nodes.get() * 2),2))
 
 
-for i in list(range(1,(numb_nodes * 2),2)):
+for i in list(range(1,(numb_nodes.get() * 2),2)):
     canvas.create_oval(x1, (radius_y * i) - radius, x2, (radius_y * i) + radius)
 '''
 
