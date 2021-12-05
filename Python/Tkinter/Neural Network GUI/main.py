@@ -1,13 +1,7 @@
-""" I want to make a GUI that will display how a 
-neural network works using circles and lines to 
-represent nodes and weights. Also in the future try
-to get it to update in real-time during backwards
-propagation """
-
 """ I want to make a Neural Network GUI for myself to visually represent how they work.
 
 This will be small scale but I want to incorporate many things like being able to animate it
-using the time package, change colors of the canvas, input your own inputs with csvs or just typing, 
+using the time package, change colors of the canvas, input your own inputs with CSVs or just typing, 
 and do complete backwards propagation. """
 
 
