@@ -5,13 +5,6 @@ using the time package, change colors of the canvas, input your own inputs with 
 and do complete backwards propagation. """
 
 
-""" I want to make a Neural Network GUI for myself to visually represent how they work.
-
-This will be small scale but I want to incorporate many things like being able to animate it
-using the time package, change colors of the canvas, input your own inputs with CSVs or just typing, 
-and do complete backwards propagation. """
-
-
 # !!! Be able to read a csv file and pop up message box
 
 
