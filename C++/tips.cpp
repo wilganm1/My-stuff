@@ -35,7 +35,7 @@ click on Compiler, click on Linker Settings and add the path.
 \t           -horizontal tab
 \?           -question mark
 //           -single-line comments. Ignored by compiler. Like # in Python.
-/* ~~ */     -multi-line comments. Like """ in Python.
+/* ~~ */     -multi-line comments. Like """ """ in Python.
 {}           -braces used for code in functions
 
 
