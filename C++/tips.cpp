@@ -440,7 +440,7 @@ There are 4 ways to create a variable, You first
 
    -Default variable, rightmost variable
    You can add a default variable using =. If the function has no argument
-   when it's called it used the default variables.
+   when it's' called it used the default variables.
         void myFunction(string country = "Norway") {
           cout << country << "\n";}
 
