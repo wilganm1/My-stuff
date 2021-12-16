@@ -495,48 +495,7 @@ There are 4 ways to create a variable, You first
 -------------------------CLASSES & OBJECTS----------------------------------
  A class is a blueprint of objects. Think class as car and object as Volvo
  You can create multiple objects
-     class Car {
-      public:   //access specifier. How methods can be accessed.
-        string brand;
-        string model;
-        int year;    };
-    int main() {
-      // Create an object of Car
-      Car carObj1;
-      carObj1.brand = "BMW";
-      carObj1.model = "X5";
-      carObj1.year = 1999;
-
-      // Create another object of Car
-      Car carObj2;
-      carObj2.brand = "Ford";
-      carObj2.model = "Mustang";
-      carObj2.year = 1969;
-      return 0;}
- -Methods. methods are functions that belong to classes
-    class MyClass {        // The class
-      public:              // Access specifier
-        void myMethod() {  // Method/function defined inside the class
-          cout << "Hello World!";}};
-    int main() {
-      MyClass myObj;     // Create an object of MyClass
-      myObj.myMethod();  // Call the method
-      return 0;}
-
-  You can call a function outside a class using ::
-      void MyClass::myMethod(){
-      cout << "Hello World!";}
-  Can also add parameters
-     int Car:: speed(int maxSpeed) { return maxSpeed}
-
-     int main() {
-      Car myObj; // Create an object of Car
-      cout << myObj.speed(200); // Call the method with an argument
-      return 0;}
-
-  -Constructor. Special method called when object of class is created.
-    Use same name as class followed by (). **Think self in Python**
-        class Car {        // The class
+     class Car {        // The class
           public:          // Access specifier
             string brand;  // Attribute
             string model;  // Attribute
@@ -545,6 +504,11 @@ There are 4 ways to create a variable, You first
               brand = x;  //plug in stuff like a function into constructor.
               model = y;  //Each object will have all the same attributes
               year = z;}};  //but with what is entered as parameters.
+      
+/*The constructor is a special function that is run when an object of a class is created.
+You can set up arguments in constructors and set attributes of the class equal to
+these arguments. Think of it like self in Python.
+*/
         int main() {
           // Create Car objects and call the constructor with different values
           Car carObj1("BMW", "X5", 1999);
@@ -553,12 +517,37 @@ There are 4 ways to create a variable, You first
           cout << carObj1.brand << " " << carObj1.model << " " << carObj1.year << "\n";
           cout << carObj2.brand << " " << carObj2.model << " " << carObj2.year << "\n";
           return 0;}
-   You can also define constructor outside of class
-    Car::Car(string x, string y, int z) {
-      brand = x;
-      model = y;
-      year = z;}
+      
+    You can also define constructor outside of class using ::
+      Car::Car(string x, string y, int z) {
+        brand = x;
+        model = y;
+        year = z;}
+        
+ -Methods. methods are functions that belong to classes
+    class MyClass {        // The class
+      public:              // Access specifier
+        void myMethod() {  // Method/function defined inside the class
+          cout << "Hello World!";}};
+    int main() {
+      
+      MyClass myObj;     // Create an object of MyClass
+      myObj.myMethod();  // Call the method
+      
+      return 0;}
 
+   You can call a function outside a class using ::
+       void MyClass::myMethod(){
+       cout << "Hello World!";}
+   Can also add parameters
+      int Car:: speed(int maxSpeed) { return maxSpeed}
+
+      int main() {
+       Car myObj; // Create an object of Car
+       cout << myObj.speed(200); // Call the method with an argument
+       return 0;}
+       
+ 
   -Struct. group of data elements together under one name.
      Like a class but simplified and public as default.
       struct nameOfStruct {
@@ -604,7 +593,7 @@ Set class to private, and use get and set methods to modify private values
   base class (parnet)    -the class being inherited from
     class Vehicle {   //parent class
         public:
-  //To set a derived class you need a : to classify it.
+  To set a derived class you need a : to classify it.
     // Derived class
     class Car: public Vehicle {  //need public to reference the parent class
       public:
