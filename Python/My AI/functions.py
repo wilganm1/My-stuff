@@ -5,7 +5,7 @@ def speak(audio):
 """ Make a recognizer function to start when 
 you say certain words """    
 
-keywords = [("aku", 1), ('hey aku', 1), ('yo aku',1),]
+keywords = [("~", 1), ('hey ~~', 1), ('yo 11',1),]
 
 def callback(recognizer, audio):
     try:
