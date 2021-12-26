@@ -1,6 +1,6 @@
 Run scala on browser here:
 https://scalafiddle.io
-----------------------------------BASICS-------------------------------------
+-----------------------------------------------BASICS--------------------------------------------------
 Data Types
  byte       - -128 to 127
  boolean    - true or false
@@ -16,14 +16,6 @@ Write comments with //. Multiline with /* */
 
 print to command line with println(~~~)
   
-- s-string. Print variables within strings. Like f-strings in Python.
-  Declare variables, then precede string with s and use $ for variables
- val x = "John"
- val y = 'C'
- val z = "Doe"
-          println(s"Name: $x $y $z") // "Name: John C Doe"
- Or use 
-
 Variables. Assign data names.
   Two types of variables, mutable - var - and immutable - val.
       
@@ -34,6 +26,16 @@ Variables. Assign data names.
  stated
   val x = 1
 
+-String interpolation
+  Print variables within strings. Like f-strings in Python.
+  Declare variables, then precede string with s, or f and use $ for variables
+ val x = "John"
+ val y = 'C'
+ val z = "Doe"
+          println(s"Name: $x $y $z") // "Name: John C Doe"
+  Use ${} for custom expresssions
+     println(s"Full Name is: ${x + y"}
+        
 -Lists
   val ints = List(1,2,3,4,5)
 
@@ -42,7 +44,7 @@ Variables. Assign data names.
   println({val x = 1 + 1
   x +1})
  
-----------------------------FUNCTIONS & METHODS-------------------------------
+----------------------------------------FUNCTIONS & METHODS-----------------------------------------
 -Functions. 
   Expressions that have parameters and take arguments. 
   To run a function call it with parameters during the call.
@@ -60,7 +62,7 @@ Variables. Assign data names.
   Methods can also take multiple parameter lists.
     def name(parameter1: Int, parameter2: Int)(parameter3: Int): Int //code
 
-----------------------------CONTROL STRUCTURES-------------------------------
+------------------------------------------CONTROL STRUCTURES--------------------------------------------
 These are things that control the flow of logic of the program.
 
 -if/else. Conditional that does something if an expression matches.
@@ -117,8 +119,14 @@ These are things that control the flow of logic of the program.
    while statement do //code    //scala3
    while (statement) {code}     //Scala2
 
+
+ break. Scala doesn't have a break statement, so you need to import a package with a break class
+         import scala.util.control._
+
 -----------------------------------------TRAITS & CLASSES-------------------------------------------
--Traits. Collection of abstract and non-abstract methods. Like mini-classes
+-Traits. Collection of abstract and non-abstract methods. Like mini-classes. Define an object type 
+   and method signatures
+             
       trait Trait_Name {
          def method1(x: Any): return_type
          def method2(y: Any): return_type}
@@ -133,10 +141,66 @@ These are things that control the flow of logic of the program.
   To create an instance of a class, called an object, just assign the class to a variable with 
   arguments for the class. The parameters must be the same data type
 
-      val obj = ClassName("X", "Y") 
-   When you call an object you can access it's fields my calling them with dot notation
-         obj.identifier1
-         obj.identifier2
+         val obj = ClassName("X", "Y") 
+     When you call an object you can access it's fields my calling them with dot notation
+           obj.identifier1  //prints X
+           obj.identifier2  //pirnts Y
+             
+  -Classes take on the properties of traits by extending them and assigning values to the trait's
+    properties. Uses the extends keyword.
+              
+             trait Dog {
+                 def breed: String
+                 def color: String
+                 def bark: Boolean = true
+                 def bite: Boolean
+             }
+             class SaintBernard extends Dog {
+                 val breed = "Saint Bernard"
+                 val color = "brown"
+                 def bite = false
+             }  
  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
