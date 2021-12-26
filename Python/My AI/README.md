@@ -6,7 +6,7 @@ I've seen this done online and I want to make my own assistant. I'm using pyttsx
 I have an idea about programming the AI to only respond to my voice. This can be done as I've seen other projects on Github do the same thing. I will have to make python recognize pitches of my voice.
 
 #### How it will work
-I will have to write a neural network to recognize my voice. This is done through detection of certain frequencies, like how a guitar tuning app can detect frequencies of strings to know if they are in tune or not. I'll need a package to be able to recognize pitch and audio frequencies like crepe or pydub. 
+I will have to write a neural network to recognize my voice. Speech recognition only recognizes words, not distinct voices, so I want to program the AI to only repsond to me. This is done through detection of certain frequencies, like how a guitar tuning app can detect frequencies of strings to know if they are in tune or not. I'll need a package to be able to recognize pitch and audio frequencies like crepe or pydub. 
 I'll have to do some research to find it. If this works I can train the network to recognize my voice and only work when it detects me. This will be the greatest feature of the AI assistant.
 
 ##### New voices
