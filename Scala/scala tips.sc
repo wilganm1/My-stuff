@@ -73,19 +73,70 @@ These are things that control the flow of logic of the program.
               //code to run
 
 -For loop.
- Runs a loop based on generators. Generators are usually written as i <- data.
+ Runs a loop based on generators. Generators are usually written as i <- data. 
+ Think of generators as i in ~~ in Python.
  
             for i <- data do //code
-   Example:        
-    val ints = List(1,2,3,4,5)
+    Example:        
+     val ints = List(1,2,3,4,5)
     
-    for i <- ints do println(i)
-    //prints 1,2,3,4,5
+     for i <- ints do println(i)
+     //prints 1,2,3,4,5
     
--Guards. if expressions in a for loop
-  for
-    i <- ints
-    if i > 2.  //guard
-  do
-    println(i)
+  -Guards. if expressions in a for loop
+    for
+      i <- ints
+      if i > 2.  //guard
+    do
+      println(i)
+
+   You can assign the result to a variable.
+      val x = if a < b then a else b
+ 
+  -Yields. Create for expressions to calculate results
+        for i <- ints yield i * 2
+
+ -Match. Acts like a switch statement in C++. Is an expression so you can assign a variable.
+       val i= 1 //variable i that is used in match expression
+   
+     val result = i match
+                     case 1 => println("one") //If i = 1, prints "one"
+                     case 2 => println("two") //if i = 2, prints "two"
+                     case 3 => println("Three")
+         
+ -Try/catch/finally. Lets you catch exceptions.
+     try
+      writeTextToFile(text)
+    catch
+      case ioe: IOException => println("Got an IOException.")
+      case nfe: NumberFormatException => println("Got a NumberFormatException.")
+    finally
+      println("Clean up your resources here.")
+
+-While loop. 
+   while statement do //code    //scala3
+   while (statement) {code}     //Scala2
+
+-----------------------------------------TRAITS & CLASSES-------------------------------------------
+-Traits. Collection of abstract and non-abstract methods. Like mini-classes
+      trait Trait_Name {
+         def method1(x: Any): return_type
+         def method2(y: Any): return_type}
+
+-Classes. Template for a creation of objects. They have parameters like methods
+
+          class ClassName(var identifier1: data_tye, var identifier2: data_type):
+                val indentifier3 = identifier1 + identifier2 //class property
+
+                def ClassMethod: Unit
+  
+  To create an instance of a class, called an object, just assign the class to a variable with 
+  arguments for the class. The parameters must be the same data type
+
+      val obj = ClassName("X", "Y") 
+   When you call an object you can access it's fields my calling them with dot notation
+         obj.identifier1
+         obj.identifier2
+ 
+
 
