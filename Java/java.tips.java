@@ -84,7 +84,7 @@ Strings.
 
   -Concatenate strings with +
 
-  -Escape characters. If using quotes inside strings use \' or \".
+  -Escape characters. If using quotes inside strings use \' or \". " '
       String txt = "We are the so-called \"Vikings\" from the north.";
 
    Adding a number and string will turn the number into a string.;
