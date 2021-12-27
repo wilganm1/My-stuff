@@ -202,12 +202,13 @@ A reusable block of code that only runs when called. Can pass parameters into it
 They must be declared within a class. Like a function in Python.;
 
             public class Main {
-              static void myMethod(data_type x) { //static means it belongs to class itself
+              static void myMethod(data_type parameter) { //static means it belongs to class itself
                 // code to be executed
               }} // void means that method does not return anything.
 
    -You run the function when you call it.
-
+                         public static void main(String[] args) {
+                            myMethod("argument");}}
 
 
 
