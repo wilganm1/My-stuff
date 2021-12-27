@@ -3,8 +3,8 @@ Java is a general-purpose object-oriented programming language.;
 
 Packages. Importing classes and functions that do stuff.;
 
-import package.name.Class    //import a single class of the package
-import package.name.*        //imports whole package
+import package.name.Class ;   //import a single class of the package
+import package.name.*   ;     //imports whole package
 
                    
 To run the java program you need the following code:
@@ -287,7 +287,62 @@ can be shared with all objects or each object can have their own traits.;
 
     The get method returns the value of the variable name.
     The set method takes a parameter (newName) and assigns it to the name variable. 
-    The this keyword is used to refer to the current object.
+    The this keyword is used to refer to the current object.;
+
+-Inheritance. Passing attributes from one class to another. Uses extends keyword
+               class Vehicle {
+                  protected String brand = "Ford";        // Vehicle attribute
+                  public void honk() {                    // Vehicle method
+                    System.out.println("Tuut, tuut!");}}
+
+                class Car extends Vehicle {
+                  private String modelName = "Mustang";    // Car attribute
+                  public static void main(String[] args) {}};
+
+-Polymorphism. Using inherited methods to perform different tasks.
+  This invovles chaning the methods from parent class.;
+
+-Nested Classes. You can group classes that belong together. Create an object of 
+an outer class then make an object of the inner class.;
+
+              class OuterClass {
+                int x = 10;
+
+                class InnerClass { //This class is nested.
+                  int y = 5;
+                }}
+              
+              public class Main {
+                public static void main(String[] args) {
+                  OuterClass myOuter = new OuterClass(); //creating an object
+                  OuterClass.InnerClass myInner = myOuter.new InnerClass(); //object of inner class
+                  System.out.println(myInner.y + myOuter.x);}}
+
+-Abstraction. Hiding certain details and showing only essential information to user.;
+      abstract keyword is a non-access modifier.
+        -abstract class: restricted class than cannot create objects. Must be inherited
+        -abstract method: only used in abstract class. body provided by subclass.;
+                
+           // Abstract class
+          abstract class Animal {
+            // Abstract method (does not have a body)
+            public abstract void animalSound();
+            // Regular method
+            public void sleep() {
+              System.out.println("Zzz");}}
+            
+          // Subclass (inherit from Animal)
+          class Pig extends Animal {
+            public void animalSound() {
+              // The body of animalSound() is provided here
+              System.out.println("The pig says: wee wee");}}
+          
+          
+          
+          
+          
+          
+          
 
  -Making packages. 
                package mypack;
