@@ -1,14 +1,19 @@
 -------------------------------------BASICS----------------------------------------------
-Java is a general-purpose object-oriented programming language.
+Java is a general-purpose object-oriented programming language.;
 
+Packages. Importing classes and functions that do stuff.;
+
+import package.name.Class    //import a single class of the package
+import package.name.*        //imports whole package
+
+                   
 To run the java program you need the following code:
 
             public class Main {
 
               public static void main(String[] args) { 
                 code in here
-              }
-            }
+              }}
 
 Printing things to console window:
   System.out.println(~~~);
@@ -61,6 +66,8 @@ Variables
   -Final. Use the keyword final to make a variable immutable.
         final data_type identifier = value;
         final int myVar = 15;
+
+ -Scope. Variables assigned between {} are only available in those braces.
 
 Type Casing
   Converting a variable of one data type to another.
@@ -202,13 +209,89 @@ A reusable block of code that only runs when called. Can pass parameters into it
 They must be declared within a class. Like a function in Python.;
 
             public class Main {
-              static void myMethod(data_type parameter) { //static means it belongs to class itself
+              static return_type myMethod(data_type parameter) {
                 // code to be executed
-              }} // void means that method does not return anything.
+              }} 
 
-   -You run the function when you call it.
-                         public static void main(String[] args) {
-                            myMethod("argument");}}
+    static means it belongs to a class itself;
+    If your method does not return anyting use void;
+    
+   -You run the function when you call it.;
+             public static void main(String[] args) {
+                myMethod("argument");};
+  -Overloading. Same name with different parameters.
+       int myMethod(int x);
+       float myMethod(float x);
+       double myMethod(double x, double y);
+;
 
 
+----------------------------------CLASSES & OBJECTS---------------------------------------
+Objects containe data and methods that can be called at any time.;
+Classes are like blueprint for objects. They have attributes and methods. Some 
+can be shared with all objects or each object can have their own traits.;
 
+               public class ClassName {
+                           //code
+               };
+ To create a new object:
+              public static void main(String[] args) {
+                ClassName objName1 = new Main(); //Create new object called objName
+                ClassName objName2 = new Main(); //2nd object of class.
+                System.out.println(myObj.x);}}
+
+
+-Attributes. You access attributes of callses using dot syntax ( . );
+             public class Main {
+               int x = 5;
+
+               public static void main(String[] args) {
+                 Main myObj = new Main(); 
+                 System.out.println(myObj.x);}}
+          // prints out 5
+
+  Access methods of a class using .methodName()
+
+    Static vs Non-static;
+        static = accessed without creating an object of a class
+        public = need to create an object.;
+
+ -Constructors. Special methods to initialize objects. Sets initial values 
+ of object attributes.;
+   The constructor must have the same name as the class;
+
+            public class Main {
+              int x;
+              String y
+              public Main(parameter1, parameter2) { // CONSTRUCTOR
+                x = parameter1;
+                y = parameter2;}
+            };
+
+ -Access Modifiers. Clearence level for classes & attributes;
+            public  -accessible for all classes
+            private  -only within declared class
+            protected  -same package and subclasses.
+                        
+ -Setters & getters;
+            public class Person {
+              private String name; // private = restricted access
+
+              // Getter
+              public String getName() {
+                return name;}
+
+              // Setter
+              public void setName(String newName) {
+                this.name = newName;}}
+
+    The get method returns the value of the variable name.
+    The set method takes a parameter (newName) and assigns it to the name variable. 
+    The this keyword is used to refer to the current object.
+
+ -Making packages. 
+               package mypack;
+               class MyPackageClass {
+                 public static void main(String[] args) {
+                   System.out.println("This is my package!");
+                 }};
