@@ -117,7 +117,40 @@ Arrays. Store multiple values in a single variable. Use [] after variable type.
                 
  -Two-dimensional arrays. 
                 int[][] arraysName = { {1,2,3}, {7,8,9} };
-                arraysName[1][2] // 9
+                arraysName[1][2] // 9;
+                  
+User input. Directly type stuff into the console window/terminal.;
+            import java.util.Scanner; //import Scanner class
+  //.in is the input method of Scanner
+            class Main {
+              public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in); //create Scanner object
+                System.out.println("enter username");
+      
+                String userName = scanner.nextLine();  // This line reads user input
+                System.out.println("Username is: " + userName); //output user input
+              }}
+
+  The scanner object can be used for any & all data types. You just need to call
+  the object with the specific 
+
+  For each data type you need a different method from the scanner Class;
+    boolean     nextBoolean();
+    double      nextDouble();
+    int         nextInt();
+    String      nextLine();
+
+ PROBLEM. When you do nextInt() or nextDouble() Java automatically adds a \n 
+ which creates a new line. The problem is that it doesn't' go away if you do 
+ a nextLine() method call.; To fix that just call nextLine() with no arguments.;
+ 
+            // String input
+            String name = scanner.nextLine();
+
+            // Numerical input
+            int age = scanner.nextInt();
+            double salary = scanner.nextDouble();
+
 
 ------------------------------------CONDITIONALS-----------------------------------------
 These control the flow of logic in the program depending if the condition is true or 
@@ -335,14 +368,32 @@ an outer class then make an object of the inner class.;
           class Pig extends Animal {
             public void animalSound() {
               // The body of animalSound() is provided here
-              System.out.println("The pig says: wee wee");}}
+              System.out.println("The pig says: wee wee");}};
           
+-Interfaces. completely abstract class to group related methods with empty bodies.;
+  You must implement interfaces to access them. 
+    Use the interface keyword to create and interface and implements to extend it
+          // interface
+          interface Animal {
+            public void animalSound(); // interface method (does not have a body)
+            public void run(); // interface method (does not have a body)
+          }
           
-          
-          
-          
-          
-          
+          // Pig "implements" the Animal interface
+          class Pig implements Animal {
+            public void animalSound() {
+              // The body of animalSound() is provided here
+              System.out.println("The pig says: wee wee");};
+
+-Enums. Special "class" that represents a group of constants (unchangeable variables)
+     You can access consants with dot notation..;
+            
+          enum LEVEL {
+            LOW,
+            MEDIUM,
+            HIGH}
+
+            
 
  -Making packages. 
                package mypack;
