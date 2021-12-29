@@ -6,7 +6,7 @@ Packages. Importing classes and functions that do stuff.;
 import package.name.Class ;   //import a single class of the package
 import package.name.*   ;     //imports whole package
 
-import java.time.*      //dates and times
+import java.time.* ;     //dates and times
                    
 To run the java program you need the following code:
 
@@ -103,6 +103,7 @@ Math. Built-in class that has math functions
   .random()   //returns number between 0.0 and 1.0
   .exp(x)     //value of e^x
   
+------------------------------------COLLECTIONS-------------------------------------------
   
 Arrays. Store multiple values in a single variable. Use [] after variable type.
   Arrays values must be only one type. Create them with {}. IMMUTABLE.
@@ -138,7 +139,11 @@ Arrays. Store multiple values in a single variable. Use [] after variable type.
               getLast()
                 
 -HashMap. Store elements in key/value pairs. Just like dictionaries in Python.
-                  
+                import java.util.HashMap 
+                
+       HashMap<key_data_type, value_data_type> hashmap = new HashMap<key_data_type, value_data_type>();
+
+
 User input. Directly type stuff into the console window/terminal.;
             import java.util.Scanner; //import Scanner class
   //.in is the input method of Scanner
@@ -212,7 +217,6 @@ false.
               while (condition) {
                 // code to run
               }
-
 
  -Do/While loop
   Executes the loop once, then checks if the condition is true before running loop.
@@ -403,7 +407,7 @@ an outer class then make an object of the inner class.;
           class Pig implements Animal {
             public void animalSound() {
               // The body of animalSound() is provided here
-              System.out.println("The pig says: wee wee");};
+              System.out.println("The pig says: wee wee");};}
 
 -Enums. Special "class" that represents a group of constants (unchangeable variables)
      You can access consants with dot notation..;
@@ -411,10 +415,8 @@ an outer class then make an object of the inner class.;
           enum LEVEL {
             LOW,
             MEDIUM,
-            HIGH}
-
+            HIGH;};          
             
-
  -Making packages. 
                package mypack;
                class MyPackageClass {
