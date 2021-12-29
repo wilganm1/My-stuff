@@ -1,4 +1,4 @@
--------------------------------------BASICS----------------------------------------------
+--------------------------------------BASICS-----------------------------------------------
 Java is a general-purpose object-oriented programming language.;
 
 Packages. Importing classes and functions that do stuff.;
@@ -6,6 +6,7 @@ Packages. Importing classes and functions that do stuff.;
 import package.name.Class ;   //import a single class of the package
 import package.name.*   ;     //imports whole package
 
+import java.time.*      //dates and times
                    
 To run the java program you need the following code:
 
@@ -13,17 +14,15 @@ To run the java program you need the following code:
 
               public static void main(String[] args) { 
                 code in here
-              }}
+                }}
 
 Printing things to console window:
   System.out.println(~~~);
-
 
 // write single-line comments
 /*
 write multiline comments
 */
-
 
 Data types
  int      //whole number 
@@ -106,7 +105,7 @@ Math. Built-in class that has math functions
   
   
 Arrays. Store multiple values in a single variable. Use [] after variable type.
-  Arrays values must be only one type. Create them with {}.
+  Arrays values must be only one type. Create them with {}. IMMUTABLE.
   
        data_type[] arrayName = {element 1, element 2, element 3}
  
@@ -118,6 +117,27 @@ Arrays. Store multiple values in a single variable. Use [] after variable type.
  -Two-dimensional arrays. 
                 int[][] arraysName = { {1,2,3}, {7,8,9} };
                 arraysName[1][2] // 9;
+                  
+ -ArrayList. Resizable array.
+                  import java.util.ArrayList;
+                  ArrayList<data_type> arraylistObj = new ArrayList<data_type>();
+     Methods for arrayList
+                  .add();    //adds in items
+                  .get(n);   //access element at index n
+                  .set(n, ~)  //change value at index n to ~
+                  .remove(n)  //removes element of index n
+                  .clear()    //deletes all elements in list.
+                  .size()       //find size of array. Like len() in python
+                  
+ -LinkedList. Manipulate data in a list. Almost identical to ArrayList.;
+              addFirst()
+              addLast()
+              removeFirst()
+              removeLast()
+              getFirst()
+              getLast()
+                
+-HashMap. Store elements in key/value pairs. Just like dictionaries in Python.
                   
 User input. Directly type stuff into the console window/terminal.;
             import java.util.Scanner; //import Scanner class
@@ -259,7 +279,7 @@ They must be declared within a class. Like a function in Python.;
 ;
 
 
-----------------------------------CLASSES & OBJECTS---------------------------------------
+-----------------------------------CLASSES & OBJECTS-----------------------------------------
 Objects containe data and methods that can be called at any time.;
 Classes are like blueprint for objects. They have attributes and methods. Some 
 can be shared with all objects or each object can have their own traits.;
