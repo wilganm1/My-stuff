@@ -103,47 +103,7 @@ Math. Built-in class that has math functions
   .random()   //returns number between 0.0 and 1.0
   .exp(x)     //value of e^x
   
-------------------------------------COLLECTIONS-------------------------------------------
   
-Arrays. Store multiple values in a single variable. Use [] after variable type.
-  Arrays values must be only one type. Create them with {}. IMMUTABLE.
-  
-       data_type[] arrayName = {element 1, element 2, element 3}
- 
- To access values use arrayName[x] indexing. 0-indexed like Python.
- You can change any element by reassigning it.
-   
-                arrayName[x] = new_value
-                
- -Two-dimensional arrays. 
-                int[][] arraysName = { {1,2,3}, {7,8,9} };
-                arraysName[1][2] // 9;
-                  
- -ArrayList. Resizable array.
-                  import java.util.ArrayList;
-                  ArrayList<data_type> arraylistObj = new ArrayList<data_type>();
-     Methods for arrayList
-                  .add();    //adds in items
-                  .get(n);   //access element at index n
-                  .set(n, ~)  //change value at index n to ~
-                  .remove(n)  //removes element of index n
-                  .clear()    //deletes all elements in list.
-                  .size()       //find size of array. Like len() in python
-                  
- -LinkedList. Manipulate data in a list. Almost identical to ArrayList.;
-              addFirst()
-              addLast()
-              removeFirst()
-              removeLast()
-              getFirst()
-              getLast()
-                
--HashMap. Store elements in key/value pairs. Just like dictionaries in Python.
-                import java.util.HashMap 
-                
-       HashMap<key_data_type, value_data_type> hashmap = new HashMap<key_data_type, value_data_type>();
-
-
 User input. Directly type stuff into the console window/terminal.;
             import java.util.Scanner; //import Scanner class
   //.in is the input method of Scanner
@@ -175,6 +135,65 @@ User input. Directly type stuff into the console window/terminal.;
             // Numerical input
             int age = scanner.nextInt();
             double salary = scanner.nextDouble();
+
+------------------------------------COLLECTIONS-------------------------------------------
+  
+Arrays. Store multiple values in a single variable. Use [] after variable type.
+  Arrays values must be only one type. Create them with {}. IMMUTABLE.
+  
+       data_type[] arrayName = {element 1, element 2, element 3}
+ 
+ To access values use arrayName[x] indexing. 0-indexed like Python.
+ You can change any element by reassigning it.
+   
+                arrayName[n] = new_value
+                
+ -Two-dimensional arrays. 
+                int[][] arraysName = { {1,2,3}, {7,8,9} };
+                arraysName[1][2] // 9;
+                  
+ -ArrayList. Resizable array.
+                  import java.util.ArrayList;
+                  ArrayList<data_type> arraylistObj = new ArrayList<data_type>();
+     Methods for arrayList
+                  .add();    //adds in items
+                  .get(n);   //access element at index n
+                  .set(n, ~)  //change value at index n to ~
+                  .remove(n)  //removes element of index n
+                  .clear()    //deletes all elements in list.
+                  .size()       //find size of array. Like len() in python
+                  
+ -LinkedList. Manipulate data in a list. Almost identical to ArrayList.;
+              addFirst()
+              addLast()
+              removeFirst()
+              removeLast()
+              getFirst()
+              getLast()
+                
+-HashMap. Store elements in key/value pairs. Just like dictionaries in Python.
+                import java.util.HashMap 
+                
+ HashMap<key_data_type, value_data_type> hashmap = new HashMap<key_data_type, value_data_type>();
+
+          .put(~)       -adds items.
+          .get(key)     -access a value through its key.
+          .remove(~)    -remove item ~
+          .clear()      -removes all items.
+          .size()       -returns how many items. like len in Python.;
+
+ HashSet. List with UNIQUE items.
+              import java.util.HashSet;
+
+       HashSet<Wrapper> obj = new HashSet<Wrapper>();
+
+        .add(~)       -add ~ to set.
+        .contains(~)  -checks if x is in list
+        .remove(~)    -removes an item
+        .clear()      -removes all items.
+        .size()       -how many items there are;
+
+Iterator. Object to loop through ArrayList and HashSet.
 
 
 ------------------------------------CONDITIONALS-----------------------------------------
