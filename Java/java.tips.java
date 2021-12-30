@@ -469,4 +469,31 @@ an outer class then make an object of the inner class.;
                    System.out.println("This is my package!");
                  }};
 
-------------------------------
+-----------------------------------ERRORS & EXCEPTIONS------------------------------------
+Exceptions occurr when there are erros in the code that prevent it from running.;
+  
+try/catch/finally. Test a code block and if it matches an error you handle it.;
+
+                  try {
+                    //  Block of code to try
+                  }
+                  catch(Exception e) {
+                    //  Block of code to handle errors
+                  }
+                  finally {
+                    // this block runs no matter what
+                  }
+
+throw. Create a custom error for whatever you want. You can match an existing error.;
+
+              throw new Exception("Message");
+
+                                  
+  
+                  
+
+
+  
+  
+  
+  
