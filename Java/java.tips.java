@@ -102,7 +102,23 @@ Math. Built-in class that has math functions
   .abs(x)     //Absolute value.
   .random()   //returns number between 0.0 and 1.0
   .exp(x)     //value of e^x
+;
+
+Wrapper. Use primitive data types as objects. More functionality.;
+          Wrapper    data type
+          Integer     -int
+          Float       -float
+          Double      -double
+          Boolean     -boolean
+          Character   -char
   
+   -Convert Integer to String.;  .toString();
+                Integer myInt = 100;
+                String myString = myInt.toString();
+                
+   -Convert String to Integer; .valueOf();
+                String str = "25";
+                Integer number = Integer.valueOf(str);
   
 User input. Directly type stuff into the console window/terminal.;
             import java.util.Scanner; //import Scanner class
@@ -194,6 +210,16 @@ Arrays. Store multiple values in a single variable. Use [] after variable type.
         .size()       -how many items there are;
 
 Iterator. Object to loop through ArrayList and HashSet.
+                import java.util.ArrayList;
+                import java.util.Iterator;
+
+             ArrayList<Wrapper> obj = new ArrayList<Wrapper>();
+
+                    //get the iterator
+                    Iterator<Wrapper> it = obj.iterator();
+
+                    // print first item
+                    System.out.println(it.next());
 
 
 ------------------------------------CONDITIONALS-----------------------------------------
