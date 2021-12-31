@@ -542,4 +542,66 @@ Threads allow a program to operate ore efficiently by doing multiple things at o
               public void run() {
                 System.out.println("This code is running in a thread");}}
 
-  
+------------------------------------FILE HANDLING------------------------------------------
+Java can open, rewrite, read, and delete files dynamically.
+    
+                  import java.io.File  //File class
+              
+                  File myObj = new File("filename.txt") //specify the filename
+                  
+     -Methods for File class:
+              canRead()          -whether file readable or not
+              canWrite()         -whther file writable or not
+              createNewFile()    -creates empty file
+              delete()           -deletes a file
+              exists()           -tests whether file exists
+              getName()          -return of the name of file
+              getAbsolutePath()  -returns aboslute pathname
+              length()           -size of file in bytes
+              list()             -arrays of files in directory
+              mkdir()            -creates a directory
+              
+              
+          import java.io.File;  // Import the File class
+          import java.io.IOException;  // Import the IOException class to handle errors
+
+  -Creating new file. Use a try/catch block to handle IOException error. .createNewFile will return
+    true if a new file is created and false if that file already exists.
+
+          public class CreateFile {
+            public static void main(String[] args) {
+              try {
+                File myObj = new File("filename.txt");
+                if (myObj.createNewFile()) {
+                  System.out.println("File created: " + myObj.getName());
+                } else {
+                  System.out.println("File already exists.");
+                }
+              } catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();}}}
+
+      To specify path of file and use \\ for Windows and / for Mac and Linux.
+               File myObj = new File("C:\\Users\\MyName\\filename.tx");
+   
+  -Write to file. Use FileWrite with .write() method to write to a file. Use .close() when done.
+                      import java.io.FileWriter;
+                      import java.io.IOException;
+
+            public class WriteToFile {
+              public static void main(String[] args) {
+                try {
+                  FileWriter myWriter = new FileWriter("filename.txt");
+                  myWriter.write("~~~~~~"); // writing text to some existing file
+                  myWriter.close();  //closes the file.
+                  System.out.println("Successfully wrote to the file.");
+                } catch (IOException e) {
+                  System.out.println("An error occurred.");
+                  e.printStackTrace();}}}
+
+  -Read a file. Import Scanner class to read contents of text file.;
+
+            
+            
+            
+            }
