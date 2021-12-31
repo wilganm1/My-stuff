@@ -327,7 +327,6 @@ They must be declared within a class. Like a function in Python.;
        double myMethod(double x, double y);
 ;
 
-
 -----------------------------------CLASSES & OBJECTS-----------------------------------------
 Objects containe data and methods that can be called at any time.;
 Classes are like blueprint for objects. They have attributes and methods. Some 
@@ -489,11 +488,44 @@ throw. Create a custom error for whatever you want. You can match an existing er
               throw new Exception("Message");
 
                                   
-  
-                  
+-----------------------------------REGULAR EXPRESSIONS------------------------------------
+Sequence of characters that forms a search pattern.;
+
+              import java.util.regex;
+                                    .Pattern  -defines a pattern
+                                    .Matcher  -used to search for pattern;
+
+       Pattern pattern = Pattern.compile("pattern", Pattern.CASE_INSENSITIVE);
+       Matcher matcher = pattern.matcher("~~~~~~");
+       boolean matchFound = matcher.find();
+
+ "pattern" is searched for in "~~~~~~" 
+
+        Compile patterns;
+              [abc]     -find one character from option between brackets
+              [^abc]    -find one character NOT between brackets
+              [0-9]     -find a single character from range 0 to 9;
+
+        Metacharacters
+              |       -find a match of any patterns separated by |: a|b|c;
+              .       -find ONLY ONE instance of any character
+              ^       -match at beginning of string: ^Hello
+              $       -match at end of strings as in: World$
+              \d      -digit
+              \s      -whitespace character
+              \b      -match at beginning or end: \bWORD, WORD\b
+              
+        Quantifiers
+        
 
 
-  
-  
-  
-  
+
+
+
+
+
+
+
+                                    
+                                 
+
