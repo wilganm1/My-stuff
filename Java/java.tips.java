@@ -136,10 +136,10 @@ User input. Directly type stuff into the console window/terminal.;
   the object with the specific 
 
   For each data type you need a different method from the scanner Class;
-    boolean     nextBoolean();
-    double      nextDouble();
-    int         nextInt();
-    String      nextLine();
+      boolean     nextBoolean();
+      double      nextDouble();
+      int         nextInt();
+      String      nextLine();
 
  PROBLEM. When you do nextInt() or nextDouble() Java automatically adds a \n 
  which creates a new line. The problem is that it doesn't' go away if you do 
@@ -326,6 +326,12 @@ They must be declared within a class. Like a function in Python.;
        float myMethod(float x);
        double myMethod(double x, double y);
 ;
+
+Lambdas. short block of code. Takes in a parameter and returns a value.;
+    
+                        parameter -> expression
+                        
+                 (parameter1, parameter2) -> { code block }
 
 -----------------------------------CLASSES & OBJECTS-----------------------------------------
 Objects containe data and methods that can be called at any time.;
@@ -516,16 +522,24 @@ Sequence of characters that forms a search pattern.;
               \b      -match at beginning or end: \bWORD, WORD\b
               
         Quantifiers
-        
+              n+      -match string with AT LEAST ONE n
+              n*      -contains >= 0 occurances of n
+              n?      -contains 0 or 1 occurrences of n
+              n{x}    -sequence of X n's'
+              n{x,y}  -sequence of X to Y n's'
+              n{x,}   -sequence of at least X n's'.;
 
 
+-------------------------------------THREADING--------------------------------------------
+Threads allow a program to operate ore efficiently by doing multiple things at once.;
 
+            public class Main extends Thread { //extend Thread class
+              public static void main(String[] args) {
+                Main thread = new Main();
+                thread.start();
+                System.out.println("This code is outside of the thread");
+              }
+              public void run() {
+                System.out.println("This code is running in a thread");}}
 
-
-
-
-
-
-                                    
-                                 
-
+  
