@@ -17,7 +17,7 @@ To run the java program you need the following code:
                 }}
 
 Printing things to console window:
-  System.out.println(~~~);
+  System.out.println("~~~");
 
 // write single-line comments
 /*
@@ -55,8 +55,10 @@ Operators
  ||   -logical OR
  !    -logical NOT. changes boolean status.
 
-Variables
-    data_type identifier = value;
+Variables. Assign data to names to be referenced later.
+      data_type identifier = value;
+
+      int myAge = 26;
 
   You can declare variables without assigning them.
        int myVar;
@@ -82,11 +84,17 @@ Type Casing
 Strings. 
   Strings use "" when typing. There are many methods dealing with strings.   
           String txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  txt.length().       // prints length of text variable
-     .toUpperCase()   // Makes every letter upper-case
-     .toLowerCase()   // makes every letter lower-case
-     .indexof("~")    // finds first position of ~.
-     .concat(y);      // concatenates txt with y.
+  txt.length().         // prints length of text variable
+     .toUpperCase()     // Makes every letter upper-case
+     .toLowerCase()     // makes every letter lower-case
+     .indexof("~")      // finds first position of ~.
+     .concat(y)         // concatenates txt with y.
+     .charAt(n)         //returns character at index n.;
+     .startswith("~")   //checks if string starts with ~
+     .endswidth("~")    //checks if string ends with ~
+     .split()           //splits string into set of substrings
+     .trim()            //removes whitespace from both ends
+  
 
   -Concatenate strings with +
 
@@ -102,6 +110,7 @@ Math. Built-in class that has math functions
   .abs(x)     //Absolute value.
   .random()   //returns number between 0.0 and 1.0
   .exp(x)     //value of e^x
+  .floor(x)   //rounds x down to nearest integer
 ;
 
 Wrapper. Use primitive data types as objects. More functionality.;
@@ -132,13 +141,16 @@ User input. Directly type stuff into the console window/terminal.;
                 System.out.println("Username is: " + userName); //output user input
               }}
 
+                x = scanner.nextInt();  //reads integers
+                y = scanner.nextInt();  //reads second integer
+
   The scanner object can be used for any & all data types. You just need to call
   the object with the specific 
 
   For each data type you need a different method from the scanner Class;
       boolean     nextBoolean();
       double      nextDouble();
-      int         nextInt();
+      int         nextInt();  //reads integers. Call for as many things you want to read.
       String      nextLine();
 
  PROBLEM. When you do nextInt() or nextDouble() Java automatically adds a \n 
@@ -220,7 +232,6 @@ Iterator. Object to loop through ArrayList and HashSet.
 
                     // print first item
                     System.out.println(it.next());
-
 
 ------------------------------------CONDITIONALS-----------------------------------------
 These control the flow of logic in the program depending if the condition is true or 
@@ -406,8 +417,29 @@ can be shared with all objects or each object can have their own traits.;
                   private String modelName = "Mustang";    // Car attribute
                   public static void main(String[] args) {}};
 
--Polymorphism. Using inherited methods to perform different tasks.
+-Polymorphism. Using inherited methods to perform different tasks. Methods with same name.
   This invovles chaning the methods from parent class.;
+
+                  class Animal {
+                    public void animalSound() {
+                      System.out.println("The animal makes a sound");}}
+
+                  class Pig extends Animal {
+                    public void animalSound() {
+                      System.out.println("The pig says: wee wee");}}
+
+                  class Dog extends Animal {
+                    public void animalSound() {
+                      System.out.println("The dog says: bow wow");}}
+
+                  class Main {
+                    public static void main(String[] args) {
+                      Animal myAnimal = new Animal();  // Create a Animal object
+                      Animal myPig = new Pig();  // Create a Pig object
+                      Animal myDog = new Dog();  // Create a Dog object
+                      myAnimal.animalSound();
+                      myPig.animalSound();
+                      myDog.animalSound();}}
 
 -Nested Classes. You can group classes that belong together. Create an object of 
 an outer class then make an object of the inner class.;
@@ -492,8 +524,7 @@ try/catch/finally. Test a code block and if it matches an error you handle it.;
 throw. Create a custom error for whatever you want. You can match an existing error.;
 
               throw new Exception("Message");
-
-                                  
+                             
 -----------------------------------REGULAR EXPRESSIONS------------------------------------
 Sequence of characters that forms a search pattern.;
 
@@ -528,7 +559,6 @@ Sequence of characters that forms a search pattern.;
               n{x}    -sequence of X n's'
               n{x,y}  -sequence of X to Y n's'
               n{x,}   -sequence of at least X n's'.;
-
 
 -------------------------------------THREADING--------------------------------------------
 Threads allow a program to operate ore efficiently by doing multiple things at once.;
@@ -601,7 +631,22 @@ Java can open, rewrite, read, and delete files dynamically.
 
   -Read a file. Import Scanner class to read contents of text file.;
 
+              import java.io.File;  // Import the File class
+              import java.io.FileNotFoundException;  // Import this class to handle errors
+              import java.util.Scanner; // Import the Scanner class to read text files
+
+              public class ReadFile {
+                public static void main(String[] args) {
+                  try {
+                    File myObj = new File("filename.txt");
+                    Scanner myReader = new Scanner(myObj);
+                    while (myReader.hasNextLine()) {
+                      String data = myReader.nextLine();
+                      System.out.println(data);
+                    }
+                    myReader.close();
+                  } catch (FileNotFoundException e) {
+                    System.out.println("An error occurred.");
+                    e.printStackTrace();}}}
+
             
-            
-            
-            }
