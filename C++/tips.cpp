@@ -617,17 +617,21 @@ Set class to private, and use get and set methods to modify private values
         public:
           void animalSound() {
           cout << "The dog says: bow wow \n" ;}};
-
--Files
+      
+-----------------------------FILES----------------------------
 Use fstream library to work with files
 #include <iostream>
-#include <fstream>
+#include <fstream>. //includes <ofstream< and <ifstream>
 
  -Write files with ofstream and <<.
     int main() {
+  
    ofstream MyFile("filename.txt"); //create and open file
+  
    MyFile << "Files can be tricky, but it is fun enough!"; //write file
+  
    MyFile.close();}  //close file
+      
  -Read files with ifstream
     string myText;   //create text string
     ifstream MyReadFile("filename.txt");  //read text file
