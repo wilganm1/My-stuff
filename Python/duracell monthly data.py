@@ -3,16 +3,17 @@
 # importing openpyxl module
 import openpyxl as xl;
   
-# opening the source excel file LOOP THIS
+# opening the source excel file. LOOP THIS
 source_folder = """Source folder here"""
 destination_file = "file name"
 
-for files in source_folder:
+# Looping through each file in source folder
+for file in source_folder:
   filename = file
   wb1 = xl.load_workbook(filename)
   ws1 = wb1.worksheets[0]
   
-  # opening the destination excel file 
+  # opening the destination excel file. NEED THIS OPEN IN LOOP TO GET CORRECT ROW & COLUMN NUMBER.
   filename1 = destination_file
   wb2 = xl.load_workbook(filename1)
   ws2 = wb2.active
@@ -27,8 +28,8 @@ for files in source_folder:
   
   # copying the cell values from source 
   # excel file to destination excel file
-  for i in range (1, mr1 + 1):
-      for j in range (1, mc1 + 1):
+  for i in range (2, mr1 + 1):  #Copies from row 2 to last row
+      for j in range (1, mc1 + 1): #Copes from column 1 to last column
           # reading cell value from source excel file
           c = ws1.cell(row = i, column = j)
 
