@@ -19,18 +19,21 @@ for files in source_folder:
 
   # calculate total number of rows and 
   # columns in source excel file
-  mr = ws1.max_row
-  mc = ws1.max_column
-
+  mr1 = ws1.max_row
+  mc1 = ws1.max_column
+  
+  mr2 = ws2.max_row  # reads max rows and columns of destination file so you 
+  mc2 = ws2.max_column # don't constantly copy over it.
+  
   # copying the cell values from source 
   # excel file to destination excel file
-  for i in range (1, mr + 1):
-      for j in range (1, mc + 1):
+  for i in range (1, mr1 + 1):
+      for j in range (1, mc1 + 1):
           # reading cell value from source excel file
           c = ws1.cell(row = i, column = j)
 
           # writing the read value to destination excel file
-          ws2.cell(row = i, column = j).value = c.value
+          ws2.cell(row = mr2 + i, column = mr2 + j).value = c.value
 
   # saving the destination excel file
   wb2.save(str(filename1))
