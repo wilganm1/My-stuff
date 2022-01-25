@@ -8,7 +8,7 @@ source_folder = """Source folder here"""
 destination_file = "file name"
 
 for files in source_folder:
-  filename ="C:\\Users\\Admin\\Desktop\\trading.xlsx"
+  filename = file
   wb1 = xl.load_workbook(filename)
   ws1 = wb1.worksheets[0]
   
