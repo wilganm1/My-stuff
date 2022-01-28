@@ -1,4 +1,4 @@
--------------------------BASICS---------------------------
+------------------------------BASICS------------------------------
 -Strings: text in Python. called a string. Typed with "" or ''.
      --> 'Hello World'
   -Can combine strings together with +
@@ -72,9 +72,7 @@ You can transfrom one data type into another using certain functions
  -If you need to call a file from the computer or something use \\
      'C:\\Users\\WilganZMT\\...'
  
-
-
-:::::::::::::::::::::::::::::::FUNCTIONS::::::::::::::::::::::::::::::::
+-------------------------------FUNCTIONS-------------------------------
 Allow you to reuse code easily. Can be used whenever.
 Format: 
     def function_name(parameter1, parameter2):    
@@ -112,7 +110,7 @@ Format:
 Website of all built in functions: 
 https://docs.python.org/3/library/functions.html#abs
 
-::::::::::::::::::::::::CONDITIONAL STATEMENTS::::::::::::::::::::::::::
+--------------------------CONDITIONAL STATEMENTS--------------------------
 If, elif, or else statements. If any of the statements = true, it runs
 Used within functions or variables
 -Example:
@@ -138,7 +136,7 @@ Used within functions or variables
  		return ~~~
 
 --------------------------DATA COLLECTIONS--------------------------
-A datatype that stores collection of different pieces of info. Use []
+List. A datatype that stores collection of different pieces of info. Use []
 	Format:
 		list_name = [item1, item2,...]
 -You can access items via their index
@@ -169,55 +167,27 @@ A datatype that stores collection of different pieces of info. Use []
 	 beatles = ["john","paul","george","ringo","stuart"]
 	 beatles.remove("stuart")
 		--> ["john","paul","george","ringo"]
-		
-		
--Dictionaries
-A dictionary is similar to a list, but you access values by looking 
-up a key instead of an index. A key can be any string or number.
-     Uses {} 
-      .get()          -retrives data from a certain location
-      .keys()	      -returns list of keys
-      .values()       -returns list of values
-	Format:
+			
+Dictionaries. A dictionary is similar to a list, but you access values
+by looking up a key instead of an index. A key can be any string or number.
+      	Format:
 		d = {'key1' : value1, 'key2' : value2, 'key3' : value3}
 		print d['key1']
 		 --> value1
-	-d['new_key'] = new_value  -adds in a new value for a key
-        -del d[key_name]	   -deletes keys and values
+	.get()          -retrives data from a certain location
+        .keys()	      -returns list of keys
+        .values()       -returns list of values
+	d['new_key'] =   new_value  -adds in a new value for a key
+        del d[key_name]	   -deletes keys and values
+	.items()	-returns keys and their values
 
-You can also count characters in dictionaries using the get method
-	word='brontosaurus'			-example string
-	d=dict()					   -example dictionary
-	for c in word:				-for loop
-		d[c]=d.get(c,0)+1		-adds 1 every time a character shows up
-	print(d)					 -r, s, u, and o, appear twice
+ You can also count characters in dictionaries using the get method
+	word='brontosaurus'	-example string
+	d=dict()		-example dictionary
+	for c in word:		   -for loop
+		d[c]=d.get(c,0)+1  -adds 1 every time a character shows up
+	print(d)		   -r, s, u, and o, appear twice
 
-You can also use lists to find out what character appears the most
-  You need to append words characters into a list, then add that list
-    to a dictionary
-
-    sent = list()					-creates list
-
-for line in handle:					-reads through a file
-    if not line.startswith("From:"): continue
-    line = line.split()
-    sent.append(line[1])			-puts second word into the list
-
-counts = dict()
-for word in sent:					-reads through the filled list
-    counts[word] = counts.get(word,0) + 1  -counts number of times
-
-bigcount = None
-bigword = None
-for word,count in counts.items(): 
-    if bigcount is None or count > bigcount:
-        bigcount = count
-        bigword = word
-
-print (bigword,bigcount)	
-
- .items()							-returns keys and their values
- 
 How to save each entry in a dictionary as an index of the dictionary
 
 dict = {}      #Have an empty dictionary
@@ -253,23 +223,20 @@ Tuples are like a hybrid of lists and strings. They dont use [] but
    (0, 1, 5) < (4, 18, 2)
     --> True  				-0 is less than 4, so thats all it compares
 
-:::::::::::::::::::::::::::::::LOOPS::::::::::::::::::::::::::::::::::::
+-----------------------------LOOPS-----------------------------
 Loops allow you do carry out functions continuously for every single
 element in a list.
 
 DEFINE ALL VARIABLES BEFORE YOU BEGIN. OUSIDE THE LOOP
 
- -******For loop******
- ******Loops through all characters in a list/object etc.********
+ -For loop. Loops through all characters in a list/object etc.
 	Format:
-		for (variable) in (list_name):
-			if ~~~~
-		return (variable)~~~		- variable can be anything
-		 
+		for variable in object: -variable can be anything
+			#code here	 
 	Example:
 		names = ["Adam","Alex","Mariah","Martine","Columbus"]
 			for x in names:
-  			print x
+  			    print x
   			#prints all names
 
 You can loop through dictionaries using dictionariy_name[x]
@@ -290,29 +257,25 @@ You can loop through dictionaries using dictionariy_name[x]
     					print number
    						--> 7
 
- -******While loops******
+While loops
   Executes the code inside of it if some condition is true. Will 
   continue to execute so long 'as' the condition is true.
   	Example:
   	count = 0
   		while count < 5:
   		  print "Hello, I am a while  - Need to increment count"
-  		and count is", count"
   		  count += 1
-"Condition" is the expression that decides whether the loop is going 
-to continue being executed or not. 
-
-While loops need a stop condition or they will be infinite
-
+	While loops need a stop condition or they will be infinite
+	
+-Stopping the loop with break
 The break is a one-line statement that means “exit the current loop.” 
 	Example:
 		count = 0
-
 		while True:
   		  print count
   		  count += 1
-          if count >= 10:
-            break
+         	  if count >= 10:
+           	      break
  -While/else:
  	while/else is similar to if/else, but there is a difference: 
  the else block will execute anytime the loop condition is 
@@ -339,7 +302,7 @@ input("Your guess: ")		-Allows raw input into console
    d.values()
 
 
-:::::::::::::::::::::::::LIST COMPREHESION::::::::::::::::::::::::::::::
+-----------------------------LIST COMPREHESION-----------------------------
 Short syntax for a function
 	Example:
 	cubes_by_four = [x ** 3 for x in range(1, 11) if
@@ -348,7 +311,6 @@ Short syntax for a function
 
 l = [i ** 2 for i in range(1, 11)]
 
-
 	Stride        -In lists, how much you go up by.
 		Example:
 			list[1,2,3,4,5,6]
@@ -356,116 +318,37 @@ l = [i ** 2 for i in range(1, 11)]
 				 --> 1, 3, 5
 Reversing lists.
  		list[::-1]
-::::::::::::::::::::::::::OBJECTS/CLASSES::::::::::::::::::::::::::::::::::
-Objects are pieces of code that are grouped in a way to carry  
-some information. Almost everything is an object, but we can actually
-make spefific objects with specific functions, lists, etc.  We do this 
-using classes and adding into them.
-
-Classes can be very useful for storing complicated objects
- with their own methods and variables. Defining a 'class' is much 
- like defining a function, but we use the 'class' keyword instead.
- They are like a blank canvas or a rough draft of an object.
+-------------------------------OBJECTS/CLASSES-------------------------------
+Class are like blueprints to create new things called objects. Think of classes
+as car and object like Volvo. All cars have simialr features, but Volvo has specific
+differences. 
 
 	Format:
 		class ClassName(instance):      -creating the Class
-			def function():          
-			  x = Mitch                 -part of the function
-			  print("My name is " x)    -prints function
-c1 = ClassName()                      -sets c1 variable as the class
-c1.function --> "My name is Mitch"    -the . retrieves the property of the variable
+			x = "~"             -attribute of class. All objects have this
+			
+			def __init__(self, y):  -constructor.
+				self.y = y
+	
+  -Constructors. 
+    Constructors are special funtions that are always called each time a new object is created. 
+	It works just like a regular function but the parameters you pass become the attributes
+        of the new object. The self keyword bind the attribute to the object.
+	
+ -Creating an object. Just create a new variable and assign it the the class name with arguments for the
+constructor.
+     obj1 = ClassName(x)
+ 
+ -Get attributes using dot notation.
+	obj1.y = y
 
-We can use classes to create new objects, which we say are
- INSTANCES of those classes. We can then assign values to 
- properties that we give classes
-
-		newObject = ClassName()
-	Example:
-		class Person():
-			-name: 
-			-personality:    -properties that Person can have
-			isSitting:
-	p1.name = "Karen"
-	p1.personaity = "bitch"     -sets values for properties
-	p1.isSitting = False
-
-  -dir(~)                 -returns all possible methods of the 'class'
-  -type(~)                -tells what kind of thing the object is
-
-Objects can be built then thrown away when no longer needed. We do this
-by using  'constructor' and 'destructor'
-
-Constructors just give initial values to start off, then can change.
-Common name is __init__, but it can be anything
-class Dog:
-  kind ='canine'     -variable that all instances have
-
-#constructors set up individual instances of objects.
- def __init__(self, name):  -self refers to this instance of class Dog
-        self.name = name    # instance variable unique to each instance
-
-  d = Dog('Fido')
-  e = Dog('Buddy')
-  d.kind                  # shared by all dogs
-   -->'canine'
-  e.kind                  # shared by all dogs
-   -->'canine'
-  d.name                  # unique to d
-   --> 'Fido'
- e.name                  # unique to e
-   --> 'Buddy'
-
-*****Destruction happens when the variable an changes. I can change to 
-anything other than PartyAnimal, and then the object is destroyed*****
-
-You create multiple instances from the same 'class' 
-
- class PartyAnimal:
-  x = 0
-  name = ""                      -this will be changed 
-  def __init__(self, z):         -z is a parameter, self is the instance
-    self.name = z
-    print(self.name, "constructed")
-
-    def party(self):
-      self.x = self.x + 1
-      print(self.name, "party count", self.x)
-
-s = PartyAnimal("Sally")        -Sally will replace z & will be printed
-s.party() 
-
-j = PartyAnimal("Jim")          -Jim will now be its own instance
-
-We now have two different instances that use the same function
-
-We can also make two differenct objects that feed off each other
-
- class PartyAnimal:
-  x = 0
-  name = ''
-  def __init__(self, nam):
-    self.name = nam
-    print(self.name,"constructed")
-
-  def party(self):
-    self.x = self.x + 1
-    print(self.name,"party count",self.x)
-
-class FootballFan(PartyAnimal):    -#this creates a new class that adds
-  points = 0                        #data to it while keeping OG data
-  def touchdown(self):
-    self.points = self.points + 7
-    self.party()
-    print(self.name,"points",self.points)
-
-
-::::::::::::::::::::::::::REGULAR EXPRESSION::::::::::::::::::::::::::::
+----------------------------REGULAR EXPRESSION----------------------------
   Regular expression is a way of finding specific characters in data
    and isolating them. You use shorthand codes to express what you want
-    to find. Also called 
+    to find. 
 
   Need to import re before you use it
-     
+   import re
     ^                  -beginning of line
     $                  -end of line 
     .                  -matches any character
@@ -479,20 +362,20 @@ class FootballFan(PartyAnimal):    -#this creates a new class that adds
    [a-z0-9]            -set of characters in a range                 
 
 
-::::::::::::::::::::::::::::::LAMBDA::::::::::::::::::::::::::::::::::::
+------------------------------LAMBDA------------------------------
 Lambda acts 'as' a substitue for a function
 	lambda x: x (% 3 == 0)  -Function goes in ()
 	def by_three(x):
   	  return x % 3 == 0
 
-:::::::::::::::::::::::::::::::MODULE:::::::::::::::::::::::::::::::::::
+-------------------------------MODULE-------------------------------
    Import certain variables or functions from a given modules
 	Format:
  		from module import function
  Use * to import everything form module
  		from module import *
 
-::::::::::::::::::::::::::::::FILES:::::::::::::::::::::::::::::::::::::
+----------------------------------FILES----------------------------------
 Files are what python deals with the most.
 open files then set a handle variable equal to it
 
@@ -510,7 +393,7 @@ To read files, you must assign a handle to it, then read it later
 		line = line.upper()       -changes every line to uppercase
 		print(line)				 -prints the actual data
 
-::::::::::::::::::::::::::::WEB PAGES:::::::::::::::::::::::::::::::::::
+---------------------------------WEB PAGES---------------------------------
   You can take data from any webpage & read it like a file. 
        Use urllib library to read it.
 
@@ -538,7 +421,7 @@ soup = BeautifulSoup(html, 'html.parser')
   You can also take specific characters from html tags using .get &
    .contents
 
-::::::::::::::::::::::::::::::::JSON::::::::::::::::::::::::::::::::::::
+---------------------------------JSON---------------------------------
  JSON is an easy, lightweight coding manipulation to store & share data
   JSON stores data within dictionaries and lists for ease of reading
  ***You need to import JSON to use it***
