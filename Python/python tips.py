@@ -1,11 +1,11 @@
 ------------------------------BASICS------------------------------
--Strings: text in Python. called a string. Typed with "" or ''.
-     --> 'Hello World'
-  -Can combine strings together with +
-    -'Hello ' + 'World'   --> 'Hello World'
-  -Use """ for multi-line strings
-  	"""Hello
-  	  World""
+Python is a general puprose high-level interpreted programming language. 
+
+Data Types.
+ int     -Integers. Whole numbers. -9, 3045
+ str     -strings. Text in Python. Uses "" or ''.
+ float   -decimal numbers. 3.14, 0.2134 
+ bool    -Boolean. true or false
         
 -Arithmetic operators: Math signs that manipulate data
   +     - Adds data together
@@ -18,19 +18,6 @@
   !=	- Not equal to.
   +=    - Adds a value to a current variable
   -=    - Subtracts value from a current variable
-
--Add comments with hashtag #
-# This won't be read. Skipped over. 
-
--Floats: numbers with decimals
-   - 5.0
-   - 3.14
--Booleans: Sets a variable either true or false
-   == TRUE
-   == FALSE
-
--Apostrophes are made using \
- --> "That\'s gay"
 
 -Acessing Index of a string or array: The Index starts from 0 not 1
 		P Y T H O N 
@@ -57,7 +44,6 @@
 -Set variables using equal sign (=)
  my_name = "Mitch"
   print my_name --> "Mitch"
-
 
 -Concatenate with f strings or %s:
    name = "Mitch" ||| print "Hello {name}" --> Hello Mitch
@@ -114,26 +100,23 @@ https://docs.python.org/3/library/functions.html#abs
 If, elif, or else statements. If any of the statements = true, it runs
 Used within functions or variables
 -Example:
-    def grade_converter(grade):		-defines function
+    def grade_converter(grade):	
    	 if grade >= 90:
-         return "A"
-     elif grade >= 80:
-         return "B"					-DONT FORGET COLON
-     elif grade >= 70:
-         return "C"
-     elif grade >= 65:
-         return "D"
-     else:							-runs if all others = false
-         return "F"
-
-    print grade_converter(84) 	-inserts grade number into funciton
-      --> B 					 -Returns "B"
+             return "A"
+   	 elif grade >= 80:
+             return "B"		
+         elif grade >= 70:
+             return "C"
+         elif grade >= 65:
+             return "D"
+         else:		 -runs if all else fails					
+             return "F"
 
  Set multiple conditions using and, or:
- 	if x > 1 and y < 5:		-both conditions must be true to run.
- 		return ~~~
+ 	if x > 1 and y < 5:	-both conditions must be true to run.
+ 	    return ~~~
  	if x > 1 and y < 5:     -either 
- 		return ~~~
+ 	    return ~~~
 
 --------------------------DATA COLLECTIONS--------------------------
 List. A datatype that stores collection of different pieces of info. Use []
@@ -200,8 +183,7 @@ for x in dict_list:
 Calling a number for i will return the value of that keys index
   dict[2] == value3   
 
------------------------------TUPLES-----------------------------
-Tuples are like a hybrid of lists and strings. They dont use [] but
+Tuples. Like a hybrid of lists and strings. They dont use [] but
  they are in an order separated by a ,. They still have an index
        ****Tuples can NOT be changed. They are immutable
 
@@ -250,13 +232,6 @@ You can loop through dictionaries using dictionariy_name[x]
 			for x in webster:
  			 print webster[x]
 
- -Loop certain values using operators.
- 	Example:	numbers = [1, 3, 4, 7]
-				for number in numbers: 
-  					if number > 6:
-    					print number
-   						--> 7
-
 While loops
   Executes the code inside of it if some condition is true. Will 
   continue to execute so long 'as' the condition is true.
@@ -301,7 +276,6 @@ input("Your guess: ")		-Allows raw input into console
    d.keys()
    d.values()
 
-
 -----------------------------LIST COMPREHESION-----------------------------
 Short syntax for a function
 	Example:
@@ -324,11 +298,11 @@ as car and object like Volvo. All cars have simialr features, but Volvo has spec
 differences. 
 
 	Format:
-		class ClassName(instance):      -creating the Class
-			x = "~"             -attribute of class. All objects have this
+	    class ClassName(instance):      -creating the Class
+		    x = "~"             -attribute of class. All objects have this
 			
-			def __init__(self, y):  -constructor.
-				self.y = y
+		    def __init__(self, y):  -constructor.
+			    self.y = y
 	
   -Constructors. 
     Constructors are special funtions that are always called each time a new object is created. 
@@ -362,7 +336,7 @@ constructor.
    [a-z0-9]            -set of characters in a range                 
 
 
-------------------------------LAMBDA------------------------------
+-------------------------------LAMBDA-------------------------------
 Lambda acts 'as' a substitue for a function
 	lambda x: x (% 3 == 0)  -Function goes in ()
 	def by_three(x):
@@ -375,7 +349,7 @@ Lambda acts 'as' a substitue for a function
  Use * to import everything form module
  		from module import *
 
-----------------------------------FILES----------------------------------
+-------------------------------FILES----------------------------------
 Files are what python deals with the most.
 open files then set a handle variable equal to it
 
@@ -393,7 +367,7 @@ To read files, you must assign a handle to it, then read it later
 		line = line.upper()       -changes every line to uppercase
 		print(line)				 -prints the actual data
 
----------------------------------WEB PAGES---------------------------------
+-------------------------------WEB PAGES---------------------------------
   You can take data from any webpage & read it like a file. 
        Use urllib library to read it.
 
@@ -456,7 +430,7 @@ print('Hide:', info["email"]["hide"])   -prints value of yes
  using .loads returns a list of two dictionaries. You can use a for loop
  to print out different keys and values.
 
-::::::::::::::::::::::::::::::::SQL:::::::::::::::::::::::::::::::::::::
+--------------------------------SQL--------------------------------
  Structured Query Language is a database system for uploading & editing
  data. When using python, use cur.exceute('''~~~''') to create
  or edit data.
