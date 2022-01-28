@@ -7,7 +7,8 @@ Data Types.
  float   -decimal numbers. 3.14, 0.2134 
  bool    -Boolean. true or false
         
--Arithmetic operators: Math signs that manipulate data
+-Operators: Signs that manipulate data
+  =     - Creates variables.
   +     - Adds data together
   -     - Subtracts data
   *     - Multiplies data
@@ -23,6 +24,9 @@ Data Types.
 		P Y T H O N 
 		0 1 2 3 4 5
     PYTHON[3] --> H. H is the 4th letter, but 3rd index
+
+ Check if a variable is a certain data type. isinstance
+	  isintance(variable, data_type)
     
  -Methods:  Built-in functions that can do things.
   -len()			 -Finds length of string
@@ -58,6 +62,7 @@ You can transfrom one data type into another using certain functions
  -If you need to call a file from the computer or something use \\
      'C:\\Users\\WilganZMT\\...'
  
+
 -------------------------------FUNCTIONS-------------------------------
 Allow you to reuse code easily. Can be used whenever.
 Format: 
