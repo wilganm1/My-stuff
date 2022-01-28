@@ -137,7 +137,7 @@ Used within functions or variables
  	if x > 1 and y < 5:     -either 
  		return ~~~
 
-:::::::::::::::::::::::::::::::LISTS::::::::::::::::::::::::::::::::::::
+--------------------------DATA COLLECTIONS--------------------------
 A datatype that stores collection of different pieces of info. Use []
 	Format:
 		list_name = [item1, item2,...]
@@ -150,34 +150,108 @@ A datatype that stores collection of different pieces of info. Use []
 			-->["pangolin", "cassowary", "hyena", "tiger"]
 
  -Manipulate the list 
-  -.append()				-adds value to end of list
-  -.pop()					-removes value at certain index
-  -.removes(x)			-removes x if it's in a list'
-  -del(n[1])				-deletes but doesn't return anything'
-
- -You can directly add to a list by append variables
-  -x = list("a")
-     x.append("b","g")
-      --> ["a","b","g"]
-
--Insert items into list at certain index using .insert
-	animals = ["ant", "bat", "cat"]
-	animals.insert(1, "dog")
-		--> ["ant", "dog", "bat", "cat"]
-
-Take a portion of a list using slice. Includes 1st, excludes 2nd 
-value
+  .append()		-adds value to end of list
+  .pop()		-removes value at certain index
+  .removes(x)		-removes x if it's in a list'
+   del(n[1])		-deletes but doesn't return anything'
+  .insert(n, x)         -inserts x at index n.
+  
+ Take a portion of a list using slice. Includes 1st, excludes 2nd 
+ value
 	letters = ['a', 'b', 'c', 'd', 'e']
 	slice = letters[1:3]
 	 --> ['b', 'c']
- -You can even include all data before or after a certain index
-    -my_list[:2]			-Includes all indices before position 2
-    -my_list[3:]			-Includes everything after position 3
+  -You can even include all data before or after a certain index
+     -my_list[:2]			-Includes all indices before position 2
+     -my_list[3:]			-Includes everything after position 3
 
--Remove data from a list using .remove
-	beatles = ["john","paul","george","ringo","stuart"]
-	beatles.remove("stuart")
+ -Remove data from a list using .remove
+	 beatles = ["john","paul","george","ringo","stuart"]
+	 beatles.remove("stuart")
 		--> ["john","paul","george","ringo"]
+		
+		
+-Dictionaries
+A dictionary is similar to a list, but you access values by looking 
+up a key instead of an index. A key can be any string or number.
+     Uses {} 
+      .get()          -retrives data from a certain location
+      .keys()	      -returns list of keys
+      .values()       -returns list of values
+	Format:
+		d = {'key1' : value1, 'key2' : value2, 'key3' : value3}
+		print d['key1']
+		 --> value1
+	-d['new_key'] = new_value  -adds in a new value for a key
+        -del d[key_name]	   -deletes keys and values
+
+You can also count characters in dictionaries using the get method
+	word='brontosaurus'			-example string
+	d=dict()					   -example dictionary
+	for c in word:				-for loop
+		d[c]=d.get(c,0)+1		-adds 1 every time a character shows up
+	print(d)					 -r, s, u, and o, appear twice
+
+You can also use lists to find out what character appears the most
+  You need to append words characters into a list, then add that list
+    to a dictionary
+
+    sent = list()					-creates list
+
+for line in handle:					-reads through a file
+    if not line.startswith("From:"): continue
+    line = line.split()
+    sent.append(line[1])			-puts second word into the list
+
+counts = dict()
+for word in sent:					-reads through the filled list
+    counts[word] = counts.get(word,0) + 1  -counts number of times
+
+bigcount = None
+bigword = None
+for word,count in counts.items(): 
+    if bigcount is None or count > bigcount:
+        bigcount = count
+        bigword = word
+
+print (bigword,bigcount)	
+
+ .items()							-returns keys and their values
+ 
+How to save each entry in a dictionary as an index of the dictionary
+
+dict = {}      #Have an empty dictionary
+
+dict_list = []    #Have a list of stuff in it 
+for x in dict_list:
+    for i in range(len(dict_list)):
+        dict[f"{i}"] = "Whatever here"
+ 
+Calling a number for i will return the value of that keys index
+  dict[2] == value3   
+
+-----------------------------TUPLES-----------------------------
+Tuples are like a hybrid of lists and strings. They dont use [] but
+ they are in an order separated by a ,. They still have an index
+       ****Tuples can NOT be changed. They are immutable
+
+   x = ('Glenn', 'Sally', 'Joseph')
+   print(x[2])
+    --> Joseph
+   print(x)
+    --> ('Glenn', 'Sally', 'Joseph')
+
+ Tuples can be used when assigning variables
+ 	(x, y) = (4, 'Atreus')
+ 	print(y)
+ 	 --> 'Atreus'
+
+  using .items() on a dictioary returns tuples of keys and values
+
+ Tuples are comparable. They look at the first value only.
+
+   (0, 1, 5) < (4, 18, 2)
+    --> True  				-0 is less than 4, so thats all it compares
 
 :::::::::::::::::::::::::::::::LOOPS::::::::::::::::::::::::::::::::::::
 Loops allow you do carry out functions continuously for every single
@@ -263,87 +337,7 @@ input("Your guess: ")		-Allows raw input into console
 
    d.keys()
    d.values()
-:::::::::::::::::::::::::::::DICTIONARIES::::::::::::::::::::::::::::::
-A dictionary is similar to a list, but you access values by looking 
-up a key instead of an index. A key can be any string or number.
-	Uses {} 
 
-      .get()          -retrives data from a certain location
-
-	Format:
-		d = {'key1' : value1, 'key2' : value2, 'key3' : value3}
-		print d['key1']
-		 --> value1
-	-d['new_key'] = new_value   	-adds in a new value for a key
-    -del d[key_name]				-deletes keys and values
-
-You can also count characters in dictionaries using the get method
-	word='brontosaurus'			-example string
-	d=dict()					   -example dictionary
-	for c in word:				-for loop
-		d[c]=d.get(c,0)+1		-adds 1 every time a character shows up
-	print(d)					 -r, s, u, and o, appear twice
-
-You can also use lists to find out what character appears the most
-  You need to append words characters into a list, then add that list
-    to a dictionary
-
-    sent = list()					-creates list
-
-for line in handle:					-reads through a file
-    if not line.startswith("From:"): continue
-    line = line.split()
-    sent.append(line[1])			-puts second word into the list
-
-counts = dict()
-for word in sent:					-reads through the filled list
-    counts[word] = counts.get(word,0) + 1  -counts number of times
-
-bigcount = None
-bigword = None
-for word,count in counts.items(): 
-    if bigcount is None or count > bigcount:
-        bigcount = count
-        bigword = word
-
-print (bigword,bigcount)	
-
- .items()							-returns keys and their values
- 
-How to save each entry in a dictionary as an index of the dictionary
-
-dict = {}      #Have an empty dictionary
-
-dict_list = []    #Have a list of stuff in it 
-for x in dict_list:
-    for i in range(len(dict_list)):
-        dict[f"{i}"] = "Whatever here"
- 
-Calling a number for i will return the value of that keys index
-  dict[2] == value3   
-
-::::::::::::::::::::::::::::::TUPLES::::::::::::::::::::::::::::::::::::
-Tuples are like a hybrid of lists and strings. They dont use [] but
- they are in an order separated by a ,. They still have an index
-       ****Tuples can NOT be changed. They are immutable
-
-   x = ('Glenn', 'Sally', 'Joseph')
-   print(x[2])
-    --> Joseph
-   print(x)
-    --> ('Glenn', 'Sally', 'Joseph')
-
- Tuples can be used when assigning variables
- 	(x, y) = (4, 'Atreus')
- 	print(y)
- 	 --> 'Atreus'
-
-  using .items() on a dictioary returns tuples of keys and values
-
- Tuples are comparable. They look at the first value only.
-
-   (0, 1, 5) < (4, 18, 2)
-    --> True  				-0 is less than 4, so thats all it compares
 
 :::::::::::::::::::::::::LIST COMPREHESION::::::::::::::::::::::::::::::
 Short syntax for a function
