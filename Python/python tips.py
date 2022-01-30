@@ -282,19 +282,18 @@ input("Your guess: ")		-Allows raw input into console
    d.values()
 
 -----------------------------LIST COMPREHESION-----------------------------
-Short syntax for a function
+Short syntax for a list creation.
+  General format:
+	  [what_you_want_to_do for x in whatever]
+	
+    Example, adding 3 to every number in a range:
+	[x+3 for x in range(1,5]
+           --> [4,5,6,7,8,9]
+     -Stride        -In lists, how much you go up by.
 	Example:
-	cubes_by_four = [x ** 3 for x in range(1, 11) if
-	((x ** 3) % 4) == 0]
-		print cubes_by_four
-
-l = [i ** 2 for i in range(1, 11)]
-
-	Stride        -In lists, how much you go up by.
-		Example:
-			list[1,2,3,4,5,6]
-				list[1:7:2]
-				 --> 1, 3, 5
+	   list[1,2,3,4,5,6]
+		list[1:7:2]
+		--> 1, 3, 5
 Reversing lists.
  		list[::-1]
 -------------------------------OBJECTS/CLASSES-------------------------------
@@ -322,55 +321,71 @@ constructor.
 	obj1.y = y
 
 ----------------------------REGULAR EXPRESSION----------------------------
-  Regular expression is a way of finding specific characters in data
-   and isolating them. You use shorthand codes to express what you want
-    to find. 
+ Shorthand codes to find certain patterns.
 
-  Need to import re before you use it
-   import re
-    ^                  -beginning of line
-    $                  -end of line 
-    .                  -matches any character
-    *                  -matches any number of specific characters before it
-     -ab*                    -aaaabbbbb, abbbbbbb, aaaaaab
-    +                  -matches at least 1 character
-     -ab+                    -abbb, abb, ab
-    [amd]              -matches a, m, or d in a string
-   #\S                 -Matches non-whitespace characters
-   #\s                 -matches whitespace characters
-   [a-z0-9]            -set of characters in a range                 
+import re
+   ^                  -any character to its right at beginning of line
+   $                  -matches any character to its left at end of line
+   .                  -matches any character
+   *                  -matches any number of specific characters before it
+    -ab*                    -aaaabbbbb, abbbbbbb, aaaaaab
+   +                  -matches at least 1 character
+    -ab+                    -abbb, abb, ab
+  [amd]               -matches a, m, or d in a string
+  #\S                 -Matches non-whitespace characters
+  #\s                 -matches whitespace characters
+  [a-z0-9]            -set of characters in a range                 
 
 
--------------------------------LAMBDA-------------------------------
+---------------------------------LAMBDA---------------------------------
 Lambda acts 'as' a substitue for a function
 	lambda x: x (% 3 == 0)  -Function goes in ()
 	def by_three(x):
   	  return x % 3 == 0
 
--------------------------------MODULE-------------------------------
+---------------------------------MODULE---------------------------------
    Import certain variables or functions from a given modules
 	Format:
  		from module import function
  Use * to import everything form module
  		from module import *
 
--------------------------------FILES----------------------------------
-Files are what python deals with the most.
-open files then set a handle variable equal to it
+----------------------------------FILES----------------------------------
+Python can open, read, save, copy, delete, and move files around.
+Python opens files by locating their directory (aka folder) and 
+changing what to do with those files.
 
-To read files, you must assign a handle to it, then read it later
+On Windows, use raw string literals when accessing files with \
+		r'path\file'
 
-	fhand = open('~~.txt')		-Assigns the file handle name
-	print(fhand)				   -prints handle, not data
-****This is not the data, it is a handle****
+ -Accessing files. Use with open pattern to load files and do stuff
+	with open (r'folder\file.txt', '~') as x:
+		#do stuff
+		
+   -Reading files
+	 with open(r'folder\file', 'r') as x:
+	       	 data = x.read()
+			
+   -Writing files
+	 with open(r'folder\file', 'w') as x:
+		data = "text~~~~~~"
+		x.write(data)
+		
+		Lines = ['daf', 'eta']
+		x.writelines(Lines)  -writes all list items on new lines
+		
+  -Append to existing file. a+ lets you read and write.
+	 with open(r'folder\file', 'a+') as x:
+		x.read('\n~~')  -\n to start a new line
+		x.write("~~"). -
 
-*********To read a file, you put a for loop using the file handle.*******
-   Alter the lines using methods within the for loop.
-	
-	for line in fhand:			-for loop that reads through the file
-    	line = line.rstrip()      -removes whitespace and line height
-		line = line.upper()       -changes every line to uppercase
-		print(line)				 -prints the actual data
+Pathlib. Package to use paths and work with files more easily
+
+import pathlib
+
+  pathlib.Path.cwd(). -print out current directory
+    .read_text().    -reads data as string 
+    .resolve().      -finds full path of file
 
 -------------------------------WEB PAGES---------------------------------
   You can take data from any webpage & read it like a file. 
