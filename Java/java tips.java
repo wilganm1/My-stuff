@@ -202,7 +202,7 @@ Arrays. Store multiple values in a single variable. Use [] after variable type.
 -HashMap. Store elements in key/value pairs. Just like dictionaries in Python.
                 import java.util.HashMap 
                 
- HashMap<key_data_type, value_data_type> hashmap = new HashMap<key_data_type, value_data_type>();
+ HashMap<key_data_type, value_data_type> hashmap_name = new HashMap<key_data_type, value_data_type>();
 
           .put(~)       -adds items.
           .get(key)     -access a value through its key.
