@@ -241,13 +241,16 @@ There are 4 ways to create a variable, You first
       cout << food << "\n";  // Outputs Pizza
       cout << meal << "\n";  // Outputs Pizza
 
- -Memory address &. references a variable itself to get it's memory address
+---------------------------------MEMORY---------------------------------
+
+ -Memory address &. references a variable itself to get it's' memory address
   string food = "Pizza";
   cout << &food; // Outputs 0x6dfed4
 
  -Pointer. stores memory address as its value. Needs a & in its value
    string food = "Pizza";  // A food variable of type string
    string* ptr = &food;   //NEED TO HAVE & SYMBOL
+   
   Use *ptr to print out the OG value that is being referenced to. Without
   the * symbol it just prints out the memory of the referenced variable
     cout << ptr << endl;  //outputs 0x61fde0
@@ -257,7 +260,7 @@ There are 4 ways to create a variable, You first
      //someFunction(){}
      x{ someFunction() }
 
-      Don't use (x, ++x) as parameters because it causes error.
+      Don't' use (x, ++x) as parameters because it causes error.
 
 -Memory allocation. You need to manually deallocate memory in C++.
   The new operator allocates memory to a variable
@@ -518,7 +521,7 @@ these arguments. Think of it like self in Python.
           cout << carObj2.brand << " " << carObj2.model << " " << carObj2.year << "\n";
           return 0;}
       
-    You can also define constructor outside of class using ::
+    Define constructor outside of class using ::
       Car::Car(string x, string y, int z) {
         brand = x;
         model = y;
@@ -640,14 +643,6 @@ Use fstream library to work with files
       cout << myText;}
      MyReadFile.close();   // Close the file
 
--RAII
-
--Preprocessors, includes, macros.
- Preprocessors manipulate the text in each code file. Use a # directive
- When you include a file you actually import the contents of the file.
- You use #include nameOfFile like when you do #include <iostream> to
- be able to use cout and cin.
-
   -Macros. A rule that defines how input text is converted into replacement
   output text. They are shortcuts.
     #define identifier
@@ -683,64 +678,3 @@ Use fstream library to work with files
       #define file_name
         //declarations
       #endif
-
-  -Logging. Logging is sending debugging information to a file that
-  records events in software called a log file.
-        #include <plog/Log.h>
-        #include <plog.Initializers/RollingFileInitializer.h>
-
--Bits and bytes. All data has memory, a combination of 1's and 0's called
- bits. 8 bits = 1 byte.
-     -sizeof operator to see how large some data types are.
- signed integers. 4 types of integers
-   short s;
-   int i;
-   long l;
-   long long ll;
-
- Floating point numbers. 3 different types.
-    float f = 4 bytes
-    double d = 8 bytes
-    long double ld = 8 bytes
-
- Inf. Used for infinity. NaN, stands for Not a Number
-    double posinf // positive infinity
-    double neginf // negative infinity
-    double nan
-
- -Boolean prints 0 for false or 1 for ture. Use std::boolalpha to
-    print out either true or false.
-    std::cout << std::boolalpha
-  You can assign an integer to a bool variable. Setting it equal to 0
-   prints out false, and other numbers evaluate to true.
-
-  To input a bool as true or false use std::boolalpha
-   bool b{}
-   std::cin >> std:: boolalpha;
-   std:: cin >> b;
-
--Halts.
-Halts will stop the program entirely.
- exit() will explicitly end the program.
-   int main(){
-       std::exit(0);} //terminates the program at that point.
-       //rest of code
- atexit() will specify a function to be called when program is exited.
-   int main(){
-       std::atexit(cleanup());}
-
- abort() aborts abnormally do to unusual error like dividing by 0
-    std::abort();
-
--Random number generation
- a pseudo-random number generator (PRNG) takes a starting number (seed)
- and does math to it to get a new different number. Then repeats the math.
- Use a third-party library for random numbers
-
- #include "random.hpp"
- using Random = effolkronium::random_static;
- int main(){
- 	 std::cout << Random::get(1, 6) << '\n';
- 	 std::cout << Random::get(1, 10) << '\n';
- 	 std::cout << Random::get(1, 20) << '\n';
- 	 return 0;}
