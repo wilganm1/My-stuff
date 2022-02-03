@@ -14,6 +14,7 @@ Data Types.
   *     - Multiplies data
   **	- Exponent
   /     - Divides data
+ //     - Divides data then rounds to nearest smallest number
   %     - Remainder after division. %f returns floats
   ==	- Is equal to.
   !=	- Not equal to.
