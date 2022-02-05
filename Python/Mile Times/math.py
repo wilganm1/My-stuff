@@ -3,8 +3,6 @@ from miletimes import Miles
 # Loop through dictionary and add up seconds and minutes
 minutes, seconds = 0, 0
 
-Miles
-
 for year in Miles:
     for minute in Miles[year].values():
         minutes += int(minute[0])
@@ -13,7 +11,6 @@ for year in Miles:
 
 
 min_to_sec = minutes * 60
-min_to_sec
 total = min_to_sec + seconds
 total
 # 24442 total seconds
