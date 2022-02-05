@@ -3,8 +3,6 @@ import matplotlib.pyplot as plt
 import re
 import random as rnd
 
-""" Make the dataframe from the csv file """
-
 class Time_math():
     def __init__(self):
         self.df = pd.read_csv('mile_times.csv')
@@ -75,7 +73,6 @@ class Time_math():
             self.Averages[avg] = round((sum([int(g[0])*60 for g in self.Averages[avg]] + [int(g[2:]) for g in self.Averages[avg]])/60)/len(self.Averages[avg]),1)
         self.x_axis = [a for a in self.Averages]
         self.y_axis = [self.Averages[t] for t in self.Averages]
-        #!!! Put this tuple double-list comprehension thing on github
         self.bar_colors = [tuple([round(rnd.random(),1) for x in range(0,3)]) for x in range(len(self.Averages))]
         plt.bar(self.x_axis, self.y_axis,
                 align = 'center',
