@@ -128,48 +128,13 @@ Wrapper. Use primitive data types as objects. More functionality.;
    -Convert String to Integer; .valueOf();
                 String str = "25";
                 Integer number = Integer.valueOf(str);
-  
-User input. Directly type stuff into the console window/terminal.;
-            import java.util.Scanner; //import Scanner class
-  //.in is the input method of Scanner
-            class Main {
-              public static void main(String[] args) {
-                Scanner scanner = new Scanner(System.in); //create Scanner object
-                System.out.println("enter username");
-      
-                String userName = scanner.nextLine();  // This line reads user input
-                System.out.println("Username is: " + userName); //output user input
-              }}
-
-                x = scanner.nextInt();  //reads integers
-                y = scanner.nextInt();  //reads second integer
-
-  The scanner object can be used for any & all data types. You just need to call
-  the object with the specific 
-
-  For each data type you need a different method from the scanner Class;
-      boolean     nextBoolean();
-      double      nextDouble();
-      int         nextInt();  //reads integers. Call for as many things you want to read.
-      String      nextLine();
-
- PROBLEM. When you do nextInt() or nextDouble() Java automatically adds a \n 
- which creates a new line. The problem is that it doesn't' go away if you do 
- a nextLine() method call.; To fix that just call nextLine() with no arguments.;
- 
-            // String input
-            String name = scanner.nextLine();
-
-            // Numerical input
-            int age = scanner.nextInt();
-            double salary = scanner.nextDouble();
 
 ------------------------------------COLLECTIONS-------------------------------------------
   
 Arrays. Store multiple values in a single variable. Use [] after variable type.
   Arrays values must be only one type. Create them with {}. IMMUTABLE.
   
-       data_type[] arrayName = {element 1, element 2, element 3}
+       dataType[] arrayName = {element 1, element 2, element 3}
  
  To access values use arrayName[x] indexing. 0-indexed like Python.
  You can change any element by reassigning it.
@@ -332,6 +297,7 @@ They must be declared within a class. Like a function in Python.;
    -You run the function when you call it.;
              public static void main(String[] args) {
                 myMethod("argument");};
+
   -Overloading. Same name with different parameters.
        int myMethod(int x);
        float myMethod(float x);
@@ -345,7 +311,7 @@ Lambdas. short block of code. Takes in a parameter and returns a value.;
                  (parameter1, parameter2) -> { code block }
 
 -----------------------------------CLASSES & OBJECTS-----------------------------------------
-Objects containe data and methods that can be called at any time.;
+Objects contain data and methods that can be called at any time.;
 Classes are like blueprint for objects. They have attributes and methods. Some 
 can be shared with all objects or each object can have their own traits.;
 
@@ -353,13 +319,15 @@ can be shared with all objects or each object can have their own traits.;
                            //code
                };
  To create a new object:
+
               public static void main(String[] args) {
-                ClassName objName1 = new Main(); //Create new object called objName
-                ClassName objName2 = new Main(); //2nd object of class.
-                System.out.println(myObj.x);}}
+                ClassName objName1 = new ClassName(); //Create new object called objName
+                System.out.println(myObj.x);
+              }
 
+       //Use have to use the new keyword. This creates a new object 
 
--Attributes. You access attributes of callses using dot syntax ( . );
+-Attributes. You access attributes of classes using dot syntax ( . );
              public class Main {
                int x = 5;
 
@@ -505,6 +473,44 @@ an outer class then make an object of the inner class.;
                  public static void main(String[] args) {
                    System.out.println("This is my package!");
                  }};
+
+-------------------------------------------USER INPUT--------------------------------------------
+  
+Directly type stuff into the console window/terminal.;
+
+            import java.util.Scanner; //import Scanner class
+  //.in is the input method of Scanner
+            class Main {
+              public static void main(String[] args) {
+                Scanner scanner = new Scanner(System.in); //create Scanner object
+                System.out.println("enter username");
+      
+                String userName = scanner.nextLine();  // This line reads user input
+                System.out.println("Username is: " + userName); //output user input
+              }}
+
+                x = scanner.nextInt();  //reads integers
+                y = scanner.nextInt();  //reads second integer
+
+  The scanner object can be used for any & all data types. You just need to call
+  the object with the specific 
+
+  For each data type you need a different method from the scanner Class;
+      boolean     nextBoolean();
+      double      nextDouble();
+      int         nextInt();  //reads integers. Call for as many things you want to read.
+      String      nextLine();
+
+ PROBLEM. When you do nextInt() or nextDouble() Java automatically adds a \n 
+ which creates a new line. The problem is that it doesn't' go away if you do 
+ a nextLine() method call.; To fix that just call nextLine() with no arguments.;
+ 
+            // String input
+            String name = scanner.nextLine();
+
+            // Numerical input
+            int age = scanner.nextInt();
+            double salary = scanner.nextDouble();
 
 -----------------------------------ERRORS & EXCEPTIONS------------------------------------
 Exceptions occurr when there are erros in the code that prevent it from running.;
