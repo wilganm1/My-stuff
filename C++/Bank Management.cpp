@@ -1,15 +1,17 @@
 #include <iostream>
 #include <cstring>
-#include <array>
+
+int checkingBalance{0};
+int savingsBalance{0};
+int withdrawAmount{};
+int depositAmount{};
 
 
-double checkingBalance{0};
-double savingsBalance{0};
-
-void viewAccounts(){ //view and make accounts;
+void viewAccounts(){ //view accounts; Making accounts comes later.
     std::cout << "\n";
     std::cout << "Checkings:  " << checkingBalance << std::endl;
-    std::cout << "Savings: " << savingsBalance << std::endl;}
+    std::cout << "Savings: " << savingsBalance << std::endl;
+    std::cout << "\n";}
 
 void addMoney(){  //depositing money into accounts
     system("CLS");
@@ -25,20 +27,34 @@ void addMoney(){  //depositing money into accounts
             std::cin.ignore(10000, '\n');}
     else {
         switch (accountChoice) {
-            double depositAmount;
+    //need a fail-safe is negative integer is entered.
             case 1:
-                std::cout << "Enter amount to deposit: ";
-                std::cin >> depositAmount;
-                checkingBalance += depositAmount;
-                std::cout << "Deposit complete" << std::endl;
-                viewAccounts();
+                while (true){
+                    std::cout << "Enter amount to deposit: ";
+                    std::cin >> depositAmount;
+                    if (depositAmount < 0){
+                        std::cout << "Invalid. Please enter positive number" << std::endl;
+                        std::cin.clear();
+                        std::cin.ignore(10000, '\n');}
+                    else {
+                        checkingBalance += depositAmount;
+                        std::cout << "Deposit complete" << std::endl;
+                        break;}}
+                    viewAccounts();
                 break;
             case 2:
-                std::cout << "Enter amount to deposit: ";
-                std::cin >> depositAmount;
-                savingsBalance += depositAmount;
-                std::cout << "Deposit complete" << std::endl;
-                viewAccounts();
+                while (true){
+                    std::cout << "Enter amount to deposit: ";
+                    std::cin >> depositAmount;
+                    if (depositAmount < 0){
+                        std::cout << "Invalid. Please enter positive number" << std::endl;
+                        std::cin.clear();
+                        std::cin.ignore(10000, '\n');}
+                    else {
+                        savingsBalance += depositAmount;
+                        std::cout << "Deposit complete" << std::endl;
+                        break;}}
+                    viewAccounts();
                 break;
             default:
                 break;}}}
@@ -58,7 +74,6 @@ void loseMoney(){ //withdrawing money
     else {
         switch (accountChoice) {
             case 1:
-                double withdrawAmount;
                 while (true) {
                     std::cout << "Enter amount to withdraw: ";
                     std::cin >> withdrawAmount; //checks to see you don't take out more than is possible.
@@ -70,8 +85,7 @@ void loseMoney(){ //withdrawing money
                         checkingBalance -= withdrawAmount;
                         std::cout << "Withdrawal complete";
                         viewAccounts();
-                        break;}
-                }
+                        break;}}
                 checkingBalance -= withdrawAmount;
                 std::cin.clear();
                 break;
@@ -146,7 +160,7 @@ void Menu(){
     while (true){
         std::cin >> pickit;
         if (std::cin.fail()){  //will catch if goal is not an integer
-                std::cout << "Not an number. Try again." << std::endl;
+                std::cout << "Not a number. Try again." << std::endl;
                 std::cin.clear();  //will erase the cin input
                 std::cin.ignore(10000, '\n');}
         else {
