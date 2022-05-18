@@ -32,24 +32,25 @@ String(x)      -turns x into a string
  x.toString()  
 
 Arithmatic operators:
-	+					-Adds two variables
-  -         -Subtracts
-	/					-Divides variables
-  *         -multiplies
-	>=					-Greater than or equal too
-	<=					-Less than or equal
-	!=					-not equal to
-  ==          -Is equal to. Causes coercion. Makes strings numbers
-	===					-Is equal to. Does not cause coercion
-  !         -Is not.
-	%					-Remainder Whats left over after one number goes into 
-						 another number fully. Example: 7 % 3 = 1.
-             3 goes into 7 two times with a left-over of 1.
-	+=				-Adds values to a variable
-	++				-Increases value of variable by 1
-	--				-Decreases value of variable by 1 
-  &&        -logical AND operator 
-  ||        -logical OR operator
+ +       -Adds two variables
+ -       -Subtracts
+ /       -Divides variables
+ *       -multiplies
+ >=	 -Greater than or equal too
+ <=	 -Less than or equal
+ !=	 -not equal to
+ ==      -Is equal to. Causes coercion. Makes strings numbers
+ ===	 -Is equal to. Does not cause coercion
+ !       -Is not.
+ %	 -Remainder Whats left over after one number goes into 
+	   another number fully. Example: 7 % 3 = 1.
+           3 goes into 7 two times with a left-over of 1.
+ +=	 -Adds values to a variable
+ ++	 -Increases value of variable by 1
+ --	 -Decreases value of variable by 1 
+ &&      -logical AND operator 
+ ||      -logical OR operator
+ 
   Add a comment with //.   //This is ignored by machine
 
 console.log();         -Prints data onto console
@@ -58,7 +59,6 @@ document.write()       -writes characters onto document
 
 console.log('Go Fu ' + 'ck Yourself');
 --> Go Fuck Yourself
-
 
 -Numbers
  Nan         -not a number. 
@@ -192,21 +192,22 @@ If, else if, else statements 		//if something happens, do something.
     		      //'We can eat later!'
 
 Operators.  Can add additional conditions
- &&			-This AND that are true
- ||			-This is true OR that is true
- !		  -NOT.
+ &&	-This AND that are true
+ ||	-This is true OR that is true
+ !	-NOT.
  !=     -not equal to.
+ 
     Example:  let day = 'Saturday';
-    			if(day === 'Saturday' || day === 'Sunday') 
-    			{console.log('Enjoy the weekend!');
-    		  } else {console.log('Do some work.');}
+    			if(day === 'Saturday' || day === 'Sunday'){
+    			console.log('Enjoy the weekend!');
+    			} else {console.log('Do some work.');}
     		   --> Enjoy the weekend;
 
     		  let excited = true;
     		  console.log(!excited);
     		   --> false
 
-break statement. Use to jump out of a loop;
+-break statement. Use to jump out of a loop;
   for (let i = 0; i < 10; i++) {
     if (i === 3) { break; }
     text += "The number is " + i + "<br>";}
