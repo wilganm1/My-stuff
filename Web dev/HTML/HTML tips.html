@@ -1,4 +1,4 @@
-:::::::::::::::::::::::::::HTML SET UP:::::::::::::::::::::::::::::::::
+-----------------------------HTML SET UP-----------------------------
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +13,14 @@ text in here
 </body>
 </html>
 
-::::::::::::::::::::::::::::::TAGS:::::::::::::::::::::::::::::::::::::::::
-<html>  					   -creates document
+----------------------------------ELEMENTS----------------------------------
+Elements in HTML make up the webpage. <tag>.
+Most tags come in pairs, beginning and end. 
+	
+	<tag>   -beginning
+	</tag>  -end
+	
+<html>               -creates document
 <div>                -division in the html. Block style
   id="">             -identification of a tag. Used for css #id
   class="x y">       -Used to reference a group of tags .class
@@ -25,31 +31,43 @@ text in here
 <footer>             -creates a footer section
 <figure>             -wraps a image/chart with it's caption
   <figcaption>          -actual caption 
-<span>					     -inline style of divs
-<ul>						     -creates bulletted list
-<ol>						     -starts to create an numbered list
- -<li>						   -Actual new list values
-<a href=""> 				 -Adds in a link to somthing
+<span>		     -inline style of divs
+<ul>		     -creates bulletted list
+<ol>		     -starts to create an numbered list
+	-<li>	</li>	      -Actual new list values
+<a href="url">link text   -Hyperlink
    target="_blank"     -opens in new tab.
-<img src="" alt="">	 -Inserts image. needs alt text
-		  width="">			 -sets width of image
-		 height="">		   -sets height of image
-<section>					   -defines section such as chapters, etc.
-<p>							     -Paragraph for text. causes line break above it
+<img>                  -Inserts image. needs alt text
+<section>	     -defines section such as chapters, etc.
+<p>		     -Paragraph for text. causes line break above it
   -<s>~~</s>            -strikethrough line. Wrap it around words.
   -<em>~~</em>          -Italicizes text.
   -<b>~~</b>            -boldends text.
 <progress value="" max="">  -adds a progress bar
 <details>             -adds a click arrow that shows more info
   <summary>             -This is what shows with the click arrow
-    <p>                   -Adds the details
+             
+--------------------------------ATTRIBUTES--------------------------------
+Attributes give information about tags. Some are specific
 
-:::::::::::::::::::DOCUMENT OBJECT MODEL (DOM):::::::::::::::::::::::::::::
+  <tag  attribute = "~">
+width = "x"
+height = "x"
+src = ""      -source of image for <img>
+alt = ""      -alternate for image in <img>
+
+
+
+
+
+
+
+------------------------DOCUMENT OBJECT MODEL (DOM)------------------------
   The document object model is a model of how an html document is 
   structured. It acts like a tree, with various branches.
 
   For example, a body branches off into divs, which branch off into paragraphs, which they themselves have ids & classes
-::::::::::::::::::::::::::::::::FORMS::::::::::::::::::::::::::::::::::::::
+-------------------------------FORMS-------------------------------
 Outline of <form> command. Used for user input. Client-side. 
       Used for data input.
     <input type="****" name="X" id="Y">
