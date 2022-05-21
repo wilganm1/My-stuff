@@ -1,6 +1,6 @@
 -----------------------------HTML SET UP-----------------------------
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <head>
 	<title>(INSERT TITLE HERE)</title>
 	<link rel="stylesheet" type="text/css" href="***.css">
@@ -13,6 +13,7 @@ text in here
 </body>
 </html>
 
+<!--> Comments <-->
 ----------------------------------ELEMENTS----------------------------------
 Elements in HTML make up the webpage. <tag>.
 Most tags come in pairs, beginning and end. 
@@ -47,47 +48,61 @@ Most tags come in pairs, beginning and end.
 <details>             -adds a click arrow that shows more info
   <summary>             -This is what shows with the click arrow
              
+	  ---------------JAVASCRIPT IN HTML FILE--------------
+	  Use <script> to use javascript directly in the HTML file
+	   JavaScript uses the following to interact with elements:
+			   
+*****	  document.getElementById("id")   *****
+	  document.getElementsByClassName("class name")
+	  document.getElementsByTagName("tag")        //gets <div>, <p>, etc.
+	       .innerHTML = "~~"  //This changes the HTML inside
+	       .style.color       //changes color
+	       .style.font
+	  
+	  </script>
+	   
 --------------------------------ATTRIBUTES--------------------------------
 Attributes give information about tags. Some are specific
 
-  <tag  attribute = "~">
-width = "x"
+  <tag attribute = "~">
+  <div height = "500">	  
+
+id = "~~~"     -unique identifier of singular element
+class = "~~~"  -an identifier that can be used for multiple elements
+
+width = "x"    
 height = "x"
-src = ""      -source of image for <img>
-alt = ""      -alternate for image in <img>
-
-
-
-
-
-
+src = ""       -source of image for <img>
+alt = ""       -alternate for image in <img>
 
 ------------------------DOCUMENT OBJECT MODEL (DOM)------------------------
   The document object model is a model of how an html document is 
   structured. It acts like a tree, with various branches.
 
   For example, a body branches off into divs, which branch off into paragraphs, which they themselves have ids & classes
--------------------------------FORMS-------------------------------
-Outline of <form> command. Used for user input. Client-side. 
-      Used for data input.
+	  
+---------------------------------FORMS---------------------------------
+Used for user input. Client-side. 
+    
+ Forms have input fields and labels for them. 
+   <form action = "~~">    //action is what happens after submitted
     <input type="****" name="X" id="Y">
     <label for="X">TEXT DISPLAYED HERE</label><br>
+   </form>
+  The for attribute in <label> CORRESPONDS TO THE <input> ID
 
-
-****<input> Has many types****
-  **Add required> to make it required to proceed**
 
 Type=""
-  - Radio          -Can only choose one of multiple options
+  -Radio          -Can only choose one of multiple options
      -<label>VALUE
      -<input type="radio" name="X" value="VALUE" required></label>
         **name should be consistent throughout all options**
 
-  - Checkbox       -Can choose multiple of given choices
+  -Checkbox       -Can choose multiple of given choices
      -<label>VALUE
      -<input type="ckeckbox" name="X" value="VALUE"></label>
 
-  - Text           -Write whatever you want in box.
+  -Text           -Write whatever you want in box.
      -<label>Write:
      -<input type ="text" id="~~" name="text"></label>
         -placeholder="~~"  -placeholders add text when you don't.
@@ -95,15 +110,15 @@ Type=""
          -[0-9]{x}          -X numbers of digits from 0-9
          -[a-zA-Z]+         -Can be any letter in any case
 
-  - Email          -Allows you to enter an email with email format
+  -Email          -Allows you to enter an email with email format
      -<label>Enter your email:
      -<input type="email" id="email" name="email"></label>
 
-  - Select         -Drop down menu with arbitary choices
+  -Select         -Drop down menu with arbitary choices
      -<select name="X"> 
      -<option value="example">EXAMPLE</option> -Unlimited
             -value is what the server checks for </select>
-  - Text Box
+  -Text Box
      -<textarea name="X"> -creates an area to enter text. Large textbox
 
   -Number          -Enters a number with a range
@@ -114,7 +129,20 @@ Type=""
   -Fieldset                -surrounds forms into their own group
    -<fieldset><legend>      -describes the grouping
 
-</form>
+
+--------------------------------CANVAS--------------------------------
+Container for any graphics on the screen.
+	  
+   <canvas id="myCanvas" width="200" height="100"></canvas>
+
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    
+
+
+
+
+
 ::::::::::::::::::::::::::::TOP NAVIGATION BAR:::::::::::::::::::::::::::::
      Also adds a dropdown menu
 
