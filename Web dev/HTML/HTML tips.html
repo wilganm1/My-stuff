@@ -13,7 +13,7 @@ text in here
 </body>
 </html>
 
-<!--> Comments <-->
+<!-- Comments -->
 ----------------------------------ELEMENTS----------------------------------
 Elements in HTML make up the webpage. <tag>.
 Most tags come in pairs, beginning and end. 
@@ -138,8 +138,51 @@ Container for any graphics on the screen.
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
     
+-------------------------------MEDIA-------------------------------
+Various types of media can be linked in HTML.
+
+ -Video
+     <video width="320" height="240" controls>  //controls adds video controls like volume, pause
+       <source src="movie.mp4" type="video/mp4">
+       <source src="movie.ogg" type="video/ogg">
+     </video> 
+	 
+    -Autoplay video
+     <video autoplay>  
+	</video>
+ -Audio
+    <audio controls>
+      <source src="horse.ogg" type="audio/ogg">  <!-- <source> specifies alternate formats that are recognized -->
+      <source src="horse.mp3" type="audio/mpeg">
+    </audio> 
 
 
+ -YouTube
+    YouTube videos have an id after "watch?v=" which you add after "/embed/"
+     <iframe width = "x" height = "y"
+     src = "https://www.youtube.com/embed/~~~~~~">
+     </iframe>
+
+---------------------------------GEOLOCATION---------------------------------
+HTML geolocation API accesses user's location
+
+ <script>
+var x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition); <!-- This is the API call -->
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script> 
+
+position.coords retrives the coordinates
 
 
 
