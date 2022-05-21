@@ -64,7 +64,7 @@ console.log('Go Fu ' + 'ck Yourself');
  Nan         -not a number. 
  Infinity    -infinity value
 
---------------------------------VARIABLES--------------------------------
+--------------------------------Variables--------------------------------
 Variables allow us to save any data to a name to access later
 
 Use words var, let, and const 
@@ -99,7 +99,7 @@ Can be used to log strings together with a const variable
       console.log(`I own a pet ${myPet}.`)
         --> 'I own a pet Dragon'
 
---------------------------------ARRAYS--------------------------------
+--------------------------------Arrays--------------------------------
 Arrays are created using []. They are used to make lists like in Python.
 Lists are ordered by index starting at 0.
    const variable = [0,1,2,3,4,5,6,7,8]   //9 numbers 
