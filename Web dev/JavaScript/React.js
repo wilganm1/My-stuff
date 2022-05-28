@@ -5,7 +5,7 @@ React uses a JavaScript extension called JSX which combines HTML and JavaScript;
  
   const name = <h1>"Joseph Smith"</h1>;
   
- *****Attributes use camelCase;*****
+ *****Attributes use camelCase*****;
   
 These variables can be called in other elements using {name};
 
@@ -74,9 +74,15 @@ Because functions are used they can be reused unlimited times.;
         <Welcome name="Edite" />   
       </div>);}
 
+--------------------------------EVENT HANDLING--------------------------------
+Handinling events is similar in standard HTML;
+A function is called when an HTML event happens;
+     
+     <button onClick={functionName}>  //
+       Activate Lasers
+     </button>
 
-
-
+     
 
 
 
