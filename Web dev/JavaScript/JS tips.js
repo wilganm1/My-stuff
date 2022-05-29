@@ -282,7 +282,7 @@ Use return to call the function;
      --> returns the area of y and z;
 
 //ES6 syntax
-Use let = () => {} to shortcut function command;
+Use let = () => {return } to shortcut function command;
 
 Use const = xyz;
   xyz(() => {}); to shortcut function command;
