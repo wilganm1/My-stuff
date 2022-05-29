@@ -73,7 +73,34 @@ to use the word 'prop';
          <Header title = {'Hello'} /> //the Header variables is called and the prop is set in the tag.
       </div>);};
 
---------------------------------EVENTS & STATES--------------------------------
+-------------------------------------LISTS-------------------------------------
+Lists use map() to loop through their contents.;
+    
+    map() works like for (a in aa){} but this syntax:  ; //
+     aa.map(a);
+
+  function Car(props) {
+    return <li>I am a { props.brand }</li>;} ; /// This puts every element in list tag <li>
+
+  function Garage() {
+    const cars = ['Ford', 'BMW', 'Audi'];  //This is the array used.
+    return (
+      <>
+        <h1>Who lives in my garage?</h1>
+        <ul> // *** This starts the list in HTML
+          {cars.map((car) => <Car brand={car} />)}  //** Explained below
+        </ul>
+      </>);}
+
+-Keys. Used to keep track of list elements. reserved keyword.;
+ There are many ways to do this;
+      const cars = [                        //object
+        {id: 1, brand: 'Ford'},
+        {id: 1, brand: 'Ford'},
+        {id: 1, brand: 'Ford'}]
+
+    {cars.map((car) => <Car key={car.id} brand={car.brand} />)}
+--------------------------------EVENTS & STATES---------------------------------
 States represent the current situation of a component.;
 
   First import the useState object;
