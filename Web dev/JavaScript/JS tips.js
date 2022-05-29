@@ -246,6 +246,7 @@ parameters will be used
 Syntax:
   function functionName(parameter1, parameter2) {
     return whatever }    //return stops the function
+	  
 You run a function by calling it or assigning it to a variable
 
   Example:
@@ -280,18 +281,11 @@ Use return to call the function;
     return area;}
      --> returns the area of y and z;
 
-Function expression. Using a saved variable as a function
-  const plantNeedsWater = function(day){
-    if(day ==='Wednesday'){return true;} 
-    else{return fals;}};        //
-  		plantNeedsWater('Tuesday');
-  		console.log(plantNeedsWater('Tuesday'));
-  		 --> false;
-
+//ES6 syntax
 Use let = () => {} to shortcut function command;
 
 Use const = xyz;
-  xyz(x => {}); to shortcut function command;
+  xyz(() => {}); to shortcut function command;
   parameters inside the ( ) and then add an arrow => that points to the 
   function body surrounded in { } like this:;
     const rectangleArea = (width, height) => {
