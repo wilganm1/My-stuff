@@ -1,8 +1,13 @@
--------------------------------BASICS-------------------------------
-How to create a new React app in the terminal
- npx create-react-app my-app
- cd my-app
- npm start
+-------------------------------BASICS-------------------------------;
+Use Visual Studio Code for an IDE;
+  
+Type the following in windows terminal to create a new React app.;
+  npx create-react-app app-name    ;  //starts react setup
+  cd app-name                     ;   //goes into the app directory
+  code .            ;                 //opens Visual Studio Code
+  
+
+  
 
 
 React is a JavaScript package used to create user interfaces.;
@@ -31,7 +36,6 @@ Functions & objects can also be passed through;
       <h1>
         Hello, {formatName(user)}!
       </h1>);
-
 
 JSX can contain children;
   const element = (
@@ -84,7 +88,7 @@ States represent the current situation of a component.;
 Handinling events is similar in standard HTML;
 A function is called when an HTML event happens;
      
-     <button onClick={functionName}>  //
+     <button onClick={() => {}}>  //function
        Activate Lasers
      </button>
      
