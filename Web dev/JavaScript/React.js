@@ -99,28 +99,75 @@ Lists use map() to loop through their contents.;
         {id: 1, brand: 'Ford'},
         {id: 1, brand: 'Ford'}]
 
-    {cars.map((car) => <Car key={car.id} brand={car.brand} />)}
---------------------------------EVENTS & STATES---------------------------------
-States represent the current situation of a component.;
+    {cars.map((car) => <Car key={car.id} brand={car.brand} />)};
 
-  First import the useState object;
-  Then create an  array variable for the state;
-   
-   import {useState} from 'react';   //importing states
-  
-   const [stateName, setStateName] = useState();  //Setting up the State object
-//!!! Have the 2nd item in the array use the word 'set' and the name of the state.
-   
-   
+------------------------------FORMS------------------------------
+Information in forms in handled by form states in components
+
+import { useState } from 'react';
+import ReactDOM from 'react-dom/client';
+
+function MyForm() {
+  const [name, setName] = useState(""); //sets default at ""
+
+  return (
+    <form>
+      <label>Enter your name:
+        <input
+          type="text" //type of the form
+          value={name}  //
+          onChange={(e) => setName(e.target.value)} //e is an event
+        />
+      </label>
+    </form>)}
+
+
+--------------------------------EVENTS---------------------------------
 Handinling events is similar in standard HTML;
 A function is called when an HTML event happens;
      
      <button onClick={() => {}}>  //function
        Activate Lasers
      </button>
-     
+  
+-------------------------------HOOKS-------------------------------
+Hooks allow function components to have access to state and other React features. 
+State generally refers to data or properties that need to be tracked in an application.
 
+ -useState
+   *** useState accepts an initial state and returns two values: ***;
+      -The current state.
+      -A function that updates the state.
 
+1) import { useState} from "react";
 
+2) function FavoriteColor(){
+      const [color, setColor] = useState("");}
+       //  current,  function that updates
+
+ Example:
+    function FavoriteColor() {
+      const [color, setColor] = useState("red");  //default color is red
+      return <h1>My favorite color is {color}!</h1>};
+
+To update the state call the updater function;
+Use a callback function to access it;
+    
+      <button   //button to change color to blue
+        type="button"
+        onClick={() => setColor("blue")}  //This is the updater function
+      >Blue</button>
+      
+ -useEffect. 
+    The useEffect Hook allows you to perform side effects in your components.
+    The second argument is optional
+       *** useEffect(<function>, <dependency>)
+   
+Example: counting every second after rendering
+      useEffect(() => {
+        setTimeout(() => {
+          setCount((count) => count + 1);
+        }, 1000);
+      }, []); // <- add empty brackets here to stop after 1 time
 
 
