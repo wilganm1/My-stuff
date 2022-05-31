@@ -52,8 +52,32 @@ Syntax:   $("selector").action()
       .slideUp();
       .slideToggle();   //both slide up & down
       .animate({params}, speed)            //params can be stuff like height, opacity, etc
-      .
+      .stop(
+         stopAll,   //animation queue is clear. Default = false
+         goToEnd)   //complete current animation. Default = false
 
+   Callback function.  Adds a function to another effect. USES WORD function
+                             *****
+          $("button").click(function(){   //function keyword
+            $("p").hide("slow", function(){
+              alert("The paragraph is now hidden");});}); 
+
+----------------------------------HTML----------------------------------
+jQuery can manipulate parts of HTML element using methods
+
+   -Getter.  Retrieves information. Methods at END.
+        $("selector")
+                     .text();    //gets text of a tag
+                     .html();   //gets the HTML code
+                     .val();   //value from a form
+   -Setters.  Inserts information
+        $("selector")
+                     .text("~~~~~")   //changes text of an element
+                     .html("<~>~~</>")  //changes html code
+                     .val("~~")        //
+                     .attr("attributeName", "attribute change")
+  
+        
 
     
     
