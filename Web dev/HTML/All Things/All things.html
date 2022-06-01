@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<!--Set up an automatic slideshow with the magenta & black ripple. Start from 0.png all the way up to 199.png. once it hits 199 have it restart at 75.png -->
+
+<html lang="en">
+<head>
+<title>My Website</title>
+<link rel="stylesheet" type="text/css" href="All-things.css"/>
+<meta charset="utf-8"/>
+</head>
+<body>
+<div id="page">
+	<div id="head">
+	<h1>Welcome to My Website</h1>
+		<h6>Prepare for dumb shit</h6>
+
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+  			 <div class="numbertext">1 / 5</div>		
+  			 <img src="guitar.jpg" alt="guitar" class="slide-pic">
+ 			 <div class="text">Music</div>
+			</div>
+
+		<div class="mySlides fade">
+  		<div class="numbertext">2 / 5</div>
+		<img src="barbell.jpg" alt="exercise" class="slide-pic">
+  <div class="text">Exercise</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 5</div>
+  <img src="anime.jpg" alt="anime" class="slide-pic">
+  <div class="text">Anime</div>
+</div>
+  
+  <div class="mySlides fade">
+  <div class="numbertext">5 / 5</div>
+  <img src="biology.jpg" alt="biology" class="slide-pic">
+  <div class="text">Biology</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5 / 5</div>
+  <img src="memes.jpg" alt="memes" class="slide-pic">
+  <div class="text">Memes</div>
+</div>
+
+</div>
+
+<br>
+<div class ="dots" style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+</script>
+</div>
+
+<div class="navbar">
+ 	<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">YouTube</a>
+ 	<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Facebook</a>
+ 	<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Twitter</a>
+ 	<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Instagram</a>
+ 	<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">MySpace</a>
+ 	<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target ="_blank">Bitchute</a>
+</div>
+
+<div class="content">
+	<div class="side">
+		<h3 class="about-me">About Me:</h3>
+		<p>Spiral out, keep going</p>
+
+		<!--Insert ripples -->
+		<div class="image-me">
+	<div class="ripple fade">
+    <img src="100.png" alt="pic" class="rip-pic" ></div>
+<div class="ripple fade">
+  <img src="101.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="102.png" alt="pic" class="rip-pic" ></div>
+<div class="ripple fade">
+  <img src="103.png" alt="pic" class="rip-pic" ></div>
+<div class="ripple fade">
+  <img src="104.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="105.png" alt="pic" class="rip-pic" ></div>
+<div class="ripple fade">
+  <img src="106.png" alt="pic" class="rip-pic" ></div>
+<div class="ripple fade">
+  <img src="107.png" alt="pic" class="rip-pic" ></div>
+<div class="ripple fade">
+  <img src="108.png" alt="pic" class="rip-pic" ></div>
+<div class="ripple fade">
+  <img src="109.png" alt="pic" class="rip-pic" ></div>
+<div class="ripple fade">
+  <img src="110.png" alt="pic" class="rip-pic" ></div>
+<div class="ripple fade">
+  <img src="111.png" alt="pic" class="rip-pic" ></div>
+<div class="ripple fade">
+  <img src="112.png" alt="pic" class="rip-pic" ></div>
+<div class="ripple fade">
+  <img src="113.png" alt="pic" class="rip-pic" ></div> 
+  <div class="ripple fade">
+  <img src="114.png" alt="pic" class="rip-pic" ></div> 
+  <div class="ripple fade">
+  <img src="115.png" alt="pic" class="rip-pic" ></div>
+<div class="ripple fade">
+  <img src="116.png" alt="pic" class="rip-pic" ></div>
+<div class="ripple fade">
+  <img src="117.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="118.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="119.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="120.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="121.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="122.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="123.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="124.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="125.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="126.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="127.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="128.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="129.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="130.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="131.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="132.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="133.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="134.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="135.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="136.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="137.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="138.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="139.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="140.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="141.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="142.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="143.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="144.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="145.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="146.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="147.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="148.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="149.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="150.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="151.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="152.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="153.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="154.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="155.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="156.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="157.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="158.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="159.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="160.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="161.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="162.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="163.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="164.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="165.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="166.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="167.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="168.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="169.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="170.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="171.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="172.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="173.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="174.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="175.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="176.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="177.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="178.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="179.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="180.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="181.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="182.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="183.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="184.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="185.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="186.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="187.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="188.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="189.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="190.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="191.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="192.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="193.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="194.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="194.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="195.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="196.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="197.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="198.png" alt="pic" class="rip-pic" ></div>
+  <div class="ripple fade">
+  <img src="199.png" alt="pic" class="rip-pic" ></div>
+</div>
+<br>
+
+<script>
+  //create variables that will be used in the function
+  //set an index variable to zero to start 
+var indexSlides = 0;
+showRipple();
+
+function showRipple() {
+  var i;        //index variable
+  var slide = document.getElementsByClassName("ripple");
+      /*this syntax retrives the images within the same document. 
+        The images need the same class */
+   for (i = 0; i < slide.length; i++) {
+    slide[i].style.display = "none";}
+    /* This is the looping function that tells the function showRipple
+       to move onto the next index within the images array */
+  indexSlides++;  //This causes the next image to actually show.
+  if (indexSlides > slide.length) {indexSlides = 76}
+      /*This tells the function showRipple to reset to the first image
+            once the last image is shown */
+     slide[indexSlides-1].style.display = "block";
+ 	 setTimeout(showRipple, 50); 
+}                            //1000 = 1 second
+
+ </script>
+
+ <table class="about-me-stats">
+  <tbody>
+    <th colspan="2">Stats:</th>  
+    <tr class="odd-row">
+       <td class="c1">Age</td>
+       <td class="c2">25 Earth revolutions</td></tr>
+    <tr class="even-row">
+       <td class="c1">Height</td>
+       <td class="c2">1.8256e-16 light-years</td></tr>
+    <tr class="odd-row">
+       <td class="c1">Sex</td>
+       <td class="c2">XY</td></tr>
+    <tr class="even-row">
+       <td class="c1">Race</td>
+       <td class="c2">wHite (& privileged)</td> </tr>
+    <tr class="odd-row">
+       <td class="c1">Eye color</td>
+       <td class="c2">487 nm λ</td></tr>
+    <tr class="even-row">
+       <td class="c1">Hair color</td>
+       <td class="c2">Brown</td> </tr>
+    <tr class="odd-row">
+       <td class="c1">Weight</td>
+       <td class="c2">~29,300 pennies</td></tr>
+
+  </tbody>
+</table>
+	</div>
+
+	<div class="main">
+		<h3>Know Thyself, for there is no spoon.</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris table ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+
+<div id="footer"> 
+		Copyright &copy; 2020 MEW 
+	</div>
+</div>
+</div>
+</body>
+</html>
