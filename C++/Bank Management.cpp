@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstring>
 
 int checkingBalance{0};
 int savingsBalance{0};
@@ -40,7 +39,7 @@ void addMoney(){  //depositing money into accounts
                             std::cin.ignore(10000, '\n');}
                         else {
                             checkingBalance += depositAmount;
-                            std::cout << "Deposit complete" << std::endl;
+                            std::cout << "Deposit complete" << "\n" << std::endl;
                             break;}}
                         viewAccounts();
                     break;
@@ -55,9 +54,8 @@ void addMoney(){  //depositing money into accounts
                             std::cin.ignore(10000, '\n');}
                         else {
                             savingsBalance += depositAmount;
-                            std::cout << "Deposit complete" << std::endl;
+                            std::cout << "Deposit complete" << "\n" << std::endl;
                             break;}}
-                        viewAccounts();
                     break;
                 default:
                     std::cout << "Invalid. Try again." << std::endl;
@@ -66,7 +64,7 @@ void addMoney(){  //depositing money into accounts
 
 void loseMoney(){ //withdrawing money
     system("CLS");
-    std::cout << "Which account would you like withdraw from?" <<std::endl;
+    std::cout << "Which account would you like to add to?" <<std::endl;
     std::cout << "1) Checkings: " << checkingBalance << std::endl;
     std::cout << "2) Savings: " << savingsBalance << std::endl;
     pickAccount:
@@ -79,111 +77,106 @@ void loseMoney(){ //withdrawing money
                 std::cin.ignore(10000, '\n');}
         else {
             switch (accountChoice) {
+        //need a fail-safe is negative integer is entered.
                 case 1:
-                    while (true) {
-                        std::cout << "Enter amount to withdraw: ";
-                        int withdrawAmount{};
-                        std::cin >> withdrawAmount; //checks to see you don't take out more than is possible.
-                        if (withdrawAmount >> checkingBalance) {
-                            std::cout << "Request greater than current balance. Please try again." << std::endl;
-                            std::cin.clear();  //will erase the cin input
-                            std::cin.ignore(10000, '\n');}
-                        else if (std::cin.fail()){  //will catch if goal is not an integer
-                            std::cout << "Not an number. Try again." << std::endl;
-                            std::cin.clear();  //will erase the cin input
-                            std::cin.ignore(10000, '\n');}
-                        else {
-                            checkingBalance -= withdrawAmount;
-                            std::cout << "Withdrawal complete";
-                            viewAccounts();
-                            break;}
-                        }
-                    checkingBalance -= withdrawAmount;
-                    std::cin.clear();
-                    break;
-                case 2:
-                    while (true) {
+                    while (true){
                         std::cout << "Enter amount to withdraw: ";
                         int withdrawAmount{};
                         std::cin >> withdrawAmount;
-                        if (withdrawAmount > savingsBalance) {
-                            std::cout << "Request greater than current balance. Please try again." << std::endl;
-                            std::cin.clear();  //will erase the cin input
+                        if (withdrawAmount < 0){
+                            std::cout << "Invalid. Please enter positive number" << std::endl;
+                            std::cin.clear();
                             std::cin.ignore(10000, '\n');}
-                        else if (std::cin.fail()){  //will catch if goal is not an integer
-                            std::cout << "Not an number. Try again." << std::endl;
-                            std::cin.clear();  //will erase the cin input
+                        else if (withdrawAmount > checkingBalance) {
+                            std::cout << "Requested withdrawal greater than current balance. Try again." << std::endl;
+                            std::cin.clear();  //clears error flag
+                            std::cin.ignore(10000, '\n');} // skips to next newline of cin
+                        else {
+                            checkingBalance -= withdrawAmount;
+                            std::cout << "Withdrawal complete" << "\n" << std::endl;
+                            break;}}
+                        viewAccounts();
+                    break;
+                case 2:
+                    while (true){
+                        std::cout << "Enter amount to withdraw: ";
+                        int withdrawAmount{};
+                        std::cin >> withdrawAmount;
+                        if (withdrawAmount < 0){
+                            std::cout << "Invalid. Please enter positive number" << std::endl;
+                            std::cin.clear();
                             std::cin.ignore(10000, '\n');}
                         else {
                             savingsBalance -= withdrawAmount;
-                            std::cout << "Withdrawal complete" << std::endl;
-                            viewAccounts();
-                            break;}
-                        }
-                    savingsBalance -= withdrawAmount;
-                    std::cin.clear();
+                            std::cout << "Withdrawal complete." << "\n" << std::endl;
+                            break;}}
                     break;
                 default:
                     std::cout << "Invalid. Try again." << std::endl;
                     goto pickAccount;
                     break;}}}
 
+
 void transferMoney(){   //taking money from one account and putting it into another.
     system("CLS");
     std::cout << "1) Checkings:  " << checkingBalance << std::endl;
     std::cout << "2) Savings: " << savingsBalance << std::endl;
     pickTransfer:
-        std::cout << "Which account would you like to transfer from? " << std::endl;
-        int transferChoice{};
-        std::cin >> transferChoice;
+        std::cout << "Enter number: " << std::endl;
+        int accountChoice{};
+        std::cin >> accountChoice;
         if (std::cin.fail()){  //will catch if goal is not an integer
                 std::cout << "Not an number. Try again." << std::endl;
                 std::cin.clear();  //will erase the cin input
                 std::cin.ignore(10000, '\n');}
         else {
-        switch (transferChoice){
-            case 1: //choose checking
-                while (true){
-                    std::cout << "Choose amount to transfer." << std::endl;
-                    int transferAmount{};
-                    std::cin >> transferAmount;
-                    if (std::cin.fail()){  //will catch if goal is not an integer
-                        std::cout << "Not an number. Try again." << std::endl;
-                        std::cin.clear();  //will erase the cin input
-                        std::cin.ignore(10000, '\n');}
-                    else if (transferAmount > checkingBalance) {
-                        std::cout << "Request greater than current balance. Please try again.";
-                        std::cin.clear();  //will erase the cin input
-                        std::cin.ignore(10000, '\n');}
-                    else {
-                        checkingBalance -= transferAmount;
-                        savingsBalance += transferAmount;
-                        break;}
-                    }
-            case 2: //choose savings
-                while (true ){
-                    std::cout << "Choose amount to transfer." << std::endl;
-                    int transferAmount{};
-                    std::cin >> transferAmount;
-                    if (std::cin.fail()){  //will catch if goal is not an integer
-                        std::cout << "Not an number. Try again." << std::endl;
-                        std::cin.clear();  //will erase the cin input
-                        std::cin.ignore(10000, '\n');}
-                    else if (transferAmount > savingsBalance) {
-                        std::cout << "Request greater than current balance. Please try again.";
-                        std::cin.clear();  //will erase the cin input
-                        std::cin.ignore(10000, '\n');}
-                    else {
-                        savingsBalance -= transferAmount;
-                        checkingBalance += transferAmount;
-                        break;}
-                    }
-            default:
-                goto pickTransfer;} //end of switch
-                }}
+            switch (accountChoice) {
+        //need a fail-safe is negative integer is entered.
+                case 1:
+                    while (true){
+                        std::cout << "Enter amount to transfer: ";
+                        int transferAmount{};
+                        std::cin >> transferAmount;
+                        if (transferAmount < 0){
+                            std::cout << "Invalid. Please enter positive number" << std::endl;
+                            std::cin.clear();
+                            std::cin.ignore(10000, '\n');}
+                        else if (transferAmount > checkingBalance){
+                            std::cout << "Invalid. Please enter positive number" << std::endl;
+                            std::cin.clear();
+                            std::cin.ignore(10000, '\n');}
+                        else {
+                            checkingBalance -= transferAmount;
+                            savingsBalance += transferAmount;
+                            std::cout << "Transfer complete." << "\n" << std::endl;
+                            break;}}
+                    break;
+                case 2: //savings
+                    while (true){
+                        std::cout << "Enter amount to transfer: ";
+                        int transferAmount{};
+                        std::cin >> transferAmount;
+                        if (transferAmount < 0){
+                            std::cout << "Invalid. Please enter positive number." << std::endl;
+                            std::cin.clear();
+                            std::cin.ignore(10000, '\n');}
+                        else if (transferAmount > savingsBalance){
+                            std::cout << "Transfer greater than current balance. Try again." << std::endl;
+                            std::cin.clear();
+                            std::cin.ignore(10000, '\n');}
+                        else {
+                            savingsBalance -= transferAmount;
+                            checkingBalance += transferAmount;
+                            std::cout << "Transfer complete" << "\n" << std::endl;
+                            break;}}
+                    break;
+                default:
+                    std::cout << "Invalid. Try again." << std::endl;
+                    goto pickTransfer;
+                    break;}}}
 
 void Menu(){
-    std::cout << "Welcome to MEW Banking." << std::endl;
+    std::cout << "Welcome to MEW Banking." << "\n" << std::endl;
     std::cout << "1) View your accounts" << std::endl;
     std::cout << "2) Deposit money" << std::endl;
     std::cout << "3) Withdraw money" << std::endl;
@@ -202,7 +195,7 @@ void Menu(){
             switch (pickit){
                 case 1:
                     viewAccounts();
-                    Menu();  //Need to have Menu() after every other function is called to restart it
+                    Menu();  //This will constantly recall Menu function. Recursion.
                     break;
                 case 2:
                     addMoney();
