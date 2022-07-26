@@ -6,15 +6,15 @@
 
 /* The player will be Xs and the computer will be Os.
 There will be 9 positions. Each time the player or computer
-makes a move that position will be used up
+makes a move that position will be used up.
 
 Have random number to decide who goes first. Binary choice
 1 = player, 0 = computer.
 
-Make an array of blank spaces that will be switched
+Make a vector of blank spaces that will be switched
 
 Each time a position is picked I need to eliminate it from being picked again.
-Can make a separate array that has values removed every time a position is picked.
+Can make a separate vector that has values removed every time a position is picked.
 */
 
 void print(std::vector<int> const &input){
@@ -29,24 +29,45 @@ std::vector<char> pst = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
 //Using this array will keep everything the same until it gets changed
 //after each play.
 
+void playerScore(){
+    //Player score first
+    if (pst[0],pst[1],pst[2] == 'X','X','X' || pst[3],pst[4],pst[5] == 'X','X','X' || pst[6],pst[7],pst[8] = 'X','X','X'){ //Horizontal
+        std::cout << "\nYou Win! Horizontal Run!" << std::endl;}
+    else if (pst[0],pst[3],pst[6] == 'X','X','X' || pst[1],pst[4],pst[7] == 'X','X','X' || pst[2],pst[5],pst[8] = 'X','X','X'){  //Vertical
+        std::cout << "\nYou Win! Vertical Run!" << std::endl;}
+    else if (pst[0],pst[4],pst[8] == 'X','X','X' || pst[2],pst[4],pst[6] == 'X','X','X'){  //Diagonal
+        std::cout << "\nYou Win! Diagonal Run!" << std::endl;}
+    else {
+        computerSelection();}
+}
+
+void computerScore(){
+    if (pst[0],pst[1],pst[2] == 'O','O','O' || pst[3],pst[4],pst[5] == 'O','O','O' || pst[6],pst[7],pst[8] = 'O','O','O'){ //Horizontal
+        std::cout << "\nYou Win! Horizontal Run!" << std::endl;}
+    else if (pst[0],pst[3],pst[6] == 'O','O','O' || pst[1],pst[4],pst[7] == 'O','O','O' || pst[2],pst[5],pst[8] = 'O','O','O'){  //Vertical
+        std::cout << "\nYou Win! Vertical Run!" << std::endl;}
+    else if (pst[0],pst[4],pst[8] == 'O','O','O' || pst[2],pst[4],pst[6] == 'O','O','O'){  //Diagonal
+        std::cout << "\nYou Win! Diagonal Run!" << std::endl;}
+    else {
+        playerSelection();}
+}
+
 //Make game board
-void gameBoard(){   //need to pass entire array as argument. Use a pointer
+int board(){   //need to pass entire array as argument. Use a pointer
     system("CLS");
     std::cout << "\n\n";
     std::cout << "\t\t   1    2    3" <<std::endl;
     std::cout << "\t\t      |   |     " << std::endl;
-    std::cout << "\t\t   " << pst[0]<<"  | pst[1]|  p3  " << std::endl;
+    std::cout << "\t\t   " << pst[0]<<"  | " << pst[1] <<" |  " << pst[2] << std::endl;
     std::cout << "\t\t _____|___|_____" << std::endl;
     std::cout << "\t\t      |   |     " << std::endl;
-    std::cout << "\t\t4  p4 | p5| p6   6" << std::endl;
+    std::cout << "\t\t4   " << pst[3]<<" | " << pst[4] <<" |  " << pst[5] << "  6 " << std::endl;
     std::cout << "\t\t _____|___|_____" << std::endl;
     std::cout << "\t\t      |   |     " << std::endl;
-    std::cout << "\t\t   p7 | p8| p9  " << std::endl;
+    std::cout << "\t\t   " << pst[6]<<"  | " << pst[7] <<" |  " << pst[8] << std::endl;
     std::cout << "\t\t      |   |     " << std::endl;
     std::cout << "\t\t   7    8    9";
 }
-
-//function to choose position
 
 void playerSelection(){ //player
     p_select:
@@ -64,12 +85,14 @@ void playerSelection(){ //player
             int index = std::distance(open_positions.begin(), itr);
             std::cout << index << std::endl; //finds index of key
             std::cout << open_positions[index] << std::endl;
-            open_positions.erase(open_positions.begin() + index);
-        }
+            open_positions.erase(open_positions.begin() + index);}
+    board();
+    playerScore();
 }
 
 void computerSelection(){
-    int comp_select = rand() % open_positions.size();
+    std::srand(time(0));
+    int comp_select = std::rand() % open_positions.size();
     int sel_elem = open_positions[comp_select];
     pst[sel_elem - 1] = 'O';
     std::vector<int>::iterator itr = std::find(open_positions.begin(), open_positions.end(), sel_elem -1);
@@ -77,10 +100,15 @@ void computerSelection(){
     std::cout << index << std::endl; //finds index of key
     std::cout << open_positions[index] << std::endl;
     open_positions.erase(open_positions.begin() + index);
+    board();
+    computerScore();
 }
+
+//Function to get score. Needs to check every single combination. 8 in total
+
 
 
 int main(){
+    //Start a function that will determine who goes first
 
-    return 0;
 }
