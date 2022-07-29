@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
-#include <algorithm> // Used to erase from vector
-#include <cstdlib> //rand() and srand()
-#include "random.hpp"
+#include <algorithm> // Iterator for vector
+#include <cstdlib> //rand() and srand().
+#include "random.hpp"   //better at guessing random numbers
 
 using Random = effolkronium::random_static;
 
@@ -16,18 +16,15 @@ Each time a position is picked I need to eliminate it from being picked again.
 Can make a separate vector that has values removed every time a position is picked.
 */
 
+std::vector<int> open_positions = {1,2,3,4,5,6,7,8,9};
+std::vector<char> pst = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
+
 
 void print(std::vector<int> const &open_positions){
     for (auto const &i: open_positions) {
         std::cout << i << " ";
     }
 }
-
-std::vector<int> open_positions = {1,2,3,4,5,6,7,8,9};
-std::vector<char> pst = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
-
-//Using this array will keep everything the same until it gets changed
-//after each play.
 
 void board(){   //need to pass entire array as argument. Use a pointer
     system("CLS");
@@ -66,6 +63,7 @@ p_select:
 }
 
 void computerSelection(){
+    srand(time(0));  // NEED THIS
     int comp_select = std::rand() % (open_positions.size() + 1);
     int sel_elem = open_positions[comp_select - 1];
     pst[sel_elem - 1] = 'O';
@@ -75,61 +73,34 @@ void computerSelection(){
     board();
 }
 
-bool playerScore(){
-    //Player score first
-    board();
-    if (pst[0],pst[1],pst[2] == 'X','X','X' || pst[3],pst[4],pst[5] == 'X','X','X' || pst[6],pst[7],pst[8] = 'X','X','X'){ //Horizontal
-        std::cout << "\nYou Win! Horizontal Run!" << std::endl;}
-    else if (pst[0],pst[3],pst[6] == 'X','X','X' || pst[1],pst[4],pst[7] == 'X','X','X' || pst[2],pst[5],pst[8] = 'X','X','X'){  //Vertical
-        std::cout << "\nYou Win! Vertical Run!" << std::endl;}
-    else if (pst[0],pst[4],pst[8] == 'X','X','X' || pst[2],pst[4],pst[6] == 'X','X','X'){  //Diagonal
-        std::cout << "\nYou Win! Diagonal Run!" << std::endl;}
-    else {};
-}
-
-bool computerScore(){
-    board();
-    if (pst[0],pst[1],pst[2] == 'O','O','O' || pst[3],pst[4],pst[5] == 'O','O','O' || pst[6],pst[7],pst[8] = 'O','O','O'){ //Horizontal
-        std::cout << "\nComputer Wins! Horizontal Run!" << std::endl;}
-    else if (pst[0],pst[3],pst[6] == 'O','O','O' || pst[1],pst[4],pst[7] == 'O','O','O' || pst[2],pst[5],pst[8] = 'O','O','O'){  //Vertical
-        std::cout << "\nComputer Wins! Vertical Run!" << std::endl;}
-    else if (pst[0],pst[4],pst[8] == 'O','O','O' || pst[2],pst[4],pst[6] == 'O','O','O'){  //Diagonal
-        std::cout << "\nComputer Wins! Diagonal Run!" << std::endl;}
-    else {};
-}//Function to get score. Needs to check every single combination. 8 in total
-
 //function who goes first
-
-bool whoGoesFirst(){
-    int pgf{};          //player goes first
-    int cgf{};          //computer goes first
-    int mark = Random::get(1,11);
-    goingFirst:
-        std::cout << "Pick a number between 1 and 10. Whoever is closer will go first: " << std::endl;
-        std::cin >> pgf;
-        if (std::cin.fail()){  //will catch if goal is not an integer
-            std::cout << "Not an number. Try again." << std::endl;
-            std::cin.clear();  //will erase the cin input
-            std::cin.ignore(10000, '\n');
-            goto goingFirst;}
-        else {
-
-        }
-
-
-
-
+    bool whoGoesFirst(){
+        return (Random::get<bool>()); // true with 50% probability by default
 }
+
+//need a function to determine who wins. Will stop the game if someone does
 
 
 
 int main(){
-    //Start a function that will determine who goes first
     std::vector<int> open_positions = {1,2,3,4,5,6,7,8,9};
     std::vector<char> pst = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
-    while (open_positions.size() > 0){
-        board();
-        playerSelection();
-        computerSelection();}
+    switch (whoGoesFirst()){
+        case 0: //false. Player first
+            while (open_positions.size() > 0){
+                board();
+                playerSelection();
+                computerSelection();}
+            break;
+        case 1: //true. Computer first
+
+            while (open_positions.size() > 0){
+                board();
+                computerSelection();
+                playerSelection();}
+            break;
+    }
+    board();
+
     return 0;
 }
