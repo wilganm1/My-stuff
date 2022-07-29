@@ -6,7 +6,6 @@
 
 using Random = effolkronium::random_static;
 
-
 /* The player will be Xs and the computer will be Os.
 There will be 9 positions. Each time the player or computer
 makes a move that position will be used up.
