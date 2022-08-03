@@ -79,28 +79,52 @@ void computerSelection(){
 }
 
 //need a function to determine who wins. Will stop the game if someone does
-
-
+bool aWinner() {
+    if (pst[0] == 'X' && pst[1] == 'X' && pst[2] == 'X' || pst[3] == 'X' && pst[4] == 'X' && pst[5] == 'X' || pst[6] == 'X' && pst[7] == 'X' && pst[8] == 'X') {
+        board();
+        std::cout << "\nYou win!. Horizontal" << std::endl;
+        return true;}
+    else if (pst[0] == 'X' && pst[3] == 'X' && pst[6] == 'X' || pst[1] == 'X' && pst[4] == 'X' && pst[7] == 'X' || pst[2] == 'X' && pst[5] == 'X' && pst[8] == 'X') {
+        board();
+        std::cout << "\nYou win!. Vertical" << std::endl;
+        return true;}
+    else if (pst[0] == 'X' && pst[4] == 'X' && pst[8] == 'X' || pst[2] == 'X' && pst[5] == 'X' && pst[6] == 'X') {
+        board();
+        std::cout << "\nYou win! Diagonal" << std::endl;
+        return true;}
+    else if (pst[0] == 'O' && pst[1] == 'O' && pst[2] == 'O' || pst[3] == 'O' && pst[4] == 'O' && pst[5] == 'O' || pst[6] == 'O' && pst[7] == 'O' && pst[8] == 'O') {
+        board();
+        std::cout << "\nComputer wins!. Horizontal" << std::endl;
+        return true;}
+    else if (pst[0] == 'O' && pst[3] == 'O' && pst[6] == 'O' || pst[1] == 'O' && pst[4] == 'O' && pst[7] == 'O' || pst[2] == 'O' && pst[5] == 'O' && pst[8] == 'O') {
+        board();
+        std::cout << "\nComputer wins!. Vertical" << std::endl;
+        return true;}
+    else if (pst[0] == 'O' && pst[4] == 'O' && pst[8] == 'O' || pst[2] == 'O' && pst[4] == 'O' && pst[6] == 'O') {
+        board();
+        std::cout << "\nComputer wins! Diagonal" << std::endl;
+        return true;}
+    else {
+        return false;}
+}
 
 int main(){
     std::vector<int> open_positions = {1,2,3,4,5,6,7,8,9};
     std::vector<char> pst = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
     switch (whoGoesFirst()){
         case 0: //false. Player first
-            while (open_positions.size() > 0){
+            while (!aWinner()){
                 board();
                 playerSelection();
                 computerSelection();}
             break;
         case 1: //true. Computer first
-
-            while (open_positions.size() > 0){
+            while (!aWinner()){
                 board();
-                computerSelection();
-                playerSelection();}
+                playerSelection();
+                computerSelection();}
             break;
     }
-    board();
 
     return 0;
 }
