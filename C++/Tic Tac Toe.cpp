@@ -121,8 +121,8 @@ int main(){
         case 1: //true. Computer first
             while (!aWinner()){
                 board();
-                playerSelection();
-                computerSelection();}
+                computerSelection();
+                playerSelection();}
             break;
     }
 
