@@ -7,7 +7,9 @@ I've been getting into archery and I wanted a place to shoot in my backyard. I b
 
 ### Building it
 I had old wooden posts around my house used to make a garden but were no longer needed. I used 7 in total. All the string was cut off before they were cut The first two were uncut and meant to hold the hay bales and are standing straight up with their ends cut at an angle to dig into the soil better. I used a sledgehammer to hit them in so they were somewhat stable.
+
 ![fence posts](https://github.com/wilganm1/My-stuff/blob/main/Things%20I%20built/Archery%20shooting%20gallery/images/IMG_0521.jpg)
+
 I first cut the string off with a box cutter and cut with the miter saw for the correct angles I needed
 ![miter saw](https://github.com/wilganm1/My-stuff/blob/main/Things%20I%20built/Archery%20shooting%20gallery/images/IMG_0512.jpg)
 
