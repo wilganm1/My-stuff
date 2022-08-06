@@ -17,10 +17,10 @@ bool checksSpaces(std::vector<int> vec, int choice){
         return false;}
 }
 
-/*void print(std::vector<int> const &open_positions){  //found online. prints out available positions
+void print(std::vector<int> const &open_positions){  //found online. prints out available positions
     for (auto const &i: open_positions) {
         std::cout << i << " ";}
-}*/
+}
 
 void board(){
     system("CLS");
@@ -41,6 +41,7 @@ void board(){
 void playerSelection(){ //Picking a spot
     p_select:
         std::cout << "\nPlease select an open space: ";
+        print(open_positions);
         std::cout << std::endl;
         int player_selection{};
         std::cin >> player_selection;
@@ -64,9 +65,9 @@ void playerSelection(){ //Picking a spot
 
 void computerSelection(){
     srand(time(0));  // NEED THIS for random every time
-    int comp_select = std::rand() % (open_positions.size() + 1);
-    int sel_elem = open_positions[comp_select - 1];
-    pst[sel_elem - 1] = 'O';
+    int comp_select = std::rand() % (open_positions.size());
+    int sel_elem = open_positions[comp_select];
+    pst[sel_elem -1 ] = 'O';
     std::vector<int>::iterator itr = std::find(open_positions.begin(), open_positions.end(), sel_elem);
     int index = std::distance(open_positions.begin(), itr);
     open_positions.erase(open_positions.begin() + index);
@@ -102,31 +103,37 @@ bool aWinner() { //determines a winner
 
 /*
 BUG: Entering in a number randomly crashes the game. It's a Windows memory error. It's a memory access issue. I think it's because the computer
-is trying to put in a number that doesn't exist in the vector.
+is trying to put in a number that doesn't exist.
 */
 
 int main(){
-    std::vector<int> open_positions = {1,2,3,4,5,6,7,8,9};
-    std::vector<char> pst = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
-    switch (whoGoesFirst()){
-        case 0: //false. Player first
-            while (aWinner() && open_positions.size() != 0){
-                board();
-                std::cout << "\nYou go first" << std::endl;
-                playerSelection();
-                if (aWinner() && open_positions.size() != 0){ //Need this so the game stops at the moment someone wins
-                    computerSelection();}
-                else {break;}}
-            break;
-        case 1: //true. Computer first
-            while (aWinner() && open_positions.size() != 0){
-                board();
-                computerSelection();
-                if (aWinner() && open_positions.size() != 0){
-                    std::cout << "\nComputer goes first" << std::endl;
-                    playerSelection();}
-                else {break;}}
-            break;}
-    std::cout << "Bug" << std::endl;
-return 0;
+    while(true){
+        std::vector<int> open_positions = {1,2,3,4,5,6,7,8,9};
+        std::vector<char> pst = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
+        board();
+        switch (whoGoesFirst()){
+            case 0: //false. Player first
+                while (aWinner() && open_positions.size() != 0){
+                    board();
+                    std::cout << "\nYou go first" << std::endl;
+                    playerSelection();
+                    if (aWinner() && open_positions.size() != 0){ //Need this so the game stops at the moment someone wins
+                        computerSelection();}
+                    else {break;}}
+                break;
+            case 1: //true. Computer first
+                while (aWinner() && open_positions.size() != 0){
+                    board();
+                    computerSelection();
+                    if (aWinner() && open_positions.size() != 0){
+                        std::cout << "\nComputer goes first" << std::endl;
+                        playerSelection();}
+                    else {break;}}
+                break;}
+        std::cout << "Play again? (y/n): ";
+        std::cin >> retry;
+        if (retry == 'y'){}
+        else {
+            break;}}
+    return 0;
 }
