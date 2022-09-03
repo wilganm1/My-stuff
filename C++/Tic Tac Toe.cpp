@@ -4,23 +4,23 @@
 #include <cstdlib> //rand() and srand().
 #include "random.hpp"   //better at guessing random numbers
 
-using Random = effolkronium::random_static;
+using Random = effolkronium::random_static; //from "random.hpp" file
 
-bool checksSpaces(std::vector<int>ops, int choice){ //function to correct if the player enters a space that is not available. Otherwise stops the game.
+bool checksSpaces(std::vector<int>ops, int choice){ //checks if the player enters a space that is not available.
     if (std::find(ops.begin(), ops.end(), choice) != ops.end()) {
         return true;}
     else {
         return false;}
 }
 
-void print(std::vector<int> const &ops){  //found online. prints out available positions
+void print(std::vector<int> const &ops){  //prints out available positions. found online.
     for (auto const &i: ops) {
         std::cout << i << " ";}
 }
 
-void board(std::vector<char>& vec){
+void board(std::vector<char>& vec){ //displays the game.
     system("CLS");
-    std::cout << "\n\n";
+    std::cout << "\t\t   Tic Tac Toe\n\n";
     std::cout << "\t\t   7    8    9" <<std::endl;
     std::cout << "\t\t      |   |     " << std::endl;
     std::cout << "\t\t   " << vec[6]<<"  | " << vec[7] <<" |  " << vec[8] << std::endl;
@@ -34,7 +34,7 @@ void board(std::vector<char>& vec){
     std::cout << "\t\t   1    2    3";
 }
 
-void playerSelection(std::vector<int>& op, std::vector<char>& vec){ //Picking a spot
+void playerSelection(std::vector<int>& op, std::vector<char>& vec){ //The player choosing a spot
     p_select:
         std::cout << "\nPlease select an open space: ";
         print(op);
@@ -53,7 +53,7 @@ void playerSelection(std::vector<int>& op, std::vector<char>& vec){ //Picking a 
             goto p_select;}
 }
 
-void computerSelection(std::vector<int>& op, std::vector<char>& vec){
+void computerSelection(std::vector<int>& op, std::vector<char>& vec){ //computer randomly selecting a spot
     srand(time(0));  // NEED THIS for random every time
     int comp_select = std::rand() % (op.size());
     int sel_elem = op[comp_select];
@@ -69,22 +69,22 @@ bool whoGoesFirst(){  // coin flip for who goes first
 
 bool aWinner(std::vector<char>vec) { //determines a winner
     if (vec[0] == 'X' && vec[1] == 'X' && vec[2] == 'X' || vec[3] == 'X' && vec[4] == 'X' && vec[5] == 'X' || vec[6] == 'X' && vec[7] == 'X' && vec[8] == 'X') {
-        std::cout << "\nYou win! Horizontal" << std::endl;
+        std::cout << "\nYou win! Horizontal." << std::endl;
         return false;}
     else if (vec[0] == 'X' && vec[3] == 'X' && vec[6] == 'X' || vec[1] == 'X' && vec[4] == 'X' && vec[7] == 'X' || vec[2] == 'X' && vec[5] == 'X' && vec[8] == 'X') {
-        std::cout << "\nYou win! Vertical" << std::endl;
+        std::cout << "\nYou win! Vertical." << std::endl;
         return false;}
     else if (vec[0] == 'X' && vec[4] == 'X' && vec[8] == 'X' || vec[2] == 'X' && vec[4] == 'X' && vec[6] == 'X') {
-        std::cout << "\nYou win! Diagonal" << std::endl;
+        std::cout << "\nYou win! Diagonal." << std::endl;
         return false;}
     else if (vec[0] == 'O' && vec[1] == 'O' && vec[2] == 'O' || vec[3] == 'O' && vec[4] == 'O' && vec[5] == 'O' || vec[6] == 'O' && vec[7] == 'O' && vec[8] == 'O') {
-        std::cout << "\nComputer wins! Horizontal" << std::endl;
+        std::cout << "\nComputer wins! Horizontal." << std::endl;
         return false;}
     else if (vec[0] == 'O' && vec[3] == 'O' && vec[6] == 'O' || vec[1] == 'O' && vec[4] == 'O' && vec[7] == 'O' || vec[2] == 'O' && vec[5] == 'O' && vec[8] == 'O') {
-        std::cout << "\nComputer wins! Vertical" << std::endl;
+        std::cout << "\nComputer wins! Vertical." << std::endl;
         return false;}
     else if (vec[0] == 'O' && vec[4] == 'O' && vec[8] == 'O' || vec[2] == 'O' && vec[4] == 'O' && vec[6] == 'O') {
-        std::cout << "\nComputer wins! Diagonal" << std::endl;
+        std::cout << "\nComputer wins! Diagonal." << std::endl;
         return false;}
     else {
         return true;}
@@ -92,42 +92,41 @@ bool aWinner(std::vector<char>vec) { //determines a winner
 
 int main(){
     while(true){
-        std::vector<int> open_positions = {1,2,3,4,5,6,7,8,9};  //I need to make these the ones that are used in functions
-        std::vector<char> pst = {' ',' ',' ',' ',' ',' ',' ',' ',' '}; //Pass them by reference in other functions
+        std::vector<int> open_positions = {1,2,3,4,5,6,7,8,9};   //these two variables are passed by reference in functions to change them dynamically.
+        std::vector<char> pst = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
         board(pst);
         switch (whoGoesFirst()){
-            case 0: //false. Player first
-                while (aWinner(pst) && open_positions.size() != 0){
+            case 0: //false. Player goes first
+                while (aWinner(pst) && open_positions.size() != 0){ //keeps the game going unless someone wins or no more spaces.
                     board(pst);
-                    std::cout << "\nYou go first" << std::endl;
+                    std::cout << "\nYou go first." << std::endl;
                     playerSelection(open_positions, pst);
                     if (aWinner(pst) && open_positions.size() != 0){ //Need this so the game stops at the moment someone wins
                         computerSelection(open_positions, pst);}
                     else {
-                        board(pst);
-                        aWinner(pst);
                         break;}}
                 break;
-            case 1: //true. Computer first
+            case 1: //true. Computer goes first
                 while (aWinner(pst) && open_positions.size() != 0){
                     computerSelection(open_positions, pst);
                     board(pst);
-                    std::cout << "\nComputer goes first" << std::endl;
+                    std::cout << "\nComputer goes first." << std::endl;
                     if (aWinner(pst) && open_positions.size() != 0){
                         playerSelection(open_positions, pst);}
                     else {
-                        board(pst);
-                        aWinner(pst);
                         break;}}
                 break;}
+        board(pst);
+        aWinner(pst);
         if (open_positions.size() == 0){
-            std::cout << "No one wins.\n";
+            std::cout << "\nNo one wins.";
         }
-        std::cout << "Play again? (y/n): ";
+        std::cout << "\nPlay again? (y/n): ";
         char retry{};
         std::cin >> retry;
         if (retry == 'y'){}
         else {
             break;}}
+    std::cout << "Thanks for playing!" << std::endl;
     return 0;
 }
