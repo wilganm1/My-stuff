@@ -4,6 +4,8 @@
 #include <algorithm>
 #include "random.hpp"
 
+//problem: If the same letter appears multiple times the game doesn't recognize it as two separate letters. It breaks the win.
+
 using Random = effolkronium::random_static;
 
 void print(std::vector<char> const &lts){  //prints out available positions. found online.
@@ -16,8 +18,8 @@ void game(std::vector<char>& bp, std::vector<char>& the_letters, std::vector<cha
     system("CLS");
     std::cout << "\t      _______ \t\t Letters Guessed"  << std::endl;
     std::cout << "\t     |       |\t\t-----------------" << std::endl;
-    std::cout << "\t     "<<bp[0]<<"       |" << std::endl;
-    std::cout << "\t    "<<bp[2]<<bp[1]<<bp[3]<<"      |" << std::endl;
+    std::cout << "\t     "<<bp[0]<<"       |\t\t      "<< lg[0] <<" " << lg[1] << " "<< lg[2] << std::endl;
+    std::cout << "\t    "<<bp[2]<<bp[1]<<bp[3]<<"      |\t\t      " <<lg[3] << " " << lg[4] << " " << lg[5] << std::endl;
     std::cout << "\t    "<<bp[4]<< " "<<bp[5]<<"      |" << std::endl;
     std::cout << "\t           __|__\t \n" << std::endl;
 }
@@ -37,9 +39,6 @@ bool match(std::vector<char>& word, char& guess, std::vector<char>& the_letters,
         return false;}
 }
 
-//PROBLEM: So no matter what I press it's not going through. I even printed out the word and tried to type it in but nothing worked.
-// So now it only prints out the very first letter even if the other letters are correct. Only works with 3 letter words.
-
 void rules(std::vector<char>& word, std::vector<char>& body_parts, std::vector<char>& the_letters, std::vector<char> letters_guessed){
     int wrong_guesses{0};
     int letters_left = the_letters.size();
@@ -53,35 +52,41 @@ void rules(std::vector<char>& word, std::vector<char>& body_parts, std::vector<c
             std::cin.clear();  //will erase the cin input
             std::cin.ignore(10000, '\n');}
         else {
-            letters_guessed.push_back(guess);
             if (!match(word,guess,the_letters,letters_left)){//find a way to see if a character is in a string.
+                letters_guessed[wrong_guesses] == guess;
                 switch (wrong_guesses){
                     case 0:
+                        letters_guessed[0] = guess;
                         body_parts[wrong_guesses] = 'O';
                         wrong_guesses++;
                         game(body_parts,the_letters,letters_guessed);
                         break;
                     case 1:
+                        letters_guessed[1] = guess;
                         body_parts[wrong_guesses] = '|';
                         wrong_guesses++;
                         game(body_parts,the_letters,letters_guessed);
                         break;
                     case 2:
+                        letters_guessed[2] = guess;
                         body_parts[wrong_guesses] = '-';
                         wrong_guesses++;
                         game(body_parts,the_letters,letters_guessed);
                         break;
                     case 3:
+                        letters_guessed[3] = guess;
                         body_parts[wrong_guesses] = '-';
                         wrong_guesses++;
                         game(body_parts,the_letters,letters_guessed);
                         break;
                     case 4:
+                        letters_guessed[4] = guess;
                         body_parts[wrong_guesses] = '/';
                         wrong_guesses++;
                         game(body_parts,the_letters,letters_guessed);
                         break;
                     case 5:
+                        letters_guessed[5] = guess;
                         body_parts[wrong_guesses] = '\\';
                         wrong_guesses++;
                         game(body_parts,the_letters,letters_guessed);
@@ -90,8 +95,7 @@ void rules(std::vector<char>& word, std::vector<char>& body_parts, std::vector<c
                         break;}}
             else {
                 game(body_parts,the_letters,letters_guessed);
-                letters_left--;}}
-    }
+                letters_left--;}}}
     if (wrong_guesses == 6){
         print(the_letters);
         std::cout << "\n\n\t\t Out of guesses." << std::endl;}
@@ -100,14 +104,12 @@ void rules(std::vector<char>& word, std::vector<char>& body_parts, std::vector<c
         std::cout << "\n\n\t\t You got it!" << std::endl;}
 }
 
-//The guessed letters still aren't printing. Try making the word a vector of characters instead of a string.
-
 int main(){
     std::vector<char> word{};
     std::string random_word();
     std::vector<char> body_parts = {' ',' ',' ',' ',' ',' '};
     std::vector<char> the_letters = {};
-    std::vector<char> letters_guessed = {};
+    std::vector<char> letters_guessed = {' ',' ',' ',' ',' ',' '};
     int word_length{};
     while (true){
         std::cout << "Choose word length from 3 to 7: ";
