@@ -6,9 +6,9 @@ Max_valence_electrons = [2,8,18,18,32,32,18,2]
 
 # For this I want to make a dictionaries of the periodic table of elements
 
-"""Add this to all objects
+"""ADD THESE TO ALL OBJECTS
 
-"valency": ,
+-"valency": ,
 
 "vapor pressure (Pa) to temp (K)"{
     1: ,
@@ -18,8 +18,10 @@ Max_valence_electrons = [2,8,18,18,32,32,18,2]
     10000: ,
     100000: },
 
+-classification of elements: metalloids, nonmetals, transition metals, alkali, alkaline earth metals, etc.
 
-Also add ionization energies 
+type of bonds they form.
+
 """
 
 Hydrogen = {
