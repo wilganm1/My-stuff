@@ -19,6 +19,11 @@ Max_valence_electrons = [2,8,18,18,32,32,18,2]
     100000: },
 
 -classification of elements: metalloids, nonmetals, transition metals, alkali, alkaline earth metals, etc.
+- PUT IN CLASS NUMBERS THAT GO WITH THE CLASSIFICATIONS
+    - Example: 
+            alkaline earth metals = 1
+            metalloids = 3
+ This will help with distinguishing covalent vs ionic vs metallic bonds
 
 type of bonds they form.
 
@@ -33,6 +38,7 @@ Hydrogen = {
     "group": 11,
     "period": 1,
     "block": "s-block",
+    "classification": "nonmetal",
     "shells": 1,
     "electrons per shell": [1],
     "valence electrons": 1,
@@ -40,8 +46,9 @@ Hydrogen = {
     "phase": "gas",
     "melting point (Fahrenheit)": -434.49,
     "boiling point (Fahrenheit)": -423.182,
-    "density (g/L)": 0.08988,
-    "liquid density (g/cm^3)": 0.07,
+    "density": {
+        "gas (g/L)": 0.08988,
+        "liquid (g/cm^3)": 0.07},
     "triple point": {
         "Kelvin": 13.8033,
         "kPa": 7.041},
@@ -77,6 +84,7 @@ Helium = {
     "group": 18,
     "period": 1,
     "block": "s-block",
+    "classification": "noble gas",
     "shells": 1,
     "electrons per shell": [2],
     "valence electrons": 2,
@@ -84,10 +92,11 @@ Helium = {
     "phase": "gas",
     "melting point (°F)": -457.96,
     "boiling point (°F)": -452.070,
-    "density (g/L)": 0.1786,
-    "liquid density": {
-        "at melting point (g/cm^3)": 0.145,
-        "at boiling point (g/cm^3)": 0.125},
+    "density: {
+        "gas": (g/L)": 0.1786,
+        "liquid": {
+            "@ m.p. (g/cm^3)": 0.145,
+            "@ b.p. (g/cm^3)": 0.125}},
     "triple point" : {
         "temperature (kelvin)": 2.177,
         "Pressure (kPa)": 5.043},
@@ -114,18 +123,25 @@ Lithium = {
     "name": "lithium",
     "appearance": "silvery-white",
     "atomic number": 3,
-    "symbol": Li,
+    "symbol": "Li,"
     "atomic weight": 6.94,
     "group": 1,
     "period": 2,
     "block": "s-block",
+    "classification": "alkali metal",
     "shells": 2,
     "electrons per shell": [2,1],
     "valence electrons": 1,
     "valency": 1,
     "phase": "solid",
-    "melting point (°F)": 356.90,
-    "boiling point (°F)": 2426,
+    "melting point": {
+        "Fahrenheit": 356.90,
+        "Celsius": asd,
+        "Kelvin": dsaf},
+    "boiling point": { 
+        "Fahrenheit": 2426,
+        "Celsius": ,
+        "Kelvin": },
     "density (g/cm^3)": 0.534,
     "liquid density (at melting point) (g/cm^3)": 0.512,
     "critical point": {
@@ -167,18 +183,26 @@ Beryllium = {
     "group": 2,
     "period": 2,
     "block": "s-block",
+    "classification": "alkaline earth metal",
     "shells": 2,
     "electrons per shell": [2,2],
     "valence electrons": 2,
     "valency": 2,
     "phase": "solid",
-    "melting point (°F)": 2349,
-    "boiling point (°F)": 4476,
-    "density (g/cm^3": 1.85,
-    "liquid density (at melting point) (g/cm^3)": 1.690,
+    "melting point": {
+        "Fahrenheit": 2349,
+        "Celsius": ,
+        "Kelvin": ,
+    "boiling point": {
+        "Fahrenheit": 4476,
+        "Celsius": ,
+        "Kelvin": },
+    "density(g/cm^3)": {
+        "sollid": 1.85,
+        "liquid (@ m.p.)": 1.690,}
     "critical point": {
-        "Temperature (Kelvin)": 5205,
-        "Pressure (MPa)": 1},
+        "temperature (Kelvin)": 5205,
+        "pressure (MPa)": 1},
     "heat of fusion (kJ/mol)": 12.2,
     "heat of vaporization (kJ/mol)": 292,
     "molar heat capacity (J/(mol*K))": 16.443,
@@ -217,18 +241,19 @@ Boron = {
     "group": 13,
     "period": 2,
     "block": "p-block",
+    "classification": "metalloid",
     "shells": 2,
     "electrons per shell": [2,3],
     "valence electrons": 3,
     "valency": 3,
     "phase": "solid",
     "melting point":{
-        "°F": 3769,
-        "°C": 2076,
+        "Fahrenheit": 3769,
+        "Celsius": 2076,
         "Kelvin": 2349},        
     "boiling point": {
-        "°F": 7101,
-        "°C": 3927,
+        "Fahrenheit": 7101,
+        "Celsius": 3927,
         "Kelvin": 4200},
     "density (g/cm^3)": 2.08,
     "heat of fusion (kJ/mol)": 50.2,
@@ -264,6 +289,7 @@ Carbon = {
     "group": 14,
     "period": 2,
     "block": "p-block",
+    "classification": "nonmetal",
     "shells": 2,
     "electrons per shell": [2,4],
     "valence electrons": 4,
@@ -314,6 +340,7 @@ Nitrogen = {
     "group": 15,
     "period": 2,
     "block": "p-block",
+    "classification": "nonmetal",
     "shells": 2,
     "electrons per shell": [2, 5],
     "valence electrons": 5,
@@ -327,9 +354,9 @@ Nitrogen = {
         "Fahrenheit": -320.431,
         "Celsius": -195.795,
         "Kelvin": 77.355},
-    "density (g/L)": 1.2506,
-    "liquid density": {
-        "at boiling point (g/cm^3)": .808},
+    "density": {
+        "gas (g/L)": 1.2506,
+        "liquid (@ b.p.) (g/cm^3)": .808}
     "triple point" : {
         "Temperature (Kelvin)": 63.151,
         "Pressure (kPa)": 12.52},
@@ -360,6 +387,7 @@ Oxygen = {
     "group": 16,
     "period": 2,
     "block": "p-block",
+    "classification": "nonmetal",
     "shells": 2,
     "electrons per shell": [2,6],
     "valence electrons": 6,
@@ -373,9 +401,9 @@ Oxygen = {
         "Fahrenheit": -297.332,
         "Celsius": -182.962,
         "Kelvin": 90.188},
-    "density (g/L)": 1.429,
-    "liquid density": {
-        "at boiling point (g/cm^3)": 1.141},
+    "density": {
+        "gas": (g/L)": 1.429,
+        "liquid (@ b.p.) (g/cm^3)": 1.141},
     "triple point" : {
         "Temperature (Kelvin)": 54.361,
         "Pressure (kPa)": 0.1463},
@@ -385,9 +413,10 @@ Oxygen = {
     "heat of fusion (kJ/mol)": 0.444,
     "heat of vaporization (kJ/mol)": 0.682,
     "molar heat capacity (J/(mol*K))": 29.378,
-    "vapor pressure": {
-        "pressure (Pa)": [1000, 10000, 100000],
-        "temperature (kelvin)": [61, 73, 90]},
+    "vapor pressure (Pa) to temp (K)": {
+        1000: 61,
+        10000: 73,
+        100000 90},
     "oxidation states": [-2,-1,0,1,2],
     "electronegativity (Pauling scale)": 3.44, 
     "ionization energies (kJ/mol)": [1313.9, 3388.3, 5300.5],
@@ -407,6 +436,7 @@ Fluorine = {
     "group": 17,
     "period": 2,
     "block": "p-block",
+    "classification": "nonmetal",
     "shells": 2,
     "electrons per shell": [2,7],
     "valence electrons": 7,
@@ -420,9 +450,9 @@ Fluorine = {
         "Fahrenheit": -306.60,
         "Celsius": -188.11,
         "Kelvin": 85.03},
-    "density (g/L)": 1.696,
-    "liquid density": {
-        "at boiling point (g/cm^3)": 1.505},
+    "density": {
+        "gas (g/L)": 1.696,
+        "liquid (@ b.p.) (g/cm^3)": 1.505},
     "triple point" : {
         "Temperature (Kelvin)": 53.48,
         "Pressure (kPa)": .252},
@@ -431,9 +461,13 @@ Fluorine = {
         "Pressure (MPa)": 5.1724},
     "heat of vaporization (kJ/mol)": 6.51,
     "molar heat capacity (J/(mol*K))": 31,
-    "vapor pressure": {
-        "pressure (Pa)": [1, 10, 100, 1000, 10000, 100000],
-        "temperature (kelvin)": [38,44,50,58,69,85]},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 38,
+        10: 44,
+        100: 50,
+        1000: 58,
+        10000: 69,
+        100000: 85},
     "oxidation states": [-1,0],
     "electronegativity (Pauling scale)": 3.98, 
     "ionization energies (kJ/mol)": [1681,3374,6147],
@@ -452,6 +486,7 @@ Neon = {
     "group": 18,
     "period": 2,
     "block": "p-block",
+    "classification": "noble gas",
     "shells": 2,
     "electrons per shell": [2,8],
     "valence electrons": 8,
@@ -465,9 +500,9 @@ Neon = {
         "Fahrenheit": -410.883,
         "Celsius": -246.046,
         "Kelvin": 27.104},
-    "density (g/L)": 0.9002,
-    "liquid density": {
-        "at boiling point (g/cm^3)": 1.207},
+    "density": {
+        "gas (g/L)": 0.9002,
+        "liquid (@ b.p.) (g/cm^3)": 1.207},
     "triple point" : {
         "Temperature (Kelvin)": 24.556,
         "Pressure (kPa)": 43.37},
@@ -477,9 +512,13 @@ Neon = {
     "heat of fusion (kJ/mol)": 0.335,
     "heat of vaporization (kJ/mol)": 1.71,
     "molar heat capacity (J/(mol*K))": 20.79,
-    "vapor pressure": {
-        "pressure (Pa)": [1,10,10,1000,10000,100000],
-        "temperature (kelvin)": [12,13,15,18,21,27]},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 12,
+        10: 13,
+        100: 15,
+        1000: 18,
+        10000: 21,
+        100000: 27},
     "oxidation states": [0],
     "ionization energies (kJ/mol)": [2080.7, 3952.3, 6122],
     "covalent radius (pm)": 58,
@@ -499,6 +538,7 @@ Sodium = {
     "group": 1,
     "period": 3,
     "block": "s-block",
+    "classification": "alkali metal",
     "shells": 3,
     "electrons per shell": [2,8,1],
     "valence electrons": 1,
@@ -512,23 +552,22 @@ Sodium = {
         "Fahrenheit": 1621.292,
         "Celsius": 882.940,
         "Kelvin": 1156.090},
-    "density (g/L)": 0.968,
-    "liquid density": {
-        "at melting point (g/cm^3)": 0.927},
+    "density": {
+        "solid (g/cm^3": 0.968,
+        "liquid (@ m.p.) (g/cm^3): 0.927}
     "critical point": {
         "Temperature (Kelvin)": 2573,
         "Pressure (MPa)": 35},
     "heat of fusion (kJ/mol)": 2.60,
     "heat of vaporization (kJ/mol)": 97.42,
     "molar heat capacity (J/(mol*K))": 28.230,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 554,
-            10: 617,
-            100: 697,
-            1000: 802,
-            10000: 946,
-            100000: 1153}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 554,
+        10: 617,
+        100: 697,
+        1000: 802,
+        10000: 946,
+        100000: 1153},
     "oxidation states": [-1,0,1],
     "electronegativity (Pauling scale)": 0.93, 
     "ionization energies (kJ/mol)": [495.8, 4562, 6910.3],
@@ -556,6 +595,7 @@ Magnesium = {
     "group": 2,
     "period": 3,
     "block": "s-block",
+    "classification": "alkaline earth metal"
     "shells": 3,
     "electrons per shell": [2,8,2],
     "valence electrons": 2,
@@ -569,9 +609,9 @@ Magnesium = {
         "Fahrenheit": 1994,
         "Celsius": 1091,
         "Kelvin": 1363},
-    "density (g/cm^3)": 1.738,
-    "liquid density": {
-        "at melting point (g/cm^3)": 1.584},
+    "density": { 
+        "solid (g/cm^3)": 1.738,
+        "liquid (@ m.p.) (g/cm^3)": 1.584},
     "heat of fusion (kJ/mol)": 8.48,
     "heat of vaporization (kJ/mol)": 128,
     "molar heat capacity (J/(mol*K))": 24.869,
@@ -611,6 +651,7 @@ Aluminum = {
     "group": 13,
     "period": 3,
     "block": "p-block",
+    "classification": "post-transition metal",
     "shells": 3,
     "electrons per shell": [2,8,3],
     "valence electrons": 3,
@@ -624,20 +665,19 @@ Aluminum = {
         "Fahrenheit": 4478,
         "Celsius": 2470,
         "Kelvin": 2743},
-    "density (g/cm^3)": 2.70,
-    "liquid density": {
-        "at melting point (g/cm^3)": 2.375},
+    "density": {
+        "solid (g/cm^3)": 2.70,
+        "liquid (@ m.p.) (g/cm^3)": 2.375},
     "heat of fusion (kJ/mol)": 10.71,
     "heat of vaporization (kJ/mol)": 284,
     "molar heat capacity (J/(mol*K))": 24.20,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 1482,
-            10: 1632,
-            100: 1817,
-            1000: 2054,
-            10000: 2364,
-            100000: 2790}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 1482,
+        10: 1632,
+        100: 1817,
+        1000: 2054,
+        10000: 2364,
+        100000: 2790},
     "oxidation states": [-2,-1,0,1,2,3],
     "electronegativity (Pauling scale)": 1.61, 
     "ionization energies (kJ/mol)": [577.5, 1816.7, 2744.8],
@@ -667,6 +707,7 @@ Silicon = {
     "group": 14,
     "period": 3,
     "block": "p-block",
+    "classification": "metalloid",
     "shells": 3,
     "electrons per shell": [2,8,4],
     "valence electrons": 4,
@@ -680,20 +721,19 @@ Silicon = {
         "Fahrenheit": 5909,
         "Celsius": 3265,
         "Kelvin": 3536},
-    "density (g/cm^3)": 2.3290,
-    "liquid density": {
-        "at melting point (g/cm^3)": 2.57},
+    "density": {
+        "solid (g/cm^3)": 2.3290,
+        "liquid (@ m.p.) (g/cm^3)": 2.57},
     "heat of fusion (kJ/mol)": 50.21,
     "heat of vaporization (kJ/mol)": 383,
     "molar heat capacity (J/(mol*K))": 19.789,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 1908,
-            10: 2102,
-            100: 2339,
-            1000: 2636,
-            10000: 3021,
-            100000: 3537}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 1908,
+        10: 2102,
+        100: 2339,
+        1000: 2636,
+        10000: 3021,
+        100000: 3537},
     "oxidation states": [-4,-3,-2,-1,0,1,2,3,4],
     "electronegativity (Pauling scale)": 1.90,
     "ionization energies (kJ/mol)": [786.5, 1577, 3231.6],
@@ -722,6 +762,7 @@ Phosphorus = {
     "group": 15,
     "period": 3,
     "block": "p-block",
+    "classification": "nonmetal",
     "shells": 3,
     "electrons per shell": [2,8,5],
     "valence electrons": 5,
@@ -761,25 +802,21 @@ Phosphorus = {
         "white": 51.9},
     "molar heat capacity (J/(mol*K))": {
         "white": 23.824},
-    "vapor pressure": {
-        "white": {
-            "vapor pressure": {
-                "pressure (Pa) to temp (K)": {
-                    1: 279,
-                    10: 307,
-                    100: 342,
-                    1000: 388,
-                    10000: 453,
-                    100000: 549}}},
+    "vapor pressure (Pa) to temp (K)": {
         "red": {
-            "vapor pressure": {
-                "pressure (Pa) to temp (K)": {
-                    1: 455,
-                    10: 489,
-                    100: 529,
-                    1000: 576,
-                    10000: 635,
-                    100000: 704}}}},
+            1: 455,
+            10: 489,
+            100: 529,
+            1000: 576,
+            10000: 635,
+            100000: 704},
+        "white": {
+            1: 279,
+            10: 307,
+            100: 342,
+            1000: 388,
+            10000: 453,
+            100000: 549}},
     "oxidation states": [-3,-2,-1,0,1,2,3,4,5],
     "electronegativity (Pauling scale)": 2.19,
     "ionization energies (kJ/mol)": [1011.8, 1907, 2914.1],
@@ -804,6 +841,7 @@ Sulfur = {
     "group": 16,
     "period": 3,
     "block": "p-block",
+    "classification": "nonmetal",
     "shells": 3,
     "electrons per shell": [2,8,6],
     "valence electrons": 6,
@@ -817,12 +855,12 @@ Sulfur = {
         "Fahrenheit": 832.3,
         "Celsius": 444.6,
         "Kelvin": 717.8},
-    "density (g/cm^3)": {
-        "alpha": 2.07,
-        "beta": 1.96,
-        "gamma": 1.92},
-    "liquid density": {
-        "at melting point (g/cm^3)": 1.819},
+    "density": {
+        "solid (g/cm^3)": {
+            "alpha": 2.07,
+            "beta": 1.96,
+            "gamma": 1.92},
+        "liquid @ m.p. (g/cm^3)": 1.819},
     "critical point": {
         "Temperature (Kelvin)": 1314,
         "Pressure (MPa)": 20.7},
@@ -858,6 +896,7 @@ Chlorine = {
     "group": 17,
     "period": 3,
     "block": "p-block",
+    "classification": "nonmetal",
     "shells": 3,
     "electrons per shell": [2,8,7],
     "valence electrons": 7,
@@ -871,9 +910,9 @@ Chlorine = {
         "Fahrenheit": -29.27,
         "Celsius": -34.04,
         "Kelvin": 239.11},
-    "density (g/L)": 3.2,
-    "liquid density": {
-        "at boiling point (g/cm^3)": 1.5625},
+    "density": {
+        "gas (g/L)": 3.2,
+        "liquid (@ b.p.)(g/cm^3)": 1.5625},
     "critical point": {
         "Temperature (Kelvin)": 416.9,
         "Pressure (MPa)": 7.991},
@@ -908,6 +947,7 @@ Argon = {
     "group": 18,
     "period": 3,
     "block": "p-block",
+    "classification": "noble gas",
     "shells": 3,
     "electrons per shell": [2,8,8],
     "valence electrons": 8,
@@ -921,9 +961,9 @@ Argon = {
         "Fahrenheit": -302.526,
         "Celsius": -185.848,
         "Kelvin": 87.302},
-    "density (g/L)": 1.784,
-    "liquid density": {
-        "at boiling point (g/cm^3)": 1.3954},
+    "density": {
+        "gas (g/L)": 1.784,
+        "liquid (g/cm^3)": 1.3954},
     "triple point" : {
         "Temperature (Kelvin)": 83.8058,
         "Pressure (kPa)": 68.89},
@@ -957,6 +997,7 @@ Potassium = {
     "group": 1,
     "period":4 ,
     "block": "s-block",
+    "classification": "alkali metal",
     "shells": 4,
     "electrons per shell": [2,8,8,1],
     "valence electrons": 1,
@@ -970,9 +1011,9 @@ Potassium = {
         "Fahrenheit": 1395.75,
         "Celsius": 757.643,
         "Kelvin": 1030.793},
-    "density (g/cm^3)": 0.8590,
-    "liquid density": {
-        "at melting point (g/cm^3)": 0.82948},
+    "density": {
+        "solid (g/cm^3)": 0.8590,
+        "liquid (@ m.p.) (g/cm^3)": 0.82948},
     "critical point": {
         "Temperature (Kelvin)": 2223,
         "Pressure (MPa)": 16},
@@ -1006,6 +1047,7 @@ Calcium = {
     "group": 2,
     "period": 4,
     "block": "s-block",
+    "classification": "alkaline earth metal",
     "shells": 4,
     "electrons per shell": [2,8,8,2],
     "valence electrons": 2,
@@ -1019,9 +1061,9 @@ Calcium = {
         "Fahrenheit": 2703,
         "Celsius": 1484,
         "Kelvin": 1757},
-    "density (g/cm^3)": 1.55,
-    "liquid density": {
-        "at melting point (g/cm^3)": 1.378},
+    "density": {
+        "solid (g/cm^3)": 1.55,
+        "liquid (@ m.p.) (g/cm^3)": 1.378},
     "heat of fusion (kJ/mol)": 8.54,
     "heat of vaporization (kJ/mol)": 154.7,
     "molar heat capacity (J/(mol*K))": 25.929,
@@ -1060,6 +1102,7 @@ Scandium = {
     "group": 3,
     "period": 4,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 4,
     "electrons per shell": [2,8,9,2],
     "valence electrons": 3,
@@ -1073,9 +1116,9 @@ Scandium = {
         "Fahrenheit": 5136,
         "Celsius": 2836,
         "Kelvin": 3109},
-    "density (g/cm^3)": 2.985,
-    "liquid density": {
-        "at melting point (g/cm^3)": 2.80},
+    "density": {
+        "solid (g/cm^3)": 2.985,
+        "liquid @ m.p. (g/cm^3)": 2.80},
     "heat of fusion (kJ/mol)": 14.1,
     "heat of vaporization (kJ/mol)": 332.7,
     "molar heat capacity (J/(mol*K))": 25.52,
@@ -1113,6 +1156,7 @@ Titanium = {
     "group": 4,
     "period": 4,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 4,
     "electrons per shell": [2,8,10,2],
     "valence electrons": 4,
@@ -1126,9 +1170,9 @@ Titanium = {
         "Fahrenheit": 5949,
         "Celsius": 3287,
         "Kelvin": 3560},
-    "density (g/cm^3)": 4.506,
-    "liquid density": {
-        "at melting point (g/cm^3)":4.11},
+    "density": {
+        "solid (g/cm^3)": 4.506,
+        "liquid (@ m.p.) (g/cm^3)":4.11},
     "heat of fusion (kJ/mol)": 14.15,
     "heat of vaporization (kJ/mol)": 425,
     "molar heat capacity (J/(mol*K))": 25.060,
@@ -1167,6 +1211,7 @@ Vanadium = {
     "group": 5,
     "period": 4,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 4,
     "electrons per shell": [2,8,11,2],
     "valence electrons": 5,
@@ -1180,9 +1225,9 @@ Vanadium = {
         "Fahrenheit": 6165,
         "Celsius": 3407,
         "Kelvin": 3680},
-    "density (g/cm^3)": 6.11,
-    "liquid density": {
-        "at melting point (g/cm^3)": 5.5},
+    "density" {
+        "solid (g/cm^3)": 6.11,
+        "liquid (@ m.p.) (g/cm^3)": 5.5},
     "heat of fusion (kJ/mol)": 21.5,
     "heat of vaporization (kJ/mol)": 444,
     "molar heat capacity (J/(mol*K))": 24.89,
@@ -1222,6 +1267,7 @@ Chromium = {
     "group": 6,
     "period": 4,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 4,
     "electrons per shell": [2,8,13,1],
     "valence electrons": 6,
@@ -1234,9 +1280,9 @@ Chromium = {
         "Fahrenheit": 4840,
         "Celsius": 2671,
         "Kelvin": 2944},
-    "density (g/cm^3)": 7.15,
-    "liquid density": {
-        "at melting point (g/cm^3)": 6.3},
+    "density": {
+        "solid (g/cm^3)": 7.15,
+        "liquid (@ m.p.) (g/cm^3)": 6.3},
     "heat of fusion (kJ/mol)": 21.0,
     "heat of vaporization (kJ/mol)": 347,
     "molar heat capacity (J/(mol*K))": 23.35,
@@ -1275,6 +1321,7 @@ Manganese = {
     "group": 7,
     "period": 4,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 4,
     "electrons per shell": [2,8,13,2],
     "valence electrons": 7,
@@ -1287,20 +1334,19 @@ Manganese = {
         "Fahrenheit": 3742,
         "Celsius": 2061,
         "Kelvin": 2334},
-    "density (g/cm^3)": 7.21,
-    "liquid density": {
-        "at melting point (g/cm^3)": 5.95},
+    "density": {
+        "solid (g/cm^3)": 7.21,
+        "liquid (@ m.p.) (g/cm^3)": 5.95},
     "heat of fusion (kJ/mol)": 12.91,
     "heat of vaporization (kJ/mol)": 221,
     "molar heat capacity (J/(mol*K))": 26.32,
-    "vapor pressure": {
-        "pressure (Pa) (for kelvin)": {
-            1: 1228,
-            10: 1347,
-            100: 1493,
-            1000: 1691,
-            10000: 1955,
-            100000: 2333}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 1228,
+        10: 1347,
+        100: 1493,
+        1000: 1691,
+        10000: 1955,
+        100000: 2333},
     "oxidation states": [-3,-1,0,1,2,3,4,5,6,7],
     "electronegativity (Pauling scale)": 1.55,
     "ionization energies (kJ/mol)": [717.3, 1509.0, 3248],
@@ -1326,6 +1372,7 @@ Iron = {
     "group": 8,
     "period": 4,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 4,
     "electrons per shell": [2,8,14,2],
     "valence electrons": 8,
@@ -1338,20 +1385,19 @@ Iron = {
         "Fahrenheit": 5182,
         "Celsius": 2861,
         "Kelvin": 3134},
-    "density (g/cm^3)": 7.874,
-    "liquid density": {
-        "at melting point (g/cm^3)": 6.98},
+    "density": {
+        "solid (g/cm^3)": 7.874,
+        "liquid (@ m.p.) (g/cm^3)": 6.98},
     "heat of fusion (kJ/mol)": 13.81,
     "heat of vaporization (kJ/mol)": 340,
     "molar heat capacity (J/(mol*K))": 25.10,
-    "vapor pressure": {
-        "pressure (Pa) (for Kelvin)": {
-            1: 1728,
-            10: 1890,
-            100: 2091,
-            1000: 2346,
-            10000: 2679,
-            100000: 3132}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 1728,
+        10: 1890,
+        100: 2091,
+        1000: 2346,
+        10000: 2679,
+        100000: 3132},
     "oxidation states": [-4,-2,-1,0,1,3,6,4,5,6,7],
     "electronegativity (Pauling scale)": 1.83,
     "ionization energies (kJ/mol)": [762.5,1531.9,2957],
@@ -1380,6 +1426,7 @@ Cobalt = {
     "group": 9,
     "period": 4,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 4,
     "electrons per shell": [2,8,15,2],
     "valence electrons": 9,
@@ -1392,20 +1439,19 @@ Cobalt = {
         "Fahrenheit": 5301,
         "Celsius": 2927,
         "Kelvin": 3200},
-    "density (g/cm^3)": 8.90,
-    "liquid density": {
-        "at melting point (g/cm^3)": 7.75},
+    "density":
+        "solid (g/cm^3)": 8.90,
+        "liquid (@ m.p.) (g/cm^3)": 7.75},
     "heat of fusion (kJ/mol)": 16.06,
     "heat of vaporization (kJ/mol)": 377,
     "molar heat capacity (J/(mol*K))": 24.81,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 1790,
-            10: 1960,
-            100: 2165,
-            1000: 2423,
-            10000: 2755,
-            100000: 3198}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 1790,
+        10: 1960,
+        100: 2165,
+        1000: 2423,
+        10000: 2755,
+        100000: 3198},
     "oxidation states": [-3,-1,0,1,2,3,4,5],
     "electronegativity (Pauling scale)": 1.88,
     "ionization energies (kJ/mol)": [760.4, 1648, 3232],
@@ -1433,6 +1479,7 @@ Nickel = {
     "group": 10,
     "period": 4,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 4,
     "electrons per shell": [2,8,16,2],
     "valence electrons": 2,
@@ -1445,20 +1492,19 @@ Nickel = {
         "Fahrenheit": 4946,
         "Celsius": 2730,
         "Kelvin": 1728},
-    "density (g/cm^3)": 8.908,
-    "liquid density": {
-        "at melting point (g/cm^3)": 7.81},
+    "density": {
+        "solid (g/cm^3)": 8.908,
+        "liquid (@ m.p.) (g/cm^3)": 7.81},
     "heat of fusion (kJ/mol)": 17.48,
     "heat of vaporization (kJ/mol)": 379,
     "molar heat capacity (J/(mol*K))": 26.07,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 1783,
-            10: 1950,
-            100: 2154,
-            1000: 2410,
-            10000: 2741,
-            100000: 3184}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 1783,
+        10: 1950,
+        100: 2154,
+        1000: 2410,
+        10000: 2741,
+        100000: 3184},
     "oxidation states": [-2,-1,0,1,2,3,4],
     "electronegativity (Pauling scale)": 1.91,
     "ionization energies (kJ/mol)": [737.1, 1753.0, 3395],
@@ -1487,6 +1533,7 @@ Copper = {
     "group": 11,
     "period": 4,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 4,
     "electrons per shell": [2,8,18,1],
     "valence electrons": 1,
@@ -1499,20 +1546,19 @@ Copper = {
         "Fahrenheit": 4643,
         "Celsius": 2562,
         "Kelvin": 2835},
-    "density (g/cm^3)": 8.96,
-    "liquid density": {
-        "at melting point (g/cm^3)": 8.02},
+    "density": {
+        "solid (g/cm^3)": 8.96,
+        "liquid (@ m.p.) (g/cm^3)": 8.02},
     "heat of fusion (kJ/mol)": 13.26,
     "heat of vaporization (kJ/mol)": 300.4,
     "molar heat capacity (J/(mol*K))": 24.440,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 1509,
-            10: 1661,
-            100: 1850,
-            1000: 2089,
-            10000: 2404,
-            100000: 2834}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 1509,
+        10: 1661,
+        100: 1850,
+        1000: 2089,
+        10000: 2404,
+        100000: 2834},
     "oxidation states": [-2,0,1,2,3,4],
     "electronegativity (Pauling scale)": 1.90, 
     "ionization energies (kJ/mol)": [745.5, 1957.9,3555],
@@ -1542,6 +1588,7 @@ Zinc = {
     "group": 12,
     "period": 4,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 4,
     "electrons per shell": [2,8,18,2],
     "valence electrons": 2,
@@ -1554,20 +1601,19 @@ Zinc = {
         "Fahrenheit": 1665,
         "Celsius": 907,
         "Kelvin": 1180},
-    "density (g/cm^3)": 7.14,
-    "liquid density": {
-        "at melting point (g/cm^3)": 6.57},
+    "density": {
+        "solid (g/cm^3)": 7.14,
+        "liquid (@ m.p.) (g/cm^3)": 6.57},
     "heat of fusion (kJ/mol)": 7.32,
     "heat of vaporization (kJ/mol)": 115,
     "molar heat capacity (J/(mol*K))": 25.470,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 610,
-            10: 670,
-            100: 750,
-            1000: 852,
-            10000: 990,
-            100000: 1179}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 610,
+        10: 670,
+        100: 750,
+        1000: 852,
+        10000: 990,
+        100000: 1179},
     "oxidation states": [-2,0,1,2],
     "electronegativity (Pauling scale)": 1.65,
     "ionization energies (kJ/mol)": [906.4,1733.3,3833],
@@ -1596,6 +1642,7 @@ Gallium = {
     "group": 13,
     "period": 4,
     "block": "p-block",
+    "classification": "post-transition metal",
     "shells": 4,
     "electrons per shell": [2,8,18,3],
     "valence electrons": 3,
@@ -1608,20 +1655,19 @@ Gallium = {
         "Fahrenheit": 4357,
         "Celsius": 2403,
         "Kelvin": 2676},
-    "density (g/cm^3)": 5.91,
-    "liquid density": {
-        "at melting point (g/cm^3)": 6.095},
+    "density": {
+        "solid (g/cm^3)": 5.91,
+        "liquid (@ m.p.) (g/cm^3)": 6.095},
     "heat of fusion (kJ/mol)": 5.59,
     "heat of vaporization (kJ/mol)": 256,
     "molar heat capacity (J/(mol*K))": 25.86,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 1310,
-            10: 1448,
-            100: 1620,
-            1000: 1838,
-            10000: 2125,
-            100000: 2518}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 1310,
+        10: 1448,
+        100: 1620,
+        1000: 1838,
+        10000: 2125,
+        100000: 2518},
     "oxidation states": [-5,-4,-3,-2,-1,0,1,2,3],
     "electronegativity (Pauling scale)": 1.81,
     "ionization energies (kJ/mol)": [578.8,1979.3,2963],
@@ -1648,6 +1694,7 @@ Germanium = {
     "group": 14,
     "period": 4,
     "block": "p-block",
+    "classification": "metalloid",
     "shells": 4,
     "electrons per shell": [2,8,18,4],
     "valence electrons": 4,
@@ -1660,20 +1707,19 @@ Germanium = {
         "Fahrenheit": 5131,
         "Celsius": 2833,
         "Kelvin": 3106},
-    "density (g/cm^3)": 5.323,
-    "liquid density": {
-        "at melting point (g/cm^3)": 5.60},
+    "density": {
+        "solid (g/cm^3)": 5.323,
+        "liquid (@ m.p.) (g/cm^3)": 5.60},
     "heat of fusion (kJ/mol)": 36.94,
     "heat of vaporization (kJ/mol)": 334,
     "molar heat capacity (J/(mol*K))": 23.222,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 1644,
-            10: 1814,
-            100: 2023,
-            1000: 2287,
-            10000: 2633,
-            100000: 3104}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 1644,
+        10: 1814,
+        100: 2023,
+        1000: 2287,
+        10000: 2633,
+        100000: 3104},
     "oxidation states": [-4,-3,-2,-1,0,1,2,3,4],
     "electronegativity (Pauling scale)": 2.01,
     "ionization energies (kJ/mol)": [762,1537.5,3302.1],
@@ -1701,6 +1747,7 @@ Arsenic= {
     "group": 15,
     "period": 4,
     "block": "p-block",
+    "classification": "metalloid",
     "shells": 4,
     "electrons per shell": [2,8,18,5],
     "valence electrons": 5,
@@ -1709,9 +1756,9 @@ Arsenic= {
         "Fahrenheit": 1137,
         "Celsius": 615,
         "Kelvin": 887},        
-    "density (g/cm^3)": 5.727,
-    "liquid density": {
-        "at melting point (g/cm^3)": 5.22},
+    "density": {
+        "solid (g/cm^3)": 5.727,
+        "liquid (@ m.p.) (g/cm^3)": 5.22},
     "triple point" : {
         "Temperature (Kelvin)": 1090,
         "Pressure (kPa)": 3628},
@@ -1720,14 +1767,13 @@ Arsenic= {
     "heat of fusion (kJ/mol)": 24.44,
     "heat of vaporization (kJ/mol)": 34.76,
     "molar heat capacity (J/(mol*K))": 24.64,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 553,
-            10: 596,
-            100: 646,
-            1000: 706,
-            10000: 781,
-            100000: 874}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 553,
+        10: 596,
+        100: 646,
+        1000: 706,
+        10000: 781,
+        100000: 874},
     "oxidation states": [-3,-2,-1,0,1,2,3,4,5],
     "electronegativity (Pauling scale)": 2.18,
     "ionization energies (kJ/mol)": [947.0,1798,2735],
@@ -1754,6 +1800,7 @@ Selenium = {
     "group": 16,
     "period": 4,
     "block": "p-block",
+    "classification": "nonmetal",
     "shells": 4,
     "electrons per shell": [2,8,18,6],
     "valence electrons": 6,
@@ -1766,23 +1813,22 @@ Selenium = {
         "Fahrenheit": 1265,
         "Celsius": 685,
         "Kelvin": 958},
-    "density (g/cm^3)": 4381,
-    "liquid density": {
-        "at melting point (g/cm^3)": 3.99},
+    "density": {
+        "solid (g/cm^3)": 4381,
+        "liquid (@ m.p.) (g/cm^3)": 3.99},
     "critical point": {
         "Temperature (Kelvin)": 1766,
         "Pressure (MPa)": 27.2},
     "heat of fusion (kJ/mol)": 6.69,
     "heat of vaporization (kJ/mol)": 95.48,
     "molar heat capacity (J/(mol*K))": 25.363,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 500,
-            10: 552,
-            100: 617,
-            1000: 704,
-            10000: 813,
-            100000: 958}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 500,
+        10: 552,
+        100: 617,
+        1000: 704,
+        10000: 813,
+        100000: 958},
     "oxidation states": [-2,-1,0,1,2,3,4,5,6],
     "electronegativity (Pauling scale)": 2.55,
     "ionization energies (kJ/mol)": [941.0,2045,2973.7],
@@ -1810,6 +1856,7 @@ Bromine= {
     "group": 17,
     "period": 4,
     "block": "p-block",
+    "classification": "nonmetal",
     "shells": 4,
     "electrons per shell": [2,8,18,7],
     "valence electrons": 7,
@@ -1822,7 +1869,8 @@ Bromine= {
         "Fahrenheit": 137.8,
         "Celsius": 58.8,
         "Kelvin": 332.0},
-    "density (g/cm^3)": 3.1028,
+    "density": {
+        "liquid (g/cm^3)": 3.1028,
     "triple point" : {
         "Temperature (Kelvin)": 265.90,
         "Pressure (kPa)": 5.8},
@@ -1861,6 +1909,7 @@ Krypton = {
     "group": 18,
     "period": 4,
     "block": "p-block",
+    "classification": "noble gas",
     "shells": 4,
     "electrons per shell": [2,8,18,8],
     "valence electrons": 8,
@@ -1873,9 +1922,9 @@ Krypton = {
         "Fahrenheit": -244.147,
         "Celsius": -153.415,
         "Kelvin": 119.93},
-    "density (g/L)": 3.749,
-    "liquid density": {
-        "at boiling point (g/cm^3)": 2.413},
+    "density": {
+        "gas (g/L)": 3.749,
+        "liquid (@ b.p.) (g/cm^3)": 2.413},
     "triple point" : {
         "Temperature (Kelvin)": 115.775,
         "Pressure (kPa)": 73.53},
@@ -1885,14 +1934,13 @@ Krypton = {
     "heat of fusion (kJ/mol)": 1.64,
     "heat of vaporization (kJ/mol)": 9.08,
     "molar heat capacity (J/(mol*K))": 20.95,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 59,
-            10: 65,
-            100: 74,
-            1000: 84,
-            10000: 99,
-            100000: 120}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 59,
+        10: 65,
+        100: 74,
+        1000: 84,
+        10000: 99,
+        100000: 120},
     "oxidation states": [0,1,2],
     "electronegativity (Pauling scale)": 3.00,
     "ionization energies (kJ/mol)": [1350.8,2350.4,3565],
@@ -1912,6 +1960,7 @@ Rubidium = {
     "group": 1,
     "period": 5,
     "block": "s-block",
+    "classification": "alkali metal",
     "shells": 5,
     "electrons per shell": [2,8,18,8,1],
     "valence electrons": 1,
@@ -1924,9 +1973,9 @@ Rubidium = {
         "Fahrenheit": 1270,
         "Celsius": 688,
         "Kelvin": 961},
-    "density (g/cm^3)": 1.532,
-    "liquid density": {
-        "at melting point (g/cm^3)": 1.46},
+    "density": 
+        "solid (g/cm^3)": 1.532,
+        "liquid (@ m.p.) (g/cm^3)": 1.46},
     "triple point" : {
         "Temperature (Kelvin)": 312.41},
     "critical point": {
@@ -1935,14 +1984,13 @@ Rubidium = {
     "heat of fusion (kJ/mol)": 2.19,
     "heat of vaporization (kJ/mol)": 69,
     "molar heat capacity (J/(mol*K))": 31.060,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 434,
-            10: 486,
-            100: 552,
-            1000: 641,
-            10000: 769,
-            100000: 958}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 434,
+        10: 486,
+        100: 552,
+        1000: 641,
+        10000: 769,
+        100000: 958},
     "oxidation states": [-1,1],
     "electronegativity (Pauling scale)": 0.82,
     "ionization energies (kJ/mol)": [403, 2632.1, 3859.4],
@@ -1969,6 +2017,7 @@ Strontium = {
     "group": 2,
     "period": 5,
     "block": "s-block",
+    "classification": "alkaline earth metal",
     "shells": 5,
     "electrons per shell": [2,8,18,8,2],
     "valence electrons": 2,
@@ -1981,20 +2030,19 @@ Strontium = {
         "Fahrenheit": 2511,
         "Celsius": 1377,
         "Kelvin": 1650},
-    "density (g/cm^3)": 2.64,
-    "liquid density": {
-        "at melting point (g/cm^3)": 2.375},
+    "density":
+        "solid (g/cm^3)": 2.64,
+        "liquid (@ m.p.) (g/cm^3)": 2.375},
     "heat of fusion (kJ/mol)": 7.43,
     "heat of vaporization (kJ/mol)": 141,
     "molar heat capacity (J/(mol*K))": 26.4,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 796,
-            10: 882,
-            100: 990,
-            1000: 1139,
-            10000: 1345,
-            100000: 1646}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 796,
+        10: 882,
+        100: 990,
+        1000: 1139,
+        10000: 1345,
+        100000: 1646},
     "oxidation states": [1,2],
     "electronegativity (Pauling scale)": 0.95,
     "ionization energies (kJ/mol)": [549.5,1064.2,4138],
@@ -2021,6 +2069,7 @@ Yttrium= {
     "group": 3,
     "period": 5,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 2,
     "electrons per shell": [2,8,18,9,2],
     "valence electrons": 3,
@@ -2033,20 +2082,19 @@ Yttrium= {
         "Fahrenheit": 5306,
         "Celsius": 2930,
         "Kelvin": 3203},
-    "density (g/cm^3)": 4.472,
-    "liquid density": {
-        "at melting point (g/cm^3)": 4.24},
+    "density": {
+        "solid (g/cm^3)": 4.472,
+        "liquid (@ m.p.) (g/cm^3)": 4.24},
     "heat of fusion (kJ/mol)": 11.42,
     "heat of vaporization (kJ/mol)": 363,
     "molar heat capacity (J/(mol*K))": 26.53,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 1883,
-            10: 2075,
-            100: 2320,
-            1000: 2627,
-            10000: 3036,
-            100000: 3607}},
+    "vapor pressure (Pa) to temp (K)" {
+        1: 1883,
+        10: 2075,
+        100: 2320,
+        1000: 2627,
+        10000: 3036,
+        100000: 3607},
     "oxidation states": [0,1,2,3],
     "electronegativity (Pauling scale)": 1.22,
     "ionization energies (kJ/mol)": [600,1180,1980],
@@ -2073,6 +2121,7 @@ Zirconium= {
     "group": 4,
     "period": 5,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 5,
     "electrons per shell": [2,8,18,10,2],
     "valence electrons": 4,
@@ -2085,20 +2134,19 @@ Zirconium= {
         "Fahrenheit": 7911,
         "Celsius": 4377,
         "Kelvin": 4650},
-    "density (g/cm^3)": 6.52,
-    "liquid density": {
-        "at melting point (g/cm^3)": 5.8},
+    "density": {
+        "solid (g/cm^3)": 6.52,
+        "liquid (@ m.p.) (g/cm^3)": 5.8},
     "heat of fusion (kJ/mol)": 14,
     "heat of vaporization (kJ/mol)": 591,
     "molar heat capacity (J/(mol*K))": 25.36,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 2639,
-            10: 2891,
-            100: 3197,
-            1000: 3575,
-            10000: 4053,
-            100000: 4678}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 2639,
+        10: 2891,
+        100: 3197,
+        1000: 3575,
+        10000: 4053,
+        100000: 4678},
     "oxidation states": [-2,0,1,2,3,4],
     "electronegativity (Pauling scale)": 1.33,
     "ionization energies (kJ/mol)": [640.1,1270,2218],
@@ -2126,6 +2174,7 @@ Niobium= {
     "group": 5,
     "period": 5,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 5,
     "electrons per shell": [2,8,18,12,1],
     "valence electrons": 5,
@@ -2142,14 +2191,13 @@ Niobium= {
     "heat of fusion (kJ/mol)": 30,
     "heat of vaporization (kJ/mol)": 689.9,
     "molar heat capacity (J/(mol*K))": 24.60,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 2942,
-            10: 3207,
-            100: 3524,
-            1000: 3910,
-            10000: 4393,
-            100000: 5013}},
+    "vapor pressure" (Pa) to temp (K)": {
+        1: 2942,
+        10: 3207,
+        100: 3524,
+        1000: 3910,
+        10000: 4393,
+        100000: 5013},
     "oxidation states": [-3,-1,0,1,2,3,4,5],
     "electronegativity (Pauling scale)": 1.6,
     "ionization energies (kJ/mol)": [652.1,1380,2416],
@@ -2177,6 +2225,7 @@ Molybdenum = {
     "group": 6,
     "period": 5,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 5,
     "electrons per shell": [2,8,18,13,1],
     "valence electrons": 6,
@@ -2189,20 +2238,19 @@ Molybdenum = {
         "Fahrenheit": 8382,
         "Celsius": 4639,
         "Kelvin": 4912},
-    "density (g/cm^3)": 10.28,
-    "liquid density": {
-        "at melting point (g/cm^3)": 9.33},
+    "density": {
+        "solid" (g/cm^3)": 10.28,
+        "liquid (@ m.p.) (g/cm^3)": 9.33},
     "heat of fusion (kJ/mol)": 37.48,
     "heat of vaporization (kJ/mol)": 598,
     "molar heat capacity (J/(mol*K))": 24.06,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 2742,
-            10: 2994,
-            100: 3312,
-            1000: 3707,
-            10000: 4212,
-            100000: 4879}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 2742,
+        10: 2994,
+        100: 3312,
+        1000: 3707,
+        10000: 4212,
+        100000: 4879},
     "oxidation states": [-4,2,-1,0,1,2,3,4,5,6],
     "electronegativity (Pauling scale)": 2.16,
     "ionization energies (kJ/mol)": [684.3,1560,2618],
@@ -2232,6 +2280,7 @@ Technetium = {
     "group": 7,
     "period": 5,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 3,
     "electrons per shell": [2,8,18,13,2],
     "valence electrons": 7,
@@ -2248,14 +2297,13 @@ Technetium = {
     "heat of fusion (kJ/mol)": 33.29,
     "heat of vaporization (kJ/mol)": 585.2,
     "molar heat capacity (J/(mol*K))": 24.27,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 2727,
-            10: 2998,
-            100: 3324,
-            1000: 3726,
-            10000: 4234,
-            100000: 4894}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 2727,
+        10: 2998,
+        100: 3324,
+        1000: 3726,
+        10000: 4234,
+        100000: 4894},
     "oxidation states": [-1,0,1,2,3,4,5,6,7],
     "electronegativity (Pauling scale)": 1.9,
     "ionization energies (kJ/mol)": [686.9,1470,2850],
@@ -2278,6 +2326,7 @@ Ruthenium = {
     "group": 8,
     "period": 5,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 5,
     "electrons per shell": [2,8,18,15,1],
     "valence electrons": 8,
@@ -2291,20 +2340,19 @@ Ruthenium = {
         "Fahrenheit": 7502,
         "Celsius": 4150,
         "Kelvin": 4423},
-    "density (g/cm^3)": 12.45,
-    "liquid density": {
-        "at melting point (g/cm^3)": 10.65},
+    "density": {
+        "solid (g/cm^3)": 12.45,
+        "liquid (@ m.p.) (g/cm^3)": 10.65},
     "heat of fusion (kJ/mol)": 38.59,
     "heat of vaporization (kJ/mol)": 619,
     "molar heat capacity (J/(mol*K))": 24.06,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 2588,
-            10: 2811,
-            100: 3087,
-            1000: 3424,
-            10000: 3845,
-            100000: 4388}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 2588,
+        10: 2811,
+        100: 3087,
+        1000: 3424,
+        10000: 3845,
+        100000: 4388},
     "oxidation states": [-4,-2,0,1,2,3,4,5,6,7,8],
     "electronegativity (Pauling scale)": 2.2,
     "ionization energies (kJ/mol)": [710.2,1620,2747],
@@ -2332,6 +2380,7 @@ Rhodium = {
     "group": 9,
     "period": 5,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 5,
     "electrons per shell": [2,8,18,16,1],
     "valence electrons": 9,
@@ -2345,20 +2394,19 @@ Rhodium = {
         "Fahrenheit": 6683,
         "Celsius": 3695,
         "Kelvin": 3968},
-    "density (g/cm^3)": 12.41,
-    "liquid density": {
-        "at melting point (g/cm^3)": 10.7},
+    "density": {
+        "solid (g/cm^3)": 12.41,
+        "liquid (@ m.p.) (g/cm^3)": 10.7},
     "heat of fusion (kJ/mol)": 26.59,
     "heat of vaporization (kJ/mol)": 493,
     "molar heat capacity (J/(mol*K))": 24.98,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 2288,
-            10: 2496,
-            100: 2749,
-            1000: 3063,
-            10000: 3405,
-            100000: 3997}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 2288,
+        10: 2496,
+        100: 2749,
+        1000: 3063,
+        10000: 3405,
+        100000: 3997},
     "oxidation states": [-3,-1,0,1,2,3,4,5,6,7],
     "electronegativity (Pauling scale)": 2.28,
     "ionization energies (kJ/mol)": [719.7,1740,2997],
@@ -2387,6 +2435,7 @@ Palladium = {
     "group": 10,
     "period": 5,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 4,
     "electrons per shell": [2,8,18,18],
     "valence electrons": 10,
@@ -2400,20 +2449,19 @@ Palladium = {
         "Fahrenheit": 5365,
         "Celsius": 2963,
         "Kelvin": 3236},
-    "density (g/cm^3)": 12.023,
-    "liquid density": {
-        "at melting point (g/cm^3)": 10.38},
+    "density": {
+        "solid (g/cm^3)": 12.023,
+        "liquid (@ m.p.) (g/cm^3)": 10.38},
     "heat of fusion (kJ/mol)": 16.74,
     "heat of vaporization (kJ/mol)": 358,
     "molar heat capacity (J/(mol*K))": 25.98,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 1721,
-            10: 1897,
-            100: 2117,
-            1000: 2395,
-            10000: 2753,
-            100000: 3234}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 1721,
+        10: 1897,
+        100: 2117,
+        1000: 2395,
+        10000: 2753,
+        100000: 3234},
     "oxidation states": [0,1,2,3,4,5],
     "electronegativity (Pauling scale)": 2.20,
     "ionization energies (kJ/mol)": [804.4,1870,3177],
@@ -2443,6 +2491,7 @@ Silver = {
     "group": 11,
     "period": 5,
     "block": "d-block",
+    "classification": "transition metal",
     "shells": 5,
     "electrons per shell": [2,8,18,18,1],
     "valence electrons": 1,
@@ -2456,20 +2505,19 @@ Silver = {
         "Fahrenheit": 3924,
         "Celsius": 2162,
         "Kelvin": 2435},
-    "density (g/cm^3)": 10.49,
-    "liquid density": {
-        "at melting point (g/cm^3)": 9.320},
+    "density": {
+        "solid (g/cm^3)": 10.49,
+        "liquid (@ m.p.) (g/cm^3)": 9.320},
     "heat of fusion (kJ/mol)": 11.28,
     "heat of vaporization (kJ/mol)": 254,
     "molar heat capacity (J/(mol*K))": 25.350,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: 1283,
-            10: 1413,
-            100: 1575,
-            1000: 1782,
-            10000: 2055,
-            100000: 2433}},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 1283,
+        10: 1413,
+        100: 1575,
+        1000: 1782,
+        10000: 2055,
+        100000: 2433},
     "oxidation states": [-2,-1,0,1,2,3],
     "electronegativity (Pauling scale)": 1.93,
     "ionization energies (kJ/mol)": [731,2070,3361],
@@ -2491,6 +2539,62 @@ Silver = {
     "brinell hardness (MPa)": [206,250],
     }
 
+Cadmium = {
+    "name": "cadmium",
+    "appearance": "silvery bluish-gray metallic",
+    "atomic number": 48,
+    "symbol": "Cd",
+    "atomic weight": 112.414,
+    "group": 12,
+    "period": 5,
+    "block": "d-block",
+    "classification": "transition metal",
+    "shells": 5,
+    "electrons per shell": [2,8,18,18,2],
+    "valence electrons": 2,
+    "valency": 2,
+    "phase": "solid",
+    "melting point":{
+        "Fahrenheit": 609.926,
+        "Celsius": 321.07,
+        "Kelvin": 594.22},        
+    "boiling point": {
+        "Fahrenheit": 1412.33,
+        "Celsius": 766.85,
+        "Kelvin": 1040},
+    "density": {
+        "solid (g/cm^3)": 8.65,
+        "liquid (@ m.p.) (g/cm^3)": 7.996},
+    "heat of fusion (kJ/mol)": 6.21,
+    "heat of vaporization (kJ/mol)": 99.87,
+    "molar heat capacity (J/(mol*K))": 26.020,
+    "vapor pressure (Pa) to temp (K)": {
+        1: 530,
+        10: 583,
+        100: 654,
+        1000: 745,
+        10000: 867,
+        100000: 1040},
+    "oxidation states": [-2,1,2],
+    "electronegativity (Pauling scale)": 1.69,
+    "ionization energies (kJ/mol)": [867.8,1637.4,3616],
+    "atomic radius (pm)": 151,
+    "covalent radius (pm)": 144,
+    "Van der Waals radius (pm)": 158,
+    "thermal expansion (µm/(m⋅K)) (at 25 °C)": ,
+    "thermal conductivity (W/(m⋅K))": ,
+    "electrical resistivity (nΩ⋅m (at 20 °C))": ,
+    "magnetic ordering": "diamagnetic",
+    "molar magnetic susceptibility (cm^3/mol)": ,
+    "Young's modulus (GPa)": ,
+    "shear modulus (GPa)": ,
+    "bulk modulus (GPa)": ,
+    "poisson ratio": ,
+    "mohs hardness": ,
+    "vickers hardness (MPa)": ,
+    "brinell hardness (MPa)": ,
+    }
+
 = {
     "name": "",
     "appearance": "",
@@ -2500,6 +2604,7 @@ Silver = {
     "group": ,
     "period": ,
     "block": "",
+    "classification": "",
     "shells": ,
     "electrons per shell": [],
     "valence electrons": ,
@@ -2513,10 +2618,9 @@ Silver = {
         "Fahrenheit": ,
         "Celsius": ,
         "Kelvin": },
-    "density (g/cm^3)": ,
-    "liquid density": {
-        "at melting point (g/cm^3)": ,
-        "at boiling point (g/cm^3)": },
+    "density : {
+        "solid (g/cm^3)": ,
+        "liquid" (@ m.p.) (g/cm^3): ,},
     "triple point" : {
         "Temperature (Kelvin)": ,
         "Pressure (kPa)": },
@@ -2526,14 +2630,13 @@ Silver = {
     "heat of fusion (kJ/mol)": ,
     "heat of vaporization (kJ/mol)": ,
     "molar heat capacity (J/(mol*K))": ,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: ,
-            10: ,
-            100: ,
-            1000: ,
-            10000: ,
-            100000: }},
+    "vapor pressure (Pa) to temp (K)": {
+        1: ,
+        10: ,
+        100: ,
+        1000: ,
+        10000: ,
+        100000: },
     "oxidation states": [],
     "electronegativity (Pauling scale)": ,
     "ionization energies (kJ/mol)": [],
@@ -2563,6 +2666,7 @@ Silver = {
     "group": ,
     "period": ,
     "block": "",
+    "classification": "",
     "shells": ,
     "electrons per shell": [],
     "valence electrons": ,
@@ -2576,10 +2680,9 @@ Silver = {
         "Fahrenheit": ,
         "Celsius": ,
         "Kelvin": },
-    "density (g/cm^3)": ,
-    "liquid density": {
-        "at melting point (g/cm^3)": ,
-        "at boiling point (g/cm^3)": },
+    "density : {
+        "solid (g/cm^3)": ,
+        "liquid" (@ m.p.) (g/cm^3): ,},
     "triple point" : {
         "Temperature (Kelvin)": ,
         "Pressure (kPa)": },
@@ -2589,14 +2692,13 @@ Silver = {
     "heat of fusion (kJ/mol)": ,
     "heat of vaporization (kJ/mol)": ,
     "molar heat capacity (J/(mol*K))": ,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: ,
-            10: ,
-            100: ,
-            1000: ,
-            10000: ,
-            100000: }},
+    "vapor pressure (Pa) to temp (K)": {
+        1: ,
+        10: ,
+        100: ,
+        1000: ,
+        10000: ,
+        100000: },
     "oxidation states": [],
     "electronegativity (Pauling scale)": ,
     "ionization energies (kJ/mol)": [],
@@ -2626,6 +2728,7 @@ Silver = {
     "group": ,
     "period": ,
     "block": "",
+    "classification": "",
     "shells": ,
     "electrons per shell": [],
     "valence electrons": ,
@@ -2639,10 +2742,9 @@ Silver = {
         "Fahrenheit": ,
         "Celsius": ,
         "Kelvin": },
-    "density (g/cm^3)": ,
-    "liquid density": {
-        "at melting point (g/cm^3)": ,
-        "at boiling point (g/cm^3)": },
+    "density : {
+        "solid (g/cm^3)": ,
+        "liquid" (@ m.p.) (g/cm^3): ,},
     "triple point" : {
         "Temperature (Kelvin)": ,
         "Pressure (kPa)": },
@@ -2652,14 +2754,13 @@ Silver = {
     "heat of fusion (kJ/mol)": ,
     "heat of vaporization (kJ/mol)": ,
     "molar heat capacity (J/(mol*K))": ,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: ,
-            10: ,
-            100: ,
-            1000: ,
-            10000: ,
-            100000: }},
+    "vapor pressure (Pa) to temp (K)": {
+        1: ,
+        10: ,
+        100: ,
+        1000: ,
+        10000: ,
+        100000: },
     "oxidation states": [],
     "electronegativity (Pauling scale)": ,
     "ionization energies (kJ/mol)": [],
@@ -2689,6 +2790,7 @@ Silver = {
     "group": ,
     "period": ,
     "block": "",
+    "classification": "",
     "shells": ,
     "electrons per shell": [],
     "valence electrons": ,
@@ -2702,10 +2804,9 @@ Silver = {
         "Fahrenheit": ,
         "Celsius": ,
         "Kelvin": },
-    "density (g/cm^3)": ,
-    "liquid density": {
-        "at melting point (g/cm^3)": ,
-        "at boiling point (g/cm^3)": },
+    "density : {
+        "solid (g/cm^3)": ,
+        "liquid" (@ m.p.) (g/cm^3): ,},
     "triple point" : {
         "Temperature (Kelvin)": ,
         "Pressure (kPa)": },
@@ -2715,14 +2816,13 @@ Silver = {
     "heat of fusion (kJ/mol)": ,
     "heat of vaporization (kJ/mol)": ,
     "molar heat capacity (J/(mol*K))": ,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: ,
-            10: ,
-            100: ,
-            1000: ,
-            10000: ,
-            100000: }},
+    "vapor pressure (Pa) to temp (K)": {
+        1: ,
+        10: ,
+        100: ,
+        1000: ,
+        10000: ,
+        100000: },
     "oxidation states": [],
     "electronegativity (Pauling scale)": ,
     "ionization energies (kJ/mol)": [],
@@ -2743,66 +2843,5 @@ Silver = {
     "brinell hardness (MPa)": ,
     }
 
-= {
-    "name": "",
-    "appearance": "",
-    "atomic number": ,
-    "symbol": "",
-    "atomic weight": ,
-    "group": ,
-    "period": ,
-    "block": "",
-    "shells": ,
-    "electrons per shell": [],
-    "valence electrons": ,
-    "valency": ,
-    "phase": "",
-    "melting point":{
-        "Fahrenheit": ,
-        "Celsius": ,
-        "Kelvin": },        
-    "boiling point": {
-        "Fahrenheit": ,
-        "Celsius": ,
-        "Kelvin": },
-    "density (g/cm^3)": ,
-    "liquid density": {
-        "at melting point (g/cm^3)": ,
-        "at boiling point (g/cm^3)": },
-    "triple point" : {
-        "Temperature (Kelvin)": ,
-        "Pressure (kPa)": },
-    "critical point": {
-        "Temperature (Kelvin)": ,
-        "Pressure (MPa)": },
-    "heat of fusion (kJ/mol)": ,
-    "heat of vaporization (kJ/mol)": ,
-    "molar heat capacity (J/(mol*K))": ,
-    "vapor pressure": {
-        "pressure (Pa) to temp (K)": {
-            1: ,
-            10: ,
-            100: ,
-            1000: ,
-            10000: ,
-            100000: }},
-    "oxidation states": [],
-    "electronegativity (Pauling scale)": ,
-    "ionization energies (kJ/mol)": [],
-    "atomic radius (pm)": ,
-    "covalent radius (pm)": ,
-    "Van der Waals radius (pm)": ,
-    "thermal expansion (µm/(m⋅K)) (at 25 °C)": ,
-    "thermal conductivity (W/(m⋅K))": ,
-    "electrical resistivity (nΩ⋅m (at 20 °C))": ,
-    "magnetic ordering": "diamagnetic",
-    "molar magnetic susceptibility (cm^3/mol)": ,
-    "Young's modulus (GPa)": ,
-    "shear modulus (GPa)": ,
-    "bulk modulus (GPa)": ,
-    "poisson ratio": ,
-    "mohs hardness": ,
-    "vickers hardness (MPa)": ,
-    "brinell hardness (MPa)": ,
-    }
+
 
