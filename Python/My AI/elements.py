@@ -2,7 +2,7 @@
 directly from the computer I/'m on and parse information from it. It can
 be a text file, .py file, or whatever'''
 
-Max_valence_electrons = [2,8,18,18,32,32,18,2]
+
 
 # For this I want to make a dictionaries of the periodic table of elements
 
@@ -58,13 +58,9 @@ Hydrogen = {
     "heat of fusion (H2)(kJ/mol)": 0.117,
     "heat of vaporization (H2)(kJ/mol)": 0.9047,
     "molar heat capacity (J/(mol*K))": 28.836,
-    "vapor pressure (Pa) to temp (K)"{
-        1: ,
-        10: ,
-        100: ,
-        1000: ,
-        10000: ,
-        100000: },
+    "vapor pressure (Pa) to temp (K)":{
+        10000: 15,
+        100000: 20},
     "oxidation states": [-1, 0, 1],
     "electronegativity (Pauling scale)": 2.20,
     "ionization energies (kJ/mol)": [1312.0],
@@ -92,8 +88,8 @@ Helium = {
     "phase": "gas",
     "melting point (°F)": -457.96,
     "boiling point (°F)": -452.070,
-    "density: {
-        "gas": (g/L)": 0.1786,
+    "density": {
+        "gas (g/L)": 0.1786,
         "liquid": {
             "@ m.p. (g/cm^3)": 0.145,
             "@ b.p. (g/cm^3)": 0.125}},
@@ -106,7 +102,7 @@ Helium = {
     "heat of fusion (kJ/mol)": 0.0138,
     "heat of vaporization (kJ/mol)": 0.0829,
     "molar heat capacity (J/(mol*K))": 20.78,
-    "vapor pressure (Pa) to temp (K)"{
+    "vapor pressure (Pa) to temp (K)":{
         100: 1.23,
         1000: 1.67,
         10000: 2.48,
@@ -136,12 +132,12 @@ Lithium = {
     "phase": "solid",
     "melting point": {
         "Fahrenheit": 356.90,
-        "Celsius": asd,
-        "Kelvin": dsaf},
+        "Celsius": 180.50,
+        "Kelvin": 453.65},
     "boiling point": { 
         "Fahrenheit": 2426,
-        "Celsius": ,
-        "Kelvin": },
+        "Celsius": 1330,
+        "Kelvin": 1603},
     "density (g/cm^3)": 0.534,
     "liquid density (at melting point) (g/cm^3)": 0.512,
     "critical point": {
@@ -150,7 +146,7 @@ Lithium = {
     "heat of fusion (kJ/mol)": 3,
     "heat of vaporization (kJ/mol)": 135,
     "molar heat capacity (J/(mol*K))": 24.860,
-    "vapor pressure (Pa) to temp (K)"{
+    "vapor pressure (Pa) to temp (K)":{
         1: 797,
         10: 885,
         100: 995,
@@ -191,22 +187,22 @@ Beryllium = {
     "phase": "solid",
     "melting point": {
         "Fahrenheit": 2349,
-        "Celsius": ,
-        "Kelvin": ,
+        "Celsius": 1287,
+        "Kelvin": 1560},
     "boiling point": {
         "Fahrenheit": 4476,
-        "Celsius": ,
-        "Kelvin": },
+        "Celsius": 2469,
+        "Kelvin": 2742},
     "density(g/cm^3)": {
         "sollid": 1.85,
-        "liquid (@ m.p.)": 1.690,}
+        "liquid (@ m.p.)": 1.690},
     "critical point": {
         "temperature (Kelvin)": 5205,
         "pressure (MPa)": 1},
     "heat of fusion (kJ/mol)": 12.2,
     "heat of vaporization (kJ/mol)": 292,
     "molar heat capacity (J/(mol*K))": 16.443,
-    "vapor pressure (Pa) to temp (K)"{
+    "vapor pressure (Pa) to temp (K)":{
         1: 1462,
         10: 1608,
         100: 1791,
@@ -259,7 +255,7 @@ Boron = {
     "heat of fusion (kJ/mol)": 50.2,
     "heat of vaporization (kJ/mol)": 508,
     "molar heat capacity (J/(mol*K))": 11.087,
-    "vapor pressure (Pa) to temp (K)"{
+    "vapor pressure (Pa) to temp (K)":{
         1: 2348,
         10: 2562,
         100: 2822,
@@ -356,7 +352,7 @@ Nitrogen = {
         "Kelvin": 77.355},
     "density": {
         "gas (g/L)": 1.2506,
-        "liquid (@ b.p.) (g/cm^3)": .808}
+        "liquid (@ b.p.) (g/cm^3)": 0.808},
     "triple point" : {
         "Temperature (Kelvin)": 63.151,
         "Pressure (kPa)": 12.52},
@@ -366,9 +362,13 @@ Nitrogen = {
     "heat of fusion (kJ/mol)": 0.72,
     "heat of vaporization (kJ/mol)": 5.57,
     "molar heat capacity (J/(mol*K))": 29.124,
-    "vapor pressure": {
-        "pressure (Pa)": [1, 10, 100, 1000, 10000, 100000],
-        "temperature (kelvin)": [37, 41, 46, 53, 62, 77]},
+    "vapor pressure (Pa) to temp (K)": {
+        1: 37,
+        10: 41,
+        100: 46,
+        1000: 53,
+        10000: 62,
+        100000: 77},
     "oxidation states": [-3, -2.-1.0,1,2,3,4,5],
     "electronegativity (Pauling scale)": 3.04,
     "ionization energies (kJ/mol)": [1402.3, 2856, 4578.1, 7475, 9444.9, 53266.6, 64360],
@@ -402,7 +402,7 @@ Oxygen = {
         "Celsius": -182.962,
         "Kelvin": 90.188},
     "density": {
-        "gas": (g/L)": 1.429,
+        "gas (g/L)": 1.429,
         "liquid (@ b.p.) (g/cm^3)": 1.141},
     "triple point" : {
         "Temperature (Kelvin)": 54.361,
@@ -416,7 +416,7 @@ Oxygen = {
     "vapor pressure (Pa) to temp (K)": {
         1000: 61,
         10000: 73,
-        100000 90},
+        100000: 90},
     "oxidation states": [-2,-1,0,1,2],
     "electronegativity (Pauling scale)": 3.44, 
     "ionization energies (kJ/mol)": [1313.9, 3388.3, 5300.5],
@@ -554,7 +554,7 @@ Sodium = {
         "Kelvin": 1156.090},
     "density": {
         "solid (g/cm^3": 0.968,
-        "liquid (@ m.p.) (g/cm^3): 0.927}
+        "liquid (@ m.p.) (g/cm^3)": 0.927},
     "critical point": {
         "Temperature (Kelvin)": 2573,
         "Pressure (MPa)": 35},
@@ -595,7 +595,7 @@ Magnesium = {
     "group": 2,
     "period": 3,
     "block": "s-block",
-    "classification": "alkaline earth metal"
+    "classification": "alkaline earth metal",
     "shells": 3,
     "electrons per shell": [2,8,2],
     "valence electrons": 2,
@@ -919,14 +919,13 @@ Chlorine = {
     "heat of fusion (kJ/mol)": 6.406,
     "heat of vaporization (kJ/mol)": 20.41,
     "molar heat capacity (J/(mol*K))": 33.949,
-    "vapor pressure (Pa) to temp (K)"{
+    "vapor pressure (Pa) to temp (K)":{
         1: 128,
         10: 139,
         100: 153,
         1000: 170,
         10000: 197,
         100000: 239},
-        "temperature (kelvin)": [128,139,153,170,197,239]},
     "oxidation states": [-1,0,1,2,3,4,5,6,7],
     "electronegativity (Pauling scale)": 3.16,
     "ionization energies (kJ/mol)": [1251.2, 2298, 3822],
@@ -973,7 +972,7 @@ Argon = {
     "heat of fusion (kJ/mol)": 1.18,
     "heat of vaporization (kJ/mol)": 6.53,
     "molar heat capacity (J/(mol*K))": 20.85,
-    "vapor pressure (Pa) to temp (K)"{
+    "vapor pressure (Pa) to temp (K)":{
         10: 47,
         100: 53,
         1000: 61,
@@ -1067,7 +1066,7 @@ Calcium = {
     "heat of fusion (kJ/mol)": 8.54,
     "heat of vaporization (kJ/mol)": 154.7,
     "molar heat capacity (J/(mol*K))": 25.929,
-    "vapor pressure (Pa) to temp (K)"{
+    "vapor pressure (Pa) to temp (K)":{
         1: 864,
         10: 956,
         100: 1071,
@@ -1122,7 +1121,7 @@ Scandium = {
     "heat of fusion (kJ/mol)": 14.1,
     "heat of vaporization (kJ/mol)": 332.7,
     "molar heat capacity (J/(mol*K))": 25.52,
-    "vapor pressure (Pa) to temp (K)"{
+    "vapor pressure (Pa) to temp (K)":{
         1: 1645,
         10: 1804,
         100: 2006,
@@ -1176,7 +1175,7 @@ Titanium = {
     "heat of fusion (kJ/mol)": 14.15,
     "heat of vaporization (kJ/mol)": 425,
     "molar heat capacity (J/(mol*K))": 25.060,
-    "vapor pressure (Pa) to temp (K)"{
+    "vapor pressure (Pa) to temp (K)":{
         1: 1982,
         10: 2171,
         100: 2403,
@@ -1225,13 +1224,13 @@ Vanadium = {
         "Fahrenheit": 6165,
         "Celsius": 3407,
         "Kelvin": 3680},
-    "density" {
+    "density": {
         "solid (g/cm^3)": 6.11,
         "liquid (@ m.p.) (g/cm^3)": 5.5},
     "heat of fusion (kJ/mol)": 21.5,
     "heat of vaporization (kJ/mol)": 444,
     "molar heat capacity (J/(mol*K))": 24.89,
-    "vapor pressure (Pa) to temp (K)"{
+    "vapor pressure (Pa) to temp (K)":{
         1: 2101,
         10: 2289 ,
         100: 2523,
@@ -1286,7 +1285,7 @@ Chromium = {
     "heat of fusion (kJ/mol)": 21.0,
     "heat of vaporization (kJ/mol)": 347,
     "molar heat capacity (J/(mol*K))": 23.35,
-    "vapor pressure (Pa) to temp (K)"{
+    "vapor pressure (Pa) to temp (K)":{
         1: 1656,
         10: 1807,
         100: 1991,
@@ -1439,7 +1438,7 @@ Cobalt = {
         "Fahrenheit": 5301,
         "Celsius": 2927,
         "Kelvin": 3200},
-    "density":
+    "density": {
         "solid (g/cm^3)": 8.90,
         "liquid (@ m.p.) (g/cm^3)": 7.75},
     "heat of fusion (kJ/mol)": 16.06,
@@ -1870,7 +1869,7 @@ Bromine= {
         "Celsius": 58.8,
         "Kelvin": 332.0},
     "density": {
-        "liquid (g/cm^3)": 3.1028,
+        "liquid (g/cm^3)": 3.1028},
     "triple point" : {
         "Temperature (Kelvin)": 265.90,
         "Pressure (kPa)": 5.8},
@@ -1973,7 +1972,7 @@ Rubidium = {
         "Fahrenheit": 1270,
         "Celsius": 688,
         "Kelvin": 961},
-    "density": 
+    "density": {
         "solid (g/cm^3)": 1.532,
         "liquid (@ m.p.) (g/cm^3)": 1.46},
     "triple point" : {
@@ -2030,7 +2029,7 @@ Strontium = {
         "Fahrenheit": 2511,
         "Celsius": 1377,
         "Kelvin": 1650},
-    "density":
+    "density":{
         "solid (g/cm^3)": 2.64,
         "liquid (@ m.p.) (g/cm^3)": 2.375},
     "heat of fusion (kJ/mol)": 7.43,
@@ -2088,7 +2087,7 @@ Yttrium= {
     "heat of fusion (kJ/mol)": 11.42,
     "heat of vaporization (kJ/mol)": 363,
     "molar heat capacity (J/(mol*K))": 26.53,
-    "vapor pressure (Pa) to temp (K)" {
+    "vapor pressure (Pa) to temp (K)": {
         1: 1883,
         10: 2075,
         100: 2320,
@@ -2191,7 +2190,7 @@ Niobium= {
     "heat of fusion (kJ/mol)": 30,
     "heat of vaporization (kJ/mol)": 689.9,
     "molar heat capacity (J/(mol*K))": 24.60,
-    "vapor pressure" (Pa) to temp (K)": {
+    "vapor pressure (Pa) to temp (K)": {
         1: 2942,
         10: 3207,
         100: 3524,
@@ -2239,7 +2238,7 @@ Molybdenum = {
         "Celsius": 4639,
         "Kelvin": 4912},
     "density": {
-        "solid" (g/cm^3)": 10.28,
+        "solid (g/cm^3)": 10.28,
         "liquid (@ m.p.) (g/cm^3)": 9.33},
     "heat of fusion (kJ/mol)": 37.48,
     "heat of vaporization (kJ/mol)": 598,
@@ -2581,18 +2580,17 @@ Cadmium = {
     "atomic radius (pm)": 151,
     "covalent radius (pm)": 144,
     "Van der Waals radius (pm)": 158,
-    "thermal expansion (µm/(m⋅K)) (at 25 °C)": ,
-    "thermal conductivity (W/(m⋅K))": ,
-    "electrical resistivity (nΩ⋅m (at 20 °C))": ,
+    "thermal expansion (µm/(m⋅K)) (at 25 °C)": 30.8,
+    "thermal conductivity (W/(m⋅K))": 96.6,
+    "electrical resistivity (nΩ⋅m (at 20 °C))": 72.7,
     "magnetic ordering": "diamagnetic",
-    "molar magnetic susceptibility (cm^3/mol)": ,
-    "Young's modulus (GPa)": ,
-    "shear modulus (GPa)": ,
-    "bulk modulus (GPa)": ,
-    "poisson ratio": ,
-    "mohs hardness": ,
-    "vickers hardness (MPa)": ,
-    "brinell hardness (MPa)": ,
+    "molar magnetic susceptibility (cm^3/mol)": -19.8*10**-6,
+    "Young's modulus (GPa)": 50,
+    "shear modulus (GPa)": 19,
+    "bulk modulus (GPa)": 42,
+    "poisson ratio": 0.3,
+    "mohs hardness": 2.0,
+    "brinell hardness (MPa)": [203,220],
     }
 
 Indium= {
@@ -2618,9 +2616,9 @@ Indium= {
         "Fahrenheit": 3762,
         "Celsius": 2072,
         "Kelvin": 2345},
-    "density : {
+    "density" : {
         "solid (g/cm^3)": 7.31,
-        "liquid" (@ m.p.) (g/cm^3): 7.02},
+        "liquid (@ m.p.) (g/cm^3)": 7.02},
     "triple point" : {
         "Temperature (Kelvin)": 429.7445,
         "Pressure (kPa)": 1},
@@ -2674,9 +2672,9 @@ Tin = {
         "Fahrenheit": 4716,
         "Celsius": 2602,
         "Kelvin": 2875},
-    "density : {
+    "density" : {
         "solid (g/cm^3)": 7.265,
-        "liquid" (@ m.p.) (g/cm^3): 6.99},
+        "liquid  (@ m.p.) (g/cm^3)": 6.99},
     "heat of fusion (kJ/mol)": 7.03,
     "heat of vaporization (kJ/mol)": 296.1,
     "molar heat capacity (J/(mol*K))": 27.112,
@@ -2729,9 +2727,9 @@ Antimony = {
         "Fahrenheit": 2975,
         "Celsius": 1635,
         "Kelvin": 1908},
-    "density : {
+    "density" : {
         "solid (g/cm^3)": 6.697,
-        "liquid" (@ m.p.) (g/cm^3): 6.53},
+        "liquid (@ m.p.) (g/cm^3)": 6.53},
     "heat of fusion (kJ/mol)": 19.79,
     "heat of vaporization (kJ/mol)": 193.43,
     "molar heat capacity (J/(mol*K))": 25.23,
@@ -2783,9 +2781,9 @@ Tellurium = {
         "Fahrenheit": 1810,
         "Celsius": 988,
         "Kelvin": 1261},
-    "density : {
+    "density" : {
         "solid (g/cm^3)": 6.24,
-        "liquid" (@ m.p.) (g/cm^3): 5.70},
+        "liquid (@ m.p.) (g/cm^3)": 5.70},
     "heat of fusion (kJ/mol)": 17.49,
     "heat of vaporization (kJ/mol)": 114.1,
     "molar heat capacity (J/(mol*K))": 25.73,
@@ -2808,10 +2806,10 @@ Tellurium = {
     "shear modulus (GPa)": 16,
     "bulk modulus (GPa)": 65,
     "mohs hardness": 2.25,
-    "brinell hardness (MPa)": [180-270],
+    "brinell hardness (MPa)": [180-270]
     }
 
- Iodine = {
+Iodine = {
     "name": "iodine",
     "appearance": "lustrous metallic gray solid, black/violet liquid, violet gas",
     "atomic number": 53,
@@ -2834,8 +2832,8 @@ Tellurium = {
         "Fahrenheit": 363.7,
         "Celsius": 184.3,
         "Kelvin": 457.4},
-    "density : {
-        "solid (g/cm^3)": 4.933}
+    "density" : {
+        "solid (g/cm^3)": 4.933},
     "triple point" : {
         "Temperature (Kelvin)": 386.65,
         "Pressure (kPa)": 12.1},
@@ -2865,7 +2863,7 @@ Tellurium = {
     "bulk modulus (GPa)": 7.7,
     }
 
- Xenon = {
+Xenon = {
     "name": "xenon",
     "appearance": "colorless gas",
     "atomic number": 54,
@@ -2888,9 +2886,9 @@ Tellurium = {
         "Fahrenheit": -162.578,
         "Celsius": -108.099,
         "Kelvin": 165.051},
-    "density : {
+    "density" : {
         "gas (g/cm^3)": 5.894,
-        "liquid" (@ b.p.) (g/cm^3): 2.942},
+        "liquid (@ b.p.) (g/cm^3)": 2.942},
     "triple point" : {
         "Temperature (Kelvin)": 161.405,
         "Pressure (kPa)": 81.77},
@@ -2913,73 +2911,336 @@ Tellurium = {
     "covalent radius (pm)": 140,
     "Van der Waals radius (pm)": 216,
     "thermal conductivity (W/(m⋅K))": 5.65*10**-3,
-    "electrical resistivity (nΩ⋅m (at 20 °C))": ,
     "magnetic ordering": "diamagnetic",
     "molar magnetic susceptibility (cm^3/mol)": -43.9*10**-6
     }
     
- = {
-    "name": "",
-    "appearance": "",
-    "atomic number": ,
-    "symbol": "",
-    "atomic weight": ,
-    "group": ,
-    "period": ,
-    "block": "",
-    "classification": "",
-    "shells": ,
-    "electrons per shell": [],
-    "valence electrons": ,
-    "valency": [],
-    "phase": "",
+Caesium = {
+    "name": ["caesium","cesium"],
+    "appearance": "pale gold",
+    "atomic number": 55,
+    "symbol": "Cs",
+    "atomic weight": 132.90545196,
+    "group": 1,
+    "period": 6,
+    "block": "s-block",
+    "classification": "alkali metal",
+    "shells": 6,
+    "electrons per shell": [2,8,18,18,8,1],
+    "valence electrons": 1,
+    "valency": 1,
+    "phase": "solid",
     "melting point":{
-        "Fahrenheit": ,
-        "Celsius": ,
-        "Kelvin": },        
+        "Fahrenheit": 83.3,
+        "Celsius": 28.5,
+        "Kelvin": 301.7},        
     "boiling point": {
-        "Fahrenheit": ,
-        "Celsius": ,
-        "Kelvin": },
-    "density : {
-        "solid (g/cm^3)": ,
-        "liquid" (@ m.p.) (g/cm^3): ,},
-    "triple point" : {
-        "Temperature (Kelvin)": ,
-        "Pressure (kPa)": },
+        "Fahrenheit": 1240,
+        "Celsius": 671,
+        "Kelvin": 944},
+    "density" : {
+        "solid (g/cm^3)": 1.93,
+        "liquid (@ m.p.) (g/cm^3)": 1.843},
     "critical point": {
-        "Temperature (Kelvin)": ,
-        "Pressure (MPa)": },
-    "heat of fusion (kJ/mol)": ,
-    "heat of vaporization (kJ/mol)": ,
-    "molar heat capacity (J/(mol*K))": ,
+        "Temperature (Kelvin)": 1938,
+        "Pressure (MPa)": 9.4},
+    "heat of fusion (kJ/mol)": 2.09,
+    "heat of vaporization (kJ/mol)": 63.9,
+    "molar heat capacity (J/(mol*K))": 32.210,
     "vapor pressure (Pa) to temp (K)": {
-        1: ,
-        10: ,
-        100: ,
-        1000: ,
-        10000: ,
-        100000: },
-    "oxidation states": [],
-    "electronegativity (Pauling scale)": ,
-    "ionization energies (kJ/mol)": [],
-    "atomic radius (pm)": ,
-    "covalent radius (pm)": ,
-    "Van der Waals radius (pm)": ,
-    "thermal expansion (µm/(m⋅K)) (at 25 °C)": ,
-    "thermal conductivity (W/(m⋅K))": ,
-    "electrical resistivity (nΩ⋅m (at 20 °C))": ,
-    "magnetic ordering": "diamagnetic",
-    "molar magnetic susceptibility (cm^3/mol)": ,
-    "Young's modulus (GPa)": ,
-    "shear modulus (GPa)": ,
-    "bulk modulus (GPa)": ,
-    "poisson ratio": ,
-    "mohs hardness": ,
-    "vickers hardness (MPa)": ,
-    "brinell hardness (MPa)": ,
+        1: 418,
+        10: 469,
+        100: 534,
+        1000: 623,
+        10000: 750,
+        100000: 940},
+    "oxidation states": [-1,1],
+    "electronegativity (Pauling scale)": 0.79,
+    "ionization energies (kJ/mol)": [375.7,2234.3,3400],
+    "atomic radius (pm)": 265,
+    "covalent radius (pm)": 244,
+    "Van der Waals radius (pm)": 343,
+    "thermal expansion (µm/(m⋅K)) (at 25 °C)": 97,
+    "thermal conductivity (W/(m⋅K))": 35.9,
+    "electrical resistivity (nΩ⋅m (at 20 °C))": 205,
+    "magnetic ordering": "paramagnetic",
+    "Young's modulus (GPa)": 1.7,
+    "bulk modulus (GPa)": 1.6,
+    "mohs hardness": 0.2,
+    "brinell hardness (MPa)": 0.14,
     }
        
+Barium = {
+    "name": "barium",
+    "appearance": "sivery gray; with a pale yellow tint",
+    "atomic number": 56,
+    "symbol": "Ba",
+    "atomic weight": 137.327,
+    "group": 2,
+    "period": 6,
+    "block": "s-block",
+    "classification": "alkaline earth metal",
+    "shells": 6,
+    "electrons per shell": [2.,8,18,18,2],
+    "valence electrons": 2,
+    "valency": 2,
+    "phase": "solid",
+    "melting point":{
+        "Fahrenheit": 1341,
+        "Celsius": 727,
+        "Kelvin": 1000},        
+    "boiling point": {
+        "Fahrenheit": 3353,
+        "Celsius": 1845,
+        "Kelvin": 2118},
+    "density": {
+        "solid (g/cm^3)": 3.51,
+        "liquid (@ m.p.) (g/cm^3)": 3.338},
+    "heat of fusion (kJ/mol)": 7.12,
+    "heat of vaporization (kJ/mol)": 142,
+    "molar heat capacity (J/(mol*K))": 28.07,
+    "vapor pressure (Pa) to temp (K)": {
+        1: 911,
+        10: 1038,
+        100: 1185,
+        1000: 1388,
+        10000: 1686,
+        100000: 2170},
+    "oxidation states": [1,2],
+    "electronegativity (Pauling scale)": 0.89,
+    "ionization energies (kJ/mol)": [502.9,965.2,3600],
+    "atomic radius (pm)": 222,
+    "covalent radius (pm)": 215,
+    "Van der Waals radius (pm)": 268,
+    "thermal expansion (µm/(m⋅K)) (at 25 °C)": 20.6,
+    "thermal conductivity (W/(m⋅K))": 18.4,
+    "electrical resistivity (nΩ⋅m (at 20 °C))": 332,
+    "magnetic ordering": "paramagnetic",
+    "molar magnetic susceptibility (cm^3/mol)": 20.6*10**-6,
+    "Young's modulus (GPa)": 13,
+    "shear modulus (GPa)": 4.9,
+    "bulk modulus (GPa)": 9.6,
+    "mohs hardness": 1.25,
+    }
+   
+Lanthanum = {
+    "name": "lanthanum",
+    "appearance": "silvery white",
+    "atomic number": 57,
+    "symbol": "La",
+    "atomic weight": 138.90547,
+    "group": 3,
+    "period": 6,
+    "block": "f-block",
+    "classification": "lanthanide",
+    "shells": 6,
+    "electrons per shell": [2,8,18,18,9,2],
+    "valence electrons": 2,
+    "valency": 3,
+    "phase": "solid",
+    "melting point":{
+        "Fahrenheit": 1688,
+        "Celsius": 920,
+        "Kelvin": 1193},        
+    "boiling point": {
+        "Fahrenheit": 6267,
+        "Celsius": 3464,
+        "Kelvin": 3737},
+    "density" : {
+        "solid (g/cm^3)": 6.162,
+        "liquid (@ m.p.) (g/cm^3)": 5.94},
+    "heat of fusion (kJ/mol)": 6.20,
+    "heat of vaporization (kJ/mol)": 400,
+    "molar heat capacity (J/(mol*K))": 27.11,
+    "vapor pressure (Pa) to temp (K)": {
+        1: 2005,
+        10: 2208,
+        100: 2458,
+        1000: 2772,
+        10000: 3178,
+        100000: 3726},
+    "oxidation states": [0,1,2,3],
+    "electronegativity (Pauling scale)": 1.10,
+    "ionization energies (kJ/mol)": [538.1,1067,1850.3],
+    "atomic radius (pm)": 187,
+    "covalent radius (pm)": 207,
+    "thermal expansion (µm/(m⋅K)) (at 25 °C)": 12.1,
+    "thermal conductivity (W/(m⋅K))": 13.4,
+    "electrical resistivity (nΩ⋅m (at 20 °C))": 615,
+    "magnetic ordering": "paramagnetic",
+    "molar magnetic susceptibility (cm^3/mol)": 118.0*10**-6,
+    "Young's modulus (GPa)": 36.6,
+    "shear modulus (GPa)": 14.3,
+    "bulk modulus (GPa)": 27.9,
+    "poisson ratio": 0.280,
+    "mohs hardness": 2.5,
+    "vickers hardness (MPa)": [360,1750],
+    "brinell hardness (MPa)": [350, 400],
+    }
+   
+Cerium = {
+    "name": "cerium",
+    "appearance": "silvery white",
+    "atomic number": 58,
+    "symbol": "Ce",
+    "atomic weight": 140.116,
+    "group": "-",
+    "period": 6,
+    "block": "f-block",
+    "classification": "lanthanide",
+    "shells": 6,
+    "electrons per shell": [2,8,18,19,9,2],
+    "valence electrons": 2,
+    "valency": 4,
+    "phase": "solid",
+    "melting point":{
+        "Fahrenheit": 1463,
+        "Celsius": 795,
+        "Kelvin": 1068},        
+    "boiling point": {
+        "Fahrenheit": 6229,
+        "Celsius": 3443,
+        "Kelvin": 3716},
+    "density" : {
+        "solid (g/cm^3)": 6.770,
+        "liquid (@ m.p.) (g/cm^3)": 6.55},
+    "heat of fusion (kJ/mol)": 5.46,
+    "heat of vaporization (kJ/mol)": 398,
+    "molar heat capacity (J/(mol*K))": 26.94,
+    "vapor pressure (Pa) to temp (K)": {
+        1: 1992,
+        10: 2194,
+        100: 2442,
+        1000: 2754,
+        10000: 3159,
+        100000: 3705},
+    "oxidation states": [1,2,3,4],
+    "electronegativity (Pauling scale)": 1.12,
+    "ionization energies (kJ/mol)": [534.4,1050,1949],
+    "atomic radius (pm)": 181.8,
+    "covalent radius (pm)": 204,
+    "thermal expansion (µm/(m⋅K)) (at 25 °C)": 6.3,
+    "thermal conductivity (W/(m⋅K))": 11.3,
+    "electrical resistivity (nΩ⋅m (at 20 °C))": 828,
+    "magnetic ordering": "paramagnetic",
+    "molar magnetic susceptibility (cm^3/mol)": 2450.0*10**-6,
+    "Young's modulus (GPa)": 33.6,
+    "shear modulus (GPa)": 13.5,
+    "bulk modulus (GPa)": 21.5,
+    "poisson ratio": 0.24,
+    "mohs hardness": 2.5,
+    "vickers hardness (MPa)": [210,470],
+    "brinell hardness (MPa)": [186,412],
+    }
+   
+Praseodymium = {
+    "name": "praseodymium",
+    "appearance": "grayish white",
+    "atomic number": 59,
+    "symbol": "Pr",
+    "atomic weight": 140.90766,
+    "group": "-",
+    "period": 6,
+    "block": "f-block",
+    "classification": "lanthanide",
+    "shells": 6,
+    "electrons per shell": [2,8,18,21,8,2],
+    "valence electrons": 2,
+    "valency": 4,
+    "phase": "solid",
+    "melting point":{
+        "Fahrenheit": 1715,
+        "Celsius": 935,
+        "Kelvin": 1208},        
+    "boiling point": {
+        "Fahrenheit": 5666,
+        "Celsius": 3130,
+        "Kelvin": 3403},
+    "density" : {
+        "solid (g/cm^3)": 6.77,
+        "liquid (@ m.p.) (g/cm^3)": 6.50},
+    "heat of fusion (kJ/mol)": 6.89,
+    "heat of vaporization (kJ/mol)": 331,
+    "molar heat capacity (J/(mol*K))": 27.20,
+    "vapor pressure (Pa) to temp (K)": {
+        1: 1771,
+        10: 1973,
+        100: 2227,
+        1000: 2571,
+        10000: 3054,
+        100000: 3779},
+    "oxidation states": [0,1,2,3,4,5],
+    "electronegativity (Pauling scale)": 1.13,
+    "ionization energies (kJ/mol)": [527,1020,2086],
+    "atomic radius (pm)": 182,
+    "covalent radius (pm)": 203,
+    "thermal expansion (µm/(m⋅K)) (at 25 °C)": 6.7,
+    "thermal conductivity (W/(m⋅K))": 12.5,
+    "electrical resistivity (nΩ⋅m (at 20 °C))": 0.700,
+    "magnetic ordering": "parmagnetic",
+    "molar magnetic susceptibility (cm^3/mol)": 5010.0*10**-6,
+    "Young's modulus (GPa)": 37.3,
+    "shear modulus (GPa)": 14.8,
+    "bulk modulus (GPa)": 28.8,
+    "poisson ratio": 0.281,
+    "vickers hardness (MPa)": [250,745] ,
+    "brinell hardness (MPa)": [250,640],
+    }
+   
+Neodymium = {
+    "name": "neodymium",
+    "appearance": "silvery white",
+    "atomic number": 60,
+    "symbol": "Nd",
+    "atomic weight": 144.242,
+    "group": "-",
+    "period": 6,
+    "block": "f-block",
+    "classification": "lanthanide",
+    "shells": 6,
+    "electrons per shell": [2,8,18,22,8,2],
+    "valence electrons": 2,
+    "valency": 3,
+    "phase": "solid",
+    "melting point":{
+        "Fahrenheit": 1875,
+        "Celsius": 1024,
+        "Kelvin": 1297},        
+    "boiling point": {
+        "Fahrenheit": 5565,
+        "Celsius": 3074,
+        "Kelvin": 3347},
+    "density" : {
+        "solid (g/cm^3)": 7.01,
+        "liquid (@ m.p.) (g/cm^3)": 6.89},
+    "heat of fusion (kJ/mol)": 7.14,
+    "heat of vaporization (kJ/mol)": 289,
+    "molar heat capacity (J/(mol*K))": 27.45,
+    "vapor pressure (Pa) to temp (K)": {
+        1: 1595,
+        10: 1774,
+        100: 1998,
+        1000: 2296,
+        10000: 2715,
+        100000: 3336},
+    "oxidation states": [0,2,3,4],
+    "electronegativity (Pauling scale)": 1.14,
+    "ionization energies (kJ/mol)": [533.1,1040,2130],
+    "atomic radius (pm)": 181,
+    "covalent radius (pm)": 201,
+    "thermal expansion (µm/(m⋅K)) (at 25 °C)": 9.6,
+    "thermal conductivity (W/(m⋅K))": 16.5,
+    "electrical resistivity (nΩ⋅m (at 20 °C))": 643,
+    "magnetic ordering": "paramagnetic",
+    "molar magnetic susceptibility (cm^3/mol)": 4628.0*10**-6,
+    "Young's modulus (GPa)": 41.4,
+    "shear modulus (GPa)": 16.3,
+    "bulk modulus (GPa)": 31.8,
+    "poisson ratio": 0.281,
+    "vickers hardness (MPa)": [345,745],
+    "brinell hardness (MPa)": [265,700],
+    }
+   
  = {
     "name": "",
     "appearance": "",
@@ -2993,7 +3254,7 @@ Tellurium = {
     "shells": ,
     "electrons per shell": [],
     "valence electrons": ,
-    "valency": [],
+    "valency": ,
     "phase": "",
     "melting point":{
         "Fahrenheit": ,
@@ -3003,9 +3264,9 @@ Tellurium = {
         "Fahrenheit": ,
         "Celsius": ,
         "Kelvin": },
-    "density : {
+    "density" : {
         "solid (g/cm^3)": ,
-        "liquid" (@ m.p.) (g/cm^3): ,},
+        "liquid (@ m.p.) (g/cm^3)": },
     "triple point" : {
         "Temperature (Kelvin)": ,
         "Pressure (kPa)": },
@@ -3055,7 +3316,7 @@ Tellurium = {
     "shells": ,
     "electrons per shell": [],
     "valence electrons": ,
-    "valency": [],
+    "valency": ,
     "phase": "",
     "melting point":{
         "Fahrenheit": ,
@@ -3065,9 +3326,9 @@ Tellurium = {
         "Fahrenheit": ,
         "Celsius": ,
         "Kelvin": },
-    "density : {
+    "density" : {
         "solid (g/cm^3)": ,
-        "liquid" (@ m.p.) (g/cm^3): ,},
+        "liquid (@ m.p.) (g/cm^3)": },
     "triple point" : {
         "Temperature (Kelvin)": ,
         "Pressure (kPa)": },
@@ -3117,7 +3378,7 @@ Tellurium = {
     "shells": ,
     "electrons per shell": [],
     "valence electrons": ,
-    "valency": [],
+    "valency": ,
     "phase": "",
     "melting point":{
         "Fahrenheit": ,
@@ -3127,9 +3388,9 @@ Tellurium = {
         "Fahrenheit": ,
         "Celsius": ,
         "Kelvin": },
-    "density : {
+    "density" : {
         "solid (g/cm^3)": ,
-        "liquid" (@ m.p.) (g/cm^3): ,},
+        "liquid (@ m.p.) (g/cm^3)": },
     "triple point" : {
         "Temperature (Kelvin)": ,
         "Pressure (kPa)": },
@@ -3179,7 +3440,7 @@ Tellurium = {
     "shells": ,
     "electrons per shell": [],
     "valence electrons": ,
-    "valency": [],
+    "valency": ,
     "phase": "",
     "melting point":{
         "Fahrenheit": ,
@@ -3189,9 +3450,9 @@ Tellurium = {
         "Fahrenheit": ,
         "Celsius": ,
         "Kelvin": },
-    "density : {
+    "density" : {
         "solid (g/cm^3)": ,
-        "liquid" (@ m.p.) (g/cm^3): ,},
+        "liquid (@ m.p.) (g/cm^3)": },
     "triple point" : {
         "Temperature (Kelvin)": ,
         "Pressure (kPa)": },
@@ -3241,7 +3502,7 @@ Tellurium = {
     "shells": ,
     "electrons per shell": [],
     "valence electrons": ,
-    "valency": [],
+    "valency": ,
     "phase": "",
     "melting point":{
         "Fahrenheit": ,
@@ -3251,9 +3512,9 @@ Tellurium = {
         "Fahrenheit": ,
         "Celsius": ,
         "Kelvin": },
-    "density : {
+    "density" : {
         "solid (g/cm^3)": ,
-        "liquid" (@ m.p.) (g/cm^3): ,},
+        "liquid (@ m.p.) (g/cm^3)": },
     "triple point" : {
         "Temperature (Kelvin)": ,
         "Pressure (kPa)": },
@@ -3289,5 +3550,3 @@ Tellurium = {
     "vickers hardness (MPa)": ,
     "brinell hardness (MPa)": ,
     }
-
-
