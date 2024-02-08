@@ -136,6 +136,8 @@ in ionic bonds the metals lose their valence electrons and give to nonmetals/met
 
 Have them give up their valence electrons until outermost shell == 8
 
+"""
+
 {
  "hydrogen": {
      "appearance": "colorless gas",
