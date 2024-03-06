@@ -14,9 +14,9 @@ pygame.display.set_caption("SHOOTER")       #Name of the game
 
 enemy_count = 1  #set default enemy number
 #starting position of triangle
-point1 = [WIDTH/4 - WIDTH/16, HEIGHT/2 - HEIGHT/16]
-point2 = [WIDTH/4, HEIGHT/2]
-point3 = [WIDTH/4 - WIDTH/16, HEIGHT/2 + HEIGHT/16]
+point1 = [WIDTH/8 - WIDTH/16, HEIGHT/2 - HEIGHT/16]
+point2 = [WIDTH/8, HEIGHT/2]
+point3 = [WIDTH/8 - WIDTH/16, HEIGHT/2 + HEIGHT/16]
 
 triangle_vertices = [point1, point2, point3]
 
@@ -63,10 +63,11 @@ running = True
 xr = [-1,1]
 yr = [-1,1]
 
+vel_x = random.choice(xr)
+vel_y = random.choice(yr)
+
 player_health = 3
 enemy_health = 3
-
-
 
 GAME_OVER = False   # WHEN SOMEONE WINS MAKE THIS TRUE AND HAVE A MESSAGE POP UP 
 while not GAME_OVER:
@@ -91,18 +92,19 @@ while not GAME_OVER:
                 point[0] += velocity
                 
         if keys[pygame.K_SPACE]:
-            if len(bullets) < 5:        # NUMBER OF BULLTS ALLOWED, DELETE FOR INFINITE
+            if len(bullets) == 0 :        # NUMBER OF BULLTS ALLOWED, DELETE FOR INFINITE
                 bullets.append(Projectile(triangle_vertices[1][0], triangle_vertices[1][1], 10, 'yellow'))
+            if len(bullets) > 0 and len(bullets) < 2:
+                for bullet in bullets:
+                    if bullet.x > triangle_vertices[1][0] + WIDTH/2:   
+                        bullets.append(Projectile(triangle_vertices[1][0], triangle_vertices[1][1], 10, 'yellow'))
         
         for bullet in bullets:                   #THIS BLOCK CAUSES THE BULLETS TO FLY
             if bullet.x < WIDTH and bullet.x > 0:
-                bullet.x += velocity * 4  #This causes the bullets to move
+                bullet.x += velocity * 3  #This causes the bullets to move
             else:
                 bullets.pop(bullets.index(bullet))  #ONCE BULLET HITS EDGE IT DISAPPEARS        
-        
-        if keys[pygame.K_ESCAPE]:
-            pygame.quit()
-          
+                  
         if pygame.time.get_ticks() % 50 == 0:
             vel_x = random.choice(xr)
             vel_y = random.choice(yr)
@@ -126,24 +128,30 @@ while not GAME_OVER:
         elif enemy_triangle[2][1] >= HEIGHT: #check bottom wall
             for point in enemy_triangle:      
                 point[1] -= velocity * 2
-        if len(enemy_bullets) < 7:        # NUMBER OF BULLTS ALLOWED, DELETE FOR INFINITE
-            enemy_bullets.append(Projectile(enemy_triangle[1][0], enemy_triangle[1][1], 10, "yellow"))
-            for bullet in enemy_bullets:                   #THIS BLOCK CAUSES THE BULLETS TO FLY
-                if bullet.x < WIDTH and bullet.x > 0:    #
-                    bullet.x -= velocity * 1  #This causes the bullets to move
-                else:
-                    enemy_bullets.pop(enemy_bullets.index(bullet))  #ONCE BULLET HITS EDGE IT DISAPPEARS
+        if len(enemy_bullets) == 0 :        # NUMBER OF BULLTS ALLOWED, DELETE FOR INFINITE
+            enemy_bullets.append(Projectile(enemy_triangle[1][0], enemy_triangle[1][1], 10, 'yellow'))
+        if len(enemy_bullets) > 0 and len(enemy_bullets) < 2:
+            for bullet in enemy_bullets:
+                if bullet.x < enemy_triangle[1][0] - WIDTH/2:   
+                    enemy_bullets.append(Projectile(enemy_triangle[1][0], enemy_triangle[1][1], 10, 'yellow'))
+                    
+        for bullet in enemy_bullets:                   #THIS BLOCK CAUSES THE BULLETS TO FLY
+            if bullet.x < WIDTH and bullet.x >= 0:
+                bullet.x -= velocity * 4  #This causes the bullets to move
+            else:
+                enemy_bullets.pop(enemy_bullets.index(bullet))  #ONCE BULLET HITS EDGE IT DISAPPEARS        
         redrawGameWindow()  
     
-    
+        if len(bullets) > 0:
+            for bullet in bullets:
+                if bullet.x + bullet.radius >= enemy_triangle[1][0] and bullet.x + bullet.radius <= enemy_triangle[0][0] and bullet.y + bullet.radius >= enemy_triangle[1][1] and bullet.y + bullet.radius <= enemy_triangle[0][1]:
+                    bullets.pop(bullets.index(bullet))
+                    enemy_health -= 1
+                else: 
+                    pass
+            
         """
-        Problem: Everything works except the enemy bullets are stop moving
-        
-        It doesn't matter where the triangle spawns from it always only goes a certain
-        distance then stops
-        
-        Might have to do with ticks.
-      
+        Bullet not disappearing when hits enemy triangle
         """
 
         if keys[pygame.K_ESCAPE]:
