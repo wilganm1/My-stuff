@@ -2,6 +2,8 @@ import pygame
 import random
 import time
 import os
+import math
+
 pygame.font.init()
 
 pygame.init()
@@ -29,7 +31,7 @@ enemy_point2 = [WIDTH * 0.75 - random_x, HEIGHT/2 - random_y]
 enemy_point3 = [WIDTH * 0.75 + WIDTH/16 - random_x, HEIGHT/2 + HEIGHT/16 - random_y]
 enemy_triangle = [enemy_point1, enemy_point2, enemy_point3]
        
-velocity = 6
+velocity = 10
 bg = pygame.image.load('C:/Users/WilganZMT/Pictures/black screen.png') 
         #######    NEED THIS    #######
         
@@ -68,6 +70,10 @@ vel_y = random.choice(yr)
 
 player_health = 3
 enemy_health = 3
+
+random_fire = [40,50,60,70,80,90] 
+fire_choice = random.choice(random_fire)     
+
 
 GAME_OVER = False   # WHEN SOMEONE WINS MAKE THIS TRUE AND HAVE A MESSAGE POP UP 
 while not GAME_OVER:
@@ -128,13 +134,11 @@ while not GAME_OVER:
         elif enemy_triangle[2][1] >= HEIGHT: #check bottom wall
             for point in enemy_triangle:      
                 point[1] -= velocity * 2
-        if len(enemy_bullets) == 0 :        # NUMBER OF BULLTS ALLOWED, DELETE FOR INFINITE
-            enemy_bullets.append(Projectile(enemy_triangle[1][0], enemy_triangle[1][1], 10, 'yellow'))
-        if len(enemy_bullets) > 0 and len(enemy_bullets) < 2:
-            for bullet in enemy_bullets:
-                if bullet.x < enemy_triangle[1][0] - WIDTH/2:   
-                    enemy_bullets.append(Projectile(enemy_triangle[1][0], enemy_triangle[1][1], 10, 'yellow'))
-                    
+                
+        random_fire = [40,50,60,70]
+        fire_choice = random.choice(random_fire)
+        if pygame.time.get_ticks() % fire_choice == 0:
+            enemy_bullets.append(Projectile(enemy_triangle[1][0], enemy_triangle[1][1], 10, 'yellow'))                    
         for bullet in enemy_bullets:                   #THIS BLOCK CAUSES THE BULLETS TO FLY
             if bullet.x < WIDTH and bullet.x >= 0:
                 bullet.x -= velocity * 4  #This causes the bullets to move
@@ -144,14 +148,35 @@ while not GAME_OVER:
     
         if len(bullets) > 0:
             for bullet in bullets:
-                if bullet.x + bullet.radius >= enemy_triangle[1][0] and bullet.x + bullet.radius <= enemy_triangle[0][0] and bullet.y + bullet.radius >= enemy_triangle[1][1] and bullet.y + bullet.radius <= enemy_triangle[0][1]:
+                if bullet.x >= enemy_triangle[1][0] and bullet.x <= enemy_triangle[0][0] and bullet.y >= enemy_triangle[1][1] and bullet.y <= enemy_triangle[0][1]:
                     bullets.pop(bullets.index(bullet))
                     enemy_health -= 1
                 else: 
                     pass
             
         """
-        Bullet not disappearing when hits enemy triangle
+        
+        Bullet not disappearing when hitting triangle
+        
+        Make it so that any pixel inside the are of the cirlce counts
+        
+        bullet area = math.pi * 10 ** 2
+        
+        
+        collison: 
+            
+        if any point of the circumference of the bullet touches 
+        any point of the triangle then collision = True
+        
+        The point of contact has (x,y) coordinates
+        
+        So basically the radius has to touch the triangle.
+        The radius has an x displacement and a y displacement.
+        
+        Just use pythagorian's theorem. Round down to nearest pixel
+        
+        
+        
         """
 
         if keys[pygame.K_ESCAPE]:
