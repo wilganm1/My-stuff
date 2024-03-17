@@ -17,14 +17,18 @@ Syntax:
 {}          -code block for closed off code
 
 Data types:
-"String"			-read as words. Requires "" or ''
-Numeric			-number values
-Boolean   		-whether something is true or not.
+"String"     -read as words. Requires "" or ''
+Numeric	     -number values
+Boolean      -whether something is true or not.
 objects      -like dictionaries in Python
 
 typeof        -returns what type of data a piece of code is
+console.log(typeof "Whatever");
+window.print()     -prints page 
+prompt("text")     -asks for an input
+alert(~~)          -makes an alert message pop up on screen
 
-Type converstion:
+Type conversion:
 Number(x)      -converts x to a number
   Number(false)  -returns 0;
   Number(true)   -returns 1;
@@ -55,7 +59,6 @@ Arithmatic operators:
 
 console.log();         -Prints data onto console
 document.write()       -writes characters onto document
-.getElementById("~~")   -can grab an HTML element by its Id name
 
 console.log('Go Fu ' + 'ck Yourself');
 --> Go Fuck Yourself
@@ -70,9 +73,9 @@ Variables allow us to save any data to a name to access later
 Use words var, let, and const 
 
  var variableName = whatever    //assings whatever to variable
-     var myName = "Mitch"       //Sets a variable.
+     var myName = "xx"       //Sets a variable.
      console.log(myName);
-       --> "Mitch"                 //prints out myName variable
+       --> "xx"                 //prints out myName variable
 
   You can redeclare a variable assigned using var
   Chaning variables using var changes it in all scopes
@@ -117,11 +120,11 @@ Array methods:
 Can change a list by chaning, adding, or removing elements.
     list[3] = 'D';
      --> ['A','B','C','D'];   //changes 'E' to 'D';
-   -.push()            -adds items to the end of array.
+   -.push()           -adds items to the end of array.
   list.push('F','G');
-   -->['A','B','C','D','F','G']
-   -.pop()             -Removes last item in an array.
-                   -logging the pop only returns what was removed.;
+     -->['A','B','C','D','F','G']
+   -.pop()            -Removes last item in an array.
+                      -logging the pop only returns what was removed.;
  -.splice(index,n,x)  -removes index positions. n= # to delete. X adds in
  -.slice(i1, i2)      -copies data to new array. starts at i1, ends at i2+1
 
@@ -139,11 +142,6 @@ Spread operator [...~~~]      -Copies an entire array
 
 -------------------------------Methods------------------------------------
 Methods are built-in fucntions. Use by adding a . after a variable/instance
-
-Format:   methodName(argument) {
-	property(argument)}
-
-	addNew(new) {this._new.push(new)}
 	
 Example:
 	console.log('hello'.toUpperCase());  -Uppcase every letter
@@ -151,8 +149,8 @@ Example:
 
  .toUpperCase()      -Uppercases all letters
  .toLowerCase()      -lowercases all letters
- .random() 		   	   -generates random number.
- .length()		   	   -How long a list/array is.
+ .random() 	     -generates random number.
+ .length()	     -How long a list/array is.
  .indexOf("")        -find the index of a variable or string
  .replace(X, Y)      -replaces X with Y
  .pop()              -removes last position of an array
@@ -165,13 +163,17 @@ Example:
 ---------------------------------DATE-------------------------------------
 How to get the date.;
 
- var d = new Date();  //can add in "month day, year hour:min:sec:millisec"
-  .getDay()           -gets day of date (0 to 6)
+ var d = new Date();  // YYYY-MM-DDTHH:mm:ss.sssZ
+  .getDate()          -get number of the month
   .getFullYear()      -gets full year
-  .getMonth()         -gets current month.
+  .getMonth()         -gets current month. (0 to 11). + 1 for correct month
+  .getDay()           -gets current day (0 to 6) (Sun - Sat)
   .getHours()         -gets current hours of date
+  .getMinutes()       -get minutes of current hours.
+  .getSeconds()       -gets seconds of current minute
   .getMilliseconds(); -returns millisecond
 
+ Can also set the time for elements by replacing '.get' with '.set'
 -------------------------CONDITIONAL STATEMENTS--------------------------
 Checks a specific condition & performs a task based on condition
 
@@ -241,11 +243,11 @@ condition that is checked for.;
 --------------------------------FUNCTIONS--------------------------------
 Functions are blocks of code we create to do stuff. They can have certain
 parameters that are passed called arguments. Whatever you pass into the
-parameters will be used
+parameters will be used.
 
 Syntax:
   function functionName(parameter1, parameter2) {
-    return whatever }    //return stops the function
+    do whatever here }    //return stops the function
 	  
 You run a function by calling it or assigning it to a variable
 
@@ -263,7 +265,7 @@ You run a function by calling it or assigning it to a variable
 const rectWidth = 10;
 const rectHeight = 6;
  function calculateArea(rectWidth, rectHeight) 
- 			console.log(rectHeight * rectWidth
+ 			console.log(rectHeight * rectWidth)
 
  Example:  function sayThanks(name)
  			{console.log('Thanks ' + name + '.')}
@@ -344,21 +346,20 @@ Loops repeat a command over and over under conditions
         for (number in x) {x + 1;}
 
 
-
--while loops. A loop that always runs until told to stop
+-While loops. A loop that always runs until told to stop
   let counterTwo = 1;
   while (counterTwo < 4) {
     console.log(counterTwo);
     counterTwo++;   //increments counterTwo
 
 Iteration methods  - methods to perform loops 
- - .forEach()			 - Loops every element in an array.;
+ - .forEach()	 - Loops every element in an array.;
   Example:
    const fruits = ['mango', 'papaya', 'pineapple', 'apple'];
    			// Iterate over fruits below
 fruits.forEach(fruit => console.log(`I want to eat a ${fruit}.`));
 
- - .map()				- takes an argument & returns a new array;
+ - .map()		- takes an argument & returns a new array;
   Example:
     const numbers = [1, 2, 3, 4, 5]; 
 
@@ -450,7 +451,7 @@ Like a dictionary in Python.;
 
 -new keyword. Assign variable as an object
  
-   delete operator to delete a value from an object
+-delete keyword. operator to delete a value from an object
    delete spaceship.mission
    delete spaceship['Secret Mission']
 
@@ -484,12 +485,13 @@ Like a dictionary in Python.;
         let hound = new Dog(); 
       //   hound now has all the properites of Dog 
 //   You can also make constructors flexible makning them easier to use
-      -Pass parameters into the function before calling a new object;
+    -Pass parameters into the function before calling a new object;
         function Bird(name, color) {
           this.name = name;
           this.color = color;
           this.numLegs = 2;}
-      -Then pass in your own names and colors into the new object.
+		  
+    -Then pass in your own names and colors into the new object.
         let hawk = new Bird("Hawk", "Brown")
             hawk.name --> //Hawk
             hawk.color --> //Brown
@@ -619,6 +621,7 @@ Events are things that happend to HTML elements when something happens
    -page finished loading
    -input field changed
    -button was clicked
+
 Events are pieces of JavaScript code that change HTML
 
 Syntax:
@@ -628,15 +631,15 @@ You can also use functions as events.
     <button onclick="functionName()">HTML text</button>/
 
 Common HTML events:
-  onchange      An HTML element has been changed
-  onclick       Click an HTML element
-  onmousedown   Hold down the mouse click
-  onmouseover   Move the mouse over an HTML element
-  onmouseout    Move the mouse away from an HTML element
-  onkeydown     The user pushes a keyboard key
-  onload        The browser has finished loading the page
-  onsubmit      When a submit button is pressed
-  onfocus       Input field is foucsed/clicked on
+ -onchange      An HTML element has been changed
+ -onclick       Click an HTML element
+ -onmousedown   Hold down the mouse click
+ -onmouseover   Move the mouse over an HTML element
+ -onmouseout    Move the mouse away from an HTML element
+ -onkeydown     The user pushes a keyboard key
+ -onload        The browser has finished loading the page
+ -onsubmit      When a submit button is pressed
+ -onfocus       Input field is foucsed/clicked on
 
 --------------------------------CLASSES--------------------------------
 Classes are templates for objects
@@ -864,37 +867,49 @@ The DOM is a model of the webpage that separates elements in a tree.;
     "My title"                               Text:       Text:
                                            "My link"  "My header"
 
-With the DOM JavaScript can dynamically change HTML elements
-DOM methods are actions to perform on HTML elements;
-DOM properties are values of HTML elements that you can change;
+With the DOM, JavaScript can dynamically change HTML elements.
 
-Finding HTML Elements;
- document.getElementBy{}  //element is plural if not Id
-  -Id("")              -singular element of specific Id;
-  -ClassName("")       -All elements with a specific class;
-  -TagName("")         -All tags like <div> or <img>
+Most DOM methods start with document.getElementBy
+	
+-Finding HTML Elements;
+  document.getElementBy...  -element is plural if not Id
+   -Id("")              -singular element of specific Id;
+   -ClassName("")       -All elements with a specific class;
+   -TagName("")         -All tags like <div> or <img> <p>
 
-Changing HTML Elements;
- .innerHTML = "new HTML";   //changes what the html tag shows
-  element                      
-  .{attribute} = new value      -change attribute of HTML element
-  .style.{property} = new style  -change CSS style of HTML element
-  .setAttribute(attribute,value) -change attribute value
-  .addEventListener("event", property)  -adds event;
-  .removeEventListener()
+  If you want to select a specific tag put [0] after the ("tag")
 
-Adding & Deleting Elements;
- document              -calls the document 
-  .createElement("tag")     -creates HTML element;
-  .removeChild(element)     -removes HTML element
-  .createTextNode('text')   -creates node with text;
-  .appendChild(element)     -Add an HTML element
-  .replaceChild(new, old)   -replace element;
-  .write(text)              -Adds a new div where <script> is with text;
-  .getElementById('p1').remove()          
+	-Example: Change the FIRST <p></p> text to "Hello"
+
+	   document.getElementsByTagName("p")[0].innerHTML = "Hello";
+	   
+-Changing HTML Elements;
+  document
+   .innerHTML = "new HTML";              -changes what the text of the element             
+   .src	=				 -source of a link <a>
+   .value =				 -value from a form
+   .{attribute} = new value      	 -change attribute of HTML element
+   .style.{property} = new style  	 -change CSS style of HTML element
+   .setAttribute(attribute,value) 	 -change attribute value
+   .addEventListener("event", property)  -adds event;
+   .removeEventListener()	  
+   .style =
+      .color = 			 	 -changes color
+      .fontSize = "Xpx"			 -changes font size  
+
+-Adding & Deleting Elements;
+  document                   -calls the document 
+   .createElement("tag")     -creates HTML element;
+   .removeChild(element)     -removes HTML element
+   .createTextNode('text')   -creates node with text;
+   .appendChild(element)     -Add an HTML element
+   .replaceChild(new, old)   -replace element;
+   .write(text)              -Adds a new div where <script> is with text;
+   .getElementById('p1').remove()          
 
 Adding event handlers in code;
    element.addEventListener(event, function(), useCapture, param1);
+
  This is a shortcut to adding an event. You don't need' to write a 
  function out if you include an action as a parameter;
                            OR
@@ -913,9 +928,9 @@ Adding event handlers in code;
 
 
 Event Bubbling & Event Capturing
- What is the order of events? If you have a <p> inside a <div> and 
- you do a "click" event which element is affected first?
-       This uses the useCapture argument in addEventListener
+  What is the order of events? If you have a <p> inside a <div> and 
+  you do a "click" event which element is affected first?
+        This uses the useCapture argument in addEventListener
 
 -bubbling. Inner-to-outer event handling. useCapture = false. default
        <div onclick=>          //second
@@ -923,7 +938,7 @@ Event Bubbling & Event Capturing
        </div>/
 
 -capturing. Outer-to-inner handling.  useCapture = true
-       <div onclick=>     //first
+       <div onclick=>       //first
          <p onclick =></p>/   //second
        </div>/
 
@@ -937,7 +952,7 @@ Accessing Nodes of the DOM tree.;
   document.documentElement
 
  .nodeName property         -returns the tag name of the node;
- .nodeValue property        -
+ .nodeValue property        
 
 HTML Collection Objects. Return a list of tags or classes;
  When you call getElementsByTagName() it returns an HTMLCollection 
