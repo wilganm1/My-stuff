@@ -1,0 +1,64 @@
+{
+ "brass":{
+     "components percentage": {
+         "copper": 67,
+         "zinc": 33},
+     "melting point":{
+         "fahrenheit": 1710,
+         "celsius": 930,
+         "kelvin": 1203.15},
+     "boiling point":{
+         "fahrenheit": 2012,
+         "celsius": 1100,
+         "kelvin": 1373},
+     },
+ "bronze": {
+     "components percentage":{
+         "copper": 88,
+         "zinc": 12},
+     "melting point":{
+         "fahrenheit": 1670,
+         "celsius": 910,
+         "kelvin":1183},
+     "boiling point":{
+         "fahrenheit": 4172,
+         "celsius": 2300,
+         "kelvin": 2573,}
+         },
+ "316 stainless steel": {
+     "components percentage": {
+         "iron": 69,
+         "chromium": 17,
+         "nickel": 12,
+         "manganese": 1,
+         "silicon": 0.5,
+         "molybdenum": 2.5,
+         "carbon": 0.6},
+     "melting point":{
+         "fahrenheit": 2550,
+         "celsius": 1399,
+         "kelvin": 1672},
+     "boiling point":{
+         "fahrenheit": 4982,
+         "celsius": 2750,
+         "kelvin": 3023}
+     },
+ "304 stainless steel": {
+     "components percentage": {
+         "iron": 70,
+         "chromium": 18,
+         "nickel": 10,
+         "manganese": 1,
+         "silicon": 0.5,
+         "carbon": 0.06},
+     "melting point":{
+         "fahrenheit": 2550,
+         "celsius": 1399,
+         "kelvin": 1672},
+     "boiling point":{
+         "fahrenheit": 4982,
+         "celsius": 2750,
+         "kelvin": 3023
+         } 
+     }
+ }
