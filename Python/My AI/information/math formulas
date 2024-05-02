@@ -1,0 +1,120 @@
+import math
+
+def area_square(length):
+    return length**2
+    
+def area_rectangle(length, width):
+    return length * width
+    
+def area_triangle(base, height):
+    return (base * height) / 2
+
+def area_rhombus(Diagonal, diagonal):
+    return (Diagonal * diagonal) / 2
+
+def area_trapezoid(large_side, small_side, height):
+    return (large_side + small_side) /2 * height
+    
+def area_regular_polygon(perimeter, apothem):
+    return perimeter/2 * apothem
+  
+def area_circle(radius):
+    return 3.14 * (radius**2)
+    
+def area_cone(radius, slant_height):
+    return 3.14 * radius * slant_height
+    
+def area_sphere(radius):
+    return 4 * 3.14 * radius**2    
+
+def volume_cube(length):
+    return length**3
+
+def volume_rectangular_prism(length, width, height):
+    return length * width * height
+    
+def volume_triangular_prism(base, height):
+    return base * height   
+
+def volume_cylinder(radius, height):
+    return 3.14 * radius**2 * height
+
+def volume_cone(base, height):
+    return base/3 * height   
+
+def volume_sphere(radius):
+    return (4/3) * 3.14 * radius**3
+    
+def quadratic_formula(a,b,c):
+    x = (-b + (b**2 - 4*a*c)**0.5)/2*a
+    y = (-b - (b**2 - 4*a*c)**0.5)/2*a
+    return x, y
+
+def foil(a,b,c,d):
+    return a*c + a*d + b*c + b*d
+
+def difference_two_squares(a,b):
+    return a**2 - b**2
+
+def perfect_square(a,b):
+    return a**2 + 2*a*b + b**2
+
+def velocity(distance, time):
+    return distance/2
+
+def acceleration(velocity1,velocity2, time1,time2):
+    return (velocity2 - velocity1) / (time2 - time1)
+
+def density(mass, volume):
+    return mass / volume
+
+def newtown_second_saw(mass, acceleration):
+    return mass * acceleration
+
+def pressure(force, area):
+    return force/area
+
+def kinetic_energy(mass, velocity):
+    return 0.5 * mass * velocity**2
+
+def ohms_law(amplitude, resistance):
+    return amplitude * resistance
+
+def celsius_to_fahrenheit(celsius):
+    return (9/5 * celsius) + 32
+
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * (5/9)
+
+def torque(force, radius, angle=0):
+    return force * radius * math.sin(angle)
+
+def tension(mass, gravity):
+    return mass * gravity
+
+def spring_constant(force, displacement):
+    return -force/displacement
+    
+def spring_potential_energy(force, displacement):
+    return (-force/displacement)/2 * displacement**2
+
+def strain_energy(compression):
+    return compression / 2
+
+def friction_force(coefficient_of_friction, force):
+    return coefficient_of_friction * force
+
+def gravitational_force(mass1, mass2, distance):
+    return (6.67*10**-11) * (mass1 * mass2)/distance**2
+
+def water_pressure(density, depth):
+    return density * 9.81 * depth
+
+def potential_energy(mass, height):
+    return mass * 9.81 * height
+
+def molarity(solute_moles,solution_liters):
+    return solute_moles/solution_liters
+
+def molality(solute_moles, solvent_kilograms):
+    return solute_moles/solvent_kilograms
