@@ -1,5 +1,7 @@
 import math
 
+""" dimensions """
+
 def area_square(length):
     return length**2
     
@@ -44,11 +46,13 @@ def volume_cone(base, height):
 
 def volume_sphere(radius):
     return (4/3) * 3.14 * radius**3
-    
+
+""" algebra """
+
 def quadratic_formula(a,b,c):
-    x = (-b + (b**2 - 4*a*c)**0.5)/2*a
-    y = (-b - (b**2 - 4*a*c)**0.5)/2*a
-    return x, y
+    x1 = (-b + (b**2 - 4*a*c)**0.5) / 2*a
+    x2 = (-b - (b**2 - 4*a*c)**0.5) / 2*a
+    return x1, x2
 
 def foil(a,b,c,d):
     return a*c + a*d + b*c + b*d
@@ -58,6 +62,8 @@ def difference_two_squares(a,b):
 
 def perfect_square(a,b):
     return a**2 + 2*a*b + b**2
+
+""" physics """
 
 def velocity(distance, time):
     return distance/2
@@ -77,14 +83,11 @@ def pressure(force, area):
 def kinetic_energy(mass, velocity):
     return 0.5 * mass * velocity**2
 
-def ohms_law(amplitude, resistance):
-    return amplitude * resistance
+def work(force, distance, angle=0):
+    return force * distance * math.cos(angle)
 
-def celsius_to_fahrenheit(celsius):
-    return (9/5 * celsius) + 32
-
-def fahrenheit_to_celsius(fahrenheit):
-    return (fahrenheit - 32) * (5/9)
+def power(force, distance, angle=0, time):
+    return (force * distance) * angle / time
 
 def torque(force, radius, angle=0):
     return force * radius * math.sin(angle)
@@ -107,6 +110,15 @@ def friction_force(coefficient_of_friction, force):
 def gravitational_force(mass1, mass2, distance):
     return (6.67*10**-11) * (mass1 * mass2)/distance**2
 
+def ohms_law(amplitude, resistance):
+    return amplitude * resistance
+
+def celsius_to_fahrenheit(celsius):
+    return (9/5 * celsius) + 32
+
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) * (5/9)
+
 def water_pressure(density, depth):
     return density * 9.81 * depth
 
@@ -119,9 +131,12 @@ def molarity(solute_moles,solution_liters):
 def molality(solute_moles, solvent_kilograms):
     return solute_moles/solvent_kilograms
 
+""" optics """
+
 def magnification(image_size, actual_size):
     return image_size/actual_size
 
-
+def lens_formula(object_distance, image_distance):
+    return 1 / (1/object_distance + 1/image_distance)
     
 
