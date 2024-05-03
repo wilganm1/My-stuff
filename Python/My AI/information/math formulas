@@ -68,7 +68,7 @@ def acceleration(velocity1,velocity2, time1,time2):
 def density(mass, volume):
     return mass / volume
 
-def newtown_second_saw(mass, acceleration):
+def newtown_second_law(mass, acceleration):
     return mass * acceleration
 
 def pressure(force, area):
@@ -118,3 +118,10 @@ def molarity(solute_moles,solution_liters):
 
 def molality(solute_moles, solvent_kilograms):
     return solute_moles/solvent_kilograms
+
+def magnification(image_size, actual_size):
+    return image_size/actual_size
+
+
+    
+
