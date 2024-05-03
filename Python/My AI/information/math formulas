@@ -131,12 +131,11 @@ def molarity(solute_moles,solution_liters):
 def molality(solute_moles, solvent_kilograms):
     return solute_moles/solvent_kilograms
 
-""" optics """
+""" optics https://www.newport.com/n/optics-formulas """
 
 def magnification(image_size, actual_size):
     return image_size/actual_size
 
 def lens_formula(object_distance, image_distance):
     return 1 / (1/object_distance + 1/image_distance)
-    
 
