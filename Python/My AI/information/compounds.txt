@@ -72,202 +72,198 @@ Magnesium nitrate,	148.313, 	Mg(NO3)2,
 Silicon dioxide,	60.083, 	SiO2,
 Acetone,	58.08, 	C3H6O,
 Hydroquinone,	110.11, 	C6H6O2,
-Pyridine,	79.1, 	C5H5N,
+Pyridine,	79.1, 	C5H5N,,
 Ammonium acetate,	77.083, 	C2H3O2NH4,
-Xylene,	106.16, 	C8H10
-Barium sulfate,	233.38, 	BaSO4
-Benzene,	78.11, 	C6H6
-Bicarbonate,	61.016, 	CHO3–
-Chromate,	15.992, 	CrO42-
-Methyl Ethyl Ketone,	72.107, 	C4H8O
-Cyanide,	26.02, CN,
-Trichloroacetic acid,	163.38, 	C2HCl3O2
-Magnesium sulfate,	120.361, 	MgSO4
-Methanol,	32.04, 	CH3OH
-Oxygen,	15.999, 	O
-Methylene blue,	319.85, 	C16H18ClN3S
-Sodium sulfite,	126.043, 	Na2SO3
-Sulfur trioxide,	80.057, 	SO3
-Aluminum phosphate,	121.951, 	AlPO4
-Stearic acid,	284.484, 	C18H36O2
-Dinitrogen monoxide,	44.013, 	N2O
-Titanium dioxide,	233.38, 	TiO2
-Acetonitrile,	41.053, 	C2H3N
-Oxalic acid,	90.03, 	H2C2O4
-Potassium dichromate,	294.185, 	K2Cr2O7
-Sodium bromide,	102.894, 	NaBr
-Sodium hypochlorite,	74.439, 	NaClO
-Zinc acetate,	183.48, 	Zn(CH3COO)2(H2O)2
-Zinc chloride,	136.286, 	ZnCl2
-Zinc hydroxide,	99.424,	Zn(OH)2
-Magnesium carbonate,	84.313, 	MgCO3
-Potassium chlorate,	122.545, 	KClO3
-Hydrazine,	32.0452, 	N2H4
-Ascorbic acid,	176.12, 	C6H8O6
-Benzoic acid,	122.12, 	C7H6O2
-Resorcinol,	110.1, 	C6H6O2
-Chlorine,	‎70.9, 	Cl2
-Maleic acid,	116.072, 	C4H4O4
-Sodium metabisulfite,	190.107, 	Na2S2O5
-Acetamide,	59.068,	C2H5NO
-Sodium silicate,	122.062, 	(Na2O)x·SiO2
-Nitrite,	46.005, 	NO2
-Phosphate,	94.9714, 	PO43-
-Dichloromethane,	84.93, 	CH2Cl2
-Carbon Disulfide,	76.13, 	CS2
-Potassium chromate,	194.189, 	CrK2O4
-Zinc sulfate,	161.436, 	ZnSO4
-Iodine, 126.90, 	I
-Tannic acid,	1701.19, 	C76H52O46
-Aluminum,	26.982, 	Al
-Perchloric acid,	100.46, 	HClO4
-Hypochlorite,	51.449, 	ClO
-Potassium Bromide,	119.002, 	KBr
-Chromic acid,	118.01, 	H2CrO4
-Dihydrogen monoxide,	18.01528, 	OH2
-Methyl acetate,	74.079, 	C3H6O2
-Dimethyl sulfoxide,	78.13, 	C2H6OS
-Hexane, 86.18, C6H14
-Eugenol,	164.2,	C10H12O2
-Manganese dioxide,	86.9368, 	MnO2
-Lactic acid,	90.078, 	C3H6O3
-Sodium potassium tartrate,	282.1, 	C4H4O6KNa·4H2O
-Hexamine,	140.186, C6H12N4
-Lithium hydroxide,	23.95, 	LiOH
-Phosphorus pentachloride,	208.24, 	PCl5
-Potassium oxide,	94.2, 	K2O
-Monopotassium phosphate,	136.084, 	KH2PO4
-Silver acetate,	166.91, 	AgC2H3O2
-Sodium citrate,	258.06, 	Na3C6H5O7
-Sodium fluoride,	41.98817, 	NaF
-Sodium nitrite,	68.9953, 	NaNO2
-Sulfate, 96.06, 	SO4
-Barium carbonate,	197.34, 	BaCO3
-Calcium iodide,	293.887, 	CaI2
-Hydrogen sulfate,	97.064, 	HSO4
-Lithium oxide,	29.88,	Li2O
-Dimethylglyoxime,	116.12, 	C4H8N2O2
-Potassium Permanganate,	158.034, 	KMnO4
-Silver phosphate,	418.58, 	Ag3PO4
-Ammonium bromide,	97.943, 	NH4Br
-Calcium phosphate,	310.18, 	Ca3(PO4)2
-Dichromate,	294.185, 	K2Cr2O7
-Aluminum sulfide,	150.158, 	Al2S3
-Ammonium carbonate,	96.086, 	(NH4)2CO3
-Barium chloride,	208.23, 	BaCl2
-Nitrogen monoxide,	30.006, 	NO
-Fructose,	180.16, 	C6H12O6
-Magnesium iodide,	278.1139, 	MgI2
-Magnesium sulfide,	56.38, MgS
-Ozone,	48, 	O3
-Potassium cyanide,	65.12, 	KCN
-Silver oxide,	231.735, Ag2O
-Sodium chromate,	161.97, 	Na2CrO4
-Sodium peroxide,	77.98,	Na2O2
-Toluene, 92.14, 	C7H8
-Zinc carbonate,	125.388, 	ZnCO3
-Zinc phosphate,	386.11, 	Zn3(PO4)2
-Zinc sulfide,	97.474, 	ZnS
-Para dichlorobenzene,	147.01, 	C6H4Cl2
-Boric acid,	61.83, 	H3BO3
-Oxalate, ‎88.018, 	C2O42
-Potassium bicarbonate,	100.114, 	KHCO3
-Potassium hypochlorite,	90.55, 	KClO
-Potassium nitrite,	85.103, 	KNO2
-Bromothymol Blue,	624.384, 	C27H28Br2O5S
-Ammonium iodide,	144.94, 	NH4I
-Ammonium nitrite	64.06 	NH4NO2
-Ammonium oxide	52.0763 	(NH4)2O
-Argon gas	39.948 	Ar
-Barium bromide	297.14 	BaBr2
-Barium iodide	391.136 	BaI2
-Bromate	127.901 	BrO3–
-Dinitrogen trioxide	76.01 	N2O3
-Ethylene glycol	62.07 	C2H6O2
-Nickel sulfate	154.75 	NiSO4
-Helium	atomic mass ‎4.002602 u	He
-Iodide	253.809 	I
-Lead ii acetate	‎325.29 	Pb(C2H3O2)2
-Lithium chloride	42.394 	LiCl
-Phosphate ion	94.9714 	PO43-
-Potassium fluoride	58.0967 	KF
-Potassium sulfite	158.26 	K2SO3
-Silver carbonate	275.7453 	Ag2CO3
-Sodium cyanide	49.0072 	NaCN
-Sodium nitride	82.976 	Na3N
-Strontium chloride	158.52 	SrCl2
-Strontium nitrate	211.628 	Sr(NO3)2
-Urea	‎60.056 	CH4N2O
-Bleach	‎74.439 	NaClO
-Lithium bromide	86.844 	LiBr
-Aluminum fluoride	83.9767 	AlF3
-Barium fluoride	175.34 	BaF2
-Butanoic acid	88.11 	C4H8O2
-Calcium hydride	42.094 	CaH2
-Copper ii carbonate	123.55 	CuCO3
-Fluorine	18.998403 u	F
-Lithium phosphate	115.79 	Li3PO4
-Glycerol	92.09382 	C3H8O3
-Hypobromous acid	96.911 	HBrO
-Hypoiodous acid	143.89 	HIO
-Lead iodide	461.01 	PbI2
-Lithium iodide	133.844 	LiI
-Magnesium oxide	40.3044 	MgO
-Urethane	89.09 	 C3H7NO2
-Nickel nitrate	182.703 	Ni(NO3)2
-Sodium dichromate	261.97 	Na2Cr2O7
-Tartaric acid	150.087 	C4H6O6
-Zinc iodide	319.22 	ZnI2
-Bromine	54.9380 	Br
-Aluminum bromide	266.69 	AlBr3
-Sodium Percarbonate	157.01 	C2H6Na4O12
-Nickel acetate	178.797 	C4H6O4Ni
-Sodium Thiosulfate	158.11 	Na2S2O3
-Acetaldehyde	44.05 	C2H4O
-Copper sulfate	159.609 	CuSO4
-Mannitol	182.172 	C6H14O6
-Calcium Chloride	110.98 	CaCl2
-Monosodium Glutamate	169.111 	C5H8NO4Na
-Polystyrene	104.1 	(C8H8)n
-Calcium Carbide	64.099 	CaC2
-Tetrachloroethylene	165.83 	C2Cl4
-Sodium Chlorate	106.44 	NaClO3
-Potassium Iodate	214.001 	KIO3
-Lead Acetate	325.29 	Pb(C2H3O2)2
-Potassium Thiocyanate	97.181 	KSCN
-Butane	58.12 	C4H10
-Maltose	342.3 	C12H22O11
-Polyurethane Foam	548.589 	C27H36N2O10
-Formaldehyde	30.031 	CH2O
-Formic Acid	46.03 	HCOOH
-Sulfur Hexafluoride	146.06 	SF6
-Phosphorus Trichloride	137.33 	PCl3
-Ethane	30.07 	C2H6
-Dinitrogen Pentoxide	30.07 	N2O5
-Phosphorous Acid	82 	H3PO3
-Potassium Ferrocyanide	368.35 	K4Fe(CN)6
-Xenon Difluoride	169.29 	XeF2
-Diatomic Bromine	159.808 	Br2
-Phenyl	77.106 	C6H5
-Phosphorus Triiodide	411.6872 	PI3
-Peroxydisulfuric Acid	194.14 	H2S2O8
-Dipotassium Phosphate	174.2 	K2HPO4
-Aluminium hydroxide	78.00 	Al(OH)3
-Ammonium persulfate	228.18 	(NH4)2S2O8
-Sodium borate	201.22 	Na2[B4O5(OH)4]·8H2O
-Chloroacetic acid	94.49 	C2H3O2Cl
-Potassium acetate	98.142 	CH3CO2K
-Barium oxide	153.326 	BaO
-Copper(I) Oxide	143.09 	Cu2O
-Copper Hydroxide	97.561 	Cu(OH)2
-Tin Oxide	97.561 	SnO2
-Chlorine Trifluoride	92.448 	ClF3
-Ethylene	28.054 	C2H4
-Acetylene	26.038 	C2H2
-Chromic Oxide	151.9904 	Cr2O3
-Sodium bisulfate	120.06 	NaHSO4
-Copper (II) chloride	134.45 	CuCl2
-Mercuric chloride	271.52 	HgCl2
-Tin (II) chloride	189.60 	SnCl2
-Propane	44.097 	C3H8
-Lead (IV) oxide	239.1988 	PbO2
+Xylene,	106.16, 	C8H10,
+Barium sulfate,	233.38, 	BaSO4,
+Benzene,	78.11, 	C6H6,
+Bicarbonate,	61.016, 	CHO3,
+Chromate,	15.992, 	CrO42-,
+Methyl Ethyl Ketone,	72.107, 	C4H8O,
+Cyanide,	26.02, CN,,
+Trichloroacetic acid,	163.38, 	C2HCl3O2,
+Magnesium sulfate,	120.361, 	MgSO4,
+Methanol,	32.04, 	CH3OH,
+Oxygen,	15.999, 	O,
+Methylene blue,	319.85, 	C16H18ClN3S,
+Sodium sulfite,	126.043, 	Na2SO3,
+Sulfur trioxide,	80.057, 	SO3,
+Aluminum phosphate,	121.951, 	AlPO4,
+Stearic acid,	284.484, 	C18H36O2,
+Dinitrogen monoxide,	44.013, 	N2O,
+Titanium dioxide,	233.38, 	TiO2,
+Acetonitrile,	41.053, 	C2H3N,
+Oxalic acid,	90.03, 	H2C2O4,
+Potassium dichromate,	294.185, 	K2Cr2O7,
+Sodium bromide,	102.894, 	NaBr,
+Sodium hypochlorite,	74.439, 	NaClO,
+Zinc acetate,	183.48, 	Zn(CH3COO)2(H2O)2,
+Zinc chloride,	136.286, 	ZnCl2,
+Zinc hydroxide,	99.424,	Zn(OH)2,
+Magnesium carbonate,	84.313, 	MgCO3,
+Potassium chlorate,	122.545, 	KClO3,
+Hydrazine,	32.0452, 	N2H4,
+Ascorbic acid,	176.12, 	C6H8O6,
+Benzoic acid,	122.12, 	C7H6O2,
+Resorcinol,	110.1, 	C6H6O2,
+Chlorine,	‎70.9, 	Cl2,
+Maleic acid,	116.072, 	C4H4O4,
+Sodium metabisulfite,	190.107, 	Na2S2O5,
+Acetamide,	59.068,	C2H5NO,
+Sodium silicate,	122.062, 	(Na2O)x·SiO2,
+Nitrite,	46.005, 	NO2,
+Phosphate,	94.9714, 	PO43-,
+Dichloromethane,	84.93, 	CH2Cl2,
+Carbon Disulfide,	76.13, 	CS2,
+Potassium chromate,	194.189, 	CrK2O4,
+Zinc sulfate,	161.436, 	ZnSO4,
+Iodine, 126.90, 	I,
+Tannic acid,	1701.19, 	C76H52O46,
+Aluminum,	26.982, 	Al,
+Perchloric acid,	100.46, 	HClO4,
+Hypochlorite,	51.449, 	ClO,
+Potassium Bromide,	119.002, 	KBr,
+Chromic acid,	118.01, 	H2CrO4,
+Dihydrogen monoxide,	18.01528, 	OH2,
+Methyl acetate,	74.079, 	C3H6O2,
+Dimethyl sulfoxide,	78.13, 	C2H6OS,
+Hexane, 86.18, C6H14,
+Eugenol,	164.2,	C10H12O2,
+Manganese dioxide,	86.9368, 	MnO2,
+Lactic acid,	90.078, 	C3H6O3,
+Sodium potassium tartrate,	282.1, 	C4H4O6KNa·4H2O,
+Hexamine,	140.186, C6H12N4,
+Lithium hydroxide,	23.95, 	LiOH,
+Phosphorus pentachloride,	208.24, 	PCl5,
+Potassium oxide,	94.2, 	K2O,
+Monopotassium phosphate,	136.084, 	KH2PO4,
+Silver acetate,	166.91, 	AgC2H3O2,
+Sodium citrate,	258.06, 	Na3C6H5O7,
+Sodium fluoride,	41.98817, 	NaF,
+Sodium nitrite,	68.9953, 	NaNO2,
+Sulfate, 96.06, 	SO4,
+Barium carbonate,	197.34, 	BaCO3,
+Calcium iodide,	293.887, 	CaI2,
+Hydrogen sulfate,	97.064, 	HSO4,
+Lithium oxide,	29.88,	Li2O,
+Dimethylglyoxime,	116.12, 	C4H8N2O2,
+Potassium Permanganate,	158.034, 	KMnO4,
+Silver phosphate,	418.58, 	Ag3PO4,
+Ammonium bromide,	97.943, 	NH4Br,
+Calcium phosphate,	310.18, 	Ca3(PO4)2,
+Dichromate,	294.185, 	K2Cr2O7,
+Aluminum sulfide,	150.158, 	Al2S3,
+Ammonium carbonate,	96.086, 	(NH4)2CO3,
+Barium chloride,	208.23, 	BaCl2,
+Nitrogen monoxide,	30.006, 	NO,
+Fructose,	180.16, 	C6H12O6,
+Magnesium iodide,	278.1139, 	MgI2,
+Magnesium sulfide,	56.38, MgS,
+Ozone,	48, 	O3,
+Potassium cyanide,	65.12, 	KCN,
+Silver oxide,	231.735, Ag2O,
+Sodium chromate,	161.97, 	Na2CrO4,
+Sodium peroxide,	77.98,	Na2O2,
+Toluene, 92.14, 	C7H8,
+Zinc carbonate,	125.388, 	ZnCO3,
+Zinc phosphate,	386.11, 	Zn3(PO4)2,
+Zinc sulfide,	97.474, 	ZnS,
+Para dichlorobenzene,	147.01, 	C6H4Cl2,
+Boric acid,	61.83, 	H3BO3,
+Oxalate, ‎88.018, 	C2O42,
+Potassium bicarbonate,	100.114, 	KHCO3,
+Potassium hypochlorite,	90.55, 	KClO,
+Potassium nitrite,	85.103, 	KNO2,
+Bromothymol Blue,	624.384, 	C27H28Br2O5S,
+Ammonium iodide,	144.94, 	NH4I,
+Ammonium nitrite,	64.06, 	NH4NO2,
+Ammonium oxide,	52.0763, 	(NH4)2O,
+Argon gas,	39.948, Ar,
+Barium bromide,	297.14, 	BaBr2,
+Barium iodide,	391.136, 	BaI2,
+Bromate,	127.901, 	BrO3–,
+Dinitrogen trioxide,	76.01, 	N2O3,
+Ethylene glycol,	62.07, 	C2H6O2,
+Nickel sulfate,	154.75, 	NiSO4,
+Lead 2 acetate,	‎325.29, 	Pb(C2H3O2)2,
+Lithium chloride,	42.394, 	LiCl,
+Potassium fluoride,	58.0967, 	KF,
+Potassium sulfite,	158.26, 	K2SO3,
+Silver carbonate,	275.7453, 	Ag2CO3,
+Sodium cyanide,	49.0072, 	NaCN,
+Sodium nitride,	82.976, 	Na3N,
+Strontium chloride,	158.52, 	SrCl2,
+Strontium nitrate,	211.628, 	Sr(NO3)2,
+Urea,	‎60.056, 	CH4N2O,
+Bleach,	‎74.439, 	NaClO,
+Lithium bromide,	86.844, 	LiBr,
+Aluminum fluoride,	83.9767, 	AlF3,
+Barium fluoride,	175.34, 	BaF2,
+Butanoic acid,	88.11, 	C4H8O2,
+Calcium hydride,	42.094, 	CaH2,
+Copper 2 carbonate,	123.55, 	CuCO3,
+Lithium phosphate,	115.79, 	Li3PO4,
+Glycerol,	92.09382, 	C3H8O3,
+Hypobromous acid,	96.911, 	HBrO,
+Hypoiodous acid,	143.89, 	HIO,
+Lead iodide,	461.01, 	PbI2,
+Lithium iodide,	133.844, 	LiI,
+Magnesium oxide,	40.3044, 	MgO,
+Urethane,	89.09, C3H7NO2,
+Nickel nitrate,	182.703, 	Ni(NO3)2,
+Sodium dichromate,	261.97, 	Na2Cr2O7,
+Tartaric acid,	150.087, 	C4H6O6,
+Zinc iodide,	319.22, 	ZnI2,
+Bromine,	54.9380, 	Br,
+Aluminum bromide,	266.69, 	AlBr3,
+Sodium Percarbonate,	157.01, 	C2H6Na4O12,
+Nickel acetate,	178.797, 	C4H6O4Ni,
+Sodium Thiosulfate,	158.11, 	Na2S2O3,
+Acetaldehyde,	44.05, 	C2H4O,
+Copper sulfate,	159.609, 	CuSO4,
+Mannitol,	182.172, 	C6H14O6,
+Calcium Chloride,	110.98, 	CaCl2,
+Monosodium Glutamate,	169.111, 	C5H8NO4Na,
+Polystyrene,	104.1, 	(C8H8)n,
+Calcium Carbide,	64.099, 	CaC2,
+Tetrachloroethylene,	165.83, 	C2Cl4,
+Sodium Chlorate,	106.44, 	NaClO3,
+Potassium Iodate,	214.001, 	KIO3,
+Lead Acetate,	325.29, 	Pb(C2H3O2)2,
+Potassium Thiocyanate,	97.181 	KSCN,
+Butane,	58.12, 	C4H10,
+Maltose,	342.3, 	C12H22O11,
+Polyurethane Foam,	548.589, C27H36N2O10,
+Formaldehyde,	30.031, 	CH2O,
+Formic Acid,	46.03, 	HCOOH,
+Sulfur Hexafluoride,	146.06, 	SF6,
+Phosphorus Trichloride,	137.33, 	PCl3
+Ethane,	30.07, 	C2H6,
+Dinitrogen Pentoxide,	30.07, 	N2O5,
+Phosphorous Acid,	82, 	H3PO3,
+Potassium Ferrocyanide,	368.35, 	K4Fe(CN)6,
+Xenon Difluoride,	169.29, 	XeF2,
+Diatomic Bromine,	159.808, 	Br2,
+Phenyl,	77.106, 	C6H5,
+Phosphorus Triiodide,	411.6872, 	PI3,
+Peroxydisulfuric Acid,	194.14, 	H2S2O8,
+Dipotassium Phosphate,	174.2, 	K2HPO4,
+Aluminium hydroxide,	78.00, 	Al(OH)3,
+Ammonium persulfate,	228.18, 	(NH4)2S2O8,
+Sodium borate,	201.22, 	Na2[B4O5(OH)4]·8H2O,
+Chloroacetic acid,	94.49, 	C2H3O2Cl,
+Potassium acetate,	98.142, 	CH3CO2K,
+Barium oxide,	153.326, BaO,
+Copper Oxide,	143.09, 	Cu2O,
+Copper Hydroxide,	97.561, 	Cu(OH)2,
+Tin Oxide,	97.561, SnO2,
+Chlorine Trifluoride,	92.448, 	ClF3,
+Ethylene,	28.054, 	C2H4,
+Acetylene,	26.038, 	C2H2,
+Chromic Oxide,	151.9904, 	Cr2O3,
+Sodium bisulfate,	120.06, 	NaHSO4,
+Copper chloride,	134.45, 	CuCl2,
+Mercuric chloride,	271.52, 	HgCl2,
+Tin chloride,	189.60, 	SnCl2,
+Propane,	44.097, 	C3H8,
+Lead oxide,	239.1988, PbO2,
