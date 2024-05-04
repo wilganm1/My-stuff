@@ -2,6 +2,9 @@ import math
 
 """ dimensions """
 
+def circumference(radius):
+    return 2 * 3.14 * radius
+    
 def area_square(length):
     return length**2
     
@@ -71,14 +74,32 @@ def velocity(distance, time):
 def acceleration(velocity1,velocity2, time1,time2):
     return (velocity2 - velocity1) / (time2 - time1)
 
+def centripetal_acceleration(velocity, radius):
+    return velocity**2 / radius
+
 def density(mass, volume):
     return mass / volume
+
+def pressure(force, area):
+    return force/area
 
 def newtown_second_law(mass, acceleration):
     return mass * acceleration
 
-def pressure(force, area):
-    return force/area
+def momentum(mass, velocity):
+    return mass * velocity
+
+def impulse(force, time):
+    return force * time
+
+def impulse_momentum(mass, velocity1, velocity2):
+    return mass * velocity2 - mass * velocity1
+
+def angular_velocity(position_angle, time):
+    return position_angle/time
+
+def rotational_power(torque, angular_velocity):
+    return torque * angular_velocity
 
 def kinetic_energy(mass, velocity):
     return 0.5 * mass * velocity**2
@@ -86,7 +107,7 @@ def kinetic_energy(mass, velocity):
 def work(force, distance, angle=0):
     return force * distance * math.cos(angle)
 
-def power(force, distance, angle=0, time):
+def power(force, distance, time, angle=0):
     return (force * distance) * angle / time
 
 def torque(force, radius, angle=0):
@@ -94,6 +115,12 @@ def torque(force, radius, angle=0):
 
 def tension(mass, gravity):
     return mass * gravity
+
+def mass_flow_rate(mass, time):
+    return mass/time
+
+def kinematic_viscosity(viscosity, density):
+    return viscosity/density
 
 def spring_constant(force, displacement):
     return -force/displacement
@@ -104,14 +131,26 @@ def spring_potential_energy(force, displacement):
 def strain_energy(compression):
     return compression / 2
 
+def surface_tension(force, length):
+    return force/length
+
+def pendulum_formula(pendulum_length):
+    return 2 * 3.14 * (pendulum_length/9.8)
+
 def friction_force(coefficient_of_friction, force):
     return coefficient_of_friction * force
 
+def bulk_modulus(pressure, original_volume, new_volume):
+    return pressure / ((original_volume - new_volume)/original_volume)
+
+def youngs_modulus(force, area, original_length, new_length):
+    return (force * original_length) / (area * (new_length - original_length))
+
+def shear_modulus(force,area,initial_length, displacement):
+    return (force/area) / (displacement/initial_length)
+
 def gravitational_force(mass1, mass2, distance):
     return (6.67*10**-11) * (mass1 * mass2)/distance**2
-
-def ohms_law(amplitude, resistance):
-    return amplitude * resistance
 
 def celsius_to_fahrenheit(celsius):
     return (9/5 * celsius) + 32
@@ -122,14 +161,29 @@ def fahrenheit_to_celsius(fahrenheit):
 def water_pressure(density, depth):
     return density * 9.81 * depth
 
+def liquid_expansion(beta_expansion_coefficient, original_volume, time_change):
+    return beta_expansion_coefficient * original_volume * time_change
+
+def froude_number(water_velocity, hydraulic_depth):
+    return water_velocity / (9.8 * hydraulic_depth)**0.5
+
 def potential_energy(mass, height):
     return mass * 9.81 * height
+
+def sensible_heat(mass, specific_heat_capacity, temperature_change):
+    return mass * specific_heat_capacity * temperature_change
 
 def molarity(solute_moles,solution_liters):
     return solute_moles/solution_liters
 
 def molality(solute_moles, solvent_kilograms):
     return solute_moles/solvent_kilograms
+
+def lorentz_factor(velocity):
+    return 1 / (1 - (velocity**2 / 29792458**2)**0.5)
+
+def mass_energy_equivalence(mass):
+    return mass * 29792458
 
 """ optics https://www.newport.com/n/optics-formulas """
 
@@ -139,3 +193,22 @@ def magnification(image_size, actual_size):
 def lens_formula(object_distance, image_distance):
     return 1 / (1/object_distance + 1/image_distance)
 
+""" electricity """
+
+def ohms_law(amplitude, resistance):
+    return amplitude * resistance
+
+def coulombs_law(q1,q2,distance):
+    return (8.99 * (10**9)) * ((abs(q1 * q2))/distance**2)
+
+def capacitance(charge, potential_difference):
+    return charge/potential_difference
+    
+def current_density(current, area):
+    return current/area
+
+def faraday_induction(change_magnetic_flux, change_time):
+    return change_magnetic_flux / change_time
+    
+def magnetic_flux(magnetic_field, area_perpendicular, angle = 0):
+    return magnetic_field * area_perpendicular * angle
