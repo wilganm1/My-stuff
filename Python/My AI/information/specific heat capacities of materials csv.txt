@@ -1,0 +1,72 @@
+Material (300K 100 kPa), specific heat capacity (J/kg K)
+air, 1650
+air, 1158
+air, 1073
+air, 1151
+alcohol methyl (wood),2530
+alcohol ethyl (grain), 	2440
+aluminum,897
+ammonia (liquid), 4700
+ammonia (gas), 2060
+argon, 520
+asphalt, 920
+bone, 440
+brass, 375
+brick, 840
+concrete, 880
+copper, 385
+diamond,516
+eggs (chicken), 3180
+freon 12 (liquid), 871
+freon 12 (vapor) 595
+glass (crown),	670
+glass (flint), 503
+glass (pyrex), 753
+gold, 129
+granite, 790
+graphite, 717
+gypsum,	1090
+hydrogen (H2),14,304
+helium,	5193
+iron, 449
+lead, 129
+lithium, 3582
+lucite, 1460
+marble,	880
+mercury,140
+mica, 880
+milk (whole),3850
+neon, 1030
+nickel,	444
+nitrogen (N2),1040
+olive oil, 1790
+oxygen (O2),918
+perlite, 387
+platinum, 133
+plutonium,140
+porcelain,1085
+salt,880
+sand, 835
+scandium,568
+silicon,705
+silver, 	235
+soil (dry),	800
+soil (wet),	1480
+snow, 2090
+teflon, 1172
+tin, 228
+titanium, 523
+tungsten, 132
+uranium, 116
+water (ice −5 °C), 2090
+water (liquid 0 °C), 4217.6
+water (liquid 20 °C), 4181.8
+water (liquid 40 °C), 4178.5
+water (liquid 60 °C), 4184.3
+water (liquid 80 °C), 4196.3
+water (liquid 100 °C), 4215.9
+water (vapor 0 °C), 3909.2
+water (vapor 27°C), 3984.6
+water (vapor 100 °C),4039.2
+wood, 1700
+zinc,388
