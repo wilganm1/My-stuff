@@ -1,0 +1,29 @@
+{
+ "Physical constants":
+     {
+      "Gravitational acceleration (m/s)": 9.80665,
+      "Planck constant (h)": 6.62607015 * 10**-34,
+      "Gravitation constant (G)": 6.67 * 10**-11,
+      "Boltzmann constant (k)": 1.38 * 10**-23,
+      "Molar gas constant (R)": 8.314,
+      "Avogadro’s number": 6.023 * 10**23, 
+      "Charge of electron (e)": 1.602 * 10**-19,
+      "Permittivity of vacuum": 8.85 * 10**-12,
+      "Coulomb constant (1/4πε0)": 8.9875517923 * 109,
+      "Faraday constant (F)": 96485,
+      "Mass of electron (me)": 9.1 * 10**-31, 
+      "Mass of proton (mp)": 1.6726 * 10**-27,
+      "Mass of neutron (mn)": 1.6749 * 10**-27,
+      "Stefan-Boltzmann constant (σ)": 5.67 * 10**-8,
+      "Rydberg constant (R∞)": 1.097 * 107,
+      "Bohr magneton (µB)": 9.27 * 10**-24, 
+      "Bohr radius (aO)": 0.529 * 10**-10,
+      "Standard atmosphere (Pa)": 101325 , 
+      "Wien displacement constant (b)":2.9 * 10**-3,
+      "speed of light in vacuum (m/s)": 29792458,
+      "speed of sound (m/s)": 343,
+      "Rydberg constant": 10973731.6,
+      "elementary charge (e) (C)": 1.602176634 * 10**-19,
+      "Cosmological constan": 1.089 * 10**-52
+      }
+     }
