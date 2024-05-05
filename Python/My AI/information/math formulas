@@ -173,6 +173,9 @@ def potential_energy(mass, height):
 def sensible_heat(mass, specific_heat_capacity, temperature_change):
     return mass * specific_heat_capacity * temperature_change
 
+def entropy(heat_transfer, temperature):
+    return heat_transfer/temperature
+
 def molarity(solute_moles,solution_liters):
     return solute_moles/solution_liters
 
@@ -185,13 +188,37 @@ def lorentz_factor(velocity):
 def mass_energy_equivalence(mass):
     return mass * 29792458
 
-""" optics https://www.newport.com/n/optics-formulas """
+def photon_momentum(wavelength):
+    return (6.62607015 * 10**-34) / wavelength
+
+""" waves & optics https://www.newport.com/n/optics-formulas """
 
 def magnification(image_size, actual_size):
     return image_size/actual_size
 
 def lens_formula(object_distance, image_distance):
     return 1 / (1/object_distance + 1/image_distance)
+
+def refractive_index(substance_velocity):
+    return 29792458 / substance_velocity
+
+def critical_angle(refractive_index2, refractive_index1):
+    return math.asin(refractive_index2/refractive_index1)
+
+def intensity(time_averaged_power, area):
+    time_averaged_power / area
+
+def frequency(time):
+    return 1/time
+
+def wave_speed(wavelength, time):
+    return wavelength / time
+
+def mach_angle(mach):
+    return math.asin(1/mach)
+
+def cherenkov_angle(refractive_index, particle_velocity):
+    return math.acos((29792458/ (refractive_index * particle_velocity)))
 
 """ electricity """
 
