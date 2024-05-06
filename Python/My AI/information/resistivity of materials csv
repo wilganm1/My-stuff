@@ -1,4 +1,4 @@
-material, electrical resisitivity @ 20 C (ohm meters)
+Material, electrical resisitivity @ 20 C (ohm meters)
 Aluminium, 2.8 * 10**-8
 Antimony, 3.9 * 10**-7
 Bismuth, 1.3 * 10**-6
@@ -10,15 +10,15 @@ Gold, 2.4 * 10**-8
 Carbon (Graphite),	1 * 10**-5
 Germanium, 4.6 * 10-1
 Iron,	1.0 * 10**-7
-Lead,	1.9 * 10**-7
+Lead, 1.9 * 10**-7
 Manganin,	4.2 * 10**-7
 Nichrome,	1.1 * 10**-6
-Nickel,	7 * 10**-8
+Nickel, 7 * 10**-8
 Palladium, 1.0 * 10**-7
 Platinum,	0.98 * 10**-7
 Quartz, 7 * 10**17
 Silicon, 6.4 * 10**2
-Silver,	1.6 * 10**-8
+Silver, 1.6 * 10**-8
 Tantalum, 1.3 * 10**-7
 Tin, 1.1 * 10**-7
 Tungsten, 4.9 * 10**-8
