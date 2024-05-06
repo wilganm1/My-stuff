@@ -230,6 +230,9 @@ def coulombs_law(q1,q2,distance):
 
 def capacitance(charge, potential_difference):
     return charge/potential_difference
+
+def conductivity(distance, area, specific_resistance):
+    return distance/area * specific_resistance
     
 def current_density(current, area):
     return current/area
