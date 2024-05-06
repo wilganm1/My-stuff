@@ -1269,6 +1269,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,13,1],
     "valence electrons": 6,
+    "valency": 2
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 3465,
@@ -1324,6 +1325,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,13,2],
     "valence electrons": 7,
+    "valency":, [7,4,2],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 2275,
@@ -1377,6 +1379,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,14,2],
     "valence electrons": 8,
+    "valency": [2,3],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 2800,
@@ -1432,6 +1435,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,15,2],
     "valence electrons": 9,
+    "valency": [2,3],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 2723,
@@ -1486,6 +1490,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,16,2],
     "valence electrons": 2,
+    "valency": [3, 2],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 2651,
@@ -1541,6 +1546,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,18,1],
     "valence electrons": 1,
+    "valency": [1,2],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 1984.32,
@@ -1597,6 +1603,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,18,2],
     "valence electrons": 2,
+    "valency": 2,
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 787.15,
@@ -1652,6 +1659,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,18,3],
     "valence electrons": 3,
+    "valency": [3,1],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 85.5763,
@@ -1705,6 +1713,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,18,4],
     "valence electrons": 4,
+    "valency": [4,2],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 1720.85,
@@ -1759,6 +1768,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,18,5],
     "valence electrons": 5,
+    "valency": [5,3],
     "phase": "solid",
     "sublimation point":{
         "Fahrenheit": 1137,
@@ -1813,6 +1823,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,18,6],
     "valence electrons": 6,
+    "valency": [2,4,6],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 430,
@@ -1870,6 +1881,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,18,7],
     "valence electrons": 7,
+    "valency": [1,3,5],
     "phase": "liquid",
     "melting point":{
         "Fahrenheit": 19,
@@ -1924,6 +1936,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,18,8],
     "valence electrons": 8,
+    "valency": 0,
     "phase": "gas",
     "melting point":{
         "Fahrenheit": -251.27,
@@ -1976,6 +1989,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 5,
     "electrons per shell": [2,8,18,8,1],
     "valence electrons": 1,
+    "valency": 1,
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 102.74,
@@ -2034,6 +2048,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 5,
     "electrons per shell": [2,8,18,8,2],
     "valence electrons": 2,
+    "valency": 2,
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 1431,
@@ -2087,6 +2102,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 2,
     "electrons per shell": [2,8,18,9,2],
     "valence electrons": 3,
+    "valency": 3,
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 2279,
@@ -2140,6 +2156,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 5,
     "electrons per shell": [2,8,18,10,2],
     "valence electrons": 4,
+    "valency": 4,
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 3365,
@@ -2194,6 +2211,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 5,
     "electrons per shell": [2,8,18,12,1],
     "valence electrons": 5,
+    "valency": [3,5],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 4491,
@@ -2246,6 +2264,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 5,
     "electrons per shell": [2,8,18,13,1],
     "valence electrons": 6,
+    "valency": [2,3,4,5,6],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 4753,
@@ -2302,6 +2321,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 3,
     "electrons per shell": [2,8,18,13,2],
     "valence electrons": 7,
+    "valency": 4,
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 3915,
