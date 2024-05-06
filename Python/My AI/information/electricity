@@ -177,3 +177,36 @@ Thank concludes this article for the basics of how electricity works. Below is a
 more information and animations.
 """
 
+"""
+Electrical heating
+All electrical cables generate some heat. Electronic components also generate heat, that’s how the electrical energy 
+leaves the circuit and causes our energy meter to measure energy consumption.
+
+
+Generally, this heat is wasted energy, we don’t want this in our circuits or in our electrical distribution systems
+and we often need additional cooling to remove this unwanted heat from our devices, otherwise they will break. However, 
+it’s sometimes very useful, for example in underfloor heating where the wire generates heat to warm our homes. We can 
+easily turn it on and off and the heat is distributed throughout the room, not just along one wall like a radiator.
+
+When we pass electrical current through a circuit, the electrons will collide with atoms in the wire and the 
+electronic components and these collisions converts the kinetic energy into heat.
+
+Some wires, like this standard copper one, generates small amounts of heat. But this Nichrome wire produces a lot of 
+heat. This is an alloy, meaning a mixture of materials, specifically designed to produce very high temperatures. 
+It gets so hot it even glows. That’s also how old incandescent lights work, the material gets so hot is glows and 
+the lamp produces a lot of heat.
+
+The heat generated depends on the resistance of the material used as well as the amount of current passed through 
+the wire and also the amount of time current is allowed to pass through the wire.
+
+Some materials have a high resistance and some have a low resistance. This is basically just a measurement of how 
+easily an electron can pass through it without colliding. High resistance means a lot of collisions and so a lot 
+of heat is generated.
+
+The thickness and length of a wire affects the resistance. Short thick wires have less resistance than long thin 
+wires. That’s why distribution cables are thick, to reduce the resistance and energy loss.
+
+The thicker the wire the more resistance
+"""
+
+
