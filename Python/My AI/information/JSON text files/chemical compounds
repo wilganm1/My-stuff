@@ -169,15 +169,10 @@
          "general formla": "RCOOR'",
          "methyl formte": "HCOOCH3",
          "methyl acetate": "CH3COOCH3",
-         "": "",
-         "": "",
-         "": "",
-         "": "",
-         "": "",
-         "": "",
-         "": "",
-
-
+         "ethyl acetate": "CH3CO2CH2CH3",
+         "ethyl propionate": "C2H5O2CCH2CH3",
+         "isopropyl butyrate": "C7H14O2",
+         "ethyl benzoate": "C9H10O2",
      },
      "anabolic steroids": {
          "danazol": "C22H27NO2",
