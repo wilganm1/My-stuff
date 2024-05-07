@@ -20,7 +20,7 @@ Potassium hydroxide, 56.11,	KOH
 Silver nitrate,	169.872, AgNO3
 Sodium carbonate,	105.988, Na2CO3
 Sodium chloride,58.44, NaCl
-Cellulose,	162.1406,(C6H10O5)n
+Cellulose, 162.1406,(C6H10O5)n
 Magnesium hydroxide, 58.319, Mg(OH)2
 Methane,16.043,	CH4
 Nitrogen dioxide,30.006,NO2
@@ -85,7 +85,7 @@ Trichloroacetic acid, 163.38, C2HCl3O2
 Magnesium sulfate,120.361,MgSO4
 Methanol,32.04, CH3OH
 Oxygen,	15.999, O
-Methylene blue,	319.85, C16H18ClN3S
+Methylene blue, 319.85, C16H18ClN3S
 Sodium sulfite,	126.043, Na2SO3
 Sulfur trioxide,80.057, SO3
 Aluminum phosphate,	121.951, AlPO4
@@ -179,8 +179,8 @@ Ammonium iodide,144.94, NH4I
 Ammonium nitrite,64.06, NH4NO2
 Ammonium oxide,	52.0763, (NH4)2O
 Argon gas,39.948, Ar
-Barium bromide,	297.14, BaBr2
-Barium iodide,	391.136, BaI2
+Barium bromide, 297.14, BaBr2
+Barium iodide, 391.136, BaI2
 Bromate,127.901, BrO3
 Dinitrogen trioxide,76.01,N2O3
 Ethylene glycol,62.07,C2H6O2
@@ -238,7 +238,7 @@ Formaldehyde,30.031, CH2O
 Formic Acid,46.03,HCOOH
 Sulfur Hexafluoride,146.06, SF6
 Phosphorus Trichloride,	137.33, PCl
-Ethane,	30.07, C2H6
+Ethane, 30.07, C2H6
 Dinitrogen Pentoxide,30.07, N2O5
 Phosphorous Acid,82, H3PO3
 Potassium Ferrocyanide,	368.35, K4Fe(CN)6
@@ -256,7 +256,7 @@ Potassium acetate,98.142, CH3CO2K
 Barium oxide,153.326, BaO
 Copper Oxide,143.09, Cu2O
 Copper Hydroxide,97.561, Cu(OH)2
-Tin Oxide,	97.561, SnO2
+Tin Oxide, 97.561, SnO2
 Chlorine Trifluoride,92.448, ClF3
 Ethylene,28.054, C2H4
 Acetylene,26.038, C2H2
