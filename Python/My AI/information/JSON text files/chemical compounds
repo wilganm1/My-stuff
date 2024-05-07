@@ -165,6 +165,20 @@
          "galactose": "C6H12O6",
          "xylose": "C5H10O5",
          "ribose": "C5H10O5"},
+     "esters": {
+         "general formla": "RCOOR'",
+         "methyl formte": "HCOOCH3",
+         "methyl acetate": "CH3COOCH3",
+         "": "",
+         "": "",
+         "": "",
+         "": "",
+         "": "",
+         "": "",
+         "": "",
+
+
+     },
      "anabolic steroids": {
          "danazol": "C22H27NO2",
          "oxymetholone": "C21H32O3",
