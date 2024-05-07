@@ -4,10 +4,10 @@ Hydrochloric acid,36.458,HCl,
 Sulfuric acid,‎98.072,H2SO4,
 Acetate,59.044,	CH3CO
 Ammonia,17.031,	NH3
-Nitric acid,63.012,	HNO3
+Nitric acid,63.012, HNO3
 Phosphoric acid,97.994, H3PO4
 Sodium phosphate,119.976, Na3PO4
-Calcium carbonate, 100.086,	CaCO3
+Calcium carbonate, 100.086, CaCO3
 Ammonium sulfate, 132.134,(NH4)2SO4
 Carbonic acid,62.024, H2CO3
 Sodium bicarbonate, 84.0066, NaHCO3
