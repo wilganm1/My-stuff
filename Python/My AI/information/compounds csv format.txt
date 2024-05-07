@@ -37,6 +37,7 @@ Hydrocyanic acid,‎27.026, HCN
 Salicylic Acid,	138.121, C7H6O3
 Hydroiodic acid,127.91, HI
 Hypochlorous acid,	52.457, HClO
+Nitroglycerin, 227.08, C5H5(0NO2)3
 Iron iii oxide,	159.687, Fe2O3
 Magnesium phosphate,262.855, Mg3(PO4)2
 Sodium acetate,	82.0343, C2H3NaO2
