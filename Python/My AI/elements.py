@@ -1,211 +1,5 @@
-''' I want to make an AI program in the future that can take stored data
-directly from the computer I/'m on and parse information from it. It can
-be a text file, .py file, or whatever'''
-
-
-
-# For this I want to make a dictionaries of the periodic table of elements
-
-"""ADD THESE TO ALL OBJECTS
-
--"valency": ,
-
-"vapor pressure (Pa) to temp (K)"{
-    1: ,
-    10: ,
-    100: ,
-    1000: ,
-    10000: ,
-    100000: },
-
-Add in "protons": and "electrons": in to the dictionary
-
--classification of elements: metalloids, nonmetals, transition metals, alkali, alkaline earth metals, etc.
-- PUT IN CLASS NUMBERS THAT GO WITH THE CLASSIFICATIONS
-    - Example: 
-            alkaline earth metals = 1
-            metalloids = 3
- This will help with distinguishing covalent vs ionic vs metallic bonds
-
-type of bonds they form.
-
-Use the SMILES nomenclature when writing algorithms
-https://en.wikipedia.org/wiki/Simplified_molecular-input_line-entry_system
-
-
-How bonding will work.
-
-- All elements want their outermost shell to have 8 electrons. So 8 is the  goal
-So if an element has a valence of 2 but valency of 3 like actinide, you need to
-subtract the 2 valence and 1 from the previous shell. 
-
-To do this use element_Name["electrons per shell"[-1] to get the last electrons
-                            
-            -example:
-                x = [1,2,3,4,5]
-                
-                x[-1] == 5
-
-determine the type of bond based on metal vs nonmetal 
-
-"""
-
-"""
-For the ionic bond function you can either subtract or add the valency 
-or loop through each shell backwards and subtract electrons until one equals 8
-
-Also need to make it so that multiple of the same element can bond with 
-others, like water (H2O)
-
-
-The amount of electrons lost needs to be equal to the amount of electrons gained
-but the total amount of electrons by the receivers in the compound all need
-to have full valence shells, being 2 or 8. So that means that we can just
-multiply the total number of the individual elements until we get that number
-
-    -Example: Aluminum Oxide (Al2 O3)
-    
-        Aluminum valency == 3
-        Oxygen valency == 2
-        
-            When one aluminum gives up 2 electrons, the Oxygen has 8 and is stable
-            but the aluminum still has 1 electron left to give. So it gives it
-            to ANOTHER oxygen. But that aluminum is out of electrons so a second 
-            aluminum gives 1 electron to the second oxygen, making the second oxygen stable,
-            and it gives its other 2 electrson to a THIRD oxygen, making it stable
-            
-    You just need to make the valencies equal to one another, and to do that you
-    just multiply.
-    
-    -Example 2: Water (H2 O)
-        Hydrogen valency == 1
-        oxygen valency == 2
-        
-         Just multiply the valencies of each element by the other and thats
-         how many of each you need to make them both stable.
-
-
-                ion1["valency"] * ion2["valency"] == how many ion 1 molecules
-                ion2["valency"] * ion1["valency"] == how many ion 2 molecules
-
-   Only works for compounds with 2 elements
-
-There are some elements whose valency is greater than valence electrons
-
-"""
-
-""" This function is one the right track but it doesn't account 
-for duplicate elements or double/triple bonding.
-"""
-"""
-def ionic_bond(ion1, ion2): #ion 1 gives up electrons
-    if ion1["shells"] > 2: # This covers all elements after neon
-        valence_shell = -1 #starts with valence shell and subtracts until you hit a shell with 8. need to make an exception for hydrogen
-        while ion1["electrons per shell"][valence_shell] != 8:
-            while ion1["electrons per shell"][valence_shell] > 0:
-                ion1["electrons per shell"][valence_shell] -= 1 #needs to be one so it's one at a time
-                ion1["electrons"] -= 1
-                ion2["electrons"] += 1
-                ion2["electrons per shell"][valence_shell] += 1
-            valence_shell -=1
-        
-        
-        
-
-
-def determine_bond(elmt1, elmt2):
-    if elmt1["classification"] in ["metalloid", "nonmetal"] and elmt2["classification"] == "nonmetal":
-        covalent_bond(elmt1, elmt2) #This doesn't sort the elements by atomic number
-        
-    elif elmt1["classification"] == "nonmetal" and elmt2["classification"] in ["metalloid", "nonmetal"]:
-        covalent_bond(elmt1, elmt2)
-        
-    elif elmt1["classification"] in ["alkali metal", "alkaline earth metal", "transition metal", "post-transition metal"] and elmt2["classification"] in  ["metalloid", "nonmetal"]:
-        ionic_bond(elmt1, elmt2) 
-        
-    elif elmt1["classification"] in ["metalloid", "nonmetal"] and emlt2["classification"] in ["alkali metal", "alkaline earth metal", "transition metal", "post-transition metal"]:
-        ionic_bond(elmt2, elmt1) #This is set up so the metal is on the left side
-    else:
-        break
-"""
-""" 
-
-Now make the function for ionic, covalent, and metallic bonds
-
-in ionic bonds the metals lose their valence electrons and give to nonmetals/metalloids
-
-Have them give up their valence electrons until outermost shell == 8
-
-"""
-"""
- = {
-   "name": "",
-   "appearance": "",
-   "atomic number": ,
-   "protons": ,
-   "electrons": ,
-   "symbol": "",
-   "atomic weight": ,
-   "group": ,
-   "period": ,
-   "block": "",
-   "classification": "",
-   "shells": ,
-   "electrons per shell": ,
-   "valence electrons": 2,
-   "valency": 4,
-   "phase": "solid",
-   "melting point":{
-       "Fahrenheit": ,
-       "Celsius": ,
-       "Kelvin": },        
-   "boiling point": {
-       "Fahrenheit": "",
-       "Celsius": "",
-       "Kelvin": ""},
-   "density" : {
-       "solid (g/cm^3)": ,
-       "liquid (@ m.p.) (g/cm^3)": ""},
-   "triple point" : {
-       "Temperature (Kelvin)": "",
-       "Pressure (kPa)": ""},
-   "critical point": {
-       "Temperature (Kelvin)": "",
-       "Pressure (MPa)": ""},
-   "heat of fusion (kJ/mol)": "",
-   "heat of vaporization (kJ/mol)": "",
-   "molar heat capacity (J/(mol*K))": "",
-   "vapor pressure (Pa) to temp (K)": {
-       1: "",
-       10: "",
-       100: "",
-       1000: "",
-       10000: "",
-       100000: "},
-   "oxidation states": [],
-   "electronegativity (Pauling scale)": ,
-   "ionization energies (kJ/mol)": [],
-   "atomic radius (pm)": "",
-   "covalent radius (pm)": "",
-   "Van der Waals radius (pm)": "",
-   "thermal expansion (µm/(m⋅K)) (at 25 °C)": "",
-   "thermal conductivity (W/(m⋅K))": "",
-   "electrical resistivity (nΩ⋅m (at 20 °C))": "",
-   "magnetic ordering": "",
-   "molar magnetic susceptibility (cm^3/mol)": "",
-   "youngs modulus (GPa)": "",
-   "shear modulus (GPa)": "",
-   "bulk modulus (GPa)": "",
-   "poisson ratio": "",
-   "mohs hardness": "",
-   "vickers hardness (MPa)": "",
-   "brinell hardness (MPa)": "",
-   }
-"""
-
-
-Hydrogen = H = {
-    "name": "hydrogen",
+{
+"hydrogen": {
     "appearance": "colorless gas",
     "atomic number": 1,
     "protons": 1,
@@ -246,10 +40,9 @@ Hydrogen = H = {
     "thermal conductivity (W/(m⋅K))": 0.1805,
     "magnetic ordering": "diamagnetic",
     "molar magnetic susceptibility (cm^3/mol)": -3.98 * 10**-6
-    }
+    },
 
-Helium = He = {
-    "name": "helium",
+"helium": {
     "appearance": "colorless gas",
     "atomic number": 2,
     "protons": 2,
@@ -270,8 +63,8 @@ Helium = He = {
     "density": {
         "gas (g/L)": 0.1786,
         "liquid": {
-            "@ m.p. (g/cm^3)": 0.145,
-            "@ b.p. (g/cm^3)": 0.125}},
+            "at meltin point (g/cm^3)": 0.145,
+            "at boiling point (g/cm^3)": 0.125}},
     "triple point" : {
         "temperature (kelvin)": 2.177,
         "Pressure (kPa)": 5.043},
@@ -292,10 +85,9 @@ Helium = He = {
     "Van der Waals radius (pm)": 140,
     "thermal conductivity (W/(m⋅K))": 0.1513,
     "magnetic ordering": "diamagnetic",
-    "molar magnetic susceptibility (cm^3/mol)": -1.88 * 10**-6}
+    "molar magnetic susceptibility (cm^3/mol)": -1.88 * 10**-6},
 
-Lithium = Li = {
-    "name": "lithium",
+"lithium": {
     "appearance": "silvery-white",
     "atomic number": 3,
     "protons": 3,
@@ -349,10 +141,9 @@ Lithium = Li = {
     "bulk modulus (GPa)": 11,
     "mohs hardness": 0.6,
     "brinell hardness (MPa)": 5,
-    }
+    },
 
-Beryllium = Be = {
-    "name": "beryllium",
+"beryllium": {
     "appearance": "white-gray metallic",
     "atomic number": 4,
     "protons": 4,
@@ -377,8 +168,8 @@ Beryllium = Be = {
         "Celsius": 2469,
         "Kelvin": 2742},
     "density(g/cm^3)": {
-        "sollid": 1.85,
-        "liquid (@ m.p.)": 1.690},
+        "solid": 1.85,
+        "liquid (at melting point)": 1.690},
     "critical point": {
         "temperature (Kelvin)": 5205,
         "pressure (MPa)": 1},
@@ -409,10 +200,9 @@ Beryllium = Be = {
     "poisson ratio": 0.032,
     "mohs hardness": 5.5,
     "vickers hardness (MPa)": 1670,
-    "brinell hardness (MPa)": 1000}
+    "brinell hardness (MPa)": 1000},
 
-Boron = B = {
-    "name": "boron",
+"boron": {
     "appearance": "black-brown",
     "atomic number": 5,
     "protons": 5,
@@ -459,10 +249,9 @@ Boron = B = {
     "magnetic ordering": "diamagnetic",
     "molar magnetic susceptibility (cm^3/mol)": -6.7 * 10**-6,
     "mohs hardness": 9.5,
-    }
+    },
 
-Carbon = C = {
-    "name": "carbon",
+"carbon": {
     "appearance": "graphite: black, metallic-looking",
     "atomic number": 6,
     "protons": 6,
@@ -512,10 +301,9 @@ Carbon = C = {
     "mohs hardness": {
         "graphite": 1.5,
         "diamond": 10},
-    }
+    },
 
-Nitrogen = N = {
-    "name": "nitrogen",
+"nitrogen": {
     "appearance": "colorless",
     "atomic number": 7,
     "protons": 7,
@@ -565,10 +353,10 @@ Nitrogen = N = {
     "Van der Waals radius (pm)": 155,
     "thermal conductivity (W/(m⋅K))": 25.83 * 10**-3,
     "magnetic ordering": "diamagnetic",
-    }
+    },
 
-Oxygen = O = {
-    "name": "oxygen",
+
+"oxygen": {
     "appearance": "colorless gas. pale blue solid & liquid",
     "atomic number": 8,
     "protons": 8,
@@ -616,10 +404,9 @@ Oxygen = O = {
     "thermal conductivity (W/(m⋅K))": 26.58*10**-3,
     "magnetic ordering": "paramagnetic",
     "molar magnetic susceptibility (cm^3/mol)": 3.449 *10**-3,
-    }
+    },
 
-Fluorine = F = {
-    "name": "fluorine",
+"flourine": {
     "appearance": "pale yellow gas, bright yellow liquid",
     "atomic number": 9,
     "protons": 9,
@@ -668,10 +455,9 @@ Fluorine = F = {
     "Van der Waals radius (pm)": 135,
     "thermal conductivity (W/(m⋅K))": 0.02591,
     "magnetic ordering": "diamagnetic",
-    }
+    },
 
-Neon = Ne = {
-    "name": "neon",
+"neon": {
     "appearance": "colorless gas",
     "atomic number": 10,
     "protons": 10,
@@ -722,10 +508,9 @@ Neon = Ne = {
     "magnetic ordering": "diamagnetic",
     "molar magnetic susceptibility (cm^3/mol)": -6.74*10**-6,
     "bulk modulus (GPa)": 654,
-    }
+    },
 
-Sodium = Na = {
-    "name": "sodium",
+"sodium": {
     "appearance": "silvery white metallic",
     "atomic number": 11,
     "protons": 11,
@@ -781,9 +566,9 @@ Sodium = Na = {
     "bulk modulus (GPa)": 6.3,
     "mohs hardness": 0.5,
     "brinell hardness (MPa)": 0.69,
-    }
+    },
 
-Magnesium = Mg = {
+"magnesium": {
     "name": "magnesium",
     "appearance": "shiny grey solid",
     "atomic number": 12,
@@ -839,10 +624,9 @@ Magnesium = Mg = {
     "poisson ratio": 0.290,
     "mohs hardness": 1.75,
     "brinell hardness (MPa)": 151,
-    }
+    },
 
-Aluminum = Al = {
-    "name": "aluminum",
+"aluminum": {
     "appearance": "silvery gray metallic",
     "atomic number": 13,
     "protons": 13,
@@ -897,9 +681,9 @@ Aluminum = Al = {
     "mohs hardness": 2.75,
     "vickers hardness (MPa)": 255,
     "brinell hardness (MPa)": 355
-    }
+    },
 
-Silicon = Si = {
+"silicon": {
     "name": "silicon",
     "appearance": "crystalline, reflective",
     "atomic number": 14,
@@ -954,10 +738,9 @@ Silicon = Si = {
     "bulk modulus (GPa)": 97.6,
     "poisson ratio": 0.012,
     "mohs hardness": 6.5,
-    }
+    },
 
-Phosphorus = P = {
-    "name": "phosphorus",
+"phosphorus": {
     "appearance": "can be white, a waxy red & violet, or black metal",
     "atomic number": 15,
     "protons": 15,
@@ -1035,10 +818,9 @@ Phosphorus = P = {
     "bulk modulus (GPa)": {
         "white": 5,
         "red": 11},
-    }
+    },
 
-Sulfur = S = {
-    "name": "sulfur",
+"sulfur": {
     "appearance": "Lemon yellow sintered microcrystals",
     "atomic number": 16,
     "protons": 16,
@@ -1092,10 +874,9 @@ Sulfur = S = {
     "molar magnetic susceptibility (cm^3/mol)": -15.5*10**-6,
     "bulk modulus (GPa)": 7.7,
     "mohs hardness": 2.0,
-    }
+    },
 
-Chlorine = Cl = {
-    "name": "chlorine",
+"chlorine": {
     "appearance": "pale yellow-green",
     "atomic number": 17,
     "protons": 17,
@@ -1144,10 +925,9 @@ Chlorine = Cl = {
     "electrical resistivity (nΩ⋅m (at 20 °C))": 11,
     "magnetic ordering": "diamagnetic",
     "molar magnetic susceptibility (cm^3/mol)": -40.5*10**-6,
-    }
+    },
 
-Argon = Ar = {
-    "name": "argon",
+"argon": {
     "appearance": "colorless",
     "atomic number": 18,
     "protons": 18,
@@ -1196,10 +976,9 @@ Argon = Ar = {
     "thermal conductivity (W/(m⋅K))": 17.72*10**-3,
     "magnetic ordering": "diamagnetic",
     "molar magnetic susceptibility (cm^3/mol)": -19.6*10**-6,
-    }
+    },
 
-Potassium = K = {
-    "name": "potassium",
+"potassium": {
     "appearance": "silvery white, purple hue exposed to air",
     "atomic number": 19,
     "protons": 19,
@@ -1248,10 +1027,9 @@ Potassium = K = {
     "bulk modulus (GPa)": 3.1,
     "mohs hardness": 0.4,
     "brinell hardness (MPa)": 0.363,
-    }
+    },
 
-Calcium = Ca = {
-    "name": "calcium",
+"calcium": {
     "appearance": "dull gray, silver with yellow tint",
     "atomic number": 20,
     "protons": 20,
@@ -1305,10 +1083,9 @@ Calcium = Ca = {
     "poisson ratio": 0.31,
     "mohs hardness": 1.75,
     "brinell hardness (MPa)": 293,
-    }
+    },
 
-Scandium = Sc = {
-    "name": "scandium",
+"scandium": {
     "appearance": "silvery white",
     "atomic number": 21,
     "protons": 21,
@@ -1361,10 +1138,9 @@ Scandium = Sc = {
     "bulk modulus (GPa)": 56.6,
     "poisson ratio": 0.279,
     "brinell hardness (MPa)": 958,
-    }
+    },
 
-Titanium = Ti = {
-    "name": "titanium",
+"titanium": {
     "appearance": "silvery grey-white metallic",
     "atomic number": 22,
     "protons": 22,
@@ -1418,10 +1194,9 @@ Titanium = Ti = {
     "mohs hardness": 6.0,
     "vickers hardness (MPa)": 2125,
     "brinell hardness (MPa)": 1743,
-    }
+    },
 
-Vanadium = V = {
-    "name": "vanadium",
+"vanadium": {
     "appearance": "blue-silver-grey metal",
     "atomic number": 23,
     "protons": 23,
@@ -1476,10 +1251,9 @@ Vanadium = V = {
     "mohs hardness": 6.7,
     "vickers hardness (MPa)": 634,
     "brinell hardness (MPa)": 671,
-    }
+    },
 
-Chromium = Cr = {
-    "name": "chromium",
+"chromium": {
     "appearance": "Silvery metallic",
     "atomic number": 24,
     "protons": 24,
@@ -1493,6 +1267,7 @@ Chromium = Cr = {
     "shells": 4,
     "electrons per shell": [2,8,13,1],
     "valence electrons": 6,
+    "valency": 2,
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 3465,
@@ -1532,10 +1307,9 @@ Chromium = Cr = {
     "mohs hardness": 8.5,
     "vickers hardness (MPa)": 1060,
     "brinell hardness (MPa)": 3720,
-    }
+    },
 
-Manganese = Mn = {
-    "name": "manganese",
+"manganese": {
     "appearance": "silvery metallic",
     "atomic number": 25,
     "protons": 25,
@@ -1549,6 +1323,7 @@ Manganese = Mn = {
     "shells": 4,
     "electrons per shell": [2,8,13,2],
     "valence electrons": 7,
+    "valency": [7,4,2],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 2275,
@@ -1585,9 +1360,9 @@ Manganese = Mn = {
     "bulk modulus (GPa)": 120,
     "mohs hardness": 6.0,
     "brinell hardness (MPa)": 196,
-    }
+    },
 
-Iron = Fe = {
+"iron": {
     "name": "iron",
     "appearance": "lustrous metallic with grayish tinge",
     "atomic number": 26,
@@ -1602,6 +1377,7 @@ Iron = Fe = {
     "shells": 4,
     "electrons per shell": [2,8,14,2],
     "valence electrons": 8,
+    "valency": [2,3],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 2800,
@@ -1641,10 +1417,9 @@ Iron = Fe = {
     "mohs hardness": 4,
     "vickers hardness (MPa)": 608,
     "brinell hardness (MPa)": 690,
-    }
+    },
 
-Cobalt = Co = {
-    "name": "cobalt",
+"cobalt": {
     "appearance": "hard lustrous bluish gray metal",
     "atomic number": 27,
     "protons": 27,
@@ -1658,6 +1433,7 @@ Cobalt = Co = {
     "shells": 4,
     "electrons per shell": [2,8,15,2],
     "valence electrons": 9,
+    "valency": [2,3],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 2723,
@@ -1696,10 +1472,9 @@ Cobalt = Co = {
     "mohs hardness": 5.0,
     "vickers hardness (MPa)": 1043,
     "brinell hardness (MPa)": 1735,
-    }
+    },
 
-Nickel = Ni = {
-    "name": "nickel",
+"nickel": {
     "appearance": "lustrous, metallic, and silver with gold tinge",
     "atomic number": 28,
     "protons": 28,
@@ -1713,6 +1488,7 @@ Nickel = Ni = {
     "shells": 4,
     "electrons per shell": [2,8,16,2],
     "valence electrons": 2,
+    "valency": [3, 2],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 2651,
@@ -1752,10 +1528,9 @@ Nickel = Ni = {
     "mohs hardness": 4.0,
     "vickers hardness (MPa)": 638,
     "brinell hardness (MPa)": 1167,
-    }
+    },
 
-Copper = Cu = {
-    "name": "copper",
+"copper": {
     "appearance": "red-orange metallic luster",
     "atomic number": 29,
     "protons": 29,
@@ -1769,6 +1544,7 @@ Copper = Cu = {
     "shells": 4,
     "electrons per shell": [2,8,18,1],
     "valence electrons": 1,
+    "valency": [1,2],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 1984.32,
@@ -1809,10 +1585,9 @@ Copper = Cu = {
     "mohs hardness": 3.0,
     "vickers hardness (MPa)": 356,
     "brinell hardness (MPa)": 556,
-    }
+    },
 
-Zinc = Zn = {
-    "name": "zinc",
+"zinc": {
     "appearance": "silver gray",
     "atomic number": 30,
     "protons": 30,
@@ -1826,6 +1601,7 @@ Zinc = Zn = {
     "shells": 4,
     "electrons per shell": [2,8,18,2],
     "valence electrons": 2,
+    "valency": 2,
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 787.15,
@@ -1865,10 +1641,9 @@ Zinc = Zn = {
     "poisson ratio": 0.25,
     "mohs hardness": 2.5,
     "brinell hardness (MPa)": 370,
-    }
+    },
 
-Gallium = Ga = {
-    "name": "gallium",
+"gallium": {
     "appearance": "silvery blue",
     "atomic number": 31,
     "protons": 30,
@@ -1882,6 +1657,7 @@ Gallium = Ga = {
     "shells": 4,
     "electrons per shell": [2,8,18,3],
     "valence electrons": 3,
+    "valency": [3,1],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 85.5763,
@@ -1919,10 +1695,9 @@ Gallium = Ga = {
     "poisson ratio": 0.47,
     "mohs hardness": 1.5,
     "brinell hardness (MPa)": 62,
-    }
+    },
 
-Germanium = Ge = {
-    "name": "germanium",
+"germanium": {
     "appearance": "grayish-white",
     "atomic number": 32,
     "protons": 32,
@@ -1936,6 +1711,7 @@ Germanium = Ge = {
     "shells": 4,
     "electrons per shell": [2,8,18,4],
     "valence electrons": 4,
+    "valency": [4,2],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 1720.85,
@@ -1974,10 +1750,9 @@ Germanium = Ge = {
     "bulk modulus (GPa)": 75,
     "poisson ratio": 0.26,
     "mohs hardness": 6.0,
-    }
+    },
 
-Arsenic = As = {
-    "name": "arsenic",
+"arsenic": {
     "appearance": "metallic grey",
     "atomic number": 33,
     "protons": 33,
@@ -1991,6 +1766,7 @@ Arsenic = As = {
     "shells": 4,
     "electrons per shell": [2,8,18,5],
     "valence electrons": 5,
+    "valency": [5,3],
     "phase": "solid",
     "sublimation point":{
         "Fahrenheit": 1137,
@@ -2029,10 +1805,9 @@ Arsenic = As = {
     "bulk modulus (GPa)": 22,
     "mohs hardness": 3.5,
     "brinell hardness (MPa)": 1440,
-    }
+    },
 
-Selenium = Se = {
-    "name": "selenium",
+"selenium":  {
     "appearance": "grey-metallic or red",
     "atomic number": 34,
     "protons": 34,
@@ -2046,6 +1821,7 @@ Selenium = Se = {
     "shells": 4,
     "electrons per shell": [2,8,18,6],
     "valence electrons": 6,
+    "valency": [2,4,6],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 430,
@@ -2087,10 +1863,9 @@ Selenium = Se = {
     "poisson ratio": 0.33,
     "mohs hardness": 2,
     "brinell hardness (MPa)": 736,
-    }
+    },
 
-Bromine = Br = {
-    "name": "bromine",
+"bromine": {
     "appearance": "reddish-brown",
     "atomic number": 35,
     "protons": 35,
@@ -2104,6 +1879,7 @@ Bromine = Br = {
     "shells": 4,
     "electrons per shell": [2,8,18,7],
     "valence electrons": 7,
+    "valency": [1,3,5],
     "phase": "liquid",
     "melting point":{
         "Fahrenheit": 19,
@@ -2142,10 +1918,9 @@ Bromine = Br = {
     "electrical resistivity (nΩ⋅m (at 20 °C))": 7.8*10**10,
     "magnetic ordering": "diamagnetic",
     "molar magnetic susceptibility (cm^3/mol)": -56.4*10**-6,
-    }
+    },
 
-Krypton = Kr = {
-    "name": "krypton",
+"krypton": {
     "appearance": "colorless gas",
     "atomic number": 36,
     "protons": 36,
@@ -2159,6 +1934,7 @@ Krypton = Kr = {
     "shells": 4,
     "electrons per shell": [2,8,18,8],
     "valence electrons": 8,
+    "valency": 0,
     "phase": "gas",
     "melting point":{
         "Fahrenheit": -251.27,
@@ -2195,10 +1971,9 @@ Krypton = Kr = {
     "thermal conductivity (W/(m⋅K))": 9.43*10**-3,
     "magnetic ordering": "diamagnetic",
     "molar magnetic susceptibility (cm^3/mol)": -28.8*10**-6,
-    }
+    },
 
-Rubidium = Rb = {
-    "name": "rubidum",
+"rubidium": {
     "appearance": "grey white",
     "atomic number": 37,
     "protons": 37,
@@ -2212,6 +1987,7 @@ Rubidium = Rb = {
     "shells": 5,
     "electrons per shell": [2,8,18,8,1],
     "valence electrons": 1,
+    "valency": 1,
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 102.74,
@@ -2254,10 +2030,9 @@ Rubidium = Rb = {
     "bulk modulus (GPa)": 2.5,
     "mohs hardness": 0.3,
     "brinell hardness (MPa)": 0.216,
-    }
+    },
 
-Strontium = Sr = {
-    "name": "strontium",
+"strontium": {
     "appearance": "silvery white metallic; with yellow tint",
     "atomic number": 38,
     "protons": 38,
@@ -2271,6 +2046,7 @@ Strontium = Sr = {
     "shells": 5,
     "electrons per shell": [2,8,18,8,2],
     "valence electrons": 2,
+    "valency": 2,
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 1431,
@@ -2308,10 +2084,9 @@ Strontium = Sr = {
     "shear modulus (GPa)": 6.03,
     "poisson ratio": 0.28,
     "mohs hardness": 1.5,
-    }
+    },
 
-Yttrium = Y = {
-    "name": "yttrium",
+"yttrium": {
     "appearance": "silvery white",
     "atomic number": 39,
     "protons": 39,
@@ -2325,6 +2100,7 @@ Yttrium = Y = {
     "shells": 2,
     "electrons per shell": [2,8,18,9,2],
     "valence electrons": 3,
+    "valency": 3,
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 2279,
@@ -2362,10 +2138,9 @@ Yttrium = Y = {
     "bulk modulus (GPa)": 41.2,
     "poisson ratio": 0.243,
     "brinell hardness (MPa)": 395,
-    }
+    },
 
-Zirconium = Zr = {
-    "name": "zirconium",
+"zirconium": {
     "appearance": "silvery white",
     "atomic number": 40,
     "protons": 40,
@@ -2379,6 +2154,7 @@ Zirconium = Zr = {
     "shells": 5,
     "electrons per shell": [2,8,18,10,2],
     "valence electrons": 4,
+    "valency": 4,
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 3365,
@@ -2417,10 +2193,9 @@ Zirconium = Zr = {
     "mohs hardness": 5.0,
     "vickers hardness (MPa)": 1320,
     "brinell hardness (MPa)": 1274,
-    }
+    },
 
-Niobium = Nb = {
-    "name": "niobium",
+"niobium": {
     "appearance": "gray metallic",
     "atomic number": 41,
     "protons": 41,
@@ -2434,6 +2209,7 @@ Niobium = Nb = {
     "shells": 5,
     "electrons per shell": [2,8,18,12,1],
     "valence electrons": 5,
+    "valency": [3,5],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 4491,
@@ -2470,10 +2246,9 @@ Niobium = Nb = {
     "mohs hardness": 6.0,
     "vickers hardness (MPa)": 1130,
     "brinell hardness (MPa)": 1590,
-    }
+    },
 
-Molybdenum = Mo = {
-    "name": "molybendum",
+"molybdenum": {
     "appearance": "gray metallic",
     "atomic number": 42,
     "protons": 42,
@@ -2487,6 +2262,7 @@ Molybdenum = Mo = {
     "shells": 5,
     "electrons per shell": [2,8,18,13,1],
     "valence electrons": 6,
+    "valency": [2,3,4,5,6],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 4753,
@@ -2527,10 +2303,9 @@ Molybdenum = Mo = {
     "mohs hardness": 5.5,
     "vickers hardness (MPa)": 2120,
     "brinell hardness (MPa)": 1790,
-    }
+    },
 
-Technetium = Te = {
-    "name": "technetium",
+"technetium": {
     "appearance": "shiny gray metal",
     "atomic number": 43,
     "protons": 43,
@@ -2544,6 +2319,7 @@ Technetium = Te = {
     "shells": 3,
     "electrons per shell": [2,8,18,13,2],
     "valence electrons": 7,
+    "valency": 4,
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 3915,
@@ -2575,10 +2351,9 @@ Technetium = Te = {
     "electrical resistivity (nΩ⋅m (at 20 °C))": 200,
     "magnetic ordering": "paramagnetic",
     "molar magnetic susceptibility (cm^3/mol)": 270.0*10**-6,
-    }
+    },
 
-Ruthenium = Ru = {
-    "name": "ruthenium",
+"ruthenium": {
     "appearance": "silvery white metallic",
     "atomic number": 44,
     "protons": 44,
@@ -2631,10 +2406,9 @@ Ruthenium = Ru = {
     "poisson ratio": 0.30,
     "mohs hardness": 6.5,
     "brinell hardness (MPa)": 2100,
-    }
+    },
 
-Rhodium = Rh = {
-    "name": "rhodium",
+"rhodium": {
     "appearance": "silvery white metallic",
     "atomic number": 45,
     "protons": 45,
@@ -2688,10 +2462,9 @@ Rhodium = Rh = {
     "mohs hardness": 6,
     "vickers hardness (MPa)": [1100,8000],
     "brinell hardness (MPa)": [980,1350],
-    }
+    },
 
-Palladium = Pd = {
-    "name": "palladium",
+"palladium": {
     "appearance": "silvery white",
     "atomic number": 46,
     "protons": 46,
@@ -2746,10 +2519,9 @@ Palladium = Pd = {
     "mohs hardness": 4.75,
     "vickers hardness (MPa)":[400,600] ,
     "brinell hardness (MPa)": [320,610],
-    }
+    },
 
-Silver = Ag = {
-    "name": "silver",
+"silver": {
     "appearance": "lustrous silver metal",
     "atomic number": 47,
     "protons": 47,
@@ -2805,10 +2577,9 @@ Silver = Ag = {
     "mohs hardness": 2.5,
     "vickers hardness (MPa)": 251,
     "brinell hardness (MPa)": [206,250],
-    }
+    },
 
-Cadmium = Cd = {
-    "name": "cadmium",
+"cadmium": {
     "appearance": "silvery bluish-gray metallic",
     "atomic number": 48,
     "protons": 48,
@@ -2862,10 +2633,9 @@ Cadmium = Cd = {
     "poisson ratio": 0.3,
     "mohs hardness": 2.0,
     "brinell hardness (MPa)": [203,220],
-    }
+    },
 
-Indium = In = {
-    "name": "indium",
+"indium": {
     "appearance": "silvery lustrous gray",
     "atomic number": 49,
     "protons": 49,
@@ -2920,10 +2690,9 @@ Indium = In = {
     "shear modulus (GPa)": 1.2,
     "mohs hardness": 1.2,
     "brinell hardness (MPa)": [8.8-10.0],
-    }
+    },
 
-Tin = Sn = {
-    "name": "tin",
+"tin":{
     "appearance": "silvery-white",
     "atomic number": 50,
     "protons": 50,
@@ -2977,10 +2746,9 @@ Tin = Sn = {
     "poisson ratio": 0.36,
     "mohs hardness": 1.5,
     "brinell hardness (MPa)": [50-440],
-    }
+    },
 
-Antimony = Sb = {
-    "name": "antimony",
+"antimony": {
     "appearance": "silvery lustrous gray",
     "atomic number": 51,
     "protons": 51,
@@ -3033,10 +2801,9 @@ Antimony = Sb = {
     "bulk modulus (GPa)": 42,
     "mohs hardness": 3.0,
     "brinell hardness (MPa)": [294-384]
-    }
+    },
 
-Tellurium = Te = {
-    "name": "tellurium",
+"tellurium": {
     "appearance": "silvery lustrous gray",
     "atomic number": 52,
     "protons": 52,
@@ -3086,10 +2853,9 @@ Tellurium = Te = {
     "bulk modulus (GPa)": 65,
     "mohs hardness": 2.25,
     "brinell hardness (MPa)": [180-270]
-    }
+    },
 
-Iodine = I = {
-    "name": "iodine",
+"iodine": {
     "appearance": "lustrous metallic gray solid, black/violet liquid, violet gas",
     "atomic number": 53,
     "protons": 53,
@@ -3142,10 +2908,9 @@ Iodine = I = {
     "magnetic ordering": "diamagnetic",
     "molar magnetic susceptibility (cm^3/mol)": -88.7*10**-6,
     "bulk modulus (GPa)": 7.7,
-    }
+    },
 
-Xenon = Xe = {
-    "name": "xenon",
+"xenon": {
     "appearance": "colorless gas",
     "atomic number": 54,
     "protons": 54,
@@ -3196,10 +2961,9 @@ Xenon = Xe = {
     "thermal conductivity (W/(m⋅K))": 5.65*10**-3,
     "magnetic ordering": "diamagnetic",
     "molar magnetic susceptibility (cm^3/mol)": -43.9*10**-6
-    }
+    },
     
-Caesium = Cs = {
-    "name": ["caesium","cesium"],
+"caesium": {
     "appearance": "pale gold",
     "atomic number": 55,
     "protons": 55,
@@ -3253,10 +3017,9 @@ Caesium = Cs = {
     "bulk modulus (GPa)": 1.6,
     "mohs hardness": 0.2,
     "brinell hardness (MPa)": 0.14,
-    }
+    },
        
-Barium = Ba = {
-    "name": "barium",
+"barium": {
     "appearance": "sivery gray; with a pale yellow tint",
     "atomic number": 56,
     "protons": 56,
@@ -3308,10 +3071,9 @@ Barium = Ba = {
     "shear modulus (GPa)": 4.9,
     "bulk modulus (GPa)": 9.6,
     "mohs hardness": 1.25,
-    }
+    },
    
-Lanthanum = La = {
-    "name": "lanthanum",
+"lanthanum": {
     "appearance": "silvery white",
     "atomic number": 57,
     "protons": 57,
@@ -3365,10 +3127,9 @@ Lanthanum = La = {
     "mohs hardness": 2.5,
     "vickers hardness (MPa)": [360,1750],
     "brinell hardness (MPa)": [350, 400],
-    }
+    },
    
-Cerium = Ce = {
-    "name": "cerium",
+"cerium": {
     "appearance": "silvery white",
     "atomic number": 58,
     "protons": 58,
@@ -3422,10 +3183,9 @@ Cerium = Ce = {
     "mohs hardness": 2.5,
     "vickers hardness (MPa)": [210,470],
     "brinell hardness (MPa)": [186,412],
-    }
+    },
    
-Praseodymium = Pr = {
-    "name": "praseodymium",
+"praseodymium": {
     "appearance": "grayish white",
     "atomic number": 59,
     "protons": 59,
@@ -3478,10 +3238,9 @@ Praseodymium = Pr = {
     "poisson ratio": 0.281,
     "vickers hardness (MPa)": [250,745] ,
     "brinell hardness (MPa)": [250,640],
-    }
+    },
    
-Neodymium = Nd = {
-    "name": "neodymium",
+"neodymium": {
     "appearance": "silvery white",
     "atomic number": 60,
     "protons": 60,
@@ -3534,10 +3293,9 @@ Neodymium = Nd = {
     "poisson ratio": 0.281,
     "vickers hardness (MPa)": [345,745],
     "brinell hardness (MPa)": [265,700],
-    }
+    },
    
-Promethium = Pm = {
-    "name": "promethium",
+"promethium": {
     "appearance": "metallic",
     "atomic number": 61,
     "protons": 61,
@@ -3577,10 +3335,9 @@ Promethium = Pm = {
     "youngs modulus (GPa)": 46,
     "shear modulus (GPa)": 18,
     "bulk modulus (GPa)": 33
-    }
+    },
    
-Samarium = Sm = {
-    "name": "samarium",
+"samarium": {
     "appearance": "silvery white",
     "atomic number": 62,
     "protons": 62,
@@ -3633,10 +3390,9 @@ Samarium = Sm = {
     "poisson ratio": 0.274,
     "vickers hardness (MPa)": [410,440],
     "brinell hardness (MPa)": [440,600],
-    }
+    },
    
-Europium = Eu = {
-    "name": "Europium",
+"Europium": {
     "appearance": "silvery white with pale yellow tint. Often has oxide discoloration",
     "atomic number": 63,
     "protons": 63,
@@ -3688,10 +3444,9 @@ Europium = Eu = {
     "bulk modulus (GPa)": 8.3,
     "poisson ratio": 0.152,
     "vickers hardness (MPa)": [165,200],
-    }
+    },
    
-Gadolinium = Gd = {
-    "name": "gadolinium",
+"gadolinium": {
     "appearance": "silvery white",
     "atomic number": 64,
     "protons": 64,
@@ -3743,10 +3498,9 @@ Gadolinium = Gd = {
     "bulk modulus (GPa)": 37.9,
     "poisson ratio": 0.259,
     "vickers hardness (MPa)":[10,950],
-    }
+    },
    
-Terbium = Tb = {
-    "name": "terbium",
+"terbium": {
     "appearance": "silvery white metal",
     "atomic number": 65,
     "protons": 65,
@@ -3799,10 +3553,9 @@ Terbium = Tb = {
     "poisson ratio": 0.261,
     "vickers hardness (MPa)": [450,865],
     "brinell hardness (MPa)": [675,1200],
-    }
+    },
    
-Dysprosium = Dy = {
-    "name": "dysprosium",
+"dysprosium": {
     "appearance": "silvery white solid",
     "atomic number": 66,
     "protons": 66,
@@ -3855,10 +3608,9 @@ Dysprosium = Dy = {
     "poisson ratio": 0.247,
     "vickers hardness (MPa)": [410,550],
     "brinell hardness (MPa)": [500,1050],
-    }   
+    },   
 
-Holium = Ho = {
-    "name": "holium",
+"Holium": {
     "appearance": "silvery white solid",
     "atomic number": 67,
     "protons": 67,
@@ -3872,7 +3624,7 @@ Holium = Ho = {
     "shells": 6,
     "electrons per shell": [2,8,18,29,8,2],
     "valence electrons": 2,
-    "valency": 23,
+    "valency": [23],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 2662,
@@ -3910,10 +3662,9 @@ Holium = Ho = {
     "poisson ratio": 0.231,
     "vickers hardness (MPa)": [410, 600],
     "brinell hardness (MPa)": [500, 1250],
-    }   
+    },   
 
-Erbium = Er = {
-    "name": "erbium",
+"erbium": {
     "appearance": "silvery white",
     "atomic number": 68,
     "protons": 68,
@@ -3966,10 +3717,9 @@ Erbium = Er = {
     "poisson ratio": 0.237,
     "vickers hardness (MPa)": [430,700],
     "brinell hardness (MPa)": [600,1070],
-    }   
+    },
 
-Thulium = Tm = {
-    "name": "thulium",
+"thulium": {
     "appearance": "silvery gray",
     "atomic number": 69,
     "protons": 69,
@@ -4022,10 +3772,9 @@ Thulium = Tm = {
     "poisson ratio": 0.213,
     "vickers hardness (MPa)": [470, 650],
     "brinell hardness (MPa)": [470, 900],
-    }
+    },
 
-Ytterbium = Yb = {
-    "name": "ytterbium",
+"ytterbium": {
     "appearance": "silvery white; pale yellow tint",
     "atomic number": 70,
     "protons": 70,
@@ -4078,10 +3827,9 @@ Ytterbium = Yb = {
     "poisson ratio": 0.207,
     "vickers hardness (MPa)": [205,250],
     "brinell hardness (MPa)": [340, 440],
-    }
+    },
 
-Lutetium = Lu = {
-    "name": "lutetium",
+"lutetium": {
     "appearance": "silvery white",
     "atomic number": 71,
     "protons": 71,
@@ -4133,10 +3881,9 @@ Lutetium = Lu = {
     "poisson ratio": 0.261,
     "vickers hardness (MPa)": [755,1160],
     "brinell hardness (MPa)": [890,1300],
-    }
+    },
 
-Hafnium = {
-    "name": "hafnium",
+"hafnium": {
     "appearance": "steel gray metal",
     "atomic number": 72,
     "protons": 72,
@@ -4190,10 +3937,9 @@ Hafnium = {
     "mohs hardness": 5.5,
     "vickers hardness (MPa)": [1520, 2060],
     "brinell hardness (MPa)": [1450, 2100],
-    }
+    },
 
-Tantalum = Ta = {
-    "name": "tantalum",
+"tantalum": {
     "appearance": "gray blue",
     "atomic number": 73,
     "protons": 73,
@@ -4247,10 +3993,10 @@ Tantalum = Ta = {
     "mohs hardness": 6.5,
     "vickers hardness (MPa)": [870,1200],
     "brinell hardness (MPa)": [440,3430],
-    }
+    },
 
-Tungsten = W = {
-    "name": ["tungsten", "wolfram"],
+"tungsten": {
+    "name": "tungsten",
     "appearance": "grayish white, lustrous",
     "atomic number": 74,
     "protons": 74,
@@ -4304,10 +4050,9 @@ Tungsten = W = {
     "mohs hardness": 7.5,
     "vickers hardness (MPa)": [3430,4600],
     "brinell hardness (MPa)": [2000,4000],
-    }
+    },
 
-Rhenium = Re = {
-    "name": "rhenium",
+"rhenium": {
     "appearance": "silvery-grayish metal",
     "atomic number": 75,
     "protons": 75,
@@ -4361,10 +4106,9 @@ Rhenium = Re = {
     "mohs hardness": 7.0,
     "vickers hardness (MPa)": [1350,7850],
     "brinell hardness (MPa)": [1320,2500],
-    }
+    },
 
-Osmium = Os = {
-    "name": "osmium",
+"osmium": {
     "appearance": "silvery, blue cast crystal",
     "atomic number": 76,
     "protons": 76,
@@ -4417,10 +4161,9 @@ Osmium = Os = {
     "mohs hardness": 7.0,
     "vickers hardness (MPa)": 4137,
     "brinell hardness (MPa)": 3920,
-    }
+    },
 
-Iridium = Ir = {
-    "name": "iridium",
+"iridium": {
     "appearance": "silvery white metal",
     "atomic number": 77,
     "protons": 77,
@@ -4474,10 +4217,9 @@ Iridium = Ir = {
     "mohs hardness": 6.5,
     "vickers hardness (MPa)": [1760,2200],
     "brinell hardness (MPa)": 1670,
-    }
+    },
 
-Platinum = Pt = {
-    "name": "platinum",
+"platinum": {
     "appearance": "silvery white, slightly gray",
     "atomic number": 78,
     "protons": 78,
@@ -4532,10 +4274,9 @@ Platinum = Pt = {
     "mohs hardness": 3.5,
     "vickers hardness (MPa)": [400,550],
     "brinell hardness (MPa)": [300, 500],
-    }
+    },
 
-Gold = Au = {
-    "name": "gold",
+"gold": {
     "appearance": "metallic yellow; gold",
     "atomic number": 79,
     "protons": 79,
@@ -4591,10 +4332,9 @@ Gold = Au = {
     "mohs hardness": 2.5,
     "vickers hardness (MPa)": [188, 216],
     "brinell hardness (MPa)": [188, 245],
-    }
+    },
 
-Mercury = Hg = {
-    "name": "mercury",
+"mercury": {
     "appearance": "shiny, silvery liquid",
     "atomic number": 80,
     "protons": 80,
@@ -4647,10 +4387,9 @@ Mercury = Hg = {
     "electrical resistivity (nΩ⋅m (at 20 °C))": 961,
     "magnetic ordering": "diamagnetic",
     "molar magnetic susceptibility (cm^3/mol)": -33.44*10**-6
-    }
+    },
 
-Thallium = Tl = {
-    "name": "thallium",
+"thallium": {
     "appearance": "silvery white metal",
     "atomic number": 81,
     "protons": 81,
@@ -4704,9 +4443,9 @@ Thallium = Tl = {
     "poisson ratio": 0.45,
     "mohs hardness": 1.2,
     "brinell hardness (MPa)": [26.5,44.7],
-    }
+    },
 
-Lead = Pb = {
+"lead":{
     "name": "lead",
     "appearance": "metallic gray",
     "atomic number": 82,
@@ -4761,10 +4500,9 @@ Lead = Pb = {
     "poisson ratio": 0.44,
     "mohs hardness": 1.5,
     "brinell hardness (MPa)": [38.50],
-    }
+    },
 
-Bismuth = Bi = {
-    "name": "bismuth",
+"bismuth": {
     "appearance": "lustrous brownish silver metal",
     "atomic number": 83,
     "protons": 83,
@@ -4818,10 +4556,9 @@ Bismuth = Bi = {
     "poisson ratio": 0.33,
     "mohs hardness": 2.25,
     "brinell hardness (MPa)": [70,95],
-    }
+    },
 
-Polonium = Po = {
-    "name": "bismuth",
+"polonium": {
     "appearance": "silvery",
     "atomic number": 84,
     "protons": 84,
@@ -4875,9 +4612,9 @@ Polonium = Po = {
     "mohs hardness": "-",
     "vickers hardness (MPa)": "-",
     "brinell hardness (MPa)": "-",
-    }
+    },
 
-Astatine = At = {
+"astatine": {
     "name": "astatine",
     "appearance": "unknown",
     "atomic number": 85,
@@ -4932,10 +4669,9 @@ Astatine = At = {
     "mohs hardness": "",
     "vickers hardness (MPa)": "",
     "brinell hardness (MPa)": "",
-    }
+    },
 
-Radon = Rn = {
-    "name": "radon",
+"radon": {
     "appearance": "colorless gas",
     "atomic number": 86,
     "protons": 86,
@@ -4993,10 +4729,9 @@ Radon = Rn = {
     "mohs hardness": "",
     "vickers hardness (MPa)": "",
     "brinell hardness (MPa)": "",
-    }
+    },
 
-Francium = Fr = {
-    "name": "francium",
+"francium": {
     "appearance": "",
     "atomic number": 87,
     "protons": 87,
@@ -5056,10 +4791,9 @@ Francium = Fr = {
     "mohs hardness": "",
     "vickers hardness (MPa)": "",
     "brinell hardness (MPa)": "",
-    }
+    },
  
-Radium = Ra = {
-   "name": "radium",
+"radium": {
    "appearance": "silvery white metallic",
    "atomic number": 88,
    "protons": 88,
@@ -5120,10 +4854,9 @@ Radium = Ra = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
  
-Actinium = Ac = {
-   "name": "actinium",
+"actinium": {
    "appearance": "silverywhite, blue light glow,",
    "atomic number": 89,
    "protons": 89,
@@ -5184,10 +4917,9 @@ Actinium = Ac = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
  
-Thorium = Th = {
-   "name": "thorium",
+"thorium": {
    "appearance": "silver, often black tarnished",
    "atomic number": 90,
    "protons": 90,
@@ -5248,10 +4980,9 @@ Thorium = Th = {
    "mohs hardness": 3.0,
    "vickers hardness (MPa)": [295, 685],
    "brinell hardness (MPa)": [390, 1500],
-   }
+   },
  
-Protactinium = Pa = {
-   "name": "protactinium",
+"protactinium": {
    "appearance": "bright, silvery metallic luster",
    "atomic number": 91,
    "protons": 91,
@@ -5312,10 +5043,9 @@ Protactinium = Pa = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
  
-Uranium = U = {
-   "name": "uranium",
+"uranium": {
    "appearance": "silvery gray metallic",
    "atomic number": 92,
    "protons": 92,
@@ -5376,10 +5106,9 @@ Uranium = U = {
    "mohs hardness": "",
    "vickers hardness (MPa)": [1960,2500],
    "brinell hardness (MPa)": [2350,3850],
-   }
+   },
  
-Neptunium = Np = {
-   "name": "neptunium",
+"neptunium": {
    "appearance": "silvery metallic",
    "atomic number": 93,
    "protons": 93,
@@ -5440,10 +5169,10 @@ Neptunium = Np = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   } 
+   },
 
-Plutonium = Pu = {
-   "name": "plutonium",
+
+"plutonium": {
    "appearance": "silvery white, tarnishing to dark gray in air",
    "atomic number": 94,
    "protons": 94,
@@ -5504,10 +5233,9 @@ Plutonium = Pu = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   } 
+   },
 
-Americium = Am = {
-   "name": "Americium",
+"americium": {
    "appearance": "silvery white",
    "atomic number": 95,
    "protons": 95,
@@ -5568,10 +5296,9 @@ Americium = Am = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   } 
+   },
 
-Curium = Cm = {
-   "name": "curium",
+"curium": {
    "appearance": "silvery metallic, glow purple in dark",
    "atomic number": 96,
    "protons": 96,
@@ -5632,10 +5359,9 @@ Curium = Cm = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Berkelium = Bk = {
-   "name": "berkelium",
+"berkelium": {
    "appearance": "silvery",
    "atomic number": 97,
    "protons": 97,
@@ -5696,9 +5422,9 @@ Berkelium = Bk = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Californium = Cf = {
+"californium": {
    "name": "californium",
    "appearance": "silvery",
    "atomic number": 98,
@@ -5760,10 +5486,9 @@ Californium = Cf = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Einsteinium = Es = {
-   "name": "einsteinium",
+"einsteinium": {
    "appearance": "silvery; glows blue in dark",
    "atomic number": 99,
    "protons": 99,
@@ -5824,10 +5549,9 @@ Einsteinium = Es = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Fermium = Fm = {
-   "name": "fermium",
+"fermium": {
    "appearance": "",
    "atomic number": 100,
    "protons": 100,
@@ -5888,9 +5612,9 @@ Fermium = Fm = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Mendelevium = Md = {
+"mendelevium": {
    "name": "mendelevium",
    "appearance": "",
    "atomic number": 101,
@@ -5952,10 +5676,9 @@ Mendelevium = Md = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Nobelium = No = {
-   "name": "nobelium",
+"nobelium": {
    "appearance": "",
    "atomic number": 102,
    "protons": 102,
@@ -6016,10 +5739,9 @@ Nobelium = No = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Lawrencium = Lr = {
-   "name": "lawrencium",
+"lawrencium": {
    "appearance": "",
    "atomic number": 103,
    "protons": 103,
@@ -6080,10 +5802,9 @@ Lawrencium = Lr = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Rutherfordium = Rf = {
-   "name": "rutherfordium",
+"rutherfordium": {
    "appearance": "",
    "atomic number": 104,
    "protons": 104,
@@ -6144,10 +5865,9 @@ Rutherfordium = Rf = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Dubnium = Db = {
-   "name": "dubnium",
+"dubnium": {
    "appearance": "",
    "atomic number": 105,
    "protons": 105,
@@ -6208,10 +5928,9 @@ Dubnium = Db = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Seaborgium = Sg = {
-   "name": "seaborgium",
+"seaborgium": {
    "appearance": "",
    "atomic number": 106,
    "protons": 106,
@@ -6272,10 +5991,9 @@ Seaborgium = Sg = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Bohrium = Bh = {
-   "name": "bohrium",
+"bohrium": {
    "appearance": "",
    "atomic number": 107,
    "protons": 107,
@@ -6336,9 +6054,9 @@ Bohrium = Bh = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Hassium = Hs = {
+"hassium": {
    "name": "hassium",
    "appearance": "",
    "atomic number": 108,
@@ -6400,10 +6118,9 @@ Hassium = Hs = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Meitnerium = Mt = {
-   "name": "meitnerium",
+"meitnerium": {
    "appearance": "",
    "atomic number": 109,
    "protons": 109,
@@ -6464,10 +6181,9 @@ Meitnerium = Mt = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Darmstadtium = Ds = {
-   "name": "darmstadtium",
+"darmstadtium": {
    "appearance": "",
    "atomic number": 110,
    "protons": 110,
@@ -6528,10 +6244,9 @@ Darmstadtium = Ds = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Roentgenium = Rg = {
-   "name": "roentgenium",
+"roentgenium": {
    "appearance": "",
    "atomic number": 111,
    "protons": 111,
@@ -6592,10 +6307,9 @@ Roentgenium = Rg = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Copercinium = Cn = {
-   "name": "copernicium",
+"copercinium": {
    "appearance": "",
    "atomic number": 112,
    "protons": 112,
@@ -6656,10 +6370,9 @@ Copercinium = Cn = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Nihonium = Nh = {
-   "name": "nihonium",
+"nihonium": {
    "appearance": "",
    "atomic number": 113,
    "protons": 113,
@@ -6720,10 +6433,9 @@ Nihonium = Nh = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Flerovium = Fl = {
-   "name": "Flerovium",
+"flerovium": {
    "appearance": "",
    "atomic number": 114,
    "protons": 114,
@@ -6784,10 +6496,9 @@ Flerovium = Fl = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Moscovium = Mc = {
-   "name": "moscovium",
+"moscovium": {
    "appearance": "",
    "atomic number": 115,
    "protons": 115,
@@ -6848,10 +6559,9 @@ Moscovium = Mc = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Livermorium = Lv = {
-   "name": "livermorium",
+"livermorium": {
    "appearance": "",
    "atomic number": 116,
    "protons": 116,
@@ -6912,10 +6622,9 @@ Livermorium = Lv = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Tennessine = Ts = {
-   "name": "tennesine",
+"tennessine":  {
    "appearance": "semimetallic",
    "atomic number": 117,
    "protons": 117,
@@ -6976,10 +6685,9 @@ Tennessine = Ts = {
    "mohs hardness": "",
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
-   }
+   },
 
-Oganesson = Og = {
-   "name": "oganesson",
+"oganesson": {
    "appearance": "metallic",
    "atomic number": 118,
    "protons": 118,
@@ -7041,3 +6749,4 @@ Oganesson = Og = {
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
    }
+}
