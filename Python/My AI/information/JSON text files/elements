@@ -1,5 +1,3 @@
-https://byjus.com/chemical-compound-formulas/
-
 {
 "hydrogen": {
     "appearance": "colorless gas",
@@ -1269,7 +1267,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,13,1],
     "valence electrons": 6,
-    "valency": 2
+    "valency": 2,
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 3465,
@@ -1325,7 +1323,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 4,
     "electrons per shell": [2,8,13,2],
     "valence electrons": 7,
-    "valency":, [7,4,2],
+    "valency": [7,4,2],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 2275,
@@ -3626,7 +3624,7 @@ https://byjus.com/chemical-compound-formulas/
     "shells": 6,
     "electrons per shell": [2,8,18,29,8,2],
     "valence electrons": 2,
-    "valency": 23,
+    "valency": [23],
     "phase": "solid",
     "melting point":{
         "Fahrenheit": 2662,
@@ -6751,5 +6749,4 @@ https://byjus.com/chemical-compound-formulas/
    "vickers hardness (MPa)": "",
    "brinell hardness (MPa)": "",
    }
-
 }
