@@ -1,119 +1,119 @@
 Element,Symbol,Atomic Number,Phase,Classification,Atomic Weight, Shells, Electrons per shell, Valence electrons, Valency
-Hydrogen,H,1,gas,nonmetal,63.546,1,[1]1,1
-Helium,He,2,gas,noble gas,4.002602,1,[2]2,0
-Lithium,Li,3,solid,alkali metal,6.94,2,[2, 1]1,1
-Beryllium,Be,4,solid,alkaline earth metal,9.0121831,2,[2, 2]2,2
-Boron,B,5,solid,metalloid,10.806,2,[2, 3]3,3
-Carbon,C,6,solid,nonmetal,12.0096,2,[2, 4]4,4
-Nitrogen,N,7,gas,nonmetal,14.00643,2,[2, 5]5,3
-Oxygen,O,8,gas,nonmetal,15.99903,2,[2, 6]6,2
-Flourine,F,9,gas,nonmetal,18.998403162,2,[2, 7]7,1
-Neon,Ne,10,gas,noble gas,20.1797,2,[2, 8]8,0
-Sodium,Na,11,solid,alkali metal,22.98976928,3,[2, 8, 1]1,1
-Magnesium,Mg,12,solid,alkaline earth metal,24.304,3,[2, 8, 2]2,2
-Aluminum,Al,13,solid,post-transition metal,26.9815384,3,[2, 8, 3]3,3
-Silicon,Si,14,solid,metalloid,28.084,3,[2, 8, 4]4,4
-Phosphorus,P,15,solid,nonmetal,30.973761998,3,[2, 8, 5]5,[3, 5]
-Sulfur,S,16,solid,nonmetal,32.059,3,[2, 8, 6]6,2
-Chlorine,Cl,17,gas,nonmetal,35.446,3,[2, 8, 7]7,1
-Argon,Ar,18,gas,noble gas,39.792,3,[2, 8, 8]8,0
-Potassium,K,19,solid,alkali metal,39.0983,4,[2, 8, 8, 1]1,1
-Calcium,Ca,20,solid,alkaline earth metal,40.078,4,[2, 8, 8, 2]2,2
-Scandium,Sc,21,solid,transition metal,44.955907,4,[2, 8, 9, 2]3,3
-Titanium,Ti,22,solid,transition metal,47.867,4,[2, 8, 10, 2]4,[2, 3, 4]
-Vanadium,V,23,solid,transition metal,50.9415,4,[2, 8, 11, 2]5,[2, 3, 4, 5]
-Chromium,Cr,24,solid,transition metal,51.9961,4,[2, 8, 13, 1]6,2
-Manganese,Mn,25,solid,transition metal,54.938043,4,[2, 8, 13, 2]7,[7, 4, 2]
-Iron,Fe,26,solid,transition metal,55.845,4,[2, 8, 14, 2]8,[2, 3]
-Cobalt,Co,27,solid,transition metal,58.933194,4,[2, 8, 15, 2]9,[2, 3]
-Nickel,Ni,28,solid,transition metal,58.6934,4,[2, 8, 16, 2]2,[3, 2]
-Copper,Cu,29,solid,transition metal,63.546,4,[2, 8, 18, 1]1,[1, 2]
-Zinc,Zn,30,solid,transition metal,65.38,4,[2, 8, 18, 2]2,2
-Gallium,Ga,31,solid,post-transition metal,69.723,4,[2, 8, 18, 3]3,[3, 1]
-Germanium,Ge,32,solid,metalloid,72.63,4,[2, 8, 18, 4]4,[4, 2]
-Arsenic,As,33,solid,metalloid,74.921595,4,[2, 8, 18, 5]5,[5, 3]
-Selenium,Se,34,solid,nonmetal,78.971,4,[2, 8, 18, 6]6,[2, 4, 6]
-Bromine,Br,35,liquid,nonmetal,79.901,4,[2, 8, 18, 7]7,[1, 3, 5]
-Krypton,Kr,36,gas,noble gas,83.798,4,[2, 8, 18, 8]8,0
-Rubidium,Rb,37,solid,alkali metal,84.4678,5,[2, 8, 18, 8, 1]1,1
-Strontium,Sr,38,solid,alkaline earth metal,87.62,5,[2, 8, 18, 8, 2]2,2
-Yttrium,Y,39,solid,transition metal,88.905838,2,[2, 8, 18, 9, 2]3,3
-Zirconium,Zr,40,solid,transition metal,91.224,5,[2, 8, 18, 10, 2]4,4
-Niobium,Nb,41,solid,transition metal,92.906,5,[2, 8, 18, 12, 1]5,[3, 5]
-Molybdenum,Mo,42,solid,transition metal,95.95,5,[2, 8, 18, 13, 1]6,[2, 3, 4, 5, 6]
-Technetium,Tc,43,solid,transition metal,98,3,[2, 8, 18, 13, 2]7,4
-Ruthenium,Ru,44,solid,transition metal,101.07,5,[2, 8, 18, 15, 1]8,3
-Rhodium,Rh,45,solid,transition metal,102.906,5,[2, 8, 18, 16, 1]9,3
-Palladium,Pd,46,solid,transition metal,106.42,4,[2, 8, 18, 18]10,4
-Silver,Ag,47,solid,transition metal,107.8682,5,[2, 8, 18, 18, 1]1,1
-Cadmium,Cd,48,solid,transition metal,112.414,5,[2, 8, 18, 18, 2]2,2
-Indium,In,49,solid,post-transition metal,114.818,3,[2, 8, 18, 18, 3]3,3
-Tin,Sn,50,solid,post-transition metal,118.71,5,[2, 8, 18, 18, 4]4,[2, 4]
-Antimony,Sb,51,solid,metalloid,121.76,5,[2, 8, 18, 18, 5]5,[3, 5]
-Tellurium,Te,52,solid,metalloid,127.6,5,[2, 8, 18, 18, 6]6,[2, 4, 6]
-Iodine,I,53,solid,nonmetal,126.904,5,[2, 8, 18, 18, 7]7,[1, 3, 5, 7]
-Xenon,Xe,54,gas,noble gas,131.293,5,[2, 8, 18, 18, 8]8,0
-Caesium,Cs,55,solid,alkali metal,132.90545196,6,[2, 8, 18, 18, 8, 1]1,1
-Barium,Ba,56,solid,alkaline earth metal,137.327,6,[2.0, 8, 18, 18, 2]2,2
-Lanthanum,La,57,solid,lanthanide,138.90547,6,[2, 8, 18, 18, 9, 2]2,3
-Cerium,Ce,58,solid,lanthanide,140.116,6,[2, 8, 18, 19, 9, 2]2,4
-Praseodymium,Pr,59,solid,lanthanide,140.90766,6,[2, 8, 18, 21, 8, 2]2,4
-Neodymium,Nd,60,solid,lanthanide,144.242,6,[2, 8, 18, 22, 8, 2]2,3
-Promethium,Pm,61,solid,lanthanide,145,6,[2, 8, 18, 23, 8, 2]2,3
-Samarium,Sm,62,solid,lanthanide,150.36,6,[2, 8, 18, 24, 8, 2]2,3
-Europium,Eu,63,,lanthanide,151.96,6,[2, 8, 18, 25, 8, 2]2,3
-Gadolinium,Gd,64,solid,lanthanide,157.25,6,[2, 8, 18, 25, 9, 2]2,3
-Terbium,Tb,65,solid,lanthanide,158.925354,6,[2, 8, 18, 27, 8, 2]2,3
-Dysprosium,Dy,66,solid,lanthanide,162.5,6,[2, 8, 18, 28, 8, 2]2,3
-Holium,Ho,67,solid,lanthanide,164.930329,6,[2, 8, 18, 29, 8, 2]2,23
-Erbium,Er,68,solid,lanthanide,167.259,6,[2, 8, 18, 30, 8, 2]2,3
-Thulium,Tm,69,solid,lanthanide,168.934219,6,[2, 8, 18, 31, 8, 2]2,3
-Ytterbium,Yb,70,solid,lanthanide,173.045,6,[2, 8, 18, 32, 8, 2]2,3
-Lutetium,Lu,71,solid,lanthanide,1749668,6,[2, 8, 18, 32, 9, 2]2,3
-Hafnium,Hf,72,solid,transition metal,178.486,6,[2, 8, 18, 32, 10, 2]2,4
-Tantalum,Ta,73,solid,transition metal,180.94788,6,[2, 8, 18, 32, 11, 2]2,5
-Tungsten,W,74,solid,transition metal,183.84,6,[2, 8, 18, 32, 12, 2]2,6
-Rhenium,Re,75,solid,transition metal,186.207,6,[2, 8, 18, 32, 13, 2]2,7
-Osmium,Os,76,solid,transition metal,190.23,6,[2, 8, 18, 32, 14, 2]2,[2, 3, 4]
-Iridium,Ir,77,solid,transition metal,192.217,6,[2, 8, 18, 32, 15, 2]2,[2, 3, 4]
-Platinum,Pt,78,solid,transition metal,195.084,6,[2, 8, 18, 32, 17, 1]1,[2, 4]
-Gold,Au,79,solid,transition metal,196.96657,6,[2, 8, 18, 32, 18, 1]1,[1, 3]
-Mercury,Hg,80,liquid,transition metal,200.592,6,[2, 8, 18, 32, 18, 2]2,[1, 2]
-Thallium,Tl,81,solid,post-transition metal,204.383,6,[2, 8, 18, 32, 18, 3]3,[1, 3]
-Lead,Pb,82,solid,post-transition metal,206.14,3,[2, 8, 18, 32, 18, 4]4,[2, 4]
-Bismuth,Bi,83,solid,post-transition metal,208.9804,6,[2, 8, 18, 32, 18, 5]5,[3, 5]
-Polonium,Po,84,solid,post-transition metal,209,6,[2, 8, 18, 32, 18, 6]6,[2, 4, 6]
-Astatine,At,85,solid,metalloid,210,6,[2, 8, 18, 32, 18, 7]7,1
-Radon,Rn,86,gas,noble gas,222,6,[2, 8, 18, 32, 18, 8]8,0
-Francium,Fr,87,solid,alkali metal,223,7,[2, 8, 18, 32, 18, 8, 1]1,1
-Radium,Ra,88,solid,alkaline earth metal,226,7,[2, 8, 18, 32, 18, 8, 2]2,2
-Actinium,Ac,89,solid,actinide,227,7,[2, 8, 18, 32, 18, 9, 2]2,3
-Thorium,Th,90,solid,actinide,232.0377,7,[2, 8, 18, 32, 18, 10, 2]2,4
-Protactinium,Pa,91,solid,actinide,231.03588,7,[2, 8, 18, 32, 20, 9, 2]2,[2, 3, 4, 5]
-Uranium,U,92,solid,actinide,238.028,7,[2, 8, 18, 32, 21, 9, 2]2,6
-Neptunium,Np,93,solid,actinide,237,7,[2, 8, 18, 32, 22, 9, 2]2,6
-Plutonium,Pb,94,solid,actinide,244,7,[2, 8, 18, 32, 24, 8, 2]2,[3, 4, 5, 6]
-Americium,Am,95,solid,actinide,243,7,[2, 8, 18, 32, 25, 8, 2]2,[3, 4]
-Curium,Cm,96,solid,actinide,247,7,[2, 8, 18, 32, 25, 9, 2]2,3
-Berkelium,Bk,97,solid,actinide,247,7,[2, 8, 18, 32, 27, 8, 2]2,[3, 4]
-Californium,Cf,98,solid,actinide,251,7,[2, 8, 18, 32, 28, 8, 2]2,[2, 3, 4]
-Einsteinium,Es,99,solid,actinide,252,7,[2, 8, 18, 32, 29, 8, 2]2,3
-Fermium,Fm,100,solid,actinide,257,7,[2, 8, 18, 32, 30, 8, 2]2,3
-Mendelevium,Md,101,solid,actinide,258,7,[2, 8, 18, 32, 31, 8, 2]2,3
-Nobelium,No,102,solid,actinide,259,7,[2, 8, 18, 32, 32, 8, 2]2,3
-Lawrencium,Lr,103,solid,actinide,266,7,[2, 8, 18, 32, 32, 8, 3]3,3
-Rutherfordium,Rf,104,solid,transition metal,267,7,[2, 8, 18, 32, 32, 10, 2]2,4
-Dubnium,Db,105,solid,transition metal,268,7,[2, 8, 18, 32, 32, 11, 2]2,5
-Seaborgium,Sg,106,solid,transition metal,269,7,[2, 8, 18, 32, 32, 12, 2]2,[4, 6]
-Bohrium,Bh,107,solid,transition metal,270,7,[2, 8, 18, 32, 32, 13, 2]2,7
-Hassium,Hs,108,solid,transition metal,269,7,[2, 8, 18, 32, 32, 14, 2]2,6
-Meitnerium,Mt,109,solid,,278,7,[2, 8, 18, 32, 32, 15, 2],
-Darmstadtium,Ds,110,solid,,281,7,[2, 8, 18, 32, 32, 16, 2],
-Roentgenium,Rg,111,solid,,282,7,[2, 8, 18, 32, 32, 17, 2]2,7
-Copercinium,Cn,112,liquid,transition metal,285,7,[2, 8, 18, 32, 32, 18, 2]2,6
-Nihonium,Nh,113,solid,,286,7,[2, 8, 18, 32, 32, 18, 3]3,5
-Flerovium,Fl,114,liquid,post-transition metal,289,7,[2, 8, 18, 32, 32, 18, 4]4,4
-Moscovium,Mc,115,solid,,290,7,[2, 8, 18, 31, 31, 18, 5]5,3
-Livermorium,Lv,116,solid,,293,7,[2, 8, 18, 31, 31, 18, 6]6,2
-Tennessine,Ts,117,solid,,294,7,[2, 8, 18, 32, 32, 18, 7]7,1
-Oganesson,Og,118,solid,noble gas,294,7,[2, 8, 18, 32, 32, 18, 8]8,0
+Hydrogen;H;1;gas;nonmetal;63.546;1;[1];1;1
+Helium;He;2;gas;noble gas;4.002602;1;[2];2;0
+Lithium;Li;3;solid;alkali metal;6.94;2;[2, 1];1;1
+Beryllium;Be;4;solid;alkaline earth metal;9.0121831;2;[2, 2];2;2
+Boron;B;5;solid;metalloid;10.806;2;[2, 3];3;3
+Carbon;C;6;solid;nonmetal;12.0096;2;[2, 4];4;4
+Nitrogen;N;7;gas;nonmetal;14.00643;2;[2, 5];5;3
+Oxygen;O;8;gas;nonmetal;15.99903;2;[2, 6];6;2
+Flourine;F;9;gas;nonmetal;18.998403162;2;[2, 7];7;1
+Neon;Ne;10;gas;noble gas;20.1797;2;[2, 8];8;0
+Sodium;Na;11;solid;alkali metal;22.98976928;3;[2, 8, 1];1;1
+Magnesium;Mg;12;solid;alkaline earth metal;24.304;3;[2, 8, 2];2;2
+Aluminum;Al;13;solid;post-transition metal;26.9815384;3;[2, 8, 3];3;3
+Silicon;Si;14;solid;metalloid;28.084;3;[2, 8, 4];4;4
+Phosphorus;P;15;solid;nonmetal;30.973761998;3;[2, 8, 5];5;[3, 5]
+Sulfur;S;16;solid;nonmetal;32.059;3;[2, 8, 6];6;2
+Chlorine;Cl;17;gas;nonmetal;35.446;3;[2, 8, 7];7;1
+Argon;Ar;18;gas;noble gas;39.792;3;[2, 8, 8];8;0
+Potassium;K;19;solid;alkali metal;39.0983;4;[2, 8, 8, 1];1;1
+Calcium;Ca;20;solid;alkaline earth metal;40.078;4;[2, 8, 8, 2];2;2
+Scandium;Sc;21;solid;transition metal;44.955907;4;[2, 8, 9, 2];3;3
+Titanium;Ti;22;solid;transition metal;47.867;4;[2, 8, 10, 2];4;[2, 3, 4]
+Vanadium;V;23;solid;transition metal;50.9415;4;[2, 8, 11, 2];5;[2, 3, 4, 5]
+Chromium;Cr;24;solid;transition metal;51.9961;4;[2, 8, 13, 1];6;2
+Manganese;Mn;25;solid;transition metal;54.938043;4;[2, 8, 13, 2];7;[7, 4, 2]
+Iron;Fe;26;solid;transition metal;55.845;4;[2, 8, 14, 2];8;[2, 3]
+Cobalt;Co;27;solid;transition metal;58.933194;4;[2, 8, 15, 2];9;[2, 3]
+Nickel;Ni;28;solid;transition metal;58.6934;4;[2, 8, 16, 2];2;[3, 2]
+Copper;Cu;29;solid;transition metal;63.546;4;[2, 8, 18, 1];1;[1, 2]
+Zinc;Zn;30;solid;transition metal;65.38;4;[2, 8, 18, 2];2;2
+Gallium;Ga;31;solid;post-transition metal;69.723;4;[2, 8, 18, 3];3;[3, 1]
+Germanium;Ge;32;solid;metalloid;72.63;4;[2, 8, 18, 4];4;[4, 2]
+Arsenic;As;33;solid;metalloid;74.921595;4;[2, 8, 18, 5];5;[5, 3]
+Selenium;Se;34;solid;nonmetal;78.971;4;[2, 8, 18, 6];6;[2, 4, 6]
+Bromine;Br;35;liquid;nonmetal;79.901;4;[2, 8, 18, 7];7;[1, 3, 5]
+Krypton;Kr;36;gas;noble gas;83.798;4;[2, 8, 18, 8];8;0
+Rubidium;Rb;37;solid;alkali metal;84.4678;5;[2, 8, 18, 8, 1];1;1
+Strontium;Sr;38;solid;alkaline earth metal;87.62;5;[2, 8, 18, 8, 2];2;2
+Yttrium;Y;39;solid;transition metal;88.905838;2;[2, 8, 18, 9, 2];3;3
+Zirconium;Zr;40;solid;transition metal;91.224;5;[2, 8, 18, 10, 2];4;4
+Niobium;Nb;41;solid;transition metal;92.906;5;[2, 8, 18, 12, 1];5;[3, 5]
+Molybdenum;Mo;42;solid;transition metal;95.95;5;[2, 8, 18, 13, 1];6;[2, 3, 4, 5, 6]
+Technetium;Tc;43;solid;transition metal;98;3;[2, 8, 18, 13, 2];7;4
+Ruthenium;Ru;44;solid;transition metal;101.07;5;[2, 8, 18, 15, 1];8;3
+Rhodium;Rh;45;solid;transition metal;102.906;5;[2, 8, 18, 16, 1];9;3
+Palladium;Pd;46;solid;transition metal;106.42;4;[2, 8, 18, 18];10;4
+Silver;Ag;47;solid;transition metal;107.8682;5;[2, 8, 18, 18, 1];1;1
+Cadmium;Cd;48;solid;transition metal;112.414;5;[2, 8, 18, 18, 2];2;2
+Indium;In;49;solid;post-transition metal;114.818;3;[2, 8, 18, 18, 3];3;3
+Tin;Sn;50;solid;post-transition metal;118.71;5;[2, 8, 18, 18, 4];4;[2, 4]
+Antimony;Sb;51;solid;metalloid;121.76;5;[2, 8, 18, 18, 5];5;[3, 5]
+Tellurium;Te;52;solid;metalloid;127.6;5;[2, 8, 18, 18, 6];6;[2, 4, 6]
+Iodine;I;53;solid;nonmetal;126.904;5;[2, 8, 18, 18, 7];7;[1, 3, 5, 7]
+Xenon;Xe;54;gas;noble gas;131.293;5;[2, 8, 18, 18, 8];8;0
+Caesium;Cs;55;solid;alkali metal;132.90545196;6;[2, 8, 18, 18, 8, 1];1;1
+Barium;Ba;56;solid;alkaline earth metal;137.327;6;[2.0, 8, 18, 18, 2];2;2
+Lanthanum;La;57;solid;lanthanide;138.90547;6;[2, 8, 18, 18, 9, 2];2;3
+Cerium;Ce;58;solid;lanthanide;140.116;6;[2, 8, 18, 19, 9, 2];2;4
+Praseodymium;Pr;59;solid;lanthanide;140.90766;6;[2, 8, 18, 21, 8, 2];2;4
+Neodymium;Nd;60;solid;lanthanide;144.242;6;[2, 8, 18, 22, 8, 2];2;3
+Promethium;Pm;61;solid;lanthanide;145;6;[2, 8, 18, 23, 8, 2];2;3
+Samarium;Sm;62;solid;lanthanide;150.36;6;[2, 8, 18, 24, 8, 2];2;3
+Europium;Eu;63;;lanthanide;151.96;6;[2, 8, 18, 25, 8, 2];2;3
+Gadolinium;Gd;64;solid;lanthanide;157.25;6;[2, 8, 18, 25, 9, 2];2;3
+Terbium;Tb;65;solid;lanthanide;158.925354;6;[2, 8, 18, 27, 8, 2];2;3
+Dysprosium;Dy;66;solid;lanthanide;162.5;6;[2, 8, 18, 28, 8, 2];2;3
+Holium;Ho;67;solid;lanthanide;164.930329;6;[2, 8, 18, 29, 8, 2];2;[23]
+Erbium;Er;68;solid;lanthanide;167.259;6;[2, 8, 18, 30, 8, 2];2;3
+Thulium;Tm;69;solid;lanthanide;168.934219;6;[2, 8, 18, 31, 8, 2];2;3
+Ytterbium;Yb;70;solid;lanthanide;173.045;6;[2, 8, 18, 32, 8, 2];2;3
+Lutetium;Lu;71;solid;lanthanide;1749668;6;[2, 8, 18, 32, 9, 2];2;3
+Hafnium;Hf;72;solid;transition metal;178.486;6;[2, 8, 18, 32, 10, 2];2;4
+Tantalum;Ta;73;solid;transition metal;180.94788;6;[2, 8, 18, 32, 11, 2];2;5
+Tungsten;W;74;solid;transition metal;183.84;6;[2, 8, 18, 32, 12, 2];2;6
+Rhenium;Re;75;solid;transition metal;186.207;6;[2, 8, 18, 32, 13, 2];2;7
+Osmium;Os;76;solid;transition metal;190.23;6;[2, 8, 18, 32, 14, 2];2;[2, 3, 4]
+Iridium;Ir;77;solid;transition metal;192.217;6;[2, 8, 18, 32, 15, 2];2;[2, 3, 4]
+Platinum;Pt;78;solid;transition metal;195.084;6;[2, 8, 18, 32, 17, 1];1;[2, 4]
+Gold;Au;79;solid;transition metal;196.96657;6;[2, 8, 18, 32, 18, 1];1;[1, 3]
+Mercury;Hg;80;liquid;transition metal;200.592;6;[2, 8, 18, 32, 18, 2];2;[1, 2]
+Thallium;Tl;81;solid;post-transition metal;204.383;6;[2, 8, 18, 32, 18, 3];3;[1, 3]
+Lead;Pb;82;solid;post-transition metal;206.14;3;[2, 8, 18, 32, 18, 4];4;[2, 4]
+Bismuth;Bi;83;solid;post-transition metal;208.9804;6;[2, 8, 18, 32, 18, 5];5;[3, 5]
+Polonium;Po;84;solid;post-transition metal;209;6;[2, 8, 18, 32, 18, 6];6;[2, 4, 6]
+Astatine;At;85;solid;metalloid;210;6;[2, 8, 18, 32, 18, 7];7;1
+Radon;Rn;86;gas;noble gas;222;6;[2, 8, 18, 32, 18, 8];8;0
+Francium;Fr;87;solid;alkali metal;223;7;[2, 8, 18, 32, 18, 8, 1];1;1
+Radium;Ra;88;solid;alkaline earth metal;226;7;[2, 8, 18, 32, 18, 8, 2];2;2
+Actinium;Ac;89;solid;actinide;227;7;[2, 8, 18, 32, 18, 9, 2];2;3
+Thorium;Th;90;solid;actinide;232.0377;7;[2, 8, 18, 32, 18, 10, 2];2;4
+Protactinium;Pa;91;solid;actinide;231.03588;7;[2, 8, 18, 32, 20, 9, 2];2;[2, 3, 4, 5]
+Uranium;U;92;solid;actinide;238.028;7;[2, 8, 18, 32, 21, 9, 2];2;6
+Neptunium;Np;93;solid;actinide;237;7;[2, 8, 18, 32, 22, 9, 2];2;6
+Plutonium;Pb;94;solid;actinide;244;7;[2, 8, 18, 32, 24, 8, 2];2;[3, 4, 5, 6]
+Americium;Am;95;solid;actinide;243;7;[2, 8, 18, 32, 25, 8, 2];2;[3, 4]
+Curium;Cm;96;solid;actinide;247;7;[2, 8, 18, 32, 25, 9, 2];2;3
+Berkelium;Bk;97;solid;actinide;247;7;[2, 8, 18, 32, 27, 8, 2];2;[3, 4]
+Californium;Cf;98;solid;actinide;251;7;[2, 8, 18, 32, 28, 8, 2];2;[2, 3, 4]
+Einsteinium;Es;99;solid;actinide;252;7;[2, 8, 18, 32, 29, 8, 2];2;3
+Fermium;Fm;100;solid;actinide;257;7;[2, 8, 18, 32, 30, 8, 2];2;3
+Mendelevium;Md;101;solid;actinide;258;7;[2, 8, 18, 32, 31, 8, 2];2;3
+Nobelium;No;102;solid;actinide;259;7;[2, 8, 18, 32, 32, 8, 2];2;3
+Lawrencium;Lr;103;solid;actinide;266;7;[2, 8, 18, 32, 32, 8, 3];3;3
+Rutherfordium;Rf;104;solid;transition metal;267;7;[2, 8, 18, 32, 32, 10, 2];2;4
+Dubnium;Db;105;solid;transition metal;268;7;[2, 8, 18, 32, 32, 11, 2];2;5
+Seaborgium;Sg;106;solid;transition metal;269;7;[2, 8, 18, 32, 32, 12, 2];2;[4, 6]
+Bohrium;Bh;107;solid;transition metal;270;7;[2, 8, 18, 32, 32, 13, 2];2;7
+Hassium;Hs;108;solid;transition metal;269;7;[2, 8, 18, 32, 32, 14, 2];2;6
+Meitnerium;Mt;109;solid;;278;7;[2, 8, 18, 32, 32, 15, 2];;
+Darmstadtium;Ds;110;solid;;281;7;[2, 8, 18, 32, 32, 16, 2];;
+Roentgenium;Rg;111;solid;;282;7;[2, 8, 18, 32, 32, 17, 2];2;7
+Copercinium;Cn;112;liquid;transition metal;285;7;[2, 8, 18, 32, 32, 18, 2];2;6
+Nihonium;Nh;113;solid;;286;7;[2, 8, 18, 32, 32, 18, 3];3;5
+Flerovium;Fl;114;liquid;post-transition metal;289;7;[2, 8, 18, 32, 32, 18, 4];4;4
+Moscovium;Mc;115;solid;;290;7;[2, 8, 18, 31, 31, 18, 5];5;3
+Livermorium;Lv;116;solid;;293;7;[2, 8, 18, 31, 31, 18, 6];6;2
+Tennessine;Ts;117;solid;;294;7;[2, 8, 18, 32, 32, 18, 7];7;1
+Oganesson;Og;118;solid;noble gas;294;7;[2, 8, 18, 32, 32, 18, 8];8;0
