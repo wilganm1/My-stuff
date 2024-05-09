@@ -245,8 +245,15 @@ def magnetic_flux(magnetic_field, area_perpendicular, angle = 0):
 
 " artificial intelligence "
 
-def sigmoid(input_value):
-    return 1/(1 + (math.e**-input_value))
+def sigmoid(input):
+    return 1/(1 + (math.e**-input))
 
 def forward_propagation(inputs, weights, bias):
-   
+    return sum([inputs[i] * weights[i] for i in range(len(inputs))]) + bias
+
+def tanh_activation(input):
+    return (2 / (1 + (math.e**(-2 * input)))) - 1
+
+def softplus(input):
+    return math.log(1 + math.e**input)
+
