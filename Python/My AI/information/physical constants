@@ -24,6 +24,7 @@
       "speed of sound (m/s)": 343,
       "Rydberg constant": 10973731.6,
       "elementary charge (e) (C)": 1.602176634 * 10**-19,
-      "Cosmological constan": 1.089 * 10**-52
+      "Cosmological constan": 1.089 * 10**-52,
+      "Eular's number": 2.718281828459045,
       }
      }
