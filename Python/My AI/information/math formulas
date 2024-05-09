@@ -242,3 +242,11 @@ def faraday_induction(change_magnetic_flux, change_time):
     
 def magnetic_flux(magnetic_field, area_perpendicular, angle = 0):
     return magnetic_field * area_perpendicular * angle
+
+" artificial intelligence "
+
+def sigmoid(input_value):
+    return 1/(1 + (math.e**-input_value))
+
+def forward_propagation(inputs, weights, bias):
+   
