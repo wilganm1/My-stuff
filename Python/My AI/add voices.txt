@@ -4,7 +4,9 @@ Python 3.8, Windows 10, Pyttsx3 version = 2.7
 
 2. Click start button on Windows. Type or click "Run".
 
-3. Type in 'regedit' into the bar, hit enter, then click yes. This is the Microsoft registry editor. Go to HKEY_LOCAL_MACHINE/SOFTWARE/MICROSOFT/SPEECH/VOICES/TOKENS
+3. Type in 'regedit' into the bar, hit enter, then click yes. This is the Microsoft registry editor. Go to 
+HKEY_LOCAL_MACHINE/SOFTWARE/MICROSOFT/SPEECH/VOICES/TOKENS
+
 This will have 2 folders, one for each default voice. They should be David and Zira. They should be named -TTS_MS_EN-US_{name}_11.0 or something like that.
 
 4) Click on '  -TTS_MS_EN-US_{name}_11.0  ' and look at LangDataPath. Go to that folder and check if your downloaded voice are there too.
