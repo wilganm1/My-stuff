@@ -1,21 +1,9 @@
-/***************************************************************
- * Name:      [PROJECT NAME]App.h
- * Purpose:   Defines Application Class
- * Author:     ()
- * Created:   2025-03-12
- * Copyright:  ()
- * License:
- **************************************************************/
+//    HEADER FILE TO CREATE AN THE MAIN WINDOW OF AN APP.
+#pragma once
+#include <wx/wx.h>
 
-#ifndef [PROJECT NAME]APP_H
-#define [PROJECT NAME]APP_H
-
-#include <wx/app.h>
-
-class [PROJECT NAME]App : public wxApp
+class App: public wxApp
 {
-    public:
-        virtual bool OnInit();
+public:
+    bool OnInit();
 };
-
-#endif // [PROJECT NAME]APP_H
