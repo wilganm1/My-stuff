@@ -1,9 +1,6 @@
-//    HEADER FILE TO CREATE A FRAME CLASS. USED TO MAKE FRAMES
-#pragma once
+#include "MainFrame.h"
 #include <wx/wx.h>
 
-class MainFrame : public wxFrame
-{
-public:
-    MainFrame(const wxString& title);
-};
+MainFrame::MainFrame(const wxString& title): wxFrame(nullptr, wxID_ANY, title){
+
+}
