@@ -80,5 +80,12 @@ by the panel/frame the control is in.
             now bind button1 to the event handle
 
     button1->Bind(wxEVT_BUTTON, &MainFrame::OnButton1Clicked, this);
-    
+
+
+--------------MOUSE EVENTS--------------
+Events that happend with the mouse: moving, clicking, holding,
+
+        in header file
+  private:
+    void OnMouseEvent(wxMouseEvent& evt);
   
