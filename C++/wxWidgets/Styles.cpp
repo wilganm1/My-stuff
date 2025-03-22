@@ -28,4 +28,7 @@ Style parameters usually go after the size parameter and on CodeBlocks is highli
   majorDim = 1       //  Lays out boxes vertically
     OR
  majorDim = n, wxRA_SPECIFY_ROWS   // n is the number of choices you have, style makes them vetical.
+
+// DATE PICKER
+  wxDP_DROPDOWN    // Uses a default calendar to select date
   
