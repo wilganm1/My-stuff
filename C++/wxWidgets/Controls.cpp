@@ -1,4 +1,7 @@
 #include <wx/spinctrl.h>
+#include <wx/clrpicker.h>
+#include <wx/datectrl.h>
+#include <wx/fontpicker.h>
 
 /*  These control have to be within the main frame class inside the MainFrame.cpp file, or whatever it's called. NOT the App.cpp file
 
@@ -23,8 +26,8 @@
 
     wxSlider* slider = new wxSlider(panel, wxID_ANY, 25, 0, 100, wxPoint(x, y)); // Horizontal slider
 
-    wxGauge* gauge = new wxGauge(panel, wxID_ANY, 100, wxPoint(x, y)); // progress bar
-    gauge->SetValue(50);   // sets initial value of progress bar. Not percentage based
+    wxGauge* gauge = new wxGauge(panel, wxID_ANY, 100, wxPoint(x, y), wxDefaultSize, wxGA_SMOOTH); // progress bar
+    gauge->SetValue(n);   // sets initial value of progress bar. Not percentage based
 
     wxArrayString choices; // drop down menu choices
     choices.Add("A");
@@ -38,12 +41,21 @@
 
     wxListBox* listBox = new wxListBox(panel, wxID_ANY, wxPoint(x, y), wxSize(width, -1), choices); // Box of text in a vertical list
 
-    wxColourPickerCtrl* colorPick = new wxColourPickerCtrl(panel, wxID_ANY, wxColour(*wx[COLOR]);
+    wxRadioBox* radioBox = new wxRadioBox(panel, wxID_ANY, "TITLE", wxPoint(x, y), wxDefaultSize, choices); // single choice check box
+
+    wxColourPickerCtrl* colourPicker = new wxColourPickerCtrl(panel, wxID_ANY, wxColour(*wx[COLOR]);
                         // colors available: BLACK, BLUE, CYAN, GREEN, YELLOW, LIGHT GREY, RED, WHITE
 
+    wxDatePickerCtrl* datePicker = new wxDatePickerCtrl(panel, wxID_ANY, wxDefaultDateTime, wxPoint(x, y), wxDefaultSize);
+
+    wxFontPickerCtrl* FontPicker = new wxFontPickerCtrl(panel, wxID_ANY, wxNullFont, wxPoint(x, y), wxDefaultSize);
+
+    wxScrollBar* scrollBar = new wxScrollBar(panel, wxID_ANY, wxPoint(x, y), wxDefaultSize, wxSB_HORIZONTAL);  // Scroll bar
+
+    wxFilePickerCtrl* filePickerCtrl = new wxFilePickerCtrl(panel, wxID_ANY, wxString([default path shown. if blank replace this with wxEMPTYSTRING]), wxString("Select File"), wxFileSelectorDefaultWildcardStr, wxPoint(x, y), wxDefaultSize);
+
+    wxDirPickerCtrl* dirPickerCtrl = new wxDirPickerCtrl(panel, wxID_ANY);
 
 
  
-
-    wxRadioBox* radioBox = new wxRadioBox(panel, wxID_ANY, "TITLE", wxPoint(x, y), wxDefaultSize, choices); // single choice check box
 }
