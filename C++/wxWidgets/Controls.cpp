@@ -1,13 +1,13 @@
 #include <wx/spinctrl.h>
 
-//    These control have to be within the main frame class inside the MainFrame.cpp file, or whatever it's called. NOT the App.cpp file
+/*  These control have to be within the main frame class inside the MainFrame.cpp file, or whatever it's called. NOT the App.cpp file
 
 
  If you don't want a specific size just use wxDefaultSize
 
  Avoid using wxDefaultPosition because it will send it to the top left corner.
 
- Using -1 for value of wxSize just makes it the default size
+ Using -1 for value of wxSize just makes it the default size */
 
 {
     wxPanel* panel = new wxPanel(this); // Creates a panel to put in controls freely
@@ -37,6 +37,13 @@
     wxSpinCtrl* spinCtrl = new wxSpinCtrl(panel, wxID_ANY, "TITLE" wxPoint(x, y); // Click increment/decrement value
 
     wxListBox* listBox = new wxListBox(panel, wxID_ANY, wxPoint(x, y), wxSize(width, -1), choices); // Box of text in a vertical list
+
+    wxColourPickerCtrl* colorPick = new wxColourPickerCtrl(panel, wxID_ANY, wxColour(*wx[COLOR]);
+                        // colors available: BLACK, BLUE, CYAN, GREEN, YELLOW, LIGHT GREY, RED, WHITE
+
+
+
+ 
 
     wxRadioBox* radioBox = new wxRadioBox(panel, wxID_ANY, "TITLE", wxPoint(x, y), wxDefaultSize, choices); // single choice check box
 }
