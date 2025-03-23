@@ -1,20 +1,19 @@
-Events are things that happen within the GUI that can be responded to.
+/* Events are things that happen within the GUI that can be responded to.
 
 - Event handlers
 When things happend they must be handled by the mainframe then implemented. Event handlers
-need to be bound to button that controls them.
+need to be bound to button that controls them.*/
 
-Write this code in the mainframe.h file inside the mainframe class:
+Write this code in the mainframe.h file inside the mainframe class: 
 
   private:
-    void OnButtonClicked(wxCommandEvent& evt);   // When button is clicked
-    void OnSliderChanged(wxCommandEvent& evt);   // when slider is changed
-    void OnTextChanged(wxCommandEvent& evt);    // when text changes in box
+    void [NameOfMethod](wxCommandEvent& evt); // good practice is to name methods after function
+    
     //Add whatever other events here
 
-Then back in the mainframe.cpp file write this code to define the event handler in the mainframe:
+Then back in the mainframe.cpp file write this code to define the event handler outside the mainframe:
 
- void MainFrame::OnButtonClicked(wxCommandEvent& evt){
+ void MainFrame::[NameOfMethod](wxCommandEvent& evt){
     wxLogStatus("Button Clicked");
 }
 
@@ -23,11 +22,11 @@ Easy way to bind events to their handlers is to use the Bind() function
 
     wxButton* button = new wxButton(panel, wxID_ANY, "Title", wxPoint(100,200), wxDefaultSize);
 
-    button->Bind(wxEVT_BUTTON, &MainFrame::OnButtonClicked, this); // Binds event to handle
+    button->Bind(wxEVT_BUTTON, &MainFrame::[NameOfMethod], this); // Binds event to handle
 
     CreateStatusBar();   //  Shows event
 
-   button->Unbind(wxEVT_BUTTON, &MainFrame::OnButtonClicked, this); // Unbinds event
+    button->Unbind(wxEVT_BUTTON, &MainFrame::OnButtonClicked, this); // Unbinds event
 
 
 ---------------EVENT PROPOGATION----------------
@@ -85,7 +84,35 @@ by the panel/frame the control is in.
 --------------MOUSE EVENTS--------------
 Events that happend with the mouse: moving, clicking, holding,
 
-        in header file
+       // in header file
   private:
     void OnMouseEvent(wxMouseEvent& evt);
-  
+
+      // in .cpp file
+
+void MainFrame::MouseFag(wxMouseEvent& evt){
+    // whatever
+}
+ //  https://docs.wxwidgets.org/3.0/classwx_mouse_event.html
+
+--------------KEYBOARD EVENTS--------------
+Events that use keyboard. Press or release keys.
+
+      // in header file
+  private:
+      void OnKeyEvent(wxKeyEvent& evt);
+
+      // in .cpp file
+
+  control->Bind(wxEVT_[], &MainFraime::OnKeyEvent, this);
+            // KEY_DOWN, KEY_UP, KEY_CHAR
+
+  void MainFrame::OnKeyEvent(wxKeyEvent& evt){
+      wxChar keyChar = evt.GetUnicodeKey();   //
+      wxLogStatus("Key Event %c", keyChar);
+  }
+
+   evt.GetEventType()   // checks what event type happens. Use for if statements
+
+https://docs.wxwidgets.org/3.0/classwx_key_event.html
+
