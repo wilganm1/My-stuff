@@ -17,9 +17,12 @@ system("CLS")      -clears the console screens.
 
 To add external libraries, download them, click on Settings up top,
 click on Compiler, click on Linker Settings and add the path.
-#include "library.h"
+Manually-entered libraries need "" insead of <>
+
+    - #include "library.h"
 
   -Namespaces, make your own functions. Use :: operator
+
       namespace abc {   //creating the namespace abc
          int func(param1, param2) {}}  //function within namespace
      call the func function by using the namespace and ::
@@ -27,6 +30,7 @@ click on Compiler, click on Linker Settings and add the path.
      calling :: within a namespace calls the global function
 
   -Nested namespaces
+
    You can shorthand a namespace inside another namespace
        namespace foo::goo {} with is the same as
          namespace foo{
@@ -48,7 +52,7 @@ click on Compiler, click on Linker Settings and add the path.
 
 -Variable Types
  int          -stores integers.
- double,float -stores decimal numbers.
+ double,float -stores decimal numbers. float has 7 decimal precision, double has 15
  char         -stores single characters only. Uses ''
  std::string  -stores text lines. Uses "".
  bool         -True or False vales. 1= true, 0 = false
@@ -67,7 +71,7 @@ Convert one data type to another using static_cast //type conversion
  -      -subtracts things.
  *      -multiplies values
  /      -divides values
- %      -modulus. Returnes division remainder
+ %      -modulus. Returns division remainder
  ++x    -increments by 1. changes value of it.
  --x    -decrements by 1
  &&,    -AND operator. (Higher precedence than ||)
@@ -89,46 +93,27 @@ Convert one data type to another using static_cast //type conversion
  All comparison operators need to be in (). (~ > ~)
   When comparing floats use epsilon. These check if they are "close enough"
 
--------------------------------------STRINGS--------------------------------------------
-#include <string>    //for strings
-
-std::string x = "Whatever here";
-
--Concatenate strings.
-Use + to combine different strings. Add a space at end of first string " "
-or you can use .append() as the same thing.
-        std::cout << "My " + "name " + "is " //notice the white space after each word
-
--Indexing strings []
- Can access the element at a certain posistion. 0-indexed like Python.
-    std::string myString = "Hello";
-    cout << myString[1];
-    //Outputs e
-
-  Get a range from a string: //range, string has element.
-      std::string x = {"whatever"}
-      x.substr(1,4);   -This gets indexes 1 to 4.
-
--Methods
-  Methods are built-in functions like python.
-   x.append(y)  -concatenates y to end of x
-   x.length()   -gets length of x
-   max(x,y,..)  -returns the largest number of x or y
-   max(x,y,..)  -returns the smallest number of x or y
-   .find(~)     -sees if ~ is in a string.
-
--std:: functions
- all_of         -checks all of an array for a condition
- size(x)        -determines size of an array
 
 ------------------------------------VARIABLES----------------------------------------
-There are 4 ways to create a variable, You first
- assign a variable then you initialize it with a value.;
+Variables are pices of code that hold information. They have a type and
+a name.
 
-  data_type variable_name;  //assignment of identifier to a data_type
-  data_type variable_name = value; //copy initialization
-  data_type variable_name( value );  //direct initialization
-  data_type variable_name { value }; //brace/list initialization *** BEST
+ -int           // Holds a whole number. no decimals
+ -float         // Decimal number. up to 7 decimals
+ -double        // Decimal number. up to 15 decimals
+ -char          // Single letter. Uses ''.
+ -std::string   // plain text > 1 letter. Uses "".
+ -bool          // true or false value
+ -void          // no data type. returns nothing
+ -auto          // auto assign a type. Try to avoid using these
+
+There are 4 ways to create a variable, You first
+assign a variable then you initialize it with a value.;
+
+  data_type variableName;  //assignment of identifier to a data_type
+  data_type variableName = value; //copy initialization
+  data_type variableName( value );  //direct initialization
+  data_type variableName { value }; //brace/list initialization *** BEST
 
     int myNum = 15;
     std::cout << myNum; //outputs 15
@@ -145,6 +130,7 @@ There are 4 ways to create a variable, You first
         int myName = Name;
         int myAge = 25;
         cout << "I'm " << myName << " and I'm " << myAge << " years old.";
+
  Add variables together:
     int x = 5;
     int y = 6;
@@ -223,6 +209,40 @@ There are 4 ways to create a variable, You first
 
  -Use e to represent powers of 10 for numbers
     float f1 = 35e3;
+
+
+-------------------------------------STRINGS--------------------------------------------
+#include <string>    //for strings
+
+std::string x = "Whatever here";
+
+-Concatenate strings.
+Use + to combine different strings. Add a space at end of first string " "
+or you can use .append() as the same thing.
+        std::cout << "My " + "name " + "is " //notice the white space after each word
+
+-Indexing strings []
+ Can access the element at a certain posistion. 0-indexed like Python.
+    std::string myString = "Hello";
+    cout << myString[1];
+    //Outputs e
+
+  Get a range from a string: //range, string has element.
+      std::string x = {"whatever"}
+      x.substr(1,4);   -This gets indexes 1 to 4.
+
+-Methods
+  Methods are built-in functions like python.
+   x.append(y)  -concatenates y to end of x
+   x.length()   -gets length of x
+   max(x,y,..)  -returns the largest number of x or y
+   max(x,y,..)  -returns the smallest number of x or y
+   .find(~)     -sees if ~ is in a string.
+
+-std:: functions
+ all_of         -checks all of an array for a condition
+ size(x)        -determines size of an array
+
 
 ----------------------------------USER INPUTS--------------------------------------
  std::cin >>    -Use std::cin to get user input. Like input() in Python.
@@ -395,6 +415,7 @@ There are multiple methods/functions to alter vectors;
 
 ---------------------------------CONDITIONALS-------------------------------------
 -Conditional statements. These will run depending on something happening or not.
+
     if       -block of code is run if condition is true;
     else     -runs if same condition is false
     else if  -runs if condition before it is false
@@ -417,6 +438,7 @@ There are multiple methods/functions to alter vectors;
         if (xxx == 7 && int yyy == 8){}
 
  -Switch statements. Basically a giant if, else layout.
+
     switch(expression) {    //loops through cases. MUST BE A CONSTANT. ONLY ONE EXPRESSION
       case x:
         // code block if x == expression
@@ -454,7 +476,7 @@ There are multiple methods/functions to alter vectors;
 Loops are blocks of code that always restart if a certain condition is met.
 
 -While loops. Will run forever while a condition is met.
-       int i = 0;
+       int i = 0;       //do this before the while loop.
        while (i < 5) {
          std::cout << i << "\n"; // prints out what i is equal to
          i++;}                   //increases i every time. Then restarts the loop
@@ -534,7 +556,7 @@ Loops are blocks of code that always restart if a certain condition is met.
  They can return something specific using the return keyword. The
  function needs a data type classifier if it returns that data type.
 
-    data_type functionName(parameters){ //declaration
+    data_type functionName(data_type parameter){ //declaration
     //code to run. body of function    (definition)
             return data;}
 
@@ -688,17 +710,20 @@ Loops are blocks of code that always restart if a certain condition is met.
       int x{};
       int& y{x};   -y is now set to the value of x
 
+
+ -Pointer*. variable that holds memory address as a value.
+       data_type* var_name{&value};
+           int v{5};      //variable
+           int* ptr{&v};   //pointer assigned to memory address
+           std::cout << &v     //prints address of variable v
+           std::cout << ptr     //prints address of ptr. = &v
+
+
  -Indirections *&. Access value at a memory address.
       int x{5};
       std::cout << &x  //prints memory address of variable x
       std::cout << *&x  //prints the value of variable x
 
- -Pointer*. variable that holds memory address as a value.
-      data_type* var_name{&value};
-          int v{5};      //variable
-          int* ptr{&v};   //pointer assigned to memory address
-          std::cout << &v     //prints address of variable v
-          std::cout << ptr     //prints address of ptr. = &v
 
    You can combine indirection and pointers
         int* ptr{&value};
@@ -903,10 +928,13 @@ attributes of the class. Think of a class as a car and object as Volvo.
        class derived-class: access-specifier base-class
 
         class BaseClass{
+            protecte: //only used for inherited classes.
         //code for this class here
         };
-    //Now the derived/child class
+
+    //Derived class
         class DerivedClass: public BaseClass{
+            public: whatever;
         };
 
     -Multilevel inheritance.
@@ -919,14 +947,14 @@ attributes of the class. Think of a class as a car and object as Volvo.
 
  -Encapsulation. Hiding information away from user.
       This usually takes the form of accessing values of a class through functions called
-      access functions
+      access functions. Uses private access specifier
 
         #include <iostream>
 
-        class Something
-        {private:    //This is private so it doesn't get changed from outside
+        class Something{;
+          private:    //This is private so it doesn't get changed from outside
               int m_value[3]; // note: we changed the implementation of this class!
-         public:
+          public:
               // We have to update any member functions to reflect the new implementation
               void setValue1(int value) { m_value[0] = value;}
               int getValue1() { return m_value[0]; }
@@ -940,17 +968,42 @@ attributes of the class. Think of a class as a car and object as Volvo.
 
  -Polymorphism. Use methods from derived classes to perform different tasks.
 
-        class Animal {    //base class
-          public:c++
-            void animalSound(){
-            std::cout << "The animal makes a sound \n"}};
-
-        class Dog : public Animal {   //derived class
+        // Base class
+        class Animal {
           public:
-            void animalSound() {   //Same method as Animal Class
-            std::cout << "The dog says: bow wow \n";}};
+            void animalSound() {
+              cout << "The animal makes a sound \n";
+            }
+        };
 
-    When we call .animalSound from each class we will get the corresponding
+        // Derived class
+        class Pig : public Animal {
+          public:
+            void animalSound() {
+              cout << "The pig says: wee wee \n";
+            }
+        };
+
+        // Derived class
+        class Dog : public Animal {
+          public:
+            void animalSound() {
+              cout << "The dog says: bow wow \n";
+            }
+        };
+
+    When we call .animalSound from each class we will get the corresponding output
+
+            int main() {
+              Animal myAnimal;
+              Pig myPig;
+              Dog myDog;
+
+              myAnimal.animalSound();
+              myPig.animalSound();
+              myDog.animalSound();
+              return 0;
+            }
 
  -Abstraction. Only display essential info and hide the rest.
 
