@@ -142,7 +142,7 @@ There are 4 ways to create a variable, You first
          int x {}   //outputs 0
 
  You can combine variables in one cout sentence. Make sure to add spaces
-        int myName = Mitch;
+        int myName = Name;
         int myAge = 25;
         cout << "I'm " << myName << " and I'm " << myAge << " years old.";
  Add variables together:
