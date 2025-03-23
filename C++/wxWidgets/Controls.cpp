@@ -5,18 +5,20 @@
 
 /*  These control have to be within the main frame class inside the MainFrame.cpp file, or whatever it's called. NOT the App.cpp file
 
-
  If you don't want a specific size just use wxDefaultSize
 
  Avoid using wxDefaultPosition because it will send it to the top left corner.
 
  Using -1 for value of wxSize just makes it the default size */
 
+ Most controls have following parameters([parent], wxID_ANY, wxDefaultPosition, wxDefaultSize)
+
 {
+// PANEL
     wxPanel* panel = new wxPanel(this); // Creates a panel to put in controls freely
             // this keyword refers to the Frame class it belongs to
 // BUTTON
-    wxButton* button = new wxButton(panel, wxID_ANY, "Gook", wxPoint(x,y), wxSize(width, height));
+    wxButton* button = new wxButton(panel, wxID_ANY, "[NAME]", wxPoint(x,y), wxSize(width, height));
  
 // CHECK BOX
     wxCheckBox* checkBox = new wxCheckBox(panel, wxID_ANY, "TITLE", wxPoint(x, y)); 
@@ -94,6 +96,4 @@
     wxMenu* subMenu = new wxMenu;
     subMenu->Append(wxID_CUT);
     fileMenu->AppendSubMenu(subMenu,_("Sub Menu"));
-
- 
 }
