@@ -97,7 +97,6 @@
     subMenu->Append(wxID_CUT);
     fileMenu->AppendSubMenu(subMenu,_("Sub Menu"));
 
-// Sizer
     wxBoxSizer* boxSizer = new wxBoxSizer(wx[ HORIZONTAL or VERTICAL]);
     wxSizerFlags flags = wxSizerFlags()
        .Proportion(x)
@@ -106,9 +105,11 @@
     boxSizer->Add(control, flags);
     boxSizer->AddSpacer(n);    // adds a gap between controls. Write between controls
     boxSizer->AddStretchSpacer(n) // Adds maximum space. Put between controls.
-    SetSizerAndFit(boxSizer); // sets sizer to the window itself
+    this->SetSizerAndFit(boxSizer); // sets sizer to the window itself. this-> not necessary
 
     panel->SetSizer(boxSizer);            // Do these 2 to use a sizer on a panel.
-    boxSizer->SeetSizerHints(this);
+    boxSizer->SetSizeHints(this);    //this keyword points to the panel.
+
+    boxSizer->Add(panel1, 1, wxEXPAND); // do this to make panel expand in all directions
     
 }
