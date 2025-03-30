@@ -127,10 +127,8 @@
    panel1->SetBackgroundColour(wxColor(145,60,2));
    panel2->SetBackgroundColour(wxColor(240,224,97));
    splitter->SplitVertically(panel1, panel2);
+   splitter->SetMinimumPaneSize(200);
 
-   splitter2->SplitHorizontally(panel2,panel3);
-
-   splitter->SplitVertically(panel1, splitter2);
 
 
 
