@@ -116,5 +116,23 @@
     boxSizer->SetSizeHints(this);    //this keyword points to the panel.
 
     boxSizer->Add(panel1, 1, wxEXPAND); // do this to make panel expand in all directions
-    
+
+// SPLITTER
+    wxSplitterWindow* splitter = new wxSplitterWindow(this, wxID_ANY, wxDefaultPosition, wxDefaultSize,
+                                                     wxSP_BORDER | wxSP_LIVE_UPDATE);
+
+    wxPanel* panel1 = new wxPanel(splitter);
+    wxPanel* panel2 = new wxPanel(splitter2);
+
+   panel1->SetBackgroundColour(wxColor(145,60,2));
+   panel2->SetBackgroundColour(wxColor(240,224,97));
+   splitter->SplitVertically(panel1, panel2);
+
+   splitter2->SplitHorizontally(panel2,panel3);
+
+   splitter->SplitVertically(panel1, splitter2);
+
+
+
+
 }
