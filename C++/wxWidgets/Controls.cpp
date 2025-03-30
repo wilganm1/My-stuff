@@ -81,7 +81,7 @@
     wxMenu* editMenu = new wxMenu;
     menuBar->Append(editMenu,_("&Edit")); // Creates "Edit" item
 
-    // Add options to menu itesm
+   // Add options to menu itesm
     fileMenu->Append(wxID_NEW);
     fileMenu->Append(wxID_OPEN);
     fileMenu->AppendSeparator();
@@ -89,11 +89,26 @@
     fileMenu->Append(wxID_SAVEAS);
     fileMenu->Append(wxID_EXIT);
 
-    // Custom Menu item
+   // Custom Menu item
     fileMenu->Append(wxID_ANY,_("&[NAME]\t[SHORTCUT]"));
 
-    // Create Submenu
+   // Create Submenu
     wxMenu* subMenu = new wxMenu;
     subMenu->Append(wxID_CUT);
     fileMenu->AppendSubMenu(subMenu,_("Sub Menu"));
+
+// Sizer
+    wxBoxSizer* boxSizer = new wxBoxSizer(wx[ HORIZONTAL or VERTICAL]);
+    wxSizerFlags flags = wxSizerFlags()
+       .Proportion(x)
+       .Border(wxALL, 25);
+
+    boxSizer->Add(control, flags);
+    boxSizer->AddSpacer(n);    // adds a gap between controls. Write between controls
+    boxSizer->AddStretchSpacer(n) // Adds maximum space. Put between controls.
+    SetSizerAndFit(boxSizer); // sets sizer to the window itself
+
+    panel->SetSizer(boxSizer);            // Do these 2 to use a sizer on a panel.
+    boxSizer->SeetSizerHints(this);
+    
 }
