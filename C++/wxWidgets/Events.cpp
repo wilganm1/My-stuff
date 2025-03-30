@@ -6,19 +6,19 @@ need to be bound to button that controls them.*/
 
 Write this code in the mainframe.h file inside the mainframe class: 
 
-  private:
-    void [NameOfMethod](wxCommandEvent& evt); // good practice is to name methods after function
-    
+    private:
+      void [NameOfMethod](wxCommandEvent& evt); // good practice is to name methods after function
+      // example: void OnButtonClicked
     //Add whatever other events here
 
 Then back in the mainframe.cpp file write this code to define the event handler outside the mainframe:
 
- void MainFrame::[NameOfMethod](wxCommandEvent& evt){
-    wxLogStatus("Button Clicked");
-}
+     void MainFrame::[NameOfMethod](wxCommandEvent& evt){
+        wxLogStatus("Button Clicked");
+    }
 
 - Binding the command to the control
-Easy way to bind events to their handlers is to use the Bind() function
+  Easy way to bind events to their handlers is to use the Bind() function
 
     wxButton* button = new wxButton(panel, wxID_ANY, "Title", wxPoint(100,200), wxDefaultSize);
 
