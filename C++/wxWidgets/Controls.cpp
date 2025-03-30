@@ -98,9 +98,14 @@
     fileMenu->AppendSubMenu(subMenu,_("Sub Menu"));
 
     wxBoxSizer* boxSizer = new wxBoxSizer(wx[ HORIZONTAL or VERTICAL]);
-    wxSizerFlags flags = wxSizerFlags()
+    wxSizerFlags flags = wxSizerFlags().
        .Proportion(x)
-       .Border(wxALL, 25);
+       .Border(wx~~~, 25);
+                 ALL
+                 LEFT
+                 RIGHT
+                 TOP
+                 BOTTOM
 
     boxSizer->Add(control, flags);
     boxSizer->AddSpacer(n);    // adds a gap between controls. Write between controls
