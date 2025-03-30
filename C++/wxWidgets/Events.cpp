@@ -61,13 +61,13 @@ by the panel/frame the control is in.
 
 - If you want separate events for each button, create their own event handles.
 
-              Header file
+              MainFrame.h file
      private:
         void OnAnyButtonClicked(wxCommandEvent& evt);
         void OnButton1Clicked(wxCommandEvent& evt);
         void OnButton2Clicked(wxCommandEvent& evt);
 
-              .cpp file
+              MainFrame.cpp file
 
     void MainFrame::OnAnyButtonClicked(wxCommandEvent& evt){
         wxLogStatus("Button Clicked");
@@ -84,13 +84,13 @@ by the panel/frame the control is in.
 --------------MOUSE EVENTS--------------
 Events that happend with the mouse: moving, clicking, holding,
 
-       // in header file
+       // MainFrame.h
   private:
     void OnMouseEvent(wxMouseEvent& evt);
 
-      // in .cpp file
+      // in MainFrame.cpp
 
-void MainFrame::MouseFag(wxMouseEvent& evt){
+void MainFrame::MouseEvent(wxMouseEvent& evt){
     // whatever
 }
  //  https://docs.wxwidgets.org/3.0/classwx_mouse_event.html
@@ -98,11 +98,11 @@ void MainFrame::MouseFag(wxMouseEvent& evt){
 --------------KEYBOARD EVENTS--------------
 Events that use keyboard. Press or release keys.
 
-      // in header file
+      // MainFrame.h
   private:
       void OnKeyEvent(wxKeyEvent& evt);
 
-      // in .cpp file
+      // in MainFrame.cpp
 
   control->Bind(wxEVT_[], &MainFraime::OnKeyEvent, this);
             // KEY_DOWN, KEY_UP, KEY_CHAR
