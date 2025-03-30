@@ -96,5 +96,6 @@ If you want multiple spiltters you need to make the 2nd splitter a child of the 
       
          splitter2->SplitHorizontally(panel2,panel3); 
       
-         splitter->SplitVertically(panel1, splitter2);
-  
+         splitter->SplitVertically(panel1, splitter2); // Splits between panel and splitter
+
+An easy way to think of splitters is to think of them as a panel made up of 2 individual panels.
