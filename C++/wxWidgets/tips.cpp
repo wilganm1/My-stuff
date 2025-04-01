@@ -4,16 +4,20 @@ Sizers control how panels, buttons, etc. act when dimensions of the window chang
 Panels do not change size when the window expands or contracts withouth sizers.
 
 Panels must be associated with the frame then added to a sizer later.
+  
                         wxPanel* panel = new wxPanel(this, wxID_ANY);
                         wxBoxSizer* sizer = new wxBoxSizer(wxVERTICAL);
 
-                        sizer->Add(panel, 1, wxEXPAND);
+                        panel->SetSizerAndFit(sizer); 
+
 
 To have multiple sizers in one frame add a sizer to another sizer
 
                         wxBoxSizer* sizer = new wxBoxSizer(wxVERTICAL);
                         wxBoxSizer* sizer2 = new wxBoxSizer(wxHORIZONTAL);
                         sizer1->Add(sizer2, 1, wxEXPAND);
+
+                        this->SetSizerAndFit(sizer);
 
 When adding mutliple panels to a 2nd sizer you need to have a proportion and wxEXPAND to 
 the panels AND to the second sizer
@@ -63,6 +67,7 @@ Center one sizer inside another.
                     panel2->SetSizerAndFit(sizer2);
 
 ----------------------------------------SPLITERS----------------------------------------
+#include <wx/splitter.h>
 Splitters are like automatic sizers that split  2+ panels with an adjustable borders between them.
 
 Splitters are controls like panels, and are treated like them.
