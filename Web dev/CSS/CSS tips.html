@@ -1,4 +1,4 @@
-:::::::::::::::::::::::::::::::BASICS::::::::::::::::::::::::::::::::::::::
+------------------------------------BASICS------------------------------------
 To affect all of the page, use body{} in css, UNLESS there is a more specific place. #IDs > .classes > <tags>.
   
 Use !important to ensure a style is absolute and set.
@@ -8,7 +8,7 @@ Use !important to ensure a style is absolute and set.
 	viewport is the viewable area on a device. 10vw means 10% of the 
 			viewable width on a device.
 
-::::::::::::::::::::::::::::::::IMAGES:::::::::::::::::::::::::::::::::::::
+------------------------------------IMAGES------------------------------------
 
  -Height and width of an <img> in a div must go within the html file itself, NOT the css file.
  	-<img src="(IMAGE)" width="x" height="y">
@@ -98,7 +98,7 @@ background-size:	 -How big the image is.
  -clear 			- keeps floating elements away
  -line-height:		-the vertical spacing between text lines.
 
-:::::::::::::::::::::::::::::::COLOR:::::::::::::::::::::::::::::::::::::::
+------------------------------------COLOR------------------------------------
 -Color:                     -Color of text
 -Background-color:     	    -color of the background
  -rgb(x, y, z)             -specified color information
@@ -106,7 +106,7 @@ background-size:	 -How big the image is.
  -linear-gradient(xdeg, y, z..n) -y & z are colors of gradient
  
 
-    ------------------------GRADIENTS------------------------------
+------------------------------------GRADIENTS------------------------------------
 Gradients are when two colors fade into each other or to transparency.
 	***Must use {background-image} in css for it to work
 -background-image:
@@ -139,7 +139,7 @@ Gradients are when two colors fade into each other or to transparency.
   				-The smaller black is, the more ripples. 
   				-Black is between space between magenta circle.
 
-:::::::::::::::::::::::::::::::::FONTS::::::::::::::::::::::::::::::::::::
+------------------------------------FONTS------------------------------------
 -font-family:      -font style
 -font-style:       -italic styles
 -font-size:        -size of the font
@@ -159,7 +159,7 @@ How to import a font from google. Go to https://fonts.google.com/ and copy a fon
 	Example:
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 
-::::::::::::::::::::::::::::PSEUDO-CLASSES:::::::::::::::::::::::::::::::::
+------------------------------------PSEUDO-CLASSES------------------------------------
 Pseudo-classes are "classes" that allow changes. They work when
 something on the webpage happens, like when a box is hovered or a link
 is clicked on. This is when these psuedo-classes activate.
@@ -190,7 +190,7 @@ is clicked on. This is when these psuedo-classes activate.
  :after
 
 
-:::::::::::::::::::::::::::CREATING A GRID:::::::::::::::::::::::::::::::::
+------------------------------------CREATING A GRID------------------------------------
 **Create a nested grid within a parent <div>. Make a new class.**
 	<div class="grid">
 		<div>Grid box 1</div>
@@ -293,7 +293,7 @@ You an change the individual forms in CSS using the following format
 
 [type="~~~"] {~~~~~;}
 
-::::::::::::::::::::::TRANSITIONS & ANIMATIONS:::::::::::::::::::::::::::::
+------------------------------------TRANSITIONS & ANIMATIONS------------------------------------
  ****Must have @keyframes NAME OF ANIMATION {} to execute the animation****
 
  	@keyframes animation-name:
@@ -331,14 +331,17 @@ You an change the individual forms in CSS using the following format
 
 ::before: 					-adds something before an element
 
-:::::::::::::::::::::::::::::RESPONSIVE DESIGN:::::::::::::::::::::::::::::
+------------------------------------RESPONSIVE DESIGN------------------------------------
 Responsive design is changing the layout of your site when on screens of 
 different sizes, such as an iphone vs a computer.
 
 Use the @media followed by the screen size in pixels, then normal code
 
- @media (200px) {			-Changes when screen is at most 200 px
+ @media (200px) {		-Changes when screen is at most 200 px
  background-color: red 		-the change that happens to whatever
 }
 
  @media screen and (min-width: )
+
+
+style="max-width:100%;height:auto;">
