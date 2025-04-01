@@ -1,3 +1,8 @@
+
+The ->[Method()] similarly to .method() in Python 
+
+
+
 ----------------------------------------SIZERS----------------------------------------
 
 Sizers control how panels, buttons, etc. act when dimensions of the window changes
