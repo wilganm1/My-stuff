@@ -9,7 +9,6 @@
 
 MainFrame::MainFrame(const wxString& title): wxFrame(nullptr, wxID_ANY, title){
 
-  wxInitAllImageHandlers();
 
   wxSplitterWindow* splitter = new wxSplitterWindow(this, wxID_ANY, wxDefaultPosition,
                                                               wxDefaultSize,
@@ -20,6 +19,28 @@ MainFrame::MainFrame(const wxString& title): wxFrame(nullptr, wxID_ANY, title){
   right->SetBackgroundColour(wxColor(240,224,97));
   splitter->SetMinimumPaneSize(50);
   splitter->SplitVertically(left,right);
+
+  /*    INSTEAD OF SPLITTER JUST USE 2 PANELS
+  wxPanel *panel1 = new wxPanel(this, wxID_ANY);
+        panel1->SetBackgroundColour(*wxRED);
+
+        wxPanel *panel2 = new wxPanel(this, wxID_ANY);
+        panel2->SetBackgroundColour(*wxBLUE);
+
+        wxBoxSizer *sizer = new wxBoxSizer(wxHORIZONTAL);
+        sizer->Add(panel1, 1, wxEXPAND | wxALL, 5);
+        sizer->Add(panel2, 1, wxEXPAND | wxALL, 5);
+
+        this->SetSizer(sizer);
+        this->SetSize(400, 200);
+        this->Centre();
+
+  */
+
+
+
+
+
 
 
   wxStaticText* staticText = new wxStaticText(left, wxID_ANY, "Select a game");
@@ -41,18 +62,18 @@ MainFrame::MainFrame(const wxString& title): wxFrame(nullptr, wxID_ANY, title){
   ticButton->Bind(wxEVT_ENTER_WINDOW, &MainFrame::onMouseOver,this);
   ticButton->Bind(wxEVT_LEAVE_WINDOW, &MainFrame::onMouseOver,this);
 
-  wxBoxSizer* sizer = new wxBoxSizer(wxVERTICAL);
+  wxBoxSizer* sizerLeft = new wxBoxSizer(wxVERTICAL);
 
-  sizer->AddStretchSpacer(0);
-  sizer->Add(staticText, 0, wxALL, 10);
-  sizer->AddSpacer(1);
-  sizer->Add(blackJackButton, 0, wxALL, 10);
-  sizer->AddSpacer(1);
-  sizer->Add(hangmanButton, 0, wxALL, 10);
-  sizer->AddSpacer(1);
-  sizer->Add(ticButton, 0, wxALL, 10);
-  sizer->AddStretchSpacer(1);
-  left->SetSizerAndFit(sizer);
+  sizerLeft->AddStretchSpacer(0);
+  sizerLeft->Add(staticText, 0, wxALL, 10);
+  sizerLeft->AddSpacer(1);
+  sizerLeft->Add(blackJackButton, 0, wxALL, 10);
+  sizerLeft->AddSpacer(1);
+  sizerLeft->Add(hangmanButton, 0, wxALL, 10);
+  sizerLeft->AddSpacer(1);
+  sizerLeft->Add(ticButton, 0, wxALL, 10);
+  sizerLeft->AddStretchSpacer(1);
+  left->SetSizerAndFit(sizerLeft);
 
   CreateStatusBar();
 
