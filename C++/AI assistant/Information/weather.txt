@@ -1,0 +1,7 @@
+Humidity: 
+Humidity is a measure of water vapor in the air. Meteorologists typically describe water vapor in the atmosphere in two different ways: absolute humidity and relative humidity. Dew point is an absolute measure and helps us understand how muggy and humid it feels outside.
+There is water vapor in our atmosphere because of evaporation. Evaporation happens when water changes from a liquid to a gas. Liquid water evaporates from oceans, lakes, rivers, plants, the ground, and fallen rain.
+Absolute humidity: the actual amount of water vapor in the air. The higher the amount of water vapor, the higher the absolute humidity.
+relative humidity: compared to the maximum amount of water vapor that can exist in the air at its current temperature. It is written as a percent.
+Dew point: The dew point marks the temperature at which water vapor will turn into liquid water droplets. This process is called condensation. Condensation is what causes clouds to form, which can then lead to precipitation such as rain, snow, and hail. The dew point will always either be the same or lower than the actual outside temperature.
+
