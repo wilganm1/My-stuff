@@ -3,6 +3,9 @@
 
 ## Use Whisper, Ollama, piper and maybe OpenCV\
 
+SDL
+ - https://www.libsdl.org
+
 Whisper port
  - https://hackaday.com/2022/11/27/heres-a-plain-c-c-implementation-of-ai-speech-recognition-so-get-hackin/
 
