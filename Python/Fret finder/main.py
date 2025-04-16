@@ -51,7 +51,7 @@ frame3 = Frame(master = root)
 
 ''' This function will show all the correct frets based on the chosen scale for each string in each tuning '''
 def ioq():
-    for i in range(0, 6): #strings. Rows.
+    for i in range(0, 7): #strings. Rows.
         for j in range(0, 25):  #frets. Columns
             frame3.columnconfigure(j, weight=1)
             frame3.rowconfigure(j, weight=1)
@@ -96,25 +96,24 @@ def ioq():
                 this_scale = []      #New list that will be have our finished scale.
                 for hhq in note_list:     #loops through the numbers in scale. Those number are index values
                     this_scale.append(notes[hhq])   #adds in letters from notes variable that correspond to scale indices
-            '''  This is the tuning dictionary. Add in more if you'd like. The letters are the open notes. '''
-            tunings = {'E Standard' : ['E','A','D','G','B','E'], 
-                       'Open E' : ['E','B','E','G#','B','E'],
-                       'Drop D' : ['D','A','D','G','B','E'],
-                       'Double Drop D' : ['D','A','D','G','B','D'],
-                       'D Standard' : ['D','G','C','F','A','D'],
-                       'Open D' : ['D','A','D','F#','A','D'],
-                       'Drop C#' : ['C#','G#','C#','F#','A#','D#'],
-                       'Drop C' : ['C','G','C','F','A','D'],
-                       'C# Standard' : ['C#','F#','B','E','G#','C#'],
-                       'C Standard' : ['C','F','A#','D#','G','C'],
-                       'Open C' : ['C','G','C','G','C','E'],
-                       'Drop B' : ['B','F#','B','E','G#','C#'],
-                       'B Standard' : ['B','E','A','D','F#','B'],
-                       'Open B' : ['B','F#','B','F#','B','D#'],
-                       'Drop A#' : ['A#','F','A#','D#','G','C'],
-                       'A# Standard' : ['A#','D#','G#','C#','F','A#'],
-                       'Drop A' : ['A','E','A','D','F#','B'],
-                       'A Standard' : ['A','D','G','C','E','A']}
+            tunings = {'E Standard' : ['B','E','A','D','G','B','E'], 
+                       'Open E' : ['B','E','B','E','G#','B','E'],
+                       'Drop D' : ['B','D','A','D','G','B','E'],
+                       'Double Drop D' : ['B','D','A','D','G','B','D'],
+                       'D Standard' : ['A','D','G','C','F','A','D'],
+                       'Open D' : ['A','D','A','D','F#','A','D'],
+                       'Drop C#' : ['A#','C#','G#','C#','F#','A#','D#'],
+                       'Drop C' : ['A','C','G','C','F','A','D'],
+                       'C# Standard' : ['G#','C#','F#','B','E','G#','C#'],
+                       'C Standard' : ['G','C','F','A#','D#','G','C'],
+                       'Open C' : ['C','C','G','C','G','C','E'],
+                       'Drop B' : ['G#','B','F#','B','E','G#','C#'],
+                       'B Standard' : ['F#','B','E','A','D','F#','B'],
+                       'Open B' : ['B','B','F#','B','F#','B','D#'],
+                       'Drop A#' : ['G','A#','F','A#','D#','G','C'],
+                       'A# Standard' : ['F','A#','D#','G#','C#','F','A#'],
+                       'Drop A' : ['F#','A','E','A','D','F#','B'],
+                       'A Standard' : ['E','A','D','G','C','E','A']}
             numbers = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]    #this is a reference for the list of frets. We come back to it later
             select = tuning_var.get()    #saves the tuning selection
             global results
@@ -153,18 +152,6 @@ canvas = Canvas(frame4, width = 530,height = 95)
 
 def mqs():
     canvas.delete("all")
-    """ Adding canvas.delete("all") updates the dots 
-    but it also deletes the neck diagram. I think this 
-    is because it deletes the canvas that was made
-    before the delete() function is called.
-    That's why the dots stay even though 
-    they have the same canvas name. 
-    I might just have to make the entire
-    neck diagram after I delete it. 
-    I tried just moving the neck code to the mqs 
-    function but nothing shows up at all.
-    """
-    
     neck_length = 530
     fret_length = neck_length - 15
     
