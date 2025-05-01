@@ -1,28 +1,13 @@
 {
     "Laws of motion": [
-      {
-        "First law of motion": "An object will remain at rest or in a uniform state of motion unless that state is changed by an external force. This concept is called inertia."
-      },
-      {
-        "Second law of motion": "Force is equal to the change in momentum, mass times velocity, over time. In other words, the rate of change is directly proportional to the amount of force applied."
-      },
-      {
-        "Third law of motion": "For every action in nature there is an equal and opposite reaction."
-      }
+        {"First law of motion": "An object will remain at rest or in a uniform state of motion unless that state is changed by an external force. This concept is called inertia."},
+        {"Second law of motion": "Force is equal to the change in momentum, mass times velocity, over time. In other words, the rate of change is directly proportional to the amount of force applied."},
+        {"Third law of motion": "For every action in nature there is an equal and opposite reaction."}
     ],
-  "Laws of Thermodynamics":[
-    {
-      "Zeroeth law of thermodynamics": "defines thermal equilibrium and forms a basis for the definition of temperature: if two systems are each in thermal equilibrium with a third system, then they are in thermal equilibrium with each other."
-    },
-    {
-      "First law of thermodynamics": "when energy passes into or out of a system (as work, heat, or matter), the system's internal energy changes in accordance with the law of conservation of energy. This also results in the observation that, in an externally isolated system, even with internal changes, the sum of all forms of energy must remain constant, as energy cannot be created or destroyed."
-    },
-    {
-      "Second law of thermodynamics": "in a natural thermodynamic process, the sum of the entropies of the interacting thermodynamic systems never decreases. A common corollary of the statement is that heat does not spontaneously pass from a colder body to a warmer body."
-    },
-    {
-      "Third law of thermodynamics": "a system's entropy approaches a constant value as the temperature approaches absolute zero. With the exception of non-crystalline solids (glasses), the entropy of a system at absolute zero is typically close to zero."
-    },
-  ],
-  
+    "Laws of Thermodynamics":[
+        {"Zeroeth law of thermodynamics": "defines thermal equilibrium and forms a basis for the definition of temperature: if two systems are each in thermal equilibrium with a third system, then they are in thermal equilibrium with each other."},
+        {"First law of thermodynamics": "when energy passes into or out of a system (as work, heat, or matter), the system's internal energy changes in accordance with the law of conservation of energy. This also results in the observation that, in an externally isolated system, even with internal changes, the sum of all forms of energy must remain constant, as energy cannot be created or destroyed."},
+        {"Second law of thermodynamics": "in a natural thermodynamic process, the sum of the entropies of the interacting thermodynamic systems never decreases. A common corollary of the statement is that heat does not spontaneously pass from a colder body to a warmer body."},
+        {"Third law of thermodynamics": "a system's entropy approaches a constant value as the temperature approaches absolute zero. With the exception of non-crystalline solids (glasses), the entropy of a system at absolute zero is typically close to zero."}
+    ],  
 }
