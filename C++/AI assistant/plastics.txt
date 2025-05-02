@@ -1,0 +1,11 @@
+{
+  "plastics": [
+    {"polyethylene terephthalate": "Polyethylene Terephthalate, abbreviated as P.E.T., has excellent chemical resistance to organic materials and water and is easily recyclable. It is practically shatterproof and possesses an impressive high strength to weight ratio. This plastic material is in fibers for clothing, containers for foods and liquid, glass fiber for engineering resins, carbon nanotubes, and many other products that we use on a daily basis. It is recycle number 1."},
+    {"High-Density Polyethylene": "High-Density Polyethylene, abbreviated as H.D.P.E., it’s an incredible resistant resin used for grocery bags, milk jugs, recycling bins, agricultural pipe, but also playground equipment, lids, and shampoo bottles among others.  Because it’s made with long unbranched polymer chains it’s much stronger and thiicker than PET. Also, it is relatively hard and resistant to impact and can be subjected to temperatures of up to 120 °C  without being affected. It is recycle number 2."},
+    {"Polyvinyl chloride": "Polyvinyl chloride, abbreviated as P.V.C., is a polymer that comes in twor forms: rigid and flexible. In its rigid form, PVC is largely used in the building and construction industry to produce door and window profiles and pipes (drinking and wastewater). When mixed with other substances, It can be made softer and more flexible and applied to plumbing, wiring, and electrical cable insulation and flooring. It is recycle number 3."},
+    {"Low-Density polyethylene": "Low-density polyethylen, abbreviated as L.D.P.E., is characterized by low-density molecules, giving this resin a thinner and more flexible design. It has the simplest structure of all the plastics, making it easy and cheap to produce. Used in plastic bags, six-pack rings, various containers, dispensing bottles, and most famously for plastic wraps. It is recycle number 4."},
+    {""},
+    {""},
+
+  ]
+}
