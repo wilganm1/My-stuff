@@ -1,0 +1,44 @@
+import tkinter as tk
+import cv2
+from PIL import Image, ImageTk
+
+dims = "1300x500"
+
+root = tk.Tk()
+root.title("Side by Side Frames (Pack)")
+root.geometry(dims) # Set an initial window size
+
+# --- Left Frame ---
+# Create the frame and set its parent to 'root'
+left_frame = tk.Frame(root, bg='lightblue', width=200)
+# Pack the frame to the left side
+left_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+#Capture video frames
+cap = cv2.VideoCapture(0)
+
+def show_frame():
+    _, frame = cap.read()
+    cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
+    img = Image.fromarray(cv2image)
+    imgtk = ImageTk.PhotoImage(image=img)
+    display1.imgtk = imgtk #Shows frame for display 1
+    display1.configure(image=imgtk)
+    root.after(10, show_frame) #while loop 
+
+display1 = tk.Button(left_frame)
+display1.pack()  #Display 1
+
+show_frame() #Display
+
+# --- Right Frame ---
+# Create the frame and set its parent to 'root'
+right_frame = tk.Frame(root, bg='lightgreen', width=200)
+# Pack the frame to the left side, it will appear next to the first one
+right_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+# Add a label to the right frame
+right_label = tk.Label(right_frame, text="Right Frame Content", bg='lightgreen')
+right_label.pack(pady=50)
+
+root.mainloop()
