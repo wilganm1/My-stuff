@@ -31,7 +31,7 @@ root.mainloop()
    
    -Pack. Putting stuff in the window. Centered 
      -Fill. Which direction the frames should fill
-     
+     -expand
         .pack(fill = 
             tk.X   #fills whole frame horizontally
             tk.Y   #fills frame vertically
@@ -94,16 +94,15 @@ These are things that do stuff and create events
 -Frames. Boxes that you can put stuff in. Closed off.
 
     frame1 = tk.Frame(master = root) #frame inside root
-    
-     ##code in frame1 here
-    
+
+      ## code here ##
+
     frame1.pack()  #Actually puts frame in the root
-    
     frame2 = tk.Frame(master = frame1) #frame inside frame1
     frame2.pack()
 
     
- -Label. Adds text to root. Information.
+ -Label. #Adds text to root. Information.
  
     label1 = tk.Label(master, 
                       text='Text here',
@@ -199,7 +198,6 @@ These are things that do stuff and create events
     
     def clicked(event): '''NEED (event)'''
         #code here
-    
     
     stringvar = tk.StringVar(root) #option selected
     stringvar.set('') #sets default option
