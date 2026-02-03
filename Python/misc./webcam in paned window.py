@@ -13,7 +13,7 @@ pw = ttk.PanedWindow(root, orient=tk.HORIZONTAL)
 pw.pack(fill=tk.BOTH, expand=True)
 
 
-# Create child frames (panes)
+# Create child frames (panes)  make a frame for each camera
 
 vid_frame = ttk.Frame(pw, width=200, height=300, relief=tk.SUNKEN)
    # Pack the frame to the left side
@@ -21,7 +21,7 @@ vid_frame = ttk.Frame(pw, width=200, height=300, relief=tk.SUNKEN)
    # Capture video frames
 cap = cv2.VideoCapture(0)
 
-def show_frame():
+def show_frame():     # copy everything for multiple cameras
     _, frame = cap.read()
     cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
     img = Image.fromarray(cv2image)
@@ -34,7 +34,6 @@ display1 = tk.Label(vid_frame)
 display1.pack()  #Display 1
 
 show_frame() #Display
-
 
 right_frame = ttk.Frame(pw, width=400, height=300, relief=tk.SUNKEN)
 
